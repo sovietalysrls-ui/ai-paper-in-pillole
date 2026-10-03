@@ -15,6 +15,7 @@ Rules:
 - Use only facts and numbers from the sheet.
 - No authors, no links, no hashtags, no title: the program adds them.
 - No bullet lists.
+- Write numbers as digits (93.1 percent; 0.124 seconds): the description is read, not heard.
 
 Banned expressions:
 $vietate

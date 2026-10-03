@@ -1,0 +1,89 @@
+{
+  "nome_breve": "OneStreamer",
+  "problema": "I modelli di intelligenza artificiale per video in streaming faticano a memorizzare il passato senza rallentare. Per non dimenticare dettagli utili, dovrebbero conservare e rielaborare continuamente l'intera sequenza di immagini, esaurendo in poco tempo la memoria dei dispositivi.",
+  "idea": "OneStreamer sostituisce la memoria visiva passata con brevi appunti e riassunti scritti in testo. In questo modo il sistema mantiene in memoria solo le immagini degli ultimi secondi, consultando il testo per ricordare il passato e rispondere al momento giusto.",
+  "come_funziona": [
+    "Un modulo di memoria visiva a finestra scorrevole conserva soltanto le immagini degli ultimi fotogrammi osservati.",
+    "Il componente PHCM trasforma continuamente le azioni passate in descrizioni dettagliate e riassunti testuali.",
+    "Quando le immagini vecchie escono dalla finestra visiva, vengono eliminate e sostituite dalla loro memoria in formato testo.",
+    "Il metodo di addestramento PSTL insegna al modello quando restare in attesa e quando intervenire proattivamente con una risposta."
+  ],
+  "risultati": [
+    {
+      "fatto": "Riduzione della lunghezza del contesto elaborato su un video di 360 secondi rispetto alla conservazione della cronologia visiva completa.",
+      "numero": "93.1%"
+    },
+    {
+      "fatto": "Riduzione del consumo di memoria della scheda grafica rispetto al mantenere tutti i fotogrammi visivi.",
+      "numero": "60.4%"
+    },
+    {
+      "fatto": "Tempo necessario a generare il primo token di risposta rispetto ai 4.560 secondi dell'approccio visivo completo.",
+      "numero": "0.124 s"
+    },
+    {
+      "fatto": "Punteggio ottenuto nel benchmark di risposta proattiva ProactiveVQA.",
+      "numero": "48.7"
+    },
+    {
+      "fatto": "Punteggio aggregato ottenuto sul benchmark globale per video in streaming OVOBench.",
+      "numero": "72.1"
+    }
+  ],
+  "limiti": [
+    "Sulla metrica di valutazione EPM registra un punteggio leggermente inferiore (62.6) rispetto al metodo che mantiene l'intera cronologia visiva (63.0)."
+  ],
+  "esempio_concreto": "Un assistente per occhiali intelligenti vi aiuta a riordinare casa: ricorda in quale cassetto avete riposto le chiavi dieci minuti fa, anche se quel punto della stanza è ormai uscito dal campo visivo della telecamera.",
+  "perche_ti_riguarda": "Permetterà di creare assistenti personali portatili e telecamere intelligenti capaci di comprendere video lunghi in tempo reale direttamente sui dispositivi, senza rallentamenti o consumi eccessivi di batteria.",
+  "gancio": "Un assistente intelligente può ricordarsi dove avete appoggiato un oggetto anche quando non lo vede più da diversi minuti. OneStreamer ci riesce trasformando i ricordi visivi in appunti scritti istantanei, evitando di bloccare la memoria del computer.",
+  "termini": [
+    {
+      "termine": "OneStreamer",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "spiegazione": "Il modello d'intelligenza artificiale per video in streaming presentato nello studio.",
+      "usa": "termine",
+      "pronuncia": "Uàn Strìmer"
+    },
+    {
+      "termine": "PHCM",
+      "tipo": "sigla",
+      "espansione_inglese": "Proactive Hierarchical Caption Memory",
+      "spiegazione": "Il modulo che converte gli eventi del video in descrizioni e riassunti di testo.",
+      "usa": "spiegazione",
+      "pronuncia": "pi acca ci emme"
+    },
+    {
+      "termine": "PSTL",
+      "tipo": "sigla",
+      "espansione_inglese": "Proactive State Transition Learning",
+      "spiegazione": "La tecnica di addestramento che insegna al sistema quando parlare e quando rimanere in attesa.",
+      "usa": "spiegazione",
+      "pronuncia": "pi esse ti elle"
+    },
+    {
+      "termine": "OVOBench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "spiegazione": "Un insieme di test standard per misurare le capacità dei modelli sui video in streaming.",
+      "usa": "termine",
+      "pronuncia": "Òvo Bènci"
+    },
+    {
+      "termine": "Qwen3-VL-4B-Instruct",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "spiegazione": "Il modello visivo e linguistico di partenza modificato per creare OneStreamer.",
+      "usa": "spiegazione",
+      "pronuncia": "Cùen trè vì elle quàttro bì instraàct"
+    }
+  ],
+  "soggetto_immagine": "a video film strip converting into a stacked text document with a clock",
+  "hashtag": [
+    "AI",
+    "StreamingVideo",
+    "IntelligenzaArtificiale",
+    "ComputerVision",
+    "MemoryOptimization"
+  ]
+}

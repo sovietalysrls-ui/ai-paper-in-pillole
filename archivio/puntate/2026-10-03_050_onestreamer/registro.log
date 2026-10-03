@@ -1,0 +1,56 @@
+[22:13:36] ===== Avvio 2026-10-03 22:13 =====
+[22:13:37] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[22:13:38]    liste trovate: 2026-10-02 (50 paper), 2026-10-01 (50 paper), 2026-09-30 (50 paper), 2026-09-29 (50 paper), 2026-09-28 (33 paper)
+[22:13:38]    provo 2610.01762 (160 voti, lista del 2026-10-02): OneStreamer: Unifying Perception, Memory, and Proactive Response in St
+[22:13:38] ✔ Scelta e lettura del paper — 2610.01762 · 160 voti · arxiv-html · 3330 parole utili
+[22:13:38] ▶ Scheda dei fatti — 1 pezzi da leggere
+[22:13:38] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Dataset Construc
+[22:13:48] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[22:13:58]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:14:19]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:14:39] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[22:14:40]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:15:17] ✔ Scheda dei fatti — OneStreamer · 5 risultati · 5 termini
+[22:15:17] ▶ Dialogo — puntata #50
+[22:15:18]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:16:35] ✔ Dialogo — 52 battute, 711 parole
+[22:16:35] ▶ Controlli e correzioni
+[22:16:35]    giro 1: nessun problema (711 parole, massimo 736)
+[22:16:35] ✔ Controlli e correzioni — nessun problema residuo
+[22:16:35] ▶ Titolo, descrizione, articolo — titolo
+[22:16:43]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:17:06]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:17:31] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[22:17:32]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:18:18] ▶ Titolo, descrizione, articolo — descrizione
+[22:18:19]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:18:58] ▶ Titolo, descrizione, articolo — articolo per il sito
+[22:18:59]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:19:20]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[22:19:46] ⚠ Gemini testo: gemini-3.5-flash sovraccarico, passo a gemini-3.5-flash-lite
+[22:19:53] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #50 - OneStreamer: come l'AI ricorda i v» · articolo 588 parole
+[22:19:54] ▶ Copertina
+[22:19:54]    limite al minuto raggiunto, aspetto 30 secondi
+[22:20:24]    limite al minuto raggiunto, aspetto 30 secondi
+[22:20:54]    limite al minuto raggiunto, aspetto 30 secondi
+[22:21:24] ⚠ copertina Gemini non riuscita (Quota Gemini esaurita anche sulla chiave di riserva. 429: {"error":{"message":"Rate limit exceeded for model gemini-3.1-flash-image (limit: 0 input to): uso il disegno del programma
+[22:21:25] ✔ Copertina — disegno del programma, icona «occhio»
+[22:21:26] ▶ Voce
+[22:21:26] ▶ Voce — blocco 1 di 5 (4 battute)
+[22:21:47] ▶ Voce — blocco 2 di 5 (14 battute)
+[22:22:13] ▶ Voce — blocco 3 di 5 (14 battute)
+[22:22:39] ▶ Voce — blocco 4 di 5 (14 battute)
+[22:23:05] ▶ Voce — blocco 5 di 5 (6 battute)
+[22:23:29] ✔ Voce — 5 blocchi
+[22:23:30] ▶ Montaggio audio
+[22:23:35] ✔ Montaggio audio — 5.2 minuti in tutto, voce 4.7 minuti, 153 parole al minuto
+[22:23:35] ▶ Articolo su WordPress — stato: bozza
+[22:24:36] ⚠ WordPress: sito non raggiungibile: HTTPSConnectionPool(host='andreamanini.it', port=443): Max retries exceeded with url: /wp-json/wp/v2/posts?search=2610.01762&status=draft%2Cpublish%2Cfuture%2Cpending&per_page=5&context=edit (Caused by NewConnectionError("HTTPSConnection(host='andreamanini.it', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[22:24:36] ▶ Consegna su Telegram
+[22:24:43] ✔ Consegna su Telegram — 3 file inviati
+[22:24:43] ▶ Registro e chiusura
+[22:24:43] Richieste al modello di testo: 8
+[22:24:43] memoria video non misurata (nvidia-smi assente)
+[22:24:43] Testi archiviati nel repository: archivio/puntate/2026-10-03_050_onestreamer
+[22:24:43] ✔ Registro e chiusura
+[22:24:43] ===== Finito in 11 minuti =====

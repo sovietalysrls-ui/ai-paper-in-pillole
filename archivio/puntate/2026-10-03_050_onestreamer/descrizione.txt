@@ -1,0 +1,13 @@
+Un assistente per occhiali intelligenti vi aiuta a riordinare casa. Ricorda in quale cassetto avete riposto le chiavi dieci minuti fa, anche se non le vede più. Oggi i modelli di intelligenza artificiale per video faticano a fare questo senza rallentare. Per non dimenticare i dettagli, dovrebbero rielaborare continuamente l'intera sequenza di immagini. Questo processo esaurisce in poco tempo la memoria dei dispositivi portatili.
+
+Il modello OneStreamer risolve il problema sostituendo la memoria visiva passata con brevi appunti di testo. Il sistema conserva in memoria solo le immagini degli ultimi fotogrammi osservati. Un modulo speciale trasforma continuamente le azioni passate in descrizioni scritte. Quando le immagini vecchie escono dalla vista, vengono eliminate e sostituite da questi appunti. Una tecnica di addestramento insegna al modello quando rispondere.
+
+Questo metodo riduce la lunghezza del contesto elaborato del novantatré virgola uno per cento. Il consumo di memoria della scheda grafica scende del sessanta virgola quattro per cento. Il tempo per iniziare a rispondere passa da oltre quattromila secondi a soli zero virgola centoventiquattro secondi. Nei test globali OVOBench il modello ottiene un punteggio di settantadue virgola uno. Sulla metrica EPM registra però un punteggio di sessantadue virgola sei, leggermente inferiore al metodo con cronologia visiva completa.
+
+Il paper è di Xiangyu Zeng, Yuandong Yang, Zhiqiu Zhang e altri 21 autori, e conta 29 pagine con 12 figure.
+
+Link al paper: https://arxiv.org/abs/2610.01762
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati in locale con modelli open source.
+
+#AI #StreamingVideo #IntelligenzaArtificiale #ComputerVision #MemoryOptimization

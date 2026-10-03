@@ -187,7 +187,8 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
         scrivi_json(p_tit, tit)
         scrivi_testo(out / "titolo.txt", tit["completo"])
         avanz.inizia(p, "descrizione")
-        desc = testi.descrizione(llm, L, sk, paper, meta, paper["link"])
+        desc = testi.descrizione(llm, L, sk, paper, meta, paper["link"],
+                                 cloud=cfg["motori"]["testo"] == "gemini")
         scrivi_testo(out / "descrizione.txt", desc)
         avanz.inizia(p, "articolo per il sito")
         art = testi.articolo(llm, L, sk, paper, meta, paper["link"], cfg["articolo"], avanz)

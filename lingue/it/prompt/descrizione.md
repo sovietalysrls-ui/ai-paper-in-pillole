@@ -16,7 +16,7 @@ Regole:
 - Usa solo fatti e numeri della scheda.
 - Niente autori, niente link, niente hashtag, niente titolo: li aggiunge il programma.
 - Niente elenchi puntati.
-- Scrivi "per cento" in lettere.
+- Scrivi i numeri in cifre, con la virgola per i decimali (93,1 per cento; 0,124 secondi): la descrizione si legge, non si ascolta.
 
 Espressioni vietate:
 $vietate

@@ -235,7 +235,7 @@ def _hashtag(lista):
     return " ".join("#" + h for h in out[:6])
 
 
-def descrizione(llm, lingua, sk, paper, meta, link):
+def descrizione(llm, lingua, sk, paper, meta, link, cloud=False):
     s, u = prompt(lingua, "descrizione", scheda=sk, titolo_originale=paper["titolo"],
                   vietate=_regole_vietate(lingua))
     corpo = llm.chat(s, u, "descrizione", temperatura=0.6, max_token=1200)
@@ -251,7 +251,8 @@ def descrizione(llm, lingua, sk, paper, meta, link):
         frase += L["solo_pagine"].format(p=pag)
     if frase:
         righe += [frase.strip() + ".", ""]
-    righe += [L["link"].format(link=link), "", L["firma"], "", _hashtag(sk.get("hashtag", []))]
+    firma = L["firma"] + " " + L.get("firma_cloud" if cloud else "firma_locale", "")
+    righe += [L["link"].format(link=link), "", firma.strip(), "", _hashtag(sk.get("hashtag", []))]
     return "\n".join(righe).strip()
 
 
