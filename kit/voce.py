@@ -47,6 +47,18 @@ def dividi(battute, lingua, per_blocco):
     return apertura, corpo
 
 
+def genera_firma(motore, lingua, cartella, avanz, passo):
+    """La frase finale ("AI Paper in Pillole è un progetto di...")."""
+    ff = lingua.get("frase_finale")
+    if not ff:
+        return None
+    p = Path(cartella) / "blocco_99_firma.wav"
+    if not p.exists() or p.stat().st_size < 1000:
+        avanz.inizia(passo, "frase finale")
+        p.write_bytes(motore.blocco([(ff.get("chi", "ARIANNA"), ff.get("voce") or ff["testo"])]))
+    return p
+
+
 def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo):
     cartella = Path(cartella)
     cartella.mkdir(parents=True, exist_ok=True)

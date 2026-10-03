@@ -22,7 +22,10 @@ Regole di scrittura:
 - Carlo e Arianna si alternano. Mai più di due battute di fila della stessa persona.
 - Usa solo fatti e numeri della scheda. Se un numero non c'è, non scriverlo.
 - Scrivi i numeri in cifre (96 per cento, 3 volte). Scrivi "per cento", non il simbolo %.
-- Nomi stranieri e sigle: segui il campo "usa" della scheda. Una sigla si spiega una volta sola, la prima volta che compare, in una lingua sola: o il significato inglese o la spiegazione italiana, mai entrambi. Dopo, solo la sigla.
+- Nomi stranieri: segui il campo "usa" della scheda.
+- Sigle: la prima volta che una sigla compare, dì subito cosa significano le lettere, con il campo "significato" della scheda, e poi a cosa serve in parole semplici. Esempio: "Se ne occupa PHCM, cioè memoria gerarchica proattiva delle didascalie: in pratica, il modulo che prende appunti." Una sola lingua, mai inglese e italiano insieme. Dopo la prima volta, solo la sigla.
+- Punteggi: ogni punteggio che non è una percentuale va detto con il suo fondo scala, usando il campo "scala": "72,1 punti su 100". Se la scala è "non indicato", non dire il numero da solo: confrontalo con un altro metodo ("un punto e mezzo in più del sistema precedente").
+- Decimali con la virgola: 72,1 e non 72.1.
 - Cita il paper per nome una volta nella parte centrale.
 - Niente didascalie tra parentesi, niente indicazioni di regia, niente effetti sonori.
 

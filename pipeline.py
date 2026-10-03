@@ -15,6 +15,7 @@ il programma riparte dal passo interrotto.
 """
 import argparse
 import datetime as dt
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -166,8 +167,16 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
         scrivi_testo(p_finale, controlli.componi_tecnico(battute))
         avanz.fatto(p, "nessun problema residuo" if not residui else f"{len(residui)} problemi residui")
 
+    if L.get("decimali_virgola"):
+        # 72.1 → 72,1 (solo decimali di 1-2 cifre: 4.560 resta un "migliaia")
+        battute = [(chi, re.sub(r"(?<![\d.,])0\.(\d+)", r"0,\1",
+                                re.sub(r"(?<![\d.,])(\d+)\.(\d{1,2})(?![\d])", r"\1,\2", b)))
+                   for chi, b in battute]
     parole = sum(conta_parole(b) for _, b in battute)
-    scrivi_testo(out / "dialogo.txt", controlli.componi(battute, L))
+    dialogo_txt = controlli.componi(battute, L)
+    if L.get("frase_finale"):
+        dialogo_txt += f"\n\n[dopo la sigla] {L['conduttori'][L['frase_finale'].get('chi', 'ARIANNA')]}: {L['frase_finale']['testo']}"
+    scrivi_testo(out / "dialogo.txt", dialogo_txt)
     proposte = {}
     battute_voce = battute
     if L.get("pronuncia_attiva"):
@@ -223,7 +232,8 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         avanz.inizia(p_voce)
         per_blocco = cfg["gemini_voce"].get("battute_per_blocco", 14)
         g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce)
-        avanz.fatto(p_voce, f"{len(g) + len(c)} blocchi")
+        firma = voce.genera_firma(motore_voce, L, lav / "voce", avanz, p_voce)
+        avanz.fatto(p_voce, f"{len(g) + len(c)} blocchi" + (" + frase finale" if firma else ""))
 
         # --- Passo 9: montaggio ---
         if (out / "puntata.wav").exists() and (out / "puntata.mp3").exists():
@@ -231,7 +241,7 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         else:
             avanz.inizia(p_mont)
             ris = audio.monta(g, c, RADICE / cfg_a["sigla_apertura"], RADICE / cfg_a["sigla_chiusura"],
-                              out / "puntata.wav", out / "puntata.mp3", cfg_a)
+                              out / "puntata.wav", out / "puntata.mp3", cfg_a, firma=firma)
             scrivi_json(lav / "audio.json", ris)
             ritmo = esito["parole"] / max(ris["voce"] / 60, 0.1)
             avanz.fatto(p_mont, f"{ris['durata'] / 60:.1f} minuti in tutto, voce {ris['voce'] / 60:.1f} "
@@ -288,6 +298,7 @@ def consegna(cfg, lingue, oggi_dir, numero, avanz, lav):
         if (out / "descrizione.txt").exists():
             avanz.manda((out / "descrizione.txt").read_text(encoding="utf-8").strip())
         for nome, come, didascalia in (("copertina.jpg", "documento", "Copertina"),
+                                       ("dialogo.txt", "documento", f"Dialogo della puntata #{numero}"),
                                        ("puntata.mp3", "audio", f"Puntata #{numero} (mp3, archivio)"),
                                        ("puntata.wav", "documento", f"Puntata #{numero} (wav, per Spotify)")):
             if (out / nome).exists() and avanz.manda_file(out / nome, pre + didascalia, come):

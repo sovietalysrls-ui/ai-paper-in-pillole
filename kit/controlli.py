@@ -108,8 +108,31 @@ def controlla(battute, scheda, lingua, cfg_d, numero_puntata):
                 break
             viste.setdefault(chiave, i)
 
-    # Sigle: spiegata una volta sola, e in una lingua sola.
+    # Sigle: la prima volta va detto cosa significano le lettere.
     testo_tutto = [b.lower() for _, b in battute]
+    for t in scheda.get("termini", []):
+        if t.get("tipo") != "sigla" or not t.get("termine"):
+            continue
+        sig = t["termine"].strip()
+        rx_sig = re.compile(r"(?<![\w-])" + re.escape(sig) + r"(?![\w-])")
+        prima = next((i for i, (_, b) in enumerate(battute) if rx_sig.search(b)), None)
+        if prima is None:
+            continue
+        significato = (t.get("significato") or t.get("espansione_inglese") or "").lower().strip()
+        parole_chiave = [w for w in re.findall(r"\w{4,}", significato)][:3]
+        vicino = " ".join(testo_tutto[prima:prima + 2])
+        if parole_chiave and not all(w in vicino for w in parole_chiave[:2]):
+            segnala(prima, T["sigla_senza_significato"].format(s=sig, sig=t.get("significato") or t.get("espansione_inglese")))
+
+    # Punteggi: se non è una percentuale, serve il fondo scala.
+    rx_punti = re.compile(T["rx_punteggio"], re.I)
+    for i, (_, b) in enumerate(battute):
+        for m in rx_punti.finditer(b):
+            coda = b[m.end():m.end() + 25].lower()
+            if not re.search(T["rx_scala"], coda):
+                segnala(i, T["punteggio_senza_scala"].format(n=m.group(0).strip()))
+                break
+
     for t in scheda.get("termini", []):
         if t.get("tipo") != "sigla":
             continue
@@ -117,6 +140,9 @@ def controlla(battute, scheda, lingua, cfg_d, numero_puntata):
         loc = (t.get("spiegazione") or "").lower().strip()
         visti_en = [i for i, b in enumerate(testo_tutto) if en and en in b]
         visti_loc = [i for i, b in enumerate(testo_tutto) if loc and len(loc) > 6 and loc in b]
+        sign = (t.get("significato") or "").lower().strip()
+        if sign and sign != loc:
+            loc = sign
         if en and loc and en != loc and visti_en and visti_loc:
             segnala(max(visti_en[0], visti_loc[0]), T["sigla_doppia"].format(s=t["termine"]))
         for vis in (visti_en, visti_loc):

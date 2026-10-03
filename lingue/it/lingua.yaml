@@ -7,6 +7,16 @@ conduttori:
   CARLO: Carlo
   ARIANNA: Arianna
 
+# Frase detta alla fine, dopo la sigla di chiusura.
+# "testo" è quello che si legge; "voce" è come lo deve pronunciare la sintesi vocale.
+frase_finale:
+  chi: ARIANNA
+  testo: "AI Paper in Pillole è un progetto di Sovietaly SRLS."
+  voce: "AI Paper in Pillole è un progetto di Sovietaly, esse erre elle esse."
+
+# Decimali con la virgola nel dialogo (72,1 e non 72.1).
+decimali_virgola: true
+
 # Trasformare i nomi inglesi in "come si pronunciano" per la voce.
 pronuncia_attiva: true
 
@@ -37,6 +47,10 @@ parole_chiusura:
 
 # Frasi usate dai controlli per spiegare al modello cosa correggere.
 testi_controlli:
+  sigla_senza_significato: "dice la sigla {s} senza spiegare cosa significano le lettere: aggiungi \"{s}, cioè {sig}\""
+  punteggio_senza_scala: "cita il punteggio \"{n}\" senza il fondo scala: scrivi per esempio \"72,1 punti su 100\", oppure confrontalo con un altro metodo"
+  rx_punteggio: "(punteggio|punti|score)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|per\\s*cento|percento))|\\d+(?:[.,]\\d+)?\\s+punti"
+  rx_scala: "^\\s*(punti\\s+)?(su|out of)\\s+\\d"
   ripetuta: "ripete una frase già detta prima nel dialogo: dì una cosa nuova o togli la frase"
   vietata: "contiene un'espressione vietata ({motivo})"
   eco: "ripete come un'eco le parole della battuta precedente"

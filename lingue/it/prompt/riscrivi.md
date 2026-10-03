@@ -12,7 +12,7 @@ Problemi da correggere:
 $problemi
 
 Riscrivi solo la battuta tra <<< e >>>. Deve restare coerente con quella prima e quella dopo.
-Frasi corte, al massimo 20 parole ciascuna. Usa solo numeri presenti nella scheda.
+Frasi corte, al massimo 20 parole ciascuna. Usa solo numeri presenti nella scheda. Le sigle, la prima volta, si dicono con il loro significato. I punteggi si dicono con il fondo scala ("72,1 punti su 100").
 Rispondi con il solo testo della battuta, senza il nome di chi parla e senza virgolette.
 
 Scheda dei fatti, per riferimento:

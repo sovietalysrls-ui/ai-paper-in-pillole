@@ -22,7 +22,9 @@ Writing rules:
 - Carlo and Arianna alternate. Never more than two lines in a row from the same person.
 - Use only facts and numbers from the sheet. If a number isn't there, don't write it.
 - Write numbers as digits and say "percent", not the % sign.
-- Names and acronyms: follow the "usa" field. An acronym is explained once only, the first time it appears. After that, just the acronym.
+- Names: follow the "usa" field.
+- Acronyms: the first time an acronym appears, say what the letters stand for (field "significato") and then what it does in plain words. After that, just the acronym.
+- Scores: every score that is not a percentage must be said with its scale (field "scala"): "72.1 out of 100". If the scale is "not stated", don't give the bare number: compare it with another method.
 - Name the paper once in the central part.
 - No stage directions in brackets, no sound effects.
 

@@ -8,6 +8,13 @@ conduttori:
   CARLO: Carlo
   ARIANNA: Arianna
 
+frase_finale:
+  chi: ARIANNA
+  testo: "AI Paper in Pillole is a project by Sovietaly SRLS."
+  voce: "AI Paper in Pillole is a project by Sovietaly, S R L S."
+
+decimali_virgola: false
+
 # In inglese i nomi inglesi non vanno riscritti.
 pronuncia_attiva: false
 
@@ -33,6 +40,10 @@ parole_chiusura:
   - "follow|subscribe"
 
 testi_controlli:
+  sigla_senza_significato: "says the acronym {s} without explaining what the letters stand for: add \"{s}, which stands for {sig}\""
+  punteggio_senza_scala: "gives the score \"{n}\" without its scale: say for example \"72.1 out of 100\", or compare it with another method"
+  rx_punteggio: "(score|scored|points)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|percent))|\\d+(?:[.,]\\d+)?\\s+points"
+  rx_scala: "^\\s*(points\\s+)?(out of|on a scale of)\\s+\\d"
   ripetuta: "repeats a sentence already said earlier: say something new or drop it"
   vietata: "contains a banned expression ({motivo})"
   eco: "echoes the words of the previous line"

@@ -57,7 +57,7 @@ def silenzio(sec):
     return np.zeros(int(FREQ * sec), dtype=np.float32)
 
 
-def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a):
+def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a, firma=None):
     """gancio: blocchi di voce dell'apertura (gancio + presentazione);
     corpo: blocchi del resto della puntata.
 
@@ -86,7 +86,9 @@ def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a):
     else:
         t_corpo = t_sigla
     t_chius = t_corpo + len(voce_c) + int(FREQ * 0.6)
-    totale = max(t_chius + len(s_ch), t_corpo + len(voce_c)) + int(FREQ * 0.5)
+    voce_f = carica(firma, togli_silenzi=True) if firma and Path(firma).exists() else np.zeros(0, np.float32)
+    t_firma = max(t_chius + len(s_ch), t_corpo + len(voce_c)) + int(FREQ * 0.4)
+    totale = (t_firma + len(voce_f) if len(voce_f) else max(t_chius + len(s_ch), t_corpo + len(voce_c))) + int(FREQ * 0.5)
     mix = np.zeros(totale, np.float32)
 
     mix[:len(voce_g)] += voce_g
@@ -100,6 +102,8 @@ def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a):
     mix[t_corpo:t_corpo + len(voce_c)] += voce_c
     if len(s_ch):
         mix[t_chius:t_chius + len(s_ch)] += s_ch
+    if len(voce_f):
+        mix[t_firma:t_firma + len(voce_f)] += voce_f
 
     grezzo = Path(uscita_wav).with_suffix(".grezzo.wav")
     _salva(grezzo, mix)
