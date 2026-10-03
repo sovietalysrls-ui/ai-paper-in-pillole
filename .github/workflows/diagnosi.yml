@@ -1,0 +1,14 @@
+# Controllo rapido: GitHub riesce a raggiungere il sito?
+name: Diagnosi sito
+on: workflow_dispatch
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          for u in https://www.andreamanini.it/wp-json/ https://andreamanini.it/wp-json/ https://www.google.com/; do
+            echo "== $u"
+            curl -4 -s -o /dev/null -m 20 -w "IPv4: %{http_code} in %{time_total}s (%{remote_ip})\n" "$u" || echo "IPv4: errore $?"
+            curl -6 -s -o /dev/null -m 20 -w "IPv6: %{http_code} in %{time_total}s (%{remote_ip})\n" "$u" || echo "IPv6: errore $?"
+          done
