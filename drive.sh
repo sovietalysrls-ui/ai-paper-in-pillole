@@ -5,7 +5,7 @@
 # Usa rclone con il collegamento "gdrive" (configurato nel segreto RCLONE_CONF).
 set -euo pipefail
 ORIGINE="${1:-uscita/OGGI}"
-BASE="gdrive:${DRIVE_CARTELLA:-AI Paper in Pillole}"
+BASE="gdrive:${DRIVE_CARTELLA:-AI PAPER IN PILLOLE}"
 NOME="${DRIVE_NOME:-$(basename "$(ls -d archivio/puntate/*/ | sort | tail -1)")}"
 
 # 1. La puntata precedente passa da OGGI a OLD, senza il wav.
