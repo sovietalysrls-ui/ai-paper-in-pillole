@@ -11,10 +11,29 @@ import yaml
 RADICE = Path(__file__).resolve().parent.parent
 
 
-def carica_config():
+def _fondi(base, sopra):
+    """Unisce due dizionari: i valori di "sopra" vincono, voce per voce."""
+    for k, v in sopra.items():
+        if isinstance(v, dict) and isinstance(base.get(k), dict):
+            _fondi(base[k], v)
+        else:
+            base[k] = v
+    return base
+
+
+def _percorso(p):
+    p = Path(os.path.expanduser(str(p)))
+    return p if p.is_absolute() else (RADICE / p).resolve()
+
+
+def carica_config(cloud=False):
     with open(RADICE / "config.yaml", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
-    cfg["cartella_base"] = Path(os.path.expanduser(cfg["cartella_base"]))
+    profilo = cfg.pop("profilo_cloud", {}) or {}
+    if cloud:
+        _fondi(cfg, profilo)
+    cfg["cartella_base"] = _percorso(cfg["cartella_base"])
+    cfg["archivio_git"] = _percorso(cfg["archivio_git"]) if cfg.get("archivio_git") else None
     carica_segreti()
     return cfg
 

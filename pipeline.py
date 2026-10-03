@@ -2,13 +2,13 @@
 """AI Paper in Pillole - la catena notturna.
 
 Uso:
-  python pipeline.py                 notte normale
-  python pipeline.py --prova         stessa cosa, ma in una cartella di prova separata
-                                     (non tocca il registro vero)
-  python pipeline.py --finto         senza modello: collauda solo il flusso
+  python pipeline.py                 notte normale, motori locali
+  python pipeline.py --cloud         notte normale, motori cloud (Gemini), per GitHub Actions
+  python pipeline.py --prova         cartella e registro di prova separati
+  python pipeline.py --finto         senza modelli: collauda solo il flusso
   python pipeline.py --paper 2610.01762   forza un paper preciso
   python pipeline.py --rifai         ignora il lavoro già fatto oggi e ricomincia
-  python pipeline.py --prova --modello gemma4:e4b   prova un altro modello
+  python pipeline.py --prova --modello gemma4:e4b   prova un altro modello locale
 
 Ogni passo salva il suo risultato. Se qualcosa si rompe, rilanciando
 il programma riparte dal passo interrotto.
@@ -21,35 +21,33 @@ from pathlib import Path
 
 import yaml
 
-from kit import controlli, fonti, testi
+from kit import audio, controlli, copertina, fonti, testi, voce
 from kit.avvisi import Avanzamento
 from kit.gpu import ContatoreVRAM
 from kit.llm import Finto, Ollama
 from kit.registro import Registro
 from kit.uscita import archivia_se_vecchia, cartelle
-from kit.util import (carica_config, carica_lingua, conta_parole, leggi_json,
-                      scrivi_json, scrivi_testo)
+from kit.util import (RADICE, carica_config, carica_lingua, conta_parole, leggi_json,
+                      scrivi_json, scrivi_testo, slug)
 
 P_SCELTA = "Scelta e lettura del paper"
 P_SCHEDA = "Scheda dei fatti"
 P_DIALOGO = "Dialogo"
 P_CONTROLLI = "Controlli e correzioni"
 P_TESTI = "Titolo, descrizione, articolo"
-P_VOCE = "Voce"
 P_COPERTINA = "Copertina"
+P_VOCE = "Voce"
 P_MONTAGGIO = "Montaggio audio"
 P_WP = "Articolo su WordPress"
+P_CONSEGNA = "Consegna su Telegram"
 P_REGISTRO = "Registro e chiusura"
-NON_COSTRUITI = [P_VOCE, P_COPERTINA, P_MONTAGGIO, P_WP]
 
 
 def nomi_passi(lingue):
-    per_lingua = [P_SCHEDA, P_DIALOGO, P_CONTROLLI, P_TESTI]
-    if len(lingue) == 1:
-        centrali = per_lingua
-    else:
-        centrali = [f"{p} [{l}]" for l in lingue for p in per_lingua]
-    return [P_SCELTA] + centrali + NON_COSTRUITI + [P_REGISTRO]
+    def per(lista):
+        return lista if len(lingue) == 1 else [f"{p} [{l}]" for l in lingue for p in lista]
+    return ([P_SCELTA] + per([P_SCHEDA, P_DIALOGO, P_CONTROLLI, P_TESTI]) + [P_COPERTINA]
+            + per([P_VOCE, P_MONTAGGIO, P_WP]) + [P_CONSEGNA, P_REGISTRO])
 
 
 def nome_passo(p, lingua, lingue):
@@ -57,7 +55,7 @@ def nome_passo(p, lingua, lingue):
 
 
 # ---------------------------------------------------------------------
-#  Passo 1-2
+#  Passi 1-2: scelta e lettura
 # ---------------------------------------------------------------------
 
 def scegli_e_leggi(cfg, args, oggi, reg, lav, avanz):
@@ -94,7 +92,7 @@ def scegli_e_leggi(cfg, args, oggi, reg, lav, avanz):
         c["autori_arxiv"] = meta.get("autori") or c["autori"]
         c["pagine"], c["figure"] = fonti.pagine_figure(meta.get("commento", ""))
         c["link"] = f"https://arxiv.org/abs/{c['arxiv_id']}"
-        if c["voti"] and cand[0]["arxiv_id"] != c["arxiv_id"]:
+        if cand[0]["arxiv_id"] != c["arxiv_id"] and not args.paper:
             avanz.scrivi("   (i paper più votati erano già stati usati)")
         scrivi_json(p_lett, lettura)
         scrivi_json(p_paper, c)
@@ -105,14 +103,14 @@ def scegli_e_leggi(cfg, args, oggi, reg, lav, avanz):
 
 
 # ---------------------------------------------------------------------
-#  Passi 3-6 per una lingua
+#  Passi 3-6 per una lingua: i testi
 # ---------------------------------------------------------------------
 
-def lavora_lingua(cod, cfg, paper, lettura, numero, llm, out, lav, lingue, avanz):
-    L = carica_lingua(cod)
+def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, avanz):
+    cod = L["codice"]
     lav.mkdir(parents=True, exist_ok=True)
     out.mkdir(parents=True, exist_ok=True)
-    cfg_m, cfg_d = cfg["modello_testo"], cfg["dialogo"]
+    cfg_d = cfg["dialogo"]
     meta = {"autori": paper.get("autori_arxiv"), "pagine": paper.get("pagine"), "figure": paper.get("figure")}
 
     # --- Passo 3: scheda dei fatti ---
@@ -122,7 +120,8 @@ def lavora_lingua(cod, cfg, paper, lettura, numero, llm, out, lav, lingue, avanz
         sk = leggi_json(p_scheda)
         avanz.saltato(p)
     else:
-        pezzi = fonti.a_pezzi(lettura, cfg["lettura"]["parole_per_pezzo"])
+        pezzi = fonti.a_pezzi(lettura, cfg["lettura"]["parole_per_pezzo"],
+                              cfg["lettura"].get("unisci_sezioni", False))
         p_estr = lav / "estratti.json"
         estratti = leggi_json(p_estr) if p_estr.exists() else []
         avanz.inizia(p, f"{len(pezzi)} pezzi da leggere")
@@ -168,15 +167,13 @@ def lavora_lingua(cod, cfg, paper, lettura, numero, llm, out, lav, lingue, avanz
         avanz.fatto(p, "nessun problema residuo" if not residui else f"{len(residui)} problemi residui")
 
     parole = sum(conta_parole(b) for _, b in battute)
-    durata = parole / cfg_d["parole_al_minuto"] * 60
     scrivi_testo(out / "dialogo.txt", controlli.componi(battute, L))
     proposte = {}
+    battute_voce = battute
     if L.get("pronuncia_attiva"):
         mappa, proposte = controlli.mappa_pronuncia(L, sk)
-        voce = controlli.versione_voce(battute, mappa)
-    else:
-        voce = battute
-    scrivi_testo(lav / "dialogo_voce.txt", controlli.componi_tecnico(voce))
+        battute_voce = controlli.versione_voce(battute, mappa)
+    scrivi_testo(lav / "dialogo_voce.txt", controlli.componi_tecnico(battute_voce))
 
     # --- Passo 6: titolo, descrizione, articolo ---
     p = nome_passo(P_TESTI, cod, lingue)
@@ -201,66 +198,202 @@ def lavora_lingua(cod, cfg, paper, lettura, numero, llm, out, lav, lingue, avanz
             "categoria": cfg["wordpress"]["categoria"], "parole": art["parole"]})
         avanz.fatto(p, f"«{tit['completo'][:60]}» · articolo {art['parole']} parole")
 
-    return {"titolo": tit, "parole": parole, "durata": durata, "proposte": proposte}
+    return {"titolo": tit, "parole": parole, "proposte": proposte, "scheda": sk,
+            "battute": battute, "battute_voce": battute_voce}
+
+
+# ---------------------------------------------------------------------
+#  Passi 7, 9, 10 per una lingua: voce, montaggio, WordPress
+# ---------------------------------------------------------------------
+
+def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, finto):
+    cod = L["codice"]
+    cfg_d, cfg_a = cfg["dialogo"], cfg["audio"]
+
+    # --- Passo 7: voce ---
+    p_voce = nome_passo(P_VOCE, cod, lingue)
+    p_mont = nome_passo(P_MONTAGGIO, cod, lingue)
+    if motore_voce is None:
+        avanz.saltato(p_voce, "motore voce: nessuno")
+        avanz.saltato(p_mont, "niente voce, niente montaggio")
+    else:
+        # Le voci cloud leggono bene i nomi inglesi: ricevono il testo normale.
+        battute = esito["battute"] if cfg["motori"]["voce"] == "gemini" else esito["battute_voce"]
+        avanz.inizia(p_voce)
+        per_blocco = cfg["gemini_voce"].get("battute_per_blocco", 14)
+        g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce)
+        avanz.fatto(p_voce, f"{len(g) + len(c)} blocchi")
+
+        # --- Passo 9: montaggio ---
+        if (out / "puntata.wav").exists() and (out / "puntata.mp3").exists():
+            avanz.saltato(p_mont)
+        else:
+            avanz.inizia(p_mont)
+            ris = audio.monta(g, c, RADICE / cfg_a["sigla_apertura"], RADICE / cfg_a["sigla_chiusura"],
+                              out / "puntata.wav", out / "puntata.mp3", cfg_a)
+            scrivi_json(lav / "audio.json", ris)
+            ritmo = esito["parole"] / max(ris["voce"] / 60, 0.1)
+            avanz.fatto(p_mont, f"{ris['durata'] / 60:.1f} minuti in tutto, voce {ris['voce'] / 60:.1f} "
+                                f"minuti, {ritmo:.0f} parole al minuto")
+            if ris["voce"] > cfg_d["secondi_max"] + 30:
+                avanz.avviso(f"[{cod}] la voce dura {ris['voce'] / 60:.1f} minuti, oltre il limite di "
+                             f"{cfg_d['secondi_max'] / 60:.1f}. In config.yaml abbassa parole_al_minuto "
+                             f"a circa {ritmo:.0f}.")
+
+    # --- Passo 10: WordPress ---
+    p_wp = nome_passo(P_WP, cod, lingue)
+    cfg_wp = cfg["wordpress"]
+    p_esito = lav / "wordpress.json"
+    if p_esito.exists():
+        avanz.saltato(p_wp, leggi_json(p_esito).get("link", ""))
+    elif finto:
+        avanz.saltato(p_wp, "prova con motori finti: niente pubblicazione")
+    elif not cfg_wp.get("attivo") or cod not in cfg_wp.get("lingue", ["it"]):
+        avanz.saltato(p_wp, "non attivo per questa lingua")
+    else:
+        from kit.wordpress import ErroreWordPress, WordPress
+        avanz.inizia(p_wp, f"stato: {cfg_wp['stato']}")
+        meta = leggi_json(lav / "articolo_meta.json")
+        try:
+            wp = WordPress(cfg_wp["sito"])
+            r = wp.pubblica(meta["titolo"], (out / "articolo.html").read_text(encoding="utf-8"),
+                            meta["estratto"], meta["categoria"], meta["tag"], out / "copertina.jpg",
+                            cfg_wp["stato"], paper["arxiv_id"])
+            scrivi_json(p_esito, r)
+            avanz.fatto(p_wp, ("già presente: " if r["esisteva"] else "") + f"{r['stato']} · {r.get('link', '')}")
+        except ErroreWordPress as e:
+            # Il sito non deve bloccare la puntata: si segnala e si va avanti.
+            avanz.avviso(f"WordPress: {e}")
+            avanz.stati[p_wp] = ("errore", str(e)[:120])
 
 
 # ---------------------------------------------------------------------
 
-def salva_proposte(base, cod, proposte):
+def consegna(cfg, lingue, oggi_dir, numero, avanz, lav):
+    p_ok = lav / "consegnato.json"
+    if p_ok.exists():
+        avanz.saltato(P_CONSEGNA)
+        return
+    if not (cfg["telegram"].get("manda_file") and avanz.tg):
+        avanz.saltato(P_CONSEGNA, "Telegram non attivo")
+        return
+    avanz.inizia(P_CONSEGNA)
+    inviati = 0
+    for cod in lingue:
+        out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
+        pre = "" if len(lingue) == 1 else f"[{cod}] "
+        if (out / "titolo.txt").exists():
+            avanz.manda((out / "titolo.txt").read_text(encoding="utf-8").strip())
+        if (out / "descrizione.txt").exists():
+            avanz.manda((out / "descrizione.txt").read_text(encoding="utf-8").strip())
+        for nome, come, didascalia in (("copertina.jpg", "documento", "Copertina"),
+                                       ("puntata.mp3", "audio", f"Puntata #{numero} (mp3, archivio)"),
+                                       ("puntata.wav", "documento", f"Puntata #{numero} (wav, per Spotify)")):
+            if (out / nome).exists() and avanz.manda_file(out / nome, pre + didascalia, come):
+                inviati += 1
+    scrivi_json(p_ok, {"file": inviati})
+    avanz.fatto(P_CONSEGNA, f"{inviati} file inviati")
+
+
+def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
+    """Nel cloud: copia testi e copertina della puntata nel repository (niente audio)."""
+    if not cfg.get("archivio_git"):
+        return
+    dest = cfg["archivio_git"] / "puntate" / f"{data}_{numero:03d}_{slug(nome_breve)}"
+    dest.mkdir(parents=True, exist_ok=True)
+    for cod in lingue:
+        out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
+        d = dest if len(lingue) == 1 else dest / cod
+        d.mkdir(parents=True, exist_ok=True)
+        for nome in ("titolo.txt", "descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg"):
+            if (out / nome).exists():
+                shutil.copy2(out / nome, d / nome)
+        sk = oggi_dir / ".lavoro" / cod / "scheda.json"
+        if sk.exists():
+            shutil.copy2(sk, d / "scheda.json")
+    if (oggi_dir / "registro.log").exists():
+        shutil.copy2(oggi_dir / "registro.log", dest / "registro.log")
+    avanz.scrivi(f"Testi archiviati nel repository: {dest.relative_to(RADICE)}")
+
+
+def salva_proposte(cartella, cod, proposte):
     if not proposte:
         return
-    p = base / "dati" / f"pronunce_proposte_{cod}.yaml"
-    esistenti = yaml.safe_load(p.read_text(encoding="utf-8")) if p.exists() else {}
-    esistenti = esistenti or {}
+    p = Path(cartella) / f"pronunce_proposte_{cod}.yaml"
+    esistenti = (yaml.safe_load(p.read_text(encoding="utf-8")) if p.exists() else {}) or {}
     nuove = {k: v for k, v in proposte.items() if k not in esistenti}
     if nuove:
         esistenti.update(nuove)
+        p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text("# Pronunce proposte dal modello. Copia in lingue/" + cod +
                      "/pronuncia.yaml quelle giuste (correggendole se serve).\n" +
                      yaml.safe_dump(esistenti, allow_unicode=True, sort_keys=True), encoding="utf-8")
 
 
+def crea_motore_testo(cfg, args, avanz, lingua0):
+    if args.finto:
+        return Finto(avanz, lingua0), cfg["modello_testo"]
+    if cfg["motori"]["testo"] == "gemini":
+        from kit.gemini import GeminiTesto
+        return GeminiTesto(cfg["gemini_testo"], avanz), cfg["gemini_testo"]
+    return Ollama(cfg["modello_testo"], avanz), cfg["modello_testo"]
+
+
+def crea_motore_voce(cfg, args, L, avanz):
+    if cfg["motori"]["voce"] == "nessuna":
+        return None
+    if args.finto:
+        return voce.VoceFinta()
+    if cfg["motori"]["voce"] == "gemini":
+        from kit.gemini import GeminiVoce
+        return GeminiVoce(cfg["gemini_voce"], L, avanz)
+    raise RuntimeError(f"motore voce sconosciuto: {cfg['motori']['voce']}")
+
+
 def main():
     ap = argparse.ArgumentParser(description="AI Paper in Pillole - catena notturna")
+    ap.add_argument("--cloud", action="store_true", help="usa il profilo cloud di config.yaml (Gemini)")
     ap.add_argument("--prova", action="store_true", help="cartella e registro di prova separati")
-    ap.add_argument("--finto", action="store_true", help="motore finto al posto del modello")
+    ap.add_argument("--finto", action="store_true", help="motori finti al posto dei modelli")
     ap.add_argument("--paper", help="forza un paper arXiv (es. 2610.01762)")
     ap.add_argument("--rifai", action="store_true", help="ricomincia il lavoro di oggi da capo")
     ap.add_argument("--data", help="finge che oggi sia questa data (AAAA-MM-GG)")
     ap.add_argument("--modello", help="usa un altro modello Ollama solo per questa volta (es. gemma4:e4b)")
+    ap.add_argument("--voce", choices=["gemini", "nessuna"], help="sceglie il motore voce solo per questa volta")
     args = ap.parse_args()
 
-    cfg = carica_config()
+    cfg = carica_config(cloud=args.cloud)
     if args.modello:
         cfg["modello_testo"]["nome"] = args.modello
+    if args.voce:
+        cfg["motori"]["voce"] = args.voce
     if args.prova:
         cfg["cartella_base"] = Path(str(cfg["cartella_base"]) + "-PROVA")
+        if cfg.get("archivio_git"):
+            cfg["archivio_git"] = Path(str(cfg["archivio_git"]) + "-PROVA")
     oggi = dt.date.fromisoformat(args.data) if args.data else dt.date.today()
     data = oggi.isoformat()
     lingue = cfg["lingue"]
 
     base, oggi_dir, old_dir = cartelle(cfg)
-    if args.rifai and (oggi_dir / ".lavoro").exists():
-        shutil.rmtree(oggi_dir / ".lavoro")
+    if args.rifai and oggi_dir.exists():
         for f in oggi_dir.iterdir():
-            if f.is_file():
-                f.unlink()
-            elif f.is_dir():
-                shutil.rmtree(f)
+            shutil.rmtree(f) if f.is_dir() else f.unlink()
     archivia_se_vecchia(oggi_dir, old_dir, data, print)
     lav = oggi_dir / ".lavoro"
     lav.mkdir(exist_ok=True)
+    dati_dir = cfg["archivio_git"] if cfg.get("archivio_git") else base / "dati"
 
+    etichetta = " (PROVA)" if args.prova else ""
+    etichetta += " · cloud" if args.cloud else ""
     avanz = Avanzamento(nomi_passi(lingue), oggi_dir / "registro.log",
                         telegram_attivo=cfg["telegram"]["attivo"] and not args.finto,
-                        intestazione=f"🎙 AI Paper in Pillole — notte del {data}"
-                                     + (" (PROVA)" if args.prova else ""))
+                        intestazione=f"🎙 AI Paper in Pillole — notte del {data}{etichetta}")
     vram = ContatoreVRAM().avvia()
-    reg = Registro(base)
+    reg = Registro(dati_dir / "registro.sqlite")
     p_stato = lav / "stato.json"
     stato = leggi_json(p_stato) if p_stato.exists() else {"data": data, "completa": False}
     scrivi_json(p_stato, stato)  # subito: un errore precoce non deve far archiviare la giornata
-    passo = P_SCELTA
     try:
         vram.fase = "lettura"
         paper, lettura = scegli_e_leggi(cfg, args, oggi, reg, lav, avanz)
@@ -272,50 +405,82 @@ def main():
         stato.update({"arxiv_id": paper["arxiv_id"], "numero": stato["numeri"][lingue[0]]})
         scrivi_json(p_stato, stato)
 
-        llm = Finto(avanz, lingue[0]) if args.finto else Ollama(cfg["modello_testo"], avanz)
-        passo = P_SCHEDA
+        # --- testi ---
+        llm, cfg_m = crea_motore_testo(cfg, args, avanz, lingue[0])
         llm.controlla()
         vram.fase = "testo"
+        lingua = {cod: carica_lingua(cod) for cod in lingue}
         esiti = {}
         for cod in lingue:
             out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
-            passo = nome_passo(P_SCHEDA, cod, lingue)
-            esiti[cod] = lavora_lingua(cod, cfg, paper, lettura, stato["numeri"][cod], llm,
-                                       out, lav / cod, lingue, avanz)
+            esiti[cod] = testi_lingua(lingua[cod], cfg, cfg_m, paper, lettura, stato["numeri"][cod],
+                                      llm, out, lav / cod, lingue, avanz)
             if cod == lingue[0]:
                 stato["nome_breve"] = esiti[cod]["titolo"]["nome"]
                 scrivi_json(p_stato, stato)
         llm.libera()
 
-        for p in NON_COSTRUITI:
-            avanz.saltato(p, "non ancora costruito")
+        # --- copertina (una per paper, uguale per tutte le lingue) ---
+        vram.fase = "immagine"
+        sk0 = esiti[lingue[0]]["scheda"]
+        prima = (oggi_dir if len(lingue) == 1 else oggi_dir / lingue[0]) / "copertina.jpg"
+        if prima.exists():
+            avanz.saltato(P_COPERTINA)
+        else:
+            avanz.inizia(P_COPERTINA)
+            motivo = copertina.disegna(prima, paper["arxiv_id"],
+                                       [sk0.get("soggetto_immagine"), paper["titolo"],
+                                        " ".join(sk0.get("hashtag", []))], cfg["copertina"])
+            for cod in lingue[1:]:
+                shutil.copy2(prima, oggi_dir / cod / "copertina.jpg")
+            avanz.fatto(P_COPERTINA, f"motivo «{motivo}»")
 
-        passo = P_REGISTRO
-        avanz.inizia(passo)
+        # --- voce, montaggio, sito ---
+        vram.fase = "voce"
+        for cod in lingue:
+            out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
+            motore_voce = crea_motore_voce(cfg, args, lingua[cod], avanz)
+            audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+                         lingue, avanz, args.finto)
+
+        consegna(cfg, lingue, oggi_dir, stato["numero"], avanz, lav)
+
+        # --- registro ---
+        avanz.inizia(P_REGISTRO)
         for cod in lingue:
             reg.segna(paper["arxiv_id"], cod, "completa", data, stato["numeri"][cod],
                       esiti[cod]["titolo"]["completo"], paper["voti"])
-            salva_proposte(base, cod, esiti[cod]["proposte"])
+            salva_proposte(dati_dir, cod, esiti[cod]["proposte"])
         stato["completa"] = True
         scrivi_json(p_stato, stato)
+        richieste = getattr(llm, "richieste", None)
+        if richieste is not None:
+            avanz.scrivi(f"Richieste al modello di testo: {richieste}"
+                         + (" (usata anche la chiave a pagamento)"
+                            if getattr(getattr(llm, "chiavi", None), "usata_pagamento", False) else ""))
         vram.ferma()
         testo_vram, sfora = vram.rapporto(cfg["gpu"]["limite_vram_mb"])
         avanz.scrivi(testo_vram)
-        if sfora:
+        if sfora and not args.cloud:
             avanz.avviso("la memoria video ha superato il limite della GTX 1070: " + testo_vram)
-        avanz.fatto(passo)
+        archivia_in_git(cfg, lingue, oggi_dir, data, stato["numero"], stato.get("nome_breve", "puntata"), avanz)
+        avanz.fatto(P_REGISTRO)
 
         e = esiti[lingue[0]]
+        wp = lav / lingue[0] / "wordpress.json"
+        riga_wp = ""
+        if wp.exists():
+            w = leggi_json(wp)
+            riga_wp = f"\nArticolo: {'in bozza' if w.get('stato') == 'draft' else w.get('stato')} · {w.get('link', '')}"
         riepilogo = (f"Puntata #{stato['numero']} pronta.\n{e['titolo']['completo']}\n"
-                     f"Dialogo: {e['parole']} parole, circa {e['durata'] / 60:.1f} minuti stimati.\n"
-                     f"Paper: {paper['link']}")
+                     f"Dialogo: {e['parole']} parole.\nPaper: {paper['link']}{riga_wp}")
         avanz.fine(riepilogo)
         return 0
     except KeyboardInterrupt:
         avanz.scrivi("Interrotto a mano. Rilanciando, riprende da qui.")
         return 130
     except Exception as exc:
-        avanz.errore(passo, exc)
+        avanz.errore(P_SCELTA, exc)
         return 1
     finally:
         vram.ferma()

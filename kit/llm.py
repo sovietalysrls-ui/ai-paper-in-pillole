@@ -191,6 +191,9 @@ class Finto:
         t = self._tra_marcatori(u)
         return re.sub(r"(?i)assolutamente!?|esatto!?|ottima domanda!?|wow!?", "", t).strip() or t
 
+    def _riscrivi_in_blocco(self, u):
+        return {"battute": []}
+
     def _lunghezza(self, u):
         return self._tra_marcatori(u)
 

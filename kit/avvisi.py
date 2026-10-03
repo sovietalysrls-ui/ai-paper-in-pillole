@@ -126,6 +126,25 @@ class Avanzamento:
         except requests.RequestException as e:
             self.log.write(f"Telegram non raggiungibile: {e}\n")
 
+    def manda_file(self, percorso, didascalia="", come="documento"):
+        """Manda un file nella chat: come="audio" lo rende ascoltabile nel telefono."""
+        if not self.tg:
+            return False
+        metodo, campo = {"audio": ("sendAudio", "audio"), "foto": ("sendPhoto", "photo")}.get(
+            come, ("sendDocument", "document"))
+        try:
+            with open(percorso, "rb") as f:
+                r = requests.post(f"https://api.telegram.org/bot{self.token}/{metodo}", timeout=300,
+                                  data={"chat_id": self.chat, "caption": didascalia[:1000]},
+                                  files={campo: f})
+            if r.status_code != 200:
+                self.log.write(f"Telegram ha rifiutato {percorso}: {r.text[:200]}\n")
+                return False
+            return True
+        except (requests.RequestException, OSError) as e:
+            self.log.write(f"Telegram non raggiungibile: {e}\n")
+            return False
+
     def manda(self, testo):
         if not self.tg:
             return

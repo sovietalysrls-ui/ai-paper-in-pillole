@@ -3,3 +3,5 @@ beautifulsoup4>=4.12
 lxml>=5.0
 pymupdf>=1.24
 pyyaml>=6.0
+numpy>=1.26
+pillow>=10.0

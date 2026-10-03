@@ -206,21 +206,40 @@ def leggi_paper(arxiv_id, cfg_lettura):
     return leggi_html(arxiv_id, cfg_lettura) or leggi_pdf(arxiv_id, cfg_lettura)
 
 
-def a_pezzi(lettura, parole_per_pezzo):
-    """Divide le sezioni in pezzi digeribili dal modello, a confine di paragrafo."""
-    pezzi = []
+def a_pezzi(lettura, parole_per_pezzo, unisci_sezioni=False):
+    """Divide il testo in pezzi digeribili dal modello, a confine di paragrafo.
+
+    Con unisci_sezioni=True più sezioni finiscono nello stesso pezzo
+    (utile con i modelli cloud, che leggono testi lunghi in una volta
+    e dove ogni richiesta conta nella quota giornaliera).
+    """
+    blocchi = []
     for sez in lettura["sezioni"]:
-        corrente, n = [], 0
-        for par in sez["testo"].split("\n\n"):
+        blocchi.append((sez["titolo"], sez["testo"].split("\n\n")))
+    if lettura["didascalie"]:
+        blocchi.append(("Didascalie di figure e tabelle", lettura["didascalie"]))
+
+    pezzi, corrente, nomi, n = [], [], [], 0
+
+    def chiudi():
+        nonlocal corrente, nomi, n
+        if corrente:
+            pezzi.append({"sezione": " + ".join(dict.fromkeys(nomi)), "testo": "\n\n".join(corrente)})
+        corrente, nomi, n = [], [], 0
+
+    for titolo, paragrafi in blocchi:
+        if not unisci_sezioni:
+            chiudi()
+        elif corrente:
+            corrente.append(f"### {titolo}")
+        for par in paragrafi:
             k = len(par.split())
             if corrente and n + k > parole_per_pezzo:
-                pezzi.append({"sezione": sez["titolo"], "testo": "\n\n".join(corrente)})
-                corrente, n = [], 0
+                chiudi()
+            if unisci_sezioni and not corrente:
+                corrente.append(f"### {titolo}")
             corrente.append(par)
+            nomi.append(titolo)
             n += k
-        if corrente:
-            pezzi.append({"sezione": sez["titolo"], "testo": "\n\n".join(corrente)})
-    if lettura["didascalie"]:
-        pezzi.append({"sezione": "Didascalie di figure e tabelle",
-                      "testo": "\n\n".join(lettura["didascalie"])})
+    chiudi()
     return pezzi

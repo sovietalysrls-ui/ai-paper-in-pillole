@@ -19,6 +19,17 @@ numero_iniziale:
   en: 1
 
 # ---------------------------------------------------------------------
+#  Motori: chi fa cosa
+#    testo:     ollama (locale) | gemini (cloud)
+#    voce:      gemini (cloud) | nessuna   (la voce locale arriva dopo)
+#    copertina: disegno (generata dal programma, nessun servizio)
+# ---------------------------------------------------------------------
+motori:
+  testo: ollama
+  voce: nessuna
+  copertina: disegno
+
+# ---------------------------------------------------------------------
 #  Scelta del paper
 # ---------------------------------------------------------------------
 scelta:
@@ -38,11 +49,13 @@ lettura:
   parole_max_sezione: 2500
   # Dimensione dei pezzi dati al modello, in parole.
   parole_per_pezzo: 1800
+  # true = più sezioni nello stesso pezzo (per i modelli cloud).
+  unisci_sezioni: false
   # Didascalie di figure e tabelle da tenere (le prime N).
   didascalie_max: 12
 
 # ---------------------------------------------------------------------
-#  Modello di testo (Ollama)
+#  Modello di testo locale (Ollama)
 # ---------------------------------------------------------------------
 modello_testo:
   indirizzo: http://127.0.0.1:11434
@@ -59,6 +72,69 @@ modello_testo:
   timeout: 900
 
 # ---------------------------------------------------------------------
+#  Gemini, testo (cloud)
+#  Chiavi in segreti.env: GEMINI_API_KEY_GRATIS, poi GEMINI_API_KEY_PAGAMENTO.
+#  La seconda si usa solo se la prima esaurisce la quota del giorno.
+# ---------------------------------------------------------------------
+gemini_testo:
+  modello: gemini-3.8-flash
+  temperatura_fatti: 0.2
+  temperatura_scrittura: 0.7
+  # Secondi di attesa tra una richiesta e l'altra: il livello
+  # gratuito ha un limite di richieste al minuto.
+  pausa_tra_richieste: 8
+  # auto = prova la porta nuova (interactions), se manca usa la vecchia.
+  porta: auto
+
+# ---------------------------------------------------------------------
+#  Gemini, voce (cloud)
+# ---------------------------------------------------------------------
+gemini_voce:
+  modello: gemini-3.8-flash-tts
+  # Voci predefinite di Gemini. Altre possibili: Charon, Fenrir, Orus
+  # (maschili), Kore, Leda, Aoede, Erinome (femminili).
+  voci:
+    CARLO: Puck
+    ARIANNA: Aoede
+  stili:
+    CARLO: "tono caldo, curioso e un po' ironico, ritmo costante e naturale"
+    ARIANNA: "tono chiaro e sorridente, spiega con calma, ritmo costante e naturale"
+  # Istruzione generale (usata con la porta vecchia generateContent).
+  istruzioni: >-
+    Leggi questo dialogo in italiano, come una conversazione naturale tra
+    due amici in un podcast. Ritmo costante, niente esitazioni.
+    Pronuncia i nomi inglesi all'inglese.
+  # Battute per richiesta: meno richieste = meno quota usata.
+  battute_per_blocco: 14
+  pausa_tra_richieste: 10
+  porta: auto
+
+# ---------------------------------------------------------------------
+#  Montaggio audio
+# ---------------------------------------------------------------------
+audio:
+  sigla_apertura: assets/sigla_apertura.wav
+  sigla_chiusura: assets/sigla_chiusura.wav
+  volume_sigla: 0.5
+  # Secondi in cui la sigla sfuma sotto la presentazione.
+  sovrapposizione_sigla: 2.5
+  pausa_tra_blocchi: 0.35
+  lufs: -16
+  mp3_bitrate: 128k
+
+# ---------------------------------------------------------------------
+#  Copertina
+# ---------------------------------------------------------------------
+copertina:
+  lato: 1400
+  colori:
+    fondo: "#F2E8D5"       # crema
+    principale: "#6E1E2B"  # bordeaux
+    linee: "#2B2B2E"       # grigio scuro
+    sfondo2: "#E3D3B8"     # crema scuro
+    accento: "#C9A15B"     # ocra
+
+# ---------------------------------------------------------------------
 #  Dialogo
 # ---------------------------------------------------------------------
 dialogo:
@@ -73,6 +149,8 @@ dialogo:
   giri_correzione: 3
   # Parole massime in una singola frase prima di farla spezzare.
   parole_max_frase: 28
+  # true = tutte le battute da correggere in una sola richiesta (cloud).
+  correzione_in_blocco: false
 
 # ---------------------------------------------------------------------
 #  Articolo sul sito
@@ -83,14 +161,18 @@ articolo:
   link_podcast: https://open.spotify.com/show/0343HceLfMtVbfln7gVijy
 
 # ---------------------------------------------------------------------
-#  WordPress (si attiva quando costruiamo il passo 10)
+#  WordPress
+#  Utente e password per applicazioni stanno in segreti.env.
 # ---------------------------------------------------------------------
 wordpress:
+  attivo: true
   sito: https://andreamanini.it
   # bozza  = lo trovi in bozza e premi "Pubblica" tu
   # pubblica = esce da solo
   stato: bozza
   categoria: AI Paper in Pillole
+  # Lingue che vanno sul sito (il sito è in italiano).
+  lingue: [it]
 
 # ---------------------------------------------------------------------
 #  Memoria video
@@ -102,9 +184,31 @@ gpu:
   limite_vram_mb: 7500
 
 # ---------------------------------------------------------------------
-#  Avvisi Telegram
-#  Il codice del bot e il numero della chat stanno in segreti.env,
-#  non qui, così questo file si può copiare senza rischi.
+#  Avvisi e consegna su Telegram
+#  Il codice del bot e il numero della chat stanno in segreti.env.
 # ---------------------------------------------------------------------
 telegram:
   attivo: true
+  # true = la mattina il bot ti manda titolo, descrizione, copertina,
+  # mp3 e wav, pronti da caricare su Spotify.
+  manda_file: true
+
+# =====================================================================
+#  Profilo CLOUD: si attiva con  python pipeline.py --cloud
+#  Sostituisce solo le voci elencate qui sotto.
+# =====================================================================
+profilo_cloud:
+  cartella_base: ./uscita
+  # Cartella del repository dove salvare testi e registro di ogni
+  # puntata (senza audio), così il registro sopravvive tra una notte
+  # e l'altra anche nel cloud.
+  archivio_git: archivio
+  motori:
+    testo: gemini
+    voce: gemini
+    copertina: disegno
+  lettura:
+    parole_per_pezzo: 15000
+    unisci_sezioni: true
+  dialogo:
+    correzione_in_blocco: true

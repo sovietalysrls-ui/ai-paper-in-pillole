@@ -7,10 +7,19 @@ __pycache__/
 .venv/
 venv/
 
-# Prodotti della catena (stanno in ~/AI-Paper-in-Pillole, ma per sicurezza)
+# Prodotti della catena: l'audio non va nel repository
 *.wav
 *.mp3
+!assets/sigla_apertura.wav
+!assets/sigla_chiusura.wav
+assets/varianti/
+uscita/
+uscita-PROVA/
 OGGI/
 OLD/
 dati/
+
+# Diari delle notti: sì nell'archivio, no altrove
 *.log
+!archivio/**/*.log
+!archivio-PROVA/**/*.log

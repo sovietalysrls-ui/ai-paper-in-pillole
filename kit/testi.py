@@ -55,6 +55,14 @@ SCHEMA_SCHEDA = {
                  "soggetto_immagine", "hashtag"],
 }
 
+SCHEMA_BLOCCO = {
+    "type": "object",
+    "properties": {"battute": {"type": "array", "items": {"type": "object", "properties": {
+        "numero": {"type": "integer"}, "testo": {"type": "string"}},
+        "required": ["numero", "testo"]}}},
+    "required": ["battute"],
+}
+
 SCHEMA_TITOLO = {
     "type": "object",
     "properties": {"nome": {"type": "string"}, "sottotitolo": {"type": "string"}},
@@ -137,7 +145,9 @@ def correggi_dialogo(llm, lingua, battute, sk, numero, cfg_d, cfg_m, avanz):
                 battute = nuovo
             continue
 
-        for i, motivi in sorted(per_b.items()):
+        if cfg_d.get("correzione_in_blocco") and per_b:
+            battute = _riscrivi_in_blocco(llm, lingua, battute, per_b, sk)
+        for i, motivi in ([] if cfg_d.get("correzione_in_blocco") else sorted(per_b.items())):
             if i >= len(battute):
                 continue
             chi, b = battute[i]
@@ -166,6 +176,27 @@ def correggi_dialogo(llm, lingua, battute, sk, numero, cfg_d, cfg_m, avanz):
     per_b, glob, parole, massimo = controlli.controlla(battute, sk, lingua, cfg_d, numero)
     residui = [f"battuta {i + 1}: {'; '.join(m)}" for i, m in per_b.items()] + [g[1] for g in glob]
     return battute, residui
+
+
+def _riscrivi_in_blocco(llm, lingua, battute, per_b, sk):
+    """Una sola richiesta per tutte le battute da correggere.
+
+    Serve con i servizi cloud, dove ogni richiesta conta nella quota
+    giornaliera. Con i modelli locali si corregge una battuta alla volta.
+    """
+    nomi = lingua["conduttori"]
+    dialogo = "\n".join(f"{i + 1}. {nomi[chi]}: {b}" for i, (chi, b) in enumerate(battute))
+    elenco = "\n".join(f"- battuta {i + 1}: " + "; ".join(m) for i, m in sorted(per_b.items()))
+    s, u = prompt(lingua, "riscrivi_blocco", dialogo=dialogo, problemi=elenco, scheda=sk)
+    r = llm.chat(s, u, "riscrivi in blocco", schema=SCHEMA_BLOCCO, temperatura=0.5, max_token=3000)
+    nuove = list(battute)
+    for voce in r.get("battute", []):
+        i = int(voce.get("numero", 0)) - 1
+        testo = " ".join(str(voce.get("testo", "")).split())
+        testo = re.sub(rf"^[\s*]*({'|'.join(map(re.escape, nomi.values()))})[\s*]*:\s*", "", testo, flags=re.I)
+        if 0 <= i < len(nuove) and testo:
+            nuove[i] = (nuove[i][0], testo)
+    return nuove
 
 
 # ---------------------------------------------------------------------

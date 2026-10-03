@@ -1,0 +1,99 @@
+# La notte di AI Paper in Pillole, sui computer di GitHub.
+#
+# Parte da sola ogni notte. Si può anche lanciare a mano:
+# scheda "Actions" del repository > "Notte" > "Run workflow".
+#
+# I segreti (chiavi Gemini, bot Telegram, WordPress) si impostano in
+# Settings > Secrets and variables > Actions. Non stanno mai nel codice.
+
+name: Notte
+
+on:
+  schedule:
+    # 02:15 UTC = 04:15 in Italia con l'ora legale, 03:15 con l'ora solare.
+    # GitHub a volte parte con qualche minuto di ritardo.
+    - cron: "15 2 * * *"
+  workflow_dispatch:
+    inputs:
+      paper:
+        description: "Forza un paper arXiv (es. 2610.01762). Vuoto = il più votato"
+        required: false
+        default: ""
+      prova:
+        description: "Prova: registro e archivio separati, numerazione vera intatta"
+        type: boolean
+        default: false
+      voce:
+        description: "Motore voce"
+        type: choice
+        options: [gemini, nessuna]
+        default: gemini
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notte
+  cancel-in-progress: false
+
+jobs:
+  puntata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installa programmi
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+
+      - name: Prepara la puntata
+        env:
+          TZ: Europe/Rome
+          GEMINI_API_KEY_GRATIS: ${{ secrets.GEMINI_API_KEY_GRATIS }}
+          GEMINI_API_KEY_PAGAMENTO: ${{ secrets.GEMINI_API_KEY_PAGAMENTO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WP_UTENTE: ${{ secrets.WP_UTENTE }}
+          WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+        run: |
+          ARGS="--cloud"
+          if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
+          if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
+          if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
+          python pipeline.py $ARGS
+
+      - name: Salva i file della puntata (14 giorni)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: puntata-${{ github.run_number }}
+          path: |
+            uscita*/OGGI/*
+            uscita*/OGGI/.lavoro/**
+          include-hidden-files: true
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Archivia testi e registro nel repository
+        if: always()
+        run: |
+          git config user.name "AI Paper in Pillole"
+          git config user.email "actions@users.noreply.github.com"
+          git add archivio archivio-PROVA 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Niente da archiviare"
+            exit 0
+          fi
+          git commit -m "Archivio: puntata del $(TZ=Europe/Rome date +%F)"
+          for i in 1 2 3; do
+            git pull --rebase -q && git push -q && break
+            sleep 5
+          done

@@ -9,8 +9,8 @@ from pathlib import Path
 
 
 class Registro:
-    def __init__(self, cartella_base):
-        p = Path(cartella_base) / "dati" / "registro.sqlite"
+    def __init__(self, file_db):
+        p = Path(file_db)
         p.parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(p)
         self.db.executescript("""
