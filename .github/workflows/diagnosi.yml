@@ -1,4 +1,5 @@
-# Controllo rapido: GitHub riesce a raggiungere il sito?
+# Controllo rapido: GitHub raggiunge il sito? Le credenziali WordPress funzionano?
+# Non stampa mai la password: solo l'esito e il nome dell'utente riconosciuto.
 name: Diagnosi sito
 on: workflow_dispatch
 jobs:
@@ -6,9 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - run: |
-          for u in https://www.andreamanini.it/wp-json/ https://andreamanini.it/wp-json/ https://www.google.com/; do
-            echo "== $u"
-            curl -4 -s -o /dev/null -m 20 -w "IPv4: %{http_code} in %{time_total}s (%{remote_ip})\n" "$u" || echo "IPv4: errore $?"
-            curl -6 -s -o /dev/null -m 20 -w "IPv6: %{http_code} in %{time_total}s (%{remote_ip})\n" "$u" || echo "IPv6: errore $?"
-          done
+      - name: Raggiungibilità e accesso
+        env:
+          WP_UTENTE: ${{ secrets.WP_UTENTE }}
+          WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+        run: |
+          echo "IP di questo server GitHub: $(curl -4 -s -m 10 https://api.ipify.org)"
+          curl -4 -s -o /dev/null -m 20 -w "Sito (senza accesso): %{http_code} in %{time_total}s\n" https://www.andreamanini.it/wp-json/ || echo "Sito (senza accesso): non raggiungibile da questo server"
+          R=$(curl -4 -s -m 30 -u "$WP_UTENTE:$WP_PASSWORD_APP" -w "\n%{http_code}" "https://www.andreamanini.it/wp-json/wp/v2/users/me?context=edit") || { echo "Accesso: non raggiungibile da questo server"; exit 0; }
+          CODICE=$(echo "$R" | tail -1)
+          echo "Accesso con password per applicazioni: codice $CODICE"
+          echo "$R" | head -1 | python3 -c "import json,sys
+          try:
+              d=json.load(sys.stdin); print('Utente riconosciuto:', d.get('name'), '| ruoli:', d.get('roles'), '| può pubblicare:', d.get('capabilities',{}).get('publish_posts'))
+          except Exception: print('Risposta non leggibile')"
