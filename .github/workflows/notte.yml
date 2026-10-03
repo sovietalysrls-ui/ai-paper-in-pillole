@@ -44,6 +44,8 @@ jobs:
   puntata:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    outputs:
+      wp_ok: ${{ steps.wp.outputs.ok }}
     steps:
       - uses: actions/checkout@v4
 
@@ -69,14 +71,25 @@ jobs:
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
         run: |
           if [ "${{ inputs.solo_articolo }}" = "true" ]; then
-            python pubblica_articolo.py ultima
-            exit $?
+            python pubblica_articolo.py ultima || true
+            exit 0
           fi
           ARGS="--cloud"
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
           if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
           python pipeline.py $ARGS
+
+      - name: L'articolo è andato sul sito?
+        id: wp
+        if: always()
+        run: |
+          ULTIMA=$(ls -d archivio/puntate/*/ 2>/dev/null | tail -1)
+          if ls uscita/OGGI/.lavoro/*/wordpress.json >/dev/null 2>&1 || [ -f "${ULTIMA}wordpress.json" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Salva i file della puntata (14 giorni)
         if: always()
@@ -107,3 +120,62 @@ jobs:
             git pull --rebase -q && git push -q && break
             sleep 5
           done
+
+  # Il server del sito blocca alcuni server di GitHub. Ogni lavoro parte su un
+  # server diverso: se il caricamento dell'articolo non è riuscito, si riprova
+  # da qui, fino a due volte.
+  articolo_2:
+    needs: puntata
+    if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && inputs.prova != true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Pubblica l'articolo (tentativo 2)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WP_UTENTE: ${{ secrets.WP_UTENTE }}
+          WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+        run: python pubblica_articolo.py ultima --tentativo 2
+      - name: Archivia l'esito
+        run: |
+          git config user.name "AI Paper in Pillole"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f archivio && git commit -q -m "Archivio: articolo pubblicato" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+
+  articolo_3:
+    needs: [puntata, articolo_2]
+    if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && needs.articolo_2.result == 'failure' && inputs.prova != true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Pubblica l'articolo (tentativo 3, ultimo)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WP_UTENTE: ${{ secrets.WP_UTENTE }}
+          WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+        run: python pubblica_articolo.py ultima --tentativo 3 --ultimo
+      - name: Archivia l'esito
+        run: |
+          git config user.name "AI Paper in Pillole"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f archivio && git commit -q -m "Archivio: articolo pubblicato" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
