@@ -23,3 +23,7 @@ dati/
 *.log
 !archivio/**/*.log
 !archivio-PROVA/**/*.log
+
+# Proposte di sigla (Lyria): servono al passo "usa", quindi si tengono
+!assets/proposte/*.wav
+!assets/proposte/*.mp3

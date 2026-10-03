@@ -367,3 +367,53 @@ class GeminiImmagine:
         if not img:
             raise ErroreModello("Gemini immagine: risposta senza immagine")
         return img
+
+
+# ---------------------------------------------------------------------
+#  Musica (Lyria): si usa una volta sola, per creare la sigla
+# ---------------------------------------------------------------------
+
+def _audio_qualsiasi(d):
+    """Estrae l'audio da una risposta, in qualunque formato arrivi."""
+    oa = d.get("output_audio")
+    if isinstance(oa, str):
+        return base64.b64decode(oa)
+    if isinstance(oa, dict) and oa.get("data"):
+        return base64.b64decode(oa["data"])
+    for passo in d.get("steps", []):
+        for c in passo.get("content", []):
+            if c.get("type") == "audio" and c.get("data"):
+                return base64.b64decode(c["data"])
+    for cand in d.get("candidates", [])[:1]:
+        for p in cand.get("content", {}).get("parts", []):
+            inl = p.get("inlineData") or p.get("inline_data")
+            if inl and inl.get("data"):
+                return base64.b64decode(inl["data"])
+    return None
+
+
+def estensione_audio(dati):
+    if dati[:4] == b"RIFF":
+        return ".wav"
+    if dati[:3] == b"ID3" or dati[:2] in (b"\xff\xfb", b"\xff\xf3", b"\xff\xf2"):
+        return ".mp3"
+    if dati[:4] == b"fLaC":
+        return ".flac"
+    if dati[:4] == b"OggS":
+        return ".ogg"
+    return ".bin"
+
+
+class GeminiMusica:
+    def __init__(self, modello, avanz):
+        self.nome = modello
+        self.avanz = avanz
+        self.chiavi = Chiavi(avanz, "Lyria")
+
+    def genera(self, descrizione):
+        d = chiama(self.chiavi, f"{BASE}/interactions", {"model": self.nome, "input": descrizione},
+                   self.avanz, timeout=600)
+        audio = _audio_qualsiasi(d)
+        if not audio:
+            raise ErroreModello("Lyria: risposta senza audio (" + json.dumps(d)[:300] + ")")
+        return audio

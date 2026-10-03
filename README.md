@@ -103,18 +103,25 @@ L'orario si cambia nel file `.github/workflows/notte.yml`, riga `cron`.
 
 ## La sigla
 
-`assets/sigla_apertura.wav` e `assets/sigla_chiusura.wav` sono generate
-da `sigla.py`, nota per nota: sono musica tua, senza diritti di terzi.
+La sigla si crea una volta sola con **Lyria**, il modello musicale di
+Google, usando la stessa chiave Gemini.
 
-Per sceglierne un'altra:
+1. Actions > **Sigla** > Run workflow, azione **proponi**. In pochi minuti
+   arrivano su Telegram 6 proposte in stili diversi (tech, indie pop,
+   funky, lo-fi allegro, acustico, synthwave). Nel campo "stile" puoi
+   scrivere uno stile tuo, per esempio "funky con basso slap e fiati".
+2. Ascolta, scegli il numero.
+3. Actions > **Sigla** > Run workflow, azione **usa**, numero scelto.
+   Il programma prende i primi 7 secondi per l'apertura e gli ultimi 8
+   per la chiusura, con le sfumature.
 
-```
-python sigla.py --varianti 6     # crea 6 varianti in assets/varianti/
-python sigla.py --seme 3         # tiene la variante numero 3
-```
+Finché la sigla non c'è, le puntate escono senza musica.
 
 Schema della puntata: gancio → sigla che sfuma sotto la presentazione →
 paper → chiusura → sigla finale.
+
+L'audio di Lyria contiene SynthID, una filigrana digitale non udibile
+che indica che il brano è generato da un'AI.
 
 ## La versione locale (PC con la GTX 1070)
 
