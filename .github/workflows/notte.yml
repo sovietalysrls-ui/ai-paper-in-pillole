@@ -131,6 +131,21 @@ jobs:
             sleep 5
           done
 
+      # Il wav è troppo pesante per il repository: va nelle Releases
+      # (colonna di destra della pagina del repository), insieme all'mp3.
+      - name: Audio nelle Releases
+        if: ${{ success() && inputs.prova != true && inputs.solo_articolo != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f uscita/OGGI/puntata.wav ] || { echo "Nessun audio oggi"; exit 0; }
+          CARTELLA=$(ls -d archivio/puntate/*/ | sort | tail -1)
+          NOME=$(basename "$CARTELLA")
+          if gh release view "$NOME" >/dev/null 2>&1; then echo "Release già presente"; exit 0; fi
+          gh release create "$NOME" uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 uscita/OGGI/copertina.jpg \
+            --title "$(cat uscita/OGGI/titolo.txt)" --notes-file uscita/OGGI/descrizione.txt \
+            || echo "::warning::Release non creata"
+
   # Il server del sito blocca alcuni server di GitHub. Ogni lavoro parte su un
   # server diverso: se il caricamento dell'articolo non è riuscito, si riprova
   # da qui, fino a due volte.

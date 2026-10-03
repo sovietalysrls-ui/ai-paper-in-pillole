@@ -309,7 +309,8 @@ def consegna(cfg, lingue, oggi_dir, numero, avanz, lav):
 
 
 def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
-    """Nel cloud: copia testi e copertina della puntata nel repository (niente audio)."""
+    """Nel cloud: copia testi, copertina e mp3 della puntata nel repository.
+    Il wav (troppo pesante per il repository) va nelle Releases di GitHub."""
     if not cfg.get("archivio_git"):
         return
     dest = cfg["archivio_git"] / "puntate" / f"{data}_{numero:03d}_{slug(nome_breve)}"
@@ -318,7 +319,7 @@ def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
         out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
         d = dest if len(lingue) == 1 else dest / cod
         d.mkdir(parents=True, exist_ok=True)
-        for nome in ("titolo.txt", "descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg"):
+        for nome in ("titolo.txt", "descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg", "puntata.mp3"):
             if (out / nome).exists():
                 shutil.copy2(out / nome, d / nome)
         for nome in ("scheda.json", "articolo_meta.json", "wordpress.json"):

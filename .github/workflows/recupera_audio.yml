@@ -1,0 +1,41 @@
+# Recupera l'audio di una notte passata e lo mette nelle Releases.
+# Serve solo per le puntate fatte prima che l'audio andasse lì da solo.
+# GitHub tiene i file delle notti per 14 giorni: oltre, non si recupera più.
+
+name: Recupera audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      esecuzione:
+        description: "Numero dell'esecuzione della notte (dall'indirizzo della pagina)"
+        required: true
+      cartella:
+        description: "Nome della cartella in archivio/puntate (es. 2026-10-03_050_onestreamer)"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recupera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.esecuzione }}
+          github-token: ${{ github.token }}
+          path: scaricati
+      - name: Crea la release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NOME: ${{ inputs.cartella }}
+        run: |
+          D=$(dirname "$(find scaricati -path '*OGGI/puntata.wav' | head -1)")
+          [ -f "$D/puntata.wav" ] || { echo "Audio non trovato"; exit 1; }
+          if gh release view "$NOME" >/dev/null 2>&1; then echo "Release già presente"; exit 0; fi
+          gh release create "$NOME" "$D/puntata.wav" "$D/puntata.mp3" "$D/copertina.jpg" \
+            --title "$(cat "$D/titolo.txt")" --notes-file "$D/descrizione.txt"

@@ -31,10 +31,11 @@ Su Amazon non devi caricare nulla, se il podcast è collegato al feed RSS
 di Spotify for Creators (vedi in fondo).
 
 Nel repository, cartella `archivio/puntate/`, restano titolo,
-descrizione, dialogo, articolo, copertina e scheda di ogni puntata.
-L'audio no: è troppo pesante per GitHub. L'mp3 resta comunque nella
-chat Telegram, e GitHub tiene una copia di tutti i file per 14 giorni
-(scheda Actions, dentro l'esecuzione della notte).
+descrizione, dialogo, articolo, copertina, scheda e **mp3** di ogni puntata.
+
+Il **wav** è troppo pesante per stare nelle cartelle del repository.
+Va nelle **Releases**: nella pagina del repository, colonna di destra.
+Ogni puntata ha la sua release, con wav, mp3 e copertina da scaricare.
 
 ## Mettere in funzione la versione cloud
 
