@@ -1,0 +1,65 @@
+# Impostazioni della versione italiana.
+
+nome_podcast: AI Paper in Pillole
+
+# Chi parla. A sinistra il nome tecnico, a destra come compare nel testo.
+conduttori:
+  CARLO: Carlo
+  ARIANNA: Arianna
+
+# Trasformare i nomi inglesi in "come si pronunciano" per la voce.
+pronuncia_attiva: true
+
+# Variabili usate nei prompt del dialogo.
+dialogo_vars:
+  ruolo_carlo: >-
+    Carlo non è un tecnico. Fa le domande che farebbe un ascoltatore curioso.
+    Ogni tanto prova un paragone con la vita di tutti i giorni, e Arianna lo
+    conferma o lo corregge. Ha un tono caldo e un po' ironico.
+  ruolo_arianna: >-
+    Arianna ha letto il paper. Spiega con parole semplici e con esempi concreti.
+    Non fa lezione: risponde, racconta, ogni tanto chiede a Carlo cosa ne pensa.
+  presentazione: >-
+    Si presentano con il nome del podcast e il numero della puntata, per esempio:
+    "Benvenuti ad AI Paper in Pillole, puntata numero [numero di oggi]. Io sono Arianna." /
+    "E io sono Carlo." Poi una frase che dice di cosa si parla oggi.
+  chiusura: >-
+    Chiudono invitando a lasciare un like e le stelline (le cinque stelle della
+    valutazione), a seguire il podcast per non perdere la prossima puntata,
+    e salutano in modo caloroso.
+
+# Parole che devono comparire nelle ultime battute. Il simbolo | vuol
+# dire "oppure": basta che compaia una delle parole.
+parole_chiusura:
+  - "like|mi piace"
+  - "stell"
+  - "segui|iscriv"
+
+# Frasi usate dai controlli per spiegare al modello cosa correggere.
+testi_controlli:
+  ripetuta: "ripete una frase già detta prima nel dialogo: dì una cosa nuova o togli la frase"
+  vietata: "contiene un'espressione vietata ({motivo})"
+  eco: "ripete come un'eco le parole della battuta precedente"
+  frase_lunga: "ha una frase di {n} parole: spezzala in frasi più corte"
+  numero: "cita il numero {n}, che non compare nella scheda dei fatti: toglilo o usa un numero della scheda"
+  sigla_doppia: "spiega la sigla {s} sia in inglese sia in italiano: tieni una sola delle due"
+  sigla_ripetuta: "spiega di nuovo la sigla {s}, già spiegata prima: usa solo la sigla o un sinonimo breve"
+  manca_presentazione: "nelle prime battute manca la presentazione con il nome del podcast"
+  manca_gancio: "il dialogo deve aprire con il gancio, prima della presentazione"
+  manca_chiusura: "nella chiusura manca: {cosa}"
+  una_voce: "parla una sola voce: servono entrambi i conduttori"
+  troppo_lungo: "il dialogo ha {n} parole, il massimo è {max}"
+  troppo_corto: "il dialogo ha {n} parole, il minimo è {min}"
+
+# Pezzi fissi aggiunti dal programma in fondo a descrizione e articolo.
+piede:
+  e: "e"
+  e_altri: "e altri {n} autori"
+  autori_max: 8
+  autori: "Il paper è di {autori}"
+  pagine_figure: ", e conta {p} pagine con {f} figure"
+  solo_pagine: ", e conta {p} pagine"
+  link: "Link al paper: {link}"
+  firma: "AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati in locale con modelli open source."
+  paper: "Il paper:"
+  ascolta: "Ascolta la puntata su"

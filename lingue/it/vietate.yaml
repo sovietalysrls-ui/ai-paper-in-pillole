@@ -1,0 +1,60 @@
+# Espressioni vietate nel dialogo, nella descrizione e nell'articolo.
+#
+# regex:   lo schema di ricerca (maiuscole e minuscole non contano).
+#          ^ significa "a inizio battuta", \b "confine di parola".
+# motivo:  la spiegazione che il controllo dà al modello.
+# esempio: come la regola compare nelle istruzioni di scrittura.
+#
+# Per aggiungere un tic: copia un blocco e cambia i tre campi.
+
+- regex: '^\W*(assolutamente|esatto|esattamente|perfetto|certo|giusto|wow|caspita|accidenti)\b\W'
+  motivo: "interiezione d'apertura da podcast artificiale"
+  esempio: 'Mai aprire una battuta con "Assolutamente!", "Esatto!", "Perfetto!", "Certo!", "Wow!", "Caspita!".'
+
+- regex: '\b(ottima|bella|buona|grande) domanda\b'
+  motivo: "complimento alla domanda"
+  esempio: 'Mai "Ottima domanda" o "Bella domanda".'
+
+- regex: '\b(e+h*m+|uhm+|mmm+|ehh+|uh)\b'
+  motivo: "suono di esitazione scritto"
+  esempio: 'Mai suoni di esitazione scritti: "ehm", "uhm", "mmm".'
+
+- regex: '\bimmagin(a|ate|iamo)\s+(che|di|un|una|uno|se)\b'
+  motivo: "apertura con «immagina che»"
+  esempio: 'Mai "Immagina che..." o "Immaginate...": racconta direttamente il caso concreto.'
+
+- regex: "\\b(è qui che|ecco dove) entra in gioco\\b"
+  motivo: "formula fatta «entra in gioco»"
+  esempio: 'Mai "Ed è qui che entra in gioco...".'
+
+- regex: '\b(allacciate le cinture|tenetevi forte|preparatevi|reggetevi)\b'
+  motivo: "enfasi teatrale"
+  esempio: 'Mai "Allacciate le cinture", "Tenetevi forte".'
+
+- regex: "\\bnon (è|si tratta di|serve) (solo |soltanto |semplicemente )?[^.!?;]{1,40}[,;:] (ma )?(è|si tratta di|serve)\\b"
+  motivo: "contrasto artificiale «non è X, è Y»"
+  esempio: 'Mai la costruzione "non è X, è Y" o "non si tratta di X, ma di Y".'
+
+- regex: '\b(rivoluzionari[oa]?|cambia(re)? le regole del gioco|game.?changer|svolta epocale)\b'
+  motivo: "enfasi esagerata"
+  esempio: 'Mai "rivoluzionario", "cambia le regole del gioco", "game changer".'
+
+- regex: '\bin un mondo (in cui|dove)\b'
+  motivo: "apertura retorica"
+  esempio: 'Mai "In un mondo in cui...".'
+
+- regex: '\b(affascinante|incredibile|pazzesco|sorprendente)!'
+  motivo: "esclamazione di meraviglia"
+  esempio: 'Niente esclamazioni di meraviglia ("Affascinante!", "Incredibile!").'
+
+- regex: '\b(la verità è che|ecco il punto|ed ecco la cosa)\b'
+  motivo: "finta rivelazione"
+  esempio: 'Mai finte rivelazioni: "La verità è che...", "Ecco il punto:".'
+
+- regex: '\b(come (si )?(dice|dicono)|secondo (molti|alcuni) esperti|gli esperti dicono)\b'
+  motivo: "attribuzione vaga"
+  esempio: 'Mai attribuzioni vaghe: "come si dice", "secondo molti esperti". Cita solo il paper.'
+
+- regex: '\b(e questo cambia tutto|e questo è solo l''inizio|il futuro è già qui)\b'
+  motivo: "finale finto-profondo"
+  esempio: 'Mai finali a effetto: "E questo cambia tutto", "Il futuro è già qui".'

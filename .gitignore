@@ -1,0 +1,16 @@
+# Chiavi personali: mai su GitHub
+segreti.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Prodotti della catena (stanno in ~/AI-Paper-in-Pillole, ma per sicurezza)
+*.wav
+*.mp3
+OGGI/
+OLD/
+dati/
+*.log

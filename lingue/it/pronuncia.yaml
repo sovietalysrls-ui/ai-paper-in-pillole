@@ -1,0 +1,43 @@
+# Dizionario fisso di pronuncia per la voce italiana.
+#
+# A sinistra come si scrive, a destra come la voce deve leggerlo.
+# L'accento grave (à è ì ò ù) indica la sillaba da accentare.
+# Questo dizionario vince sempre sulle proposte del modello.
+#
+# Ogni notte il programma salva in dati/pronunce_proposte_it.yaml
+# i nomi nuovi con la pronuncia proposta dal modello.
+# Se una ti convince, copiala qui. Se è sbagliata, correggila qui.
+# Dopo qualche settimana questo file copre quasi tutto.
+
+Hugging Face: Hàghing Féis
+OpenAI: Open Ei Ài
+Google: Gùgol
+DeepMind: Dìp Màind
+Meta: Mèta
+Microsoft: Màicrosoft
+Anthropic: Antròpic
+Nvidia: Envìdia
+NVIDIA: Envìdia
+GitHub: Ghìt Hab
+Transformer: Transfòrmer
+transformer: transfòrmer
+benchmark: bènchmark
+benchmarks: bènchmark
+dataset: dàtaset
+framework: fréimuork
+token: tòken
+fine-tuning: fàin tiùning
+prompt: pròmpt
+reinforcement learning: rinfòrsment lèrning
+deep learning: dìp lèrning
+machine learning: mascìn lèrning
+Stanford: Stènford
+Berkeley: Bèrcli
+Tsinghua: Cinguà
+Alibaba: Alibabà
+Qwen: Ciuèn
+Llama: Làma
+Gemini: Gèmini
+Claude: Clòd
+GPT: Gi Pi Ti
+arXiv: àrcaiv

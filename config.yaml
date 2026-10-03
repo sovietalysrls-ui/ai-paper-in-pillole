@@ -1,0 +1,110 @@
+# =====================================================================
+#  AI Paper in Pillole - impostazioni
+#  Questo è l'unico file da toccare per cambiare il comportamento.
+#  Le righe che iniziano con # sono commenti: il programma le ignora.
+# =====================================================================
+
+# Lingue da produrre ogni notte, nell'ordine.
+# Oggi solo italiano. Per avere anche l'inglese:  lingue: [it, en]
+# Con più lingue, la cartella OGGI avrà una sottocartella per lingua.
+lingue: [it]
+
+# Dove finiscono i file. ~ significa la tua cartella home.
+cartella_base: ~/AI-Paper-in-Pillole
+
+# Numero della prima puntata prodotta da questo sistema.
+# Serve solo la prima volta: dopo, il numero lo tiene il registro.
+numero_iniziale:
+  it: 50
+  en: 1
+
+# ---------------------------------------------------------------------
+#  Scelta del paper
+# ---------------------------------------------------------------------
+scelta:
+  # Quanti giorni indietro cercare una lista di Hugging Face non vuota.
+  giorni_indietro: 7
+  # Si parte dalla lista di ieri: alle 4 di notte quella di oggi
+  # è appena nata e i voti non sono ancora significativi.
+  parti_da_ieri: true
+  # Voti minimi per considerare un paper (0 = nessun limite).
+  voti_minimi: 5
+
+# ---------------------------------------------------------------------
+#  Lettura del paper
+# ---------------------------------------------------------------------
+lettura:
+  # Parole massime prese da ogni sezione utile.
+  parole_max_sezione: 2500
+  # Dimensione dei pezzi dati al modello, in parole.
+  parole_per_pezzo: 1800
+  # Didascalie di figure e tabelle da tenere (le prime N).
+  didascalie_max: 12
+
+# ---------------------------------------------------------------------
+#  Modello di testo (Ollama)
+# ---------------------------------------------------------------------
+modello_testo:
+  indirizzo: http://127.0.0.1:11434
+  nome: qwen3.5:9b
+  # Memoria di lavoro del modello, in "token" (pezzi di parola).
+  # 16384 sta comodo in 8 GB con Qwen3.5-9B.
+  contesto: 16384
+  temperatura_fatti: 0.2      # bassa: estrazione precisa
+  temperatura_scrittura: 0.7  # più alta: dialogo più vivo
+  # Spegne il "ragionamento ad alta voce" dei modelli Qwen3.x:
+  # più veloce e più adatto alla scrittura.
+  disattiva_ragionamento: true
+  # Secondi massimi per una singola risposta.
+  timeout: 900
+
+# ---------------------------------------------------------------------
+#  Dialogo
+# ---------------------------------------------------------------------
+dialogo:
+  # Durata massima della puntata, sigle escluse.
+  secondi_max: 285
+  # Velocità di lettura stimata della voce sintetica.
+  # Si corregge dopo le prime puntate misurando l'audio vero.
+  parole_al_minuto: 155
+  # Sotto questa quota il dialogo è troppo magro.
+  parole_min: 520
+  # Giri massimi di correzione automatica.
+  giri_correzione: 3
+  # Parole massime in una singola frase prima di farla spezzare.
+  parole_max_frase: 28
+
+# ---------------------------------------------------------------------
+#  Articolo sul sito
+# ---------------------------------------------------------------------
+articolo:
+  parole_min: 650
+  parole_max: 950
+  link_podcast: https://open.spotify.com/show/0343HceLfMtVbfln7gVijy
+
+# ---------------------------------------------------------------------
+#  WordPress (si attiva quando costruiamo il passo 10)
+# ---------------------------------------------------------------------
+wordpress:
+  sito: https://andreamanini.it
+  # bozza  = lo trovi in bozza e premi "Pubblica" tu
+  # pubblica = esce da solo
+  stato: bozza
+  categoria: AI Paper in Pillole
+
+# ---------------------------------------------------------------------
+#  Memoria video
+#  Il programma misura il picco di memoria usata dalla scheda video.
+#  Se supera questo limite, avvisa: sulla GTX 1070 (8 GB) non starebbe.
+#  7500 MB = 8 GB meno lo spazio che occupa il desktop.
+# ---------------------------------------------------------------------
+gpu:
+  limite_vram_mb: 7500
+
+# ---------------------------------------------------------------------
+#  Avvisi Telegram
+#  Il codice del bot e il numero della chat stanno in segreti.env,
+#  non qui, così questo file si può copiare senza rischi.
+# ---------------------------------------------------------------------
+telegram:
+  attivo: true

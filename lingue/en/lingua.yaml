@@ -1,0 +1,60 @@
+# Impostazioni della versione inglese.
+# Pronta all'uso: per attivarla, in config.yaml metti  lingue: [it, en]
+# Nome del podcast e conduttori si possono cambiare qui.
+
+nome_podcast: AI Paper in Pillole
+
+conduttori:
+  CARLO: Carlo
+  ARIANNA: Arianna
+
+# In inglese i nomi inglesi non vanno riscritti.
+pronuncia_attiva: false
+
+dialogo_vars:
+  ruolo_carlo: >-
+    Carlo is not technical. He asks the questions a curious listener would ask.
+    Now and then he tries an everyday comparison, and Arianna confirms or corrects it.
+    Warm tone, a little ironic.
+  ruolo_arianna: >-
+    Arianna has read the paper. She explains in plain words with concrete examples.
+    She doesn't lecture: she answers, tells stories, and sometimes asks Carlo what he thinks.
+  presentazione: >-
+    They introduce the show with its name and the episode number, for example:
+    "Welcome to AI Paper in Pillole, episode [today's number]. I'm Arianna." /
+    "And I'm Carlo." Then one sentence saying what today's episode is about.
+  chiusura: >-
+    They close by asking listeners to leave a like and a five-star rating,
+    to follow the show so they don't miss the next episode, and say a warm goodbye.
+
+parole_chiusura:
+  - "like"
+  - "star|rating"
+  - "follow|subscribe"
+
+testi_controlli:
+  ripetuta: "repeats a sentence already said earlier: say something new or drop it"
+  vietata: "contains a banned expression ({motivo})"
+  eco: "echoes the words of the previous line"
+  frase_lunga: "has a {n}-word sentence: split it into shorter sentences"
+  numero: "mentions the number {n}, which is not in the fact sheet: remove it or use a number from the sheet"
+  sigla_doppia: "explains the acronym {s} twice in different ways: keep only one"
+  sigla_ripetuta: "explains the acronym {s} again: it was already explained, just use the acronym"
+  manca_presentazione: "the opening lines lack the introduction with the show's name"
+  manca_gancio: "the dialogue must open with the hook, before the introduction"
+  manca_chiusura: "the closing lacks: {cosa}"
+  una_voce: "only one voice speaks: both hosts are needed"
+  troppo_lungo: "the dialogue has {n} words, the maximum is {max}"
+  troppo_corto: "the dialogue has {n} words, the minimum is {min}"
+
+piede:
+  e: "and"
+  e_altri: "and {n} more authors"
+  autori_max: 8
+  autori: "The paper is by {autori}"
+  pagine_figure: ", and runs {p} pages with {f} figures"
+  solo_pagine: ", and runs {p} pages"
+  link: "Paper link: {link}"
+  firma: "AI Paper in Pillole: one paper a day, in small doses, among friends. Voices and text generated locally with open-source models."
+  paper: "The paper:"
+  ascolta: "Listen to the episode on"

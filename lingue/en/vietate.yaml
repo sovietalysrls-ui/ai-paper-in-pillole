@@ -1,0 +1,45 @@
+# Banned expressions for the English version. Same format as the Italian file.
+
+- regex: '^\W*(absolutely|exactly|totally|right|wow|oh wow|great|perfect)\b\W'
+  motivo: "artificial podcast interjection"
+  esempio: 'Never open a line with "Absolutely!", "Exactly!", "Totally!", "Wow!", "Perfect!".'
+
+- regex: '\b(great|good|excellent|fantastic) question\b'
+  motivo: "praising the question"
+  esempio: 'Never "Great question" or "Good question".'
+
+- regex: '\b(u+m+|u+h+|hmm+|er+m*)\b'
+  motivo: "written filler sound"
+  esempio: 'Never written fillers: "um", "uh", "hmm".'
+
+- regex: '\bimagine (that|if|a|an)\b'
+  motivo: "«imagine that» opener"
+  esempio: 'Never "Imagine that...": tell the concrete case directly.'
+
+- regex: "\\b(that's|this is) where [^.!?]{1,30} comes in\\b"
+  motivo: "stock phrase «that's where X comes in»"
+  esempio: 'Never "That''s where X comes in".'
+
+- regex: '\b(buckle up|hold on tight|strap in)\b'
+  motivo: "theatrical emphasis"
+  esempio: 'Never "Buckle up", "Hold on tight".'
+
+- regex: "\\b(it's|this is) not (just |only |simply )?[^.!?;]{1,40}[,;:] (it's|it is)\\b"
+  motivo: "artificial «it's not X, it's Y» contrast"
+  esempio: 'Never the "it''s not X, it''s Y" construction.'
+
+- regex: '\b(revolutionary|game.?changer|groundbreaking|paradigm shift|delve|tapestry)\b'
+  motivo: "inflated wording"
+  esempio: 'Never "revolutionary", "game-changer", "groundbreaking", "delve".'
+
+- regex: '\bin a world (where|in which)\b'
+  motivo: "rhetorical opener"
+  esempio: 'Never "In a world where...".'
+
+- regex: '\b(fascinating|incredible|mind.?blowing|amazing)!'
+  motivo: "exclamation of wonder"
+  esempio: 'No exclamations of wonder ("Fascinating!", "Amazing!").'
+
+- regex: "\\b(and that changes everything|the future is (already )?here|and this is just the beginning)\\b"
+  motivo: "fake-deep ending"
+  esempio: 'Never punchline endings: "And that changes everything", "The future is here".'
