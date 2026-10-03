@@ -189,7 +189,7 @@ articolo:
 # ---------------------------------------------------------------------
 wordpress:
   attivo: true
-  sito: https://andreamanini.it
+  sito: https://www.andreamanini.it
   # bozza  = lo trovi in bozza e premi "Pubblica" tu
   # pubblica = esce da solo
   stato: bozza

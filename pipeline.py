@@ -308,9 +308,10 @@ def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
         for nome in ("titolo.txt", "descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg"):
             if (out / nome).exists():
                 shutil.copy2(out / nome, d / nome)
-        sk = oggi_dir / ".lavoro" / cod / "scheda.json"
-        if sk.exists():
-            shutil.copy2(sk, d / "scheda.json")
+        for nome in ("scheda.json", "articolo_meta.json", "wordpress.json"):
+            f = oggi_dir / ".lavoro" / cod / nome
+            if f.exists():
+                shutil.copy2(f, d / nome)
     if (oggi_dir / "registro.log").exists():
         shutil.copy2(oggi_dir / "registro.log", dest / "registro.log")
     avanz.scrivi(f"Testi archiviati nel repository: {dest.relative_to(RADICE)}")

@@ -28,6 +28,10 @@ on:
         type: choice
         options: [gemini, nessuna]
         default: gemini
+      solo_articolo:
+        description: "Non rifare la puntata: pubblica solo l'articolo dell'ultima puntata archiviata"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -64,6 +68,10 @@ jobs:
           WP_UTENTE: ${{ secrets.WP_UTENTE }}
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
         run: |
+          if [ "${{ inputs.solo_articolo }}" = "true" ]; then
+            python pubblica_articolo.py ultima
+            exit $?
+          fi
           ARGS="--cloud"
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi

@@ -10,9 +10,16 @@ trova o crea la categoria e i tag, crea l'articolo in bozza o
 pubblicato secondo config.yaml.
 """
 import os
+import socket
+import time
 from pathlib import Path
 
 import requests
+import urllib3.util.connection as _conn
+
+# I computer di GitHub non hanno IPv6: si forza IPv4, altrimenti la
+# connessione al sito fallisce con "Network is unreachable".
+_conn.allowed_gai_family = lambda: socket.AF_INET
 
 
 class ErroreWordPress(RuntimeError):
@@ -31,10 +38,19 @@ class WordPress:
         self.s.headers["User-Agent"] = "AI-Paper-in-Pillole/1.0"
 
     def _r(self, metodo, percorso, **kw):
-        try:
-            r = self.s.request(metodo, self.base + percorso, timeout=60, **kw)
-        except requests.RequestException as e:
-            raise ErroreWordPress(f"sito non raggiungibile: {e}")
+        ultimo = None
+        for tentativo in range(3):
+            try:
+                r = self.s.request(metodo, self.base + percorso, timeout=90, allow_redirects=False, **kw)
+                break
+            except requests.RequestException as e:
+                ultimo = e
+                time.sleep(10)
+        else:
+            raise ErroreWordPress(f"sito non raggiungibile: {ultimo}")
+        if r.status_code in (301, 302, 307, 308):
+            raise ErroreWordPress(f"il sito rimanda a {r.headers.get('Location')}: "
+                                  "correggi 'sito' in config.yaml con quell'indirizzo")
         if r.status_code == 401:
             raise ErroreWordPress("accesso rifiutato (401): controlla utente e password per applicazioni. "
                                   "Alcuni hosting bloccano l'accesso dei programmi: va abilitato.")
