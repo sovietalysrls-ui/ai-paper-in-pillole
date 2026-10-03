@@ -1,0 +1,69 @@
+Arianna: Per anni si è pensato che far esercitare un'intelligenza artificiale solo sui propri errori fosse la chiave assoluta per renderla più intelligente.
+
+Carlo: Uno studio recente dimostra però che le cose non stanno esattamente in questo modo.
+
+Arianna: Benvenuti ad AI Paper in Pillole, puntata numero cinquantuno.
+
+Carlo: Io sono Carlo.
+
+Arianna: E io sono Arianna.
+
+Carlo: Oggi parliamo di una regola considerata da tutti sacra nel mondo dell'intelligenza artificiale e che forse va radicalmente riscritta.
+
+Arianna: Immagina un insegnante molto esperto che cerca di capire come far studiare al meglio la propria classe. Si chiede se servano davvero di più i compiti a casa correggendo i propri errori oppure fargli copiare direttamente i passaggi giusti dalla lavagna per evitare passi falsi.
+
+Carlo: Quando si addestra una intelligenza artificiale più piccola usando una grande, ci si chiede costantemente quale metodo usare per farla fare pratica. Finora si pensava che far esercitare la macchina solo sui propri errori fosse sempre la scelta migliore per evitare che dimenticasse le cose imparate.
+
+Arianna: I ricercatori hanno messo alla prova questa regola non scritta testando sistematicamente diversi modi di fare pratica per capire cosa conti davvero nei modelli.
+
+Carlo: Hanno usato il paper intitolato Demistificare la distillazione on-policy per i modelli linguistici di grandi dimensioni.
+
+Arianna: Hanno confrontato la distillazione di modelli forti a modelli deboli.
+
+Carlo: Hanno variato in modo indipendente la politica di rollout, la direzione della divergenza KL e il tasso di apprendimento.
+
+Arianna: Hanno testato i modelli su compiti scientifici, medici e di aritmetica.
+
+Carlo: E hanno analizzato l'impatto profondo di questi fattori sull'accuratezza, sulla sparsità degli aggiornamenti e sulla dimenticanza.
+
+Arianna: Per farlo hanno usato tecniche come OnPD, cioè distillazione on-policy: in pratica, un metodo in cui la macchina fa pratica usando le risposte che genera autonomamente.
+
+Carlo: E hanno usato OffPD, cioè distillazione off-policy: in pratica, un metodo in cui la macchina fa pratica seguendo percorsi di apprendimento prestabiliti o altrui.
+
+Arianna: I risultati parlano molto chiaro con i numeri precisi del paper.
+
+Carlo: Vediamo cosa dicono esattamente i dati raccolti.
+
+Arianna: La distillazione on-policy raggiunge una accuratezza media massima sui tre dataset del settantadue per cento.
+
+Carlo: Mentre la distillazione off-policy arriva al settantatré per cento.
+
+Arianna: La variazione massima delle prestazioni fuori distribuzione al tasso di apprendimento più basso è di 1,3 punti percentuali su 100.
+
+Carlo: Il calo delle prestazioni fuori distribuzione al tasso di apprendimento più alto sale tra 11,2 e 14,0 punti su 100.
+
+Arianna: La sparsità degli aggiornamenti dei parametri al tasso di apprendimento più basso si attesta tra l'85,3 e l'89,6 per cento.
+
+Carlo: Ci sono però dei limiti importanti da tenere sempre a mente.
+
+Arianna: La ricerca si limita infatti a modelli student con un massimo di 1,5 miliardi di parametri.
+
+Carlo: I compiti analizzati richiedono inoltre tracce di ragionamento non superiori a 2.000 token.
+
+Arianna: E il modello insegnante viene sempre mantenuto fisso durante tutto il processo di distillazione.
+
+Carlo: Perché questa specifica ricerca riguarda chi ci ascolta nel profondo della vita di tutti i giorni?
+
+Arianna: Questo studio ribalta completamente le vecchie certezze del settore. Dimostra chiaramente che le tecniche tradizionali basate unicamente sugli errori non sono sempre superiori e apre la strada a strategie di addestramento molto più consapevoli.
+
+Carlo: Ci mostra in sintesi che alcune regole date per scontate nello sviluppo delle intelligenze artificiali potrebbero essere solo un mito, aiutando a creare in futuro sistemi molto più efficienti e decisamente meno costosi.
+
+Arianna: Vi invitiamo come sempre a lasciare un like e le cinque stelle alla valutazione.
+
+Carlo: E a seguire il podcast per non perdere la prossima imperdibile puntata.
+
+Arianna: A presto.
+
+Carlo: Ciao.
+
+[dopo la sigla] Arianna: AI Paper in Pillole è un progetto di Sovietaly SRLS.

@@ -1,0 +1,101 @@
+{
+  "nome_breve": "Mito On-Policy",
+  "problema": "Quando si addestra un'intelligenza artificiale più piccola usando una più grande, si discute molto su quale metodo usare per fare pratica. Finora si pensava che far esercitare la IA solo con i propri errori fosse sempre la scelta migliore per evitare che dimenticasse le cose imparate.",
+  "idea": "I ricercatori hanno messo alla prova questa regola non scritta, testando sistematicamente diversi modi di fare pratica per capire cosa conti davvero.",
+  "come_funziona": [
+    "I ricercatori hanno confrontato la distillazione di modelli forti a modelli deboli.",
+    "Hanno variato in modo indipendente la politica di rollout, la direzione della divergenza KL e il tasso di apprendimento.",
+    "Hanno testato i modelli su compiti scientifici, medici e di aritmetica.",
+    "Hanno analizzato l'impatto di questi fattori sull'accuratezza, sulla sparsità degli aggiornamenti e sulla dimenticanza."
+  ],
+  "risultati": [
+    {
+      "fatto": "Accuratezza media massima sui tre dataset per la distillazione on-policy",
+      "numero": "72%",
+      "scala": ""
+    },
+    {
+      "fatto": "Accuratezza media massima sui tre dataset per la distillazione off-policy",
+      "numero": "73%",
+      "scala": ""
+    },
+    {
+      "fatto": "Variazione massima delle prestazioni fuori distribuzione al tasso di apprendimento più basso",
+      "numero": "1.3 punti percentuali",
+      "scala": ""
+    },
+    {
+      "fatto": "Calo delle prestazioni fuori distribuzione al tasso di apprendimento più alto",
+      "numero": "11.2–14.0 punti",
+      "scala": ""
+    },
+    {
+      "fatto": "Sparsità degli aggiornamenti dei parametri al tasso di apprendimento più basso",
+      "numero": "85.3–89.6%",
+      "scala": ""
+    }
+  ],
+  "limiti": [
+    "La ricerca si limita a modelli student con un massimo di 1,5 miliardi di parametri.",
+    "I compiti analizzati richiedono tracce di ragionamento non superiori a 2.000 tokens.",
+    "Il modello insegnante viene mantenuto fisso durante tutto il processo di distillazione."
+  ],
+  "esempio_concreto": "Un insegnante esperto cerca di capire se far fare i compiti a casa agli studenti correggendo i propri errori serva davvero di più rispetto al fargli copiare i passaggi corretti dalla lavagna.",
+  "perche_ti_riguarda": "Ci mostra che alcune regole date per scontate nello sviluppo delle intelligenze artificiali potrebbero essere solo un mito, aiutando a creare in futuro sistemi più efficienti e meno costosi.",
+  "gancio": "Per anni si è pensato che far esercitare un'intelligenza artificiale solo sui propri errori fosse la chiave per renderla più intelligente. Uno studio recente dimostra che le cose non stanno esattamente così.",
+  "termini": [
+    {
+      "termine": "OnPD",
+      "tipo": "sigla",
+      "espansione_inglese": "On-Policy Distillation",
+      "significato": "distillazione on-policy",
+      "spiegazione": "Un metodo in cui l'intelligenza artificiale più piccola fa pratica usando le risposte che genera autonomamente.",
+      "usa": "spiegazione",
+      "pronuncia": "òne pi di"
+    },
+    {
+      "termine": "OffPD",
+      "tipo": "sigla",
+      "espansione_inglese": "Off-Policy Distillation",
+      "significato": "distillazione off-policy",
+      "spiegazione": "Un metodo in cui l'intelligenza artificiale fa pratica seguendo percorsi di apprendimento prestabiliti o altrui.",
+      "usa": "spiegazione",
+      "pronuncia": "òffe pi di"
+    },
+    {
+      "termine": "Llama",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una famiglia di modelli di intelligenza artificiale sviluppata da Meta.",
+      "usa": "termine",
+      "pronuncia": "làma"
+    },
+    {
+      "termine": "Qwen",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una famiglia di modelli di intelligenza artificiale.",
+      "usa": "termine",
+      "pronuncia": "kuèn"
+    },
+    {
+      "termine": "RLVR",
+      "tipo": "sigla",
+      "espansione_inglese": "Reinforcement Learning via Verifiable Rewards",
+      "significato": "apprendimento per rinforzo tramite ricompense verificabili",
+      "spiegazione": "Una tecnica di addestramento che premia la IA quando raggiunge un obiettivo verificabile.",
+      "usa": "spiegazione",
+      "pronuncia": "erre elle vi erre"
+    }
+  ],
+  "soggetto_immagine": "a split path diverging into two arrows pointing to a target",
+  "hashtag": [
+    "AI",
+    "MachineLearning",
+    "ArtificialIntelligence",
+    "TechResearch",
+    "DataScience"
+  ]
+}

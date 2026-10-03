@@ -1,0 +1,13 @@
+Un insegnante esperto cerca di capire se far fare i compiti a casa agli studenti correggendo i propri errori serva davvero di più rispetto al fargli copiare i passaggi corretti dalla lavagna. Quando si addestra un'intelligenza artificiale più piccola usando una più grande, si discute molto su quale metodo usare per fare pratica. Finora si pensava che far esercitare la IA solo con i propri errori fosse sempre la scelta migliore per evitare che dimenticasse le cose imparate. Questo studio mette alla prova questa regola non scritta, testando sistematicamente diversi modi di fare pratica.
+
+I ricercatori hanno confrontato la distillazione di modelli forti a modelli deboli. Hanno variato in modo indipendente la politica di rollout, la direzione della divergenza KL e il tasso di apprendimento. Hanno testato i modelli su compiti scientifici, medici e di aritmetica. Hanno analizzato l'impatto di questi fattori sull'accuratezza, sulla sparsità degli aggiornamenti e sulla dimenticanza. La distillazione on-policy è un metodo in cui l'intelligenza artificiale più piccola fa pratica usando le risposte che genera autonomamente. La distillazione off-policy è un metodo in cui l'intelligenza artificiale fa pratica seguendo percorsi di apprendimento prestabiliti o altrui.
+
+L'accuratezza media massima sui tre dataset è stata del 72 per cento per la distillazione on-policy e del 73 per cento per la distillazione off-policy. La variazione massima delle prestazioni fuori distribuzione è stata di 1,3 punti percentuali al tasso di apprendimento più basso. Il calo delle prestazioni fuori distribuzione è stato compreso tra 11,2 e 14,0 punti al tasso di apprendimento più alto. La sparsità degli aggiornamenti dei parametri è stata compresa tra 85,3 e 89,6 per cento al tasso di apprendimento più basso. Il risultato più interessante mostra che la differenza tra i due metodi è minima, sfatando un mito radicato nello sviluppo dei modelli. La ricerca si limita a modelli student con un massimo di 1,5 miliardi di parametri.
+
+Il paper è di Julianna Piskorz, Antonin Berthon e Mihaela van der Schaar.
+
+Link al paper: https://arxiv.org/abs/2609.35259
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #MachineLearning #ArtificialIntelligence #TechResearch #DataScience

@@ -1,0 +1,53 @@
+[23:32:55] ===== Avvio 2026-10-03 23:32 =====
+[23:32:55] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[23:32:56]    liste trovate: 2026-10-02 (50 paper), 2026-10-01 (50 paper), 2026-09-30 (50 paper), 2026-09-29 (50 paper), 2026-09-28 (33 paper)
+[23:32:56]    provo 2609.35259 (153 voti, lista del 2026-10-02): On-Policy or Off-Policy Learning? A Systematic Study of Distillation D
+[23:32:57]    (i paper più votati erano già stati usati)
+[23:32:57] ✔ Scelta e lettura del paper — 2609.35259 · 153 voti · arxiv-html · 3760 parole utili
+[23:32:57] ▶ Scheda dei fatti — 1 pezzi da leggere
+[23:32:57] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + A Controlled Comparison o
+[23:32:58]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:33:18]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:33:39] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[23:33:40]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:34:04]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:34:29] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[23:34:50] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[23:35:15]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:35:36]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[23:35:57] ⚠ Gemini testo: gemini-3.5-flash sovraccarico, passo a gemini-3.5-flash-lite
+[23:36:01] ✔ Scheda dei fatti — Mito On-Policy · 5 risultati · 5 termini
+[23:36:02] ▶ Dialogo — puntata #51
+[23:36:06] ✔ Dialogo — 36 battute, 482 parole
+[23:36:06] ▶ Controlli e correzioni
+[23:36:06]    giro 1: 2 battute da sistemare, 1 problemi generali (482 parole)
+[23:36:21]    giro 2: 6 battute da sistemare, 0 problemi generali (548 parole)
+[23:36:28]    giro 3: 2 battute da sistemare, 1 problemi generali (516 parole)
+[23:36:46] ⚠ [it] dialogo, battuta 7: contiene un'espressione vietata (apertura con «immagina che»)
+[23:36:46] ⚠ [it] dialogo, battuta 21: cita il numero 100, che non compare nella scheda dei fatti: toglilo o usa un numero della scheda; cita il punteggio "1,3 punti" senza il fondo scala: scrivi per esempio "72,1 punti su 100", oppure confrontalo con un altro metodo
+[23:36:46] ⚠ [it] dialogo, battuta 22: cita il numero 100, che non compare nella scheda dei fatti: toglilo o usa un numero della scheda
+[23:36:46] ⚠ [it] dialogo, battuta 30: ha una frase di 33 parole: spezzala in frasi più corte
+[23:36:46] ✔ Controlli e correzioni — 4 problemi residui
+[23:36:46] ▶ Titolo, descrizione, articolo — titolo
+[23:36:51] ▶ Titolo, descrizione, articolo — descrizione
+[23:37:08] ▶ Titolo, descrizione, articolo — articolo per il sito
+[23:37:17] ⚠ articolo di 487 parole (atteso 650-950)
+[23:37:25] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #51 - Mito On-Policy: quando far sbaglia» · articolo 487 parole
+[23:37:25] ▶ Copertina
+[23:37:26] ⚠ copertina Gemini non riuscita (Quota Gemini esaurita anche sulla chiave di riserva. 429: {"error":{"message":"Rate limit exceeded for model gemini-3.1-flash-image (limit: 0 requests): uso il disegno del programma
+[23:37:26] ✔ Copertina — disegno del programma, icona «strati»
+[23:37:26] ▶ Voce
+[23:37:26] ▶ Voce — blocco 1 di 3 (5 battute)
+[23:37:45] ▶ Voce — blocco 2 di 3 (15 battute)
+[23:38:14] ▶ Voce — blocco 3 di 3 (15 battute)
+[23:38:44] ▶ Voce — frase finale
+[23:38:59] ✔ Voce — 3 blocchi + frase finale
+[23:38:59] ▶ Montaggio audio
+[23:39:06] ✔ Montaggio audio — 4.0 minuti in tutto, voce 3.4 minuti, 175 parole al minuto
+[23:39:07] ▶ Articolo su WordPress — stato: bozza
+[23:44:07] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo da altri server, l'esito arriva in un messaggio a parte
+[23:44:07] ▶ Consegna su Telegram
+[23:44:16] ✔ Consegna su Telegram — 4 file inviati
+[23:44:17] ▶ Registro e chiusura
+[23:44:17] Richieste al modello di testo: 13
+[23:44:17] memoria video non misurata (nvidia-smi assente)
