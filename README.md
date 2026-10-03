@@ -95,6 +95,28 @@ il tasto verde. In 5-10 minuti arriva tutto su Telegram.
 `prova` usa un registro separato: non consuma il paper e non sposta la
 numerazione vera. Se la prova va bene, da quella notte la catena parte da sola.
 
+## Google Drive
+
+Ogni notte la puntata finisce anche su Drive, nella cartella
+**AI Paper in Pillole**:
+
+- `OGGI/`: la puntata appena fatta, completa (wav, mp3, titolo,
+  descrizione, dialogo, articolo, copertina);
+- `OLD/AAAA-MM-GG_NNN_nome/`: le puntate passate, senza il wav.
+
+Serve un'autorizzazione, una volta sola, con rclone:
+
+1. Scarica rclone per Windows da https://rclone.org/downloads/ e scompatta lo zip.
+2. Nella cartella scompattata apri PowerShell e scrivi `.\rclone.exe config`.
+3. Rispondi così: `n` (nuovo), nome `gdrive`, tipo `drive`, client id e
+   secret vuoti (Invio), scope `1`, poi Invio a tutto il resto finché
+   chiede "Use web browser to automatically authenticate?": rispondi `y`.
+   Si apre il browser: accedi a Google e autorizza. "Shared Drive": `n`.
+   Conferma con `y` e esci con `q`.
+4. Scrivi `.\rclone.exe config show gdrive` e copia tutto il testo che compare,
+   compresa la prima riga `[gdrive]`.
+5. Su GitHub crea il segreto **RCLONE_CONF** e incolla quel testo.
+
 ## Orario
 
 La notte parte alle 02:15 UTC: le 04:15 in Italia con l'ora legale, le

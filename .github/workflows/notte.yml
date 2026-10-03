@@ -91,6 +91,16 @@ jobs:
             echo "ok=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Copia su Google Drive
+        if: ${{ success() && inputs.prova != true && inputs.solo_articolo != true }}
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          if [ -z "$RCLONE_CONF" ]; then echo "Google Drive non configurato (segreto RCLONE_CONF)"; exit 0; fi
+          sudo apt-get install -y -qq rclone >/dev/null
+          mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+          ./drive.sh uscita/OGGI || echo "::warning::Copia su Drive non riuscita"
+
       - name: Salva i file della puntata (14 giorni)
         if: always()
         uses: actions/upload-artifact@v4
