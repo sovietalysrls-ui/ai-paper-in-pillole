@@ -1,0 +1,45 @@
+# Copia su Google Drive una puntata passata, presa dai file della sua notte.
+# Serve per le puntate fatte prima che Drive fosse configurato.
+# GitHub tiene i file delle notti per 14 giorni.
+
+name: Drive - recupera puntata
+
+on:
+  workflow_dispatch:
+    inputs:
+      esecuzione:
+        description: "Numero dell'esecuzione della notte"
+        required: true
+      cartella:
+        description: "Nome della cartella in archivio/puntate (es. 2026-10-03_050_onestreamer)"
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: drive
+  cancel-in-progress: false
+
+jobs:
+  copia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.esecuzione }}
+          github-token: ${{ github.token }}
+          path: scaricati
+      - name: Copia su Google Drive
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+          DRIVE_NOME: ${{ inputs.cartella }}
+        run: |
+          if [ -z "$RCLONE_CONF" ]; then echo "::error::Manca il segreto RCLONE_CONF"; exit 1; fi
+          sudo apt-get install -y -qq rclone >/dev/null
+          mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+          D=$(dirname "$(find scaricati -path '*OGGI/puntata.wav' | head -1)")
+          ./drive.sh "$D"

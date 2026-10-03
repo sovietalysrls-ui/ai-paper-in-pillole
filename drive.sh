@@ -6,7 +6,7 @@
 set -euo pipefail
 ORIGINE="${1:-uscita/OGGI}"
 BASE="gdrive:${DRIVE_CARTELLA:-AI Paper in Pillole}"
-NOME=$(basename "$(ls -d archivio/puntate/*/ | tail -1)")
+NOME="${DRIVE_NOME:-$(basename "$(ls -d archivio/puntate/*/ | sort | tail -1)")}"
 
 # 1. La puntata precedente passa da OGGI a OLD, senza il wav.
 if PRIMA=$(rclone cat "$BASE/OGGI/nome_puntata.txt" 2>/dev/null) && [ -n "$PRIMA" ]; then
