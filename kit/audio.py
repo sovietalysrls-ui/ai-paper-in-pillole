@@ -58,10 +58,12 @@ def silenzio(sec):
 
 
 def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a):
-    """gancio, corpo: liste di file wav di voce (blocchi), in ordine.
+    """gancio: blocchi di voce dell'apertura (gancio + presentazione);
+    corpo: blocchi del resto della puntata.
 
-    Schema: gancio → sigla d'apertura che sfuma sotto la presentazione
-    → resto della puntata → sigla di chiusura.
+    Schema: gancio e presentazione → sigla → paper e chiusura → sigla finale.
+    Con sovrapposizione_sigla > 0 la sigla sfuma sotto la voce che segue;
+    con 0 (predefinito) la sigla suona intera, da sola.
     """
     pausa = cfg_a.get("pausa_tra_blocchi", 0.35)
 
@@ -75,19 +77,25 @@ def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a):
     s_ap = carica(sigla_ap) * cfg_a.get("volume_sigla", 0.5) if sigla_ap and Path(sigla_ap).exists() else np.zeros(0)
     s_ch = carica(sigla_ch) * cfg_a.get("volume_sigla", 0.5) if sigla_ch and Path(sigla_ch).exists() else np.zeros(0)
 
-    sovrapposizione = cfg_a.get("sovrapposizione_sigla", 2.5)   # secondi di sigla sotto la voce
+    sovrapposizione = cfg_a.get("sovrapposizione_sigla", 0)   # secondi di sigla sotto la voce
     t_sigla = len(voce_g) + int(FREQ * 0.5) if len(voce_g) else 0
-    t_corpo = t_sigla + max(len(s_ap) - int(FREQ * sovrapposizione), 0) if len(s_ap) else t_sigla
+    if len(s_ap):
+        t_corpo = t_sigla + max(len(s_ap) - int(FREQ * sovrapposizione), 0)
+        if sovrapposizione <= 0:
+            t_corpo += int(FREQ * 0.4)          # respiro dopo la sigla
+    else:
+        t_corpo = t_sigla
     t_chius = t_corpo + len(voce_c) + int(FREQ * 0.6)
     totale = max(t_chius + len(s_ch), t_corpo + len(voce_c)) + int(FREQ * 0.5)
     mix = np.zeros(totale, np.float32)
 
     mix[:len(voce_g)] += voce_g
     if len(s_ap):
-        # sotto la voce la sigla scende di volume e sfuma
         sig = s_ap.copy()
-        inizio_sfumo = max(len(sig) - int(FREQ * sovrapposizione), 0)
-        sig[inizio_sfumo:] *= np.linspace(0.6, 0.0, len(sig) - inizio_sfumo)
+        if sovrapposizione > 0:
+            # sotto la voce la sigla scende di volume e sfuma
+            inizio_sfumo = max(len(sig) - int(FREQ * sovrapposizione), 0)
+            sig[inizio_sfumo:] *= np.linspace(0.6, 0.0, len(sig) - inizio_sfumo)
         mix[t_sigla:t_sigla + len(sig)] += sig
     mix[t_corpo:t_corpo + len(voce_c)] += voce_c
     if len(s_ch):

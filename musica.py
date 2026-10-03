@@ -10,6 +10,10 @@ arrivano su Telegram per essere ascoltate dal telefono.
 Passo 2, scelta:
   python musica.py usa 3              ricava apertura e chiusura dalla proposta 3
 
+Oppure, se hai già due file tuoi (per esempio generati in AI Studio):
+  python musica.py imposta intro.mp3 outro.mp3
+toglie i silenzi ai bordi, sfuma la fine e li salva come sigle.
+
 L'apertura è l'inizio del brano (con sfumatura finale), la chiusura è
 la parte finale. Le durate si cambiano con --apertura e --chiusura.
 
@@ -91,6 +95,32 @@ def usa(args):
     return 0
 
 
+def _prepara(src, dest, max_sec):
+    """Mono 44,1 kHz, silenzi ai bordi tolti, al massimo max_sec, sfumatura finale."""
+    tmp = dest.with_suffix(".tmp.wav")
+    filtri = ("silenceremove=start_periods=1:start_threshold=-50dB,"
+              "areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-ac", "1", "-ar", "44100",
+                    "-af", filtri, "-t", str(max_sec), str(tmp)], check=True)
+    durata = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                   "-of", "csv=p=0", str(tmp)], capture_output=True, text=True).stdout)
+    sfumo = min(1.2, durata / 4)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(tmp),
+                    "-af", f"afade=t=out:st={durata - sfumo:.2f}:d={sfumo:.2f}", str(dest)], check=True)
+    tmp.unlink()
+    return durata
+
+
+def imposta(args):
+    dest = RADICE / "assets"
+    d1 = _prepara(Path(args.intro), dest / "sigla_apertura.wav", args.massimo)
+    print(f"Apertura: {d1:.1f} secondi")
+    if args.outro:
+        d2 = _prepara(Path(args.outro), dest / "sigla_chiusura.wav", args.massimo)
+        print(f"Chiusura: {d2:.1f} secondi")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(description="Sigla con Lyria")
     sub = ap.add_subparsers(dest="azione", required=True)
@@ -102,8 +132,12 @@ def main():
     u.add_argument("numero", type=int)
     u.add_argument("--apertura", type=float, default=7.0)
     u.add_argument("--chiusura", type=float, default=8.0)
+    i = sub.add_parser("imposta")
+    i.add_argument("intro")
+    i.add_argument("outro", nargs="?")
+    i.add_argument("--massimo", type=float, default=20.0)
     a = ap.parse_args()
-    return proponi(a) if a.azione == "proponi" else usa(a)
+    return {"proponi": proponi, "usa": usa, "imposta": imposta}[a.azione](a)
 
 
 if __name__ == "__main__":

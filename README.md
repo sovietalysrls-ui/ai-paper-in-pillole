@@ -117,8 +117,8 @@ Google, usando la stessa chiave Gemini.
 
 Finché la sigla non c'è, le puntate escono senza musica.
 
-Schema della puntata: gancio → sigla che sfuma sotto la presentazione →
-paper → chiusura → sigla finale.
+Schema della puntata: gancio → presentazione → sigla → paper → chiusura →
+sigla finale.
 
 L'audio di Lyria contiene SynthID, una filigrana digitale non udibile
 che indica che il brano è generato da un'AI.

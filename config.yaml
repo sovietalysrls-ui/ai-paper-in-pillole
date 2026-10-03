@@ -116,9 +116,10 @@ gemini_voce:
 audio:
   sigla_apertura: assets/sigla_apertura.wav
   sigla_chiusura: assets/sigla_chiusura.wav
-  volume_sigla: 0.5
-  # Secondi in cui la sigla sfuma sotto la presentazione.
-  sovrapposizione_sigla: 2.5
+  volume_sigla: 0.8
+  # Ordine: gancio e presentazione, poi la sigla intera, poi il paper.
+  # Secondi in cui la sigla sfuma sotto la voce che segue (0 = nessuna sovrapposizione).
+  sovrapposizione_sigla: 0
   pausa_tra_blocchi: 0.35
   lufs: -16
   mp3_bitrate: 128k
