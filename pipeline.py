@@ -428,12 +428,24 @@ def main():
             avanz.saltato(P_COPERTINA)
         else:
             avanz.inizia(P_COPERTINA)
-            motivo = copertina.disegna(prima, paper["arxiv_id"],
-                                       [sk0.get("soggetto_immagine"), paper["titolo"],
-                                        " ".join(sk0.get("hashtag", []))], cfg["copertina"])
+            testi_tema = [sk0.get("soggetto_immagine"), paper["titolo"], " ".join(sk0.get("hashtag", []))]
+            fatta = None
+            if cfg["motori"]["copertina"] == "gemini" and not args.finto:
+                try:
+                    from kit.gemini import GeminiImmagine
+                    dati = GeminiImmagine(cfg["gemini_immagine"], avanz).genera(
+                        sk0.get("soggetto_immagine") or paper["titolo"])
+                    copertina.salva_da_bytes(prima, dati, cfg["copertina"]["lato"])
+                    fatta = "disegnata da Gemini"
+                except Exception as e:
+                    # La copertina non deve bloccare la puntata: si ripiega sul disegno del programma.
+                    avanz.avviso(f"copertina Gemini non riuscita ({str(e)[:150]}): uso il disegno del programma")
+            if not fatta:
+                motivo = copertina.disegna(prima, paper["arxiv_id"], testi_tema, cfg["copertina"])
+                fatta = f"disegno del programma, icona «{motivo}»"
             for cod in lingue[1:]:
                 shutil.copy2(prima, oggi_dir / cod / "copertina.jpg")
-            avanz.fatto(P_COPERTINA, f"motivo «{motivo}»")
+            avanz.fatto(P_COPERTINA, fatta)
 
         # --- voce, montaggio, sito ---
         vram.fase = "voce"

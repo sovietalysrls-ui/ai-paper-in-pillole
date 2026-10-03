@@ -28,5 +28,5 @@ Prepare the sheet. Rules for each field:
   - "spiegazione": a short plain-English explanation.
   - "usa": "termine" if the dialogue should use the name or acronym; "spiegazione" if it should avoid it and say the explanation instead. For acronyms used fewer than three times choose "spiegazione".
   - "pronuncia": repeat the term as written.
-- "soggetto_immagine": a simple symbolic object or scene evoking the topic, suitable for an abstract illustration with no people and no text. One sentence.
+- "soggetto_immagine": 6-15 words. An object or small symbolic scene, drawable as a line icon, that makes the paper's topic clear at a glance. Example for a paper on an AI that makes images by writing code: "a browser window with a grid and a small landscape picture in the center". No people, no faces, no text.
 - "hashtag": 5 hashtags without the # sign, in CamelCase. The first is always "AI".

@@ -28,5 +28,5 @@ Prepara la scheda. Regole per ogni campo:
   - "spiegazione": in italiano, breve, comprensibile da chiunque.
   - "usa": "termine" se nel dialogo conviene usare il nome o la sigla; "spiegazione" se conviene evitarlo e dire la spiegazione. Per le sigle usate meno di tre volte scegli "spiegazione".
   - "pronuncia": come lo leggerebbe ad alta voce un italiano che conosce l'inglese, scritto con lettere italiane e l'accento grave sulla sillaba tonica (esempio: "Hugging Face" → "Hàghing Féis"). Per le sigle lette lettera per lettera, le lettere all'italiana separate da spazi (esempio: "LLM" → "elle elle emme"). Per le parole italiane, ripeti la parola.
-- "soggetto_immagine": un oggetto o una scena semplice e simbolica che richiami il tema, adatta a un'illustrazione astratta. Senza persone, senza volti, senza scritte. Una frase.
+- "soggetto_immagine": IN INGLESE, 6-15 parole. Un oggetto o una piccola scena simbolica, disegnabile come icona a linee, che faccia capire subito il tema del paper. Esempio per un paper su un'AI che genera immagini scrivendo codice: "a browser window with a grid and a small landscape picture in the center". Senza persone, senza volti, senza scritte.
 - "hashtag": 5 hashtag senza il simbolo #, in CamelCase (esempio: "ModelliMultimodali"). Il primo è sempre "AI".

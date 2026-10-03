@@ -1,14 +1,18 @@
 """Passo 8: la copertina della puntata.
 
-Un disegno astratto, sempre negli stessi colori, con un motivo scelto
-in base al tema del paper (video, linguaggio, agenti, audio, memoria,
-reti...). Nessun testo. La variazione dipende dal numero del paper,
-quindi due paper diversi danno due copertine diverse, e lo stesso
-paper dà sempre la stessa.
+Stile fisso, quello delle copertine attuali del podcast: fondo blu
+notte con una griglia appena visibile, al centro un'icona disegnata a
+linee arancioni luminose che fa capire l'argomento. Nessun testo.
 
-Lo disegna questo programma: niente servizi esterni, niente diritti.
+Due modi:
+  gemini   un modello d'immagine disegna l'icona richiesta dalla scheda
+           (soggetto_immagine), dentro lo stile fisso;
+  disegno  il programma disegna da solo un'icona scelta dal tema
+           (onde, occhio, documento, finestra, strati, rete, grafico,
+           orbite). Serve da riserva se il modello non risponde.
 """
 import hashlib
+import io
 import math
 import random
 import re
@@ -16,13 +20,14 @@ import re
 from PIL import Image, ImageDraw, ImageFilter
 
 TEMI = [
-    ("onde",   r"audio|voce|voice|speech|parlat|music|sound|suono|ascolt"),
-    ("occhio", r"video|immagin|image|vision|visiv|pixel|camera|foto|guard"),
-    ("righe",  r"testo|text|linguag|language|parol|llm|token|scritt|lettur|document"),
-    ("griglia", r"agent|robot|azion|computer|interfacc|gui|strument|tool|codice|code|program"),
-    ("strati", r"memori|ricord|memory|context|contest|storia|cache"),
-    ("nodi",   r"rete|grafo|graph|network|connession|relazion|conoscenz|knowledge"),
-    ("scala",  r"ragion|reason|matemat|math|logic|calcol|dimostr|step|passi"),
+    ("onde",     r"audio|voce|voice|speech|parlat|music|sound|suono|ascolt"),
+    ("occhio",   r"video|vision|visiv|camera|guard|stream"),
+    ("finestra", r"immagin|image|pixel|foto|disegn|grafic|render|agent|computer|interfacc|gui|browser|web"),
+    ("documento", r"testo|text|linguag|language|parol|llm|token|scritt|lettur|document|traduz"),
+    ("strati",   r"memori|ricord|memory|context|contest|cache|dati|data"),
+    ("rete",     r"rete|grafo|graph|network|connession|relazion|conoscenz|knowledge"),
+    ("grafico",  r"ragion|reason|matemat|math|logic|calcol|benchmark|valutaz|risultat|scal"),
+    ("codice",   r"codice|code|program|software|robot|strument|tool"),
 ]
 
 
@@ -38,109 +43,175 @@ def _rgb(h):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
+def _fondo(L, P):
+    img = Image.new("RGB", (L, L), P["fondo"])
+    d = ImageDraw.Draw(img)
+    passo = L // 16
+    for i in range(0, L + 1, passo):
+        d.line([(i, 0), (i, L)], fill=P["griglia"], width=max(1, L // 900))
+        d.line([(0, i), (L, i)], fill=P["griglia"], width=max(1, L // 900))
+    # vignettatura: bordi un po' più scuri, centro un po' più chiaro
+    alone = Image.new("L", (L, L), 0)
+    ImageDraw.Draw(alone).ellipse([L * 0.15, L * 0.15, L * 0.85, L * 0.85], fill=60)
+    alone = alone.filter(ImageFilter.GaussianBlur(L // 8))
+    chiaro = Image.new("RGB", (L, L), P["griglia"])
+    return Image.composite(chiaro, img, alone)
+
+
+def _icona(d, motivo, L, rng, w, punti):
+    """Disegna l'icona in un riquadro centrale. punti: lista dove segnare i nodi luminosi."""
+    c = L / 2
+    R = L * 0.24                      # mezza dimensione del riquadro dell'icona
+    x0, y0, x1, y1 = c - R, c - R, c + R, c + R
+
+    def finestra(alto=0.0):
+        d.rounded_rectangle([x0, y0 + alto, x1, y1], radius=L * 0.012, width=w)
+        d.line([(x0, y0 + alto + R * 0.18), (x1, y0 + alto + R * 0.18)], width=w)
+        for k in range(3):
+            punti.append((x0 + R * (0.09 + 0.09 * k), y0 + alto + R * 0.09, w * 0.9))
+
+    if motivo == "onde":
+        n = 21
+        for k in range(n):
+            x = x0 + (x1 - x0) * k / (n - 1)
+            h = R * (0.15 + 0.85 * abs(math.sin(k * 0.55 + rng.uniform(0, 0.4))) * math.sin(math.pi * k / (n - 1)))
+            d.line([(x, c - h), (x, c + h)], width=w)
+    elif motivo == "occhio":
+        pts_su = [(x0 + (x1 - x0) * t / 40, c - R * 0.55 * math.sin(math.pi * t / 40)) for t in range(41)]
+        pts_giu = [(x, 2 * c - y) for x, y in pts_su]
+        d.line(pts_su, width=w)
+        d.line(pts_giu, width=w)
+        d.ellipse([c - R * 0.32, c - R * 0.32, c + R * 0.32, c + R * 0.32], width=w)
+        d.ellipse([c - R * 0.1, c - R * 0.1, c + R * 0.1, c + R * 0.1], width=w)
+        punti.append((c + R * 0.12, c - R * 0.12, w * 1.4))
+    elif motivo == "finestra":
+        finestra()
+        g = 6
+        for k in range(1, g):
+            x = x0 + (x1 - x0) * k / g
+            y = y0 + R * 0.18 + (y1 - y0 - R * 0.18) * k / g
+            d.line([(x, y0 + R * 0.18), (x, y1)], width=max(1, w // 2))
+            d.line([(x0, y), (x1, y)], width=max(1, w // 2))
+        q = R * 0.38
+        d.rectangle([c - q, c - q * 0.7, c + q, c + q * 1.1], width=w)
+        d.ellipse([c - q * 0.25, c - q * 0.35, c + q * 0.25, c + q * 0.15], width=w)
+        d.line([(c - q, c + q * 0.8), (c - q * 0.2, c + q * 0.25), (c + q * 0.3, c + q * 0.6), (c + q, c + q * 0.3)], width=w)
+        for (a, b) in ((c - q, c - q * 0.7), (c + q, c - q * 0.7), (c - q, c + q * 1.1), (c + q, c + q * 1.1)):
+            punti.append((a, b, w * 1.2))
+    elif motivo == "documento":
+        piega = R * 0.35
+        d.line([(x0 + R * 0.2, y0), (x1 - piega, y0), (x1, y0 + piega), (x1, y1), (x0 + R * 0.2, y1),
+                (x0 + R * 0.2, y0)], width=w, joint="curve")
+        d.line([(x1 - piega, y0), (x1 - piega, y0 + piega), (x1, y0 + piega)], width=w)
+        for k in range(6):
+            y = y0 + R * 0.55 + k * R * 0.22
+            lung = (x1 - x0 - R * 0.6) * rng.uniform(0.55, 1.0)
+            d.line([(x0 + R * 0.45, y), (x0 + R * 0.45 + lung, y)], width=w)
+    elif motivo == "strati":
+        for k in range(4):
+            dy = (k - 1.5) * R * 0.38
+            a = [(c, c + dy - R * 0.32), (c + R * 0.95, c + dy), (c, c + dy + R * 0.32), (c - R * 0.95, c + dy)]
+            d.polygon(a, outline=None)
+            d.line(a + [a[0]], width=w, joint="curve")
+    elif motivo == "rete":
+        nodi = [(c, c)] + [(c + R * 0.85 * math.cos(a), c + R * 0.85 * math.sin(a))
+                           for a in [i * 2 * math.pi / 6 + rng.uniform(-0.2, 0.2) for i in range(6)]]
+        for p in nodi[1:]:
+            d.line([nodi[0], p], width=w)
+        for i in range(1, 7):
+            d.line([nodi[i], nodi[i % 6 + 1]], width=max(1, w // 2))
+        for i, (x, y) in enumerate(nodi):
+            r = R * (0.13 if i == 0 else 0.08)
+            d.ellipse([x - r, y - r, x + r, y + r], width=w)
+            punti.append((x, y, w * 0.9))
+    elif motivo == "grafico":
+        d.line([(x0, y0), (x0, y1), (x1, y1)], width=w)
+        n = 5
+        for k in range(n):
+            h = (y1 - y0) * (0.25 + 0.65 * (k + 1) / n) * rng.uniform(0.85, 1.0)
+            xa = x0 + R * 0.25 + k * (x1 - x0 - R * 0.3) / n
+            d.rectangle([xa, y1 - h, xa + R * 0.22, y1], width=w)
+        d.line([(x0 + R * 0.2, y1 - R * 0.4), (x1 - R * 0.1, y0 + R * 0.15)], width=w)
+        punti.append((x1 - R * 0.1, y0 + R * 0.15, w * 1.6))
+    elif motivo == "codice":
+        finestra()
+        s = R * 0.35
+        d.line([(c - s * 0.4, c - s * 0.3), (c - s * 1.3, c + s * 0.3), (c - s * 0.4, c + s * 0.9)], width=w)
+        d.line([(c + s * 0.4, c - s * 0.3), (c + s * 1.3, c + s * 0.3), (c + s * 0.4, c + s * 0.9)], width=w)
+        d.line([(c + s * 0.2, c - s * 0.5), (c - s * 0.2, c + s * 1.1)], width=w)
+    else:  # orbite
+        for k, ang in enumerate((0, 60, 120)):
+            box = [c - R, c - R * 0.38, c + R, c + R * 0.38]
+            strato = Image.new("L", (L, L), 0)
+            ImageDraw.Draw(strato).ellipse(box, outline=255, width=w)
+            punti.append(("orbita", strato.rotate(ang, center=(c, c)), None))
+        d.ellipse([c - R * 0.14, c - R * 0.14, c + R * 0.14, c + R * 0.14], width=w)
+        punti.append((c, c, w * 1.2))
+
+
+class _Penna:
+    """Come ImageDraw, ma disegna sempre in bianco, solo il contorno."""
+
+    def __init__(self, d):
+        self.d = d
+
+    def line(self, xy, width=1, joint=None):
+        self.d.line(xy, fill=255, width=width, joint=joint)
+
+    def rectangle(self, xy, width=1):
+        self.d.rectangle(xy, outline=255, width=width)
+
+    def rounded_rectangle(self, xy, radius=0, width=1):
+        self.d.rounded_rectangle(xy, radius=radius, outline=255, width=width)
+
+    def ellipse(self, xy, width=1):
+        self.d.ellipse(xy, outline=255, width=width)
+
+    def polygon(self, xy, outline=None):
+        pass
+
+
 def disegna(percorso, arxiv_id, testi, cfg_c):
     lato = cfg_c.get("lato", 1400)
-    S = 2                                   # disegno a doppia risoluzione, poi riduco: bordi lisci
+    S = 2                             # doppia risoluzione, poi riduco: bordi lisci
     L = lato * S
     P = {k: _rgb(v) for k, v in cfg_c["colori"].items()}
     rng = random.Random(int(hashlib.sha1(arxiv_id.encode()).hexdigest()[:8], 16))
     motivo = tema(*testi)
 
-    img = Image.new("RGB", (L, L), P["fondo"])
-    d = ImageDraw.Draw(img)
-    m = int(L * 0.09)                       # margine
-    cx, cy = L // 2 + rng.randint(-L // 14, L // 14), L // 2 + rng.randint(-L // 14, L // 14)
-    sottile = max(2, L // 400)
-    medio = max(4, L // 160)
+    img = _fondo(L, P)
+    linee = Image.new("L", (L, L), 0)          # maschera delle linee dell'icona
+    d = _Penna(ImageDraw.Draw(linee))   # disegna in bianco sulla maschera delle linee
+    w = max(4, L // 180)
+    punti = []
+    _icona(d, motivo, L, rng, w, punti)
+    for p in punti:
+        if p[0] == "orbita":
+            linee = Image.composite(Image.new("L", (L, L), 255), linee, p[1])
+    d = ImageDraw.Draw(linee)
+    for p in punti:
+        if p[0] != "orbita":
+            x, y, r = p
+            d.ellipse([x - r, y - r, x + r, y + r], fill=255)
 
-    # grande forma di fondo, sempre presente: dà riconoscibilità alla serie
-    r0 = int(L * rng.uniform(0.30, 0.36))
-    d.ellipse([cx - r0, cy - r0, cx + r0, cy + r0], fill=P["principale"])
-
-    if motivo == "onde":
-        for k in range(7):
-            y0 = m + (L - 2 * m) * (k + 1) / 8
-            amp = L * 0.03 * (1 + (k % 3)) * rng.uniform(0.6, 1.2)
-            freq = rng.uniform(2, 5)
-            fase = rng.uniform(0, math.pi)
-            punti = [(x, y0 + amp * math.sin(freq * 2 * math.pi * (x - m) / (L - 2 * m) + fase)
-                      * math.sin(math.pi * (x - m) / (L - 2 * m)))
-                     for x in range(m, L - m, 8)]
-            d.line(punti, fill=P["linee"] if k % 3 else P["sfondo2"], width=medio if k == 3 else sottile)
-    elif motivo == "occhio":
-        for k in range(9, 0, -1):
-            r = r0 * k / 9 * 1.35
-            d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=P["linee"], width=sottile)
-        ri = r0 * 0.38
-        d.ellipse([cx - ri, cy - ri, cx + ri, cy + ri], fill=P["sfondo2"])
-        rp = ri * 0.45
-        d.ellipse([cx - rp, cy - rp, cx + rp, cy + rp], fill=P["linee"])
-    elif motivo == "righe":
-        y = m + L * 0.05
-        while y < L - m - L * 0.04:
-            lung = (L - 2 * m) * rng.uniform(0.35, 1.0)
-            x0 = m
-            colore = P["linee"] if rng.random() > 0.2 else P["sfondo2"]
-            d.line([(x0, y), (x0 + lung, y)], fill=colore, width=medio)
-            y += L * 0.045
-    elif motivo == "griglia":
-        n = 8
-        passo = (L - 2 * m) / n
-        for i in range(n + 1):
-            d.line([(m + i * passo, m), (m + i * passo, L - m)], fill=P["linee"], width=sottile)
-            d.line([(m, m + i * passo), (L - m, m + i * passo)], fill=P["linee"], width=sottile)
-        x, y = rng.randint(0, 2), rng.randint(0, 2)
-        cammino = [(x, y)]
-        for _ in range(9):
-            if rng.random() < 0.5 and x < n - 1:
-                x += 1
-            elif y < n - 1:
-                y += 1
-            cammino.append((x, y))
-        pts = [(m + (a + 0.5) * passo, m + (b + 0.5) * passo) for a, b in cammino]
-        d.line(pts, fill=P["sfondo2"], width=medio * 2, joint="curve")
-        for p in pts:
-            d.ellipse([p[0] - medio * 2, p[1] - medio * 2, p[0] + medio * 2, p[1] + medio * 2], fill=P["accento"])
-    elif motivo == "strati":
-        for k in range(6):
-            w = (L - 2 * m) * (0.9 - k * 0.11)
-            h = L * 0.07
-            x0 = cx - w / 2 + rng.uniform(-L * 0.03, L * 0.03)
-            y0 = m + L * 0.12 + k * L * 0.11
-            d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2,
-                                outline=P["linee"], width=medio, fill=P["sfondo2"] if k == 2 else None)
-    elif motivo == "nodi":
-        nodi = [(rng.uniform(m, L - m), rng.uniform(m, L - m)) for _ in range(14)]
-        for i, a in enumerate(nodi):
-            vicini = sorted(nodi, key=lambda b: (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)[1:3]
-            for b in vicini:
-                d.line([a, b], fill=P["linee"], width=sottile)
-        for i, (x, y) in enumerate(nodi):
-            r = medio * (3 if i % 4 == 0 else 1.8)
-            d.ellipse([x - r, y - r, x + r, y + r], fill=P["sfondo2"] if i % 4 == 0 else P["linee"])
-    elif motivo == "scala":
-        n = 7
-        lato_g = (L - 2 * m) / n
-        for i in range(n):
-            x0 = m + i * lato_g
-            y0 = L - m - (i + 1) * lato_g
-            d.rectangle([x0, y0, x0 + lato_g, L - m], outline=P["linee"], width=sottile)
-        d.line([(m, L - m), (L - m, m)], fill=P["sfondo2"], width=medio)
-    else:  # orbite
-        for k in range(5):
-            r = min(r0 * (0.6 + k * 0.28), min(cx, cy, L - cx, L - cy) - m * 0.5)
-            a0 = rng.uniform(0, 360)
-            d.arc([cx - r, cy - r, cx + r, cy + r], a0, a0 + rng.uniform(120, 300),
-                  fill=P["linee"], width=sottile if k % 2 else medio)
-
-    # punto d'accento, piccolo, sempre presente
-    ax, ay = rng.uniform(m * 1.5, L - m * 1.5), rng.uniform(m * 1.5, L - m * 1.5)
-    ra = L * 0.025
-    d.ellipse([ax - ra, ay - ra, ax + ra, ay + ra], fill=P["accento"])
+    # bagliore: la stessa maschera sfocata due volte, sotto le linee nitide
+    arancio = Image.new("RGB", (L, L), P["linee"])
+    for raggio, forza in ((L // 28, 0.9), (L // 90, 1.0)):
+        alone = linee.filter(ImageFilter.GaussianBlur(raggio)).point(lambda v: int(v * forza))
+        img = Image.composite(arancio, img, alone)
+    nucleo = Image.new("RGB", (L, L), P["accento"])
+    img = Image.composite(arancio, img, linee)
+    img = Image.composite(nucleo, img, linee.filter(ImageFilter.MinFilter(3)).point(lambda v: int(v * 0.5)))
 
     img = img.resize((lato, lato), Image.LANCZOS)
-    # grana leggera, effetto carta
-    grana = Image.effect_noise((lato, lato), 18).convert("RGB").filter(ImageFilter.GaussianBlur(0.6))
-    img = Image.blend(img, grana, 0.035)
     img.save(percorso, "JPEG", quality=90, optimize=True)
     return motivo
+
+
+def salva_da_bytes(percorso, dati, lato):
+    """Salva l'immagine del modello come JPEG quadrato del lato voluto."""
+    img = Image.open(io.BytesIO(dati)).convert("RGB")
+    m = min(img.size)
+    img = img.crop(((img.width - m) // 2, (img.height - m) // 2,
+                    (img.width + m) // 2, (img.height + m) // 2))
+    img.resize((lato, lato), Image.LANCZOS).save(percorso, "JPEG", quality=90, optimize=True)

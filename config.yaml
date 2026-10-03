@@ -22,7 +22,8 @@ numero_iniziale:
 #  Motori: chi fa cosa
 #    testo:     ollama (locale) | gemini (cloud)
 #    voce:      gemini (cloud) | nessuna   (la voce locale arriva dopo)
-#    copertina: disegno (generata dal programma, nessun servizio)
+#    copertina: gemini (cloud, icona disegnata dal modello) | disegno
+#               (icona disegnata dal programma, nessun servizio)
 # ---------------------------------------------------------------------
 motori:
   testo: ollama
@@ -124,15 +125,32 @@ audio:
 
 # ---------------------------------------------------------------------
 #  Copertina
+#  Stile fisso: fondo blu notte con griglia leggera, al centro un'icona
+#  a linee arancioni luminose che richiama l'argomento. Nessun testo.
 # ---------------------------------------------------------------------
 copertina:
   lato: 1400
   colori:
-    fondo: "#F2E8D5"       # crema
-    principale: "#6E1E2B"  # bordeaux
-    linee: "#2B2B2E"       # grigio scuro
-    sfondo2: "#E3D3B8"     # crema scuro
-    accento: "#C9A15B"     # ocra
+    fondo: "#0A1A4A"       # blu notte
+    griglia: "#13275F"     # blu appena più chiaro, per la griglia
+    linee: "#FF7A1A"       # arancione luminoso
+    accento: "#FFD2A8"     # cuore chiaro delle linee
+
+# ---------------------------------------------------------------------
+#  Gemini, immagine (cloud)
+#  {soggetto} viene sostituito con l'icona scelta dalla scheda dei fatti.
+# ---------------------------------------------------------------------
+gemini_immagine:
+  modello: gemini-3.1-flash-image
+  porta: auto
+  prompt: >-
+    Square podcast episode cover. Deep navy blue background (#0A1A4A) with a
+    very faint thin grid. In the center, one single minimal icon drawn only
+    with thin glowing neon orange lines (#FF7A1A), clean geometric line art,
+    soft glow, like a technical blueprint. The icon shows: {soggetto}.
+    The icon fills about half of the image, with lots of empty space around it.
+    Flat, elegant, high contrast. No text, no letters, no numbers, no logos,
+    no people, no faces.
 
 # ---------------------------------------------------------------------
 #  Dialogo
@@ -206,7 +224,7 @@ profilo_cloud:
   motori:
     testo: gemini
     voce: gemini
-    copertina: disegno
+    copertina: gemini
   lettura:
     parole_per_pezzo: 15000
     unisci_sezioni: true

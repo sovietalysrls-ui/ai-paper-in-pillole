@@ -307,3 +307,63 @@ class GeminiVoce:
         if not audio:
             raise ErroreModello("Gemini voce: risposta senza audio")
         return audio
+
+
+# ---------------------------------------------------------------------
+#  Immagine
+# ---------------------------------------------------------------------
+
+def _immagine_interactions(d):
+    oi = d.get("output_image")
+    if isinstance(oi, str):
+        return base64.b64decode(oi)
+    if isinstance(oi, dict) and oi.get("data"):
+        return base64.b64decode(oi["data"])
+    for passo in d.get("steps", []):
+        for c in passo.get("content", []):
+            if c.get("type") == "image" and c.get("data"):
+                return base64.b64decode(c["data"])
+    return None
+
+
+def _immagine_generatecontent(d):
+    for cand in d.get("candidates", [])[:1]:
+        for p in cand.get("content", {}).get("parts", []):
+            inl = p.get("inlineData") or p.get("inline_data")
+            if inl and inl.get("data"):
+                return base64.b64decode(inl["data"])
+    return None
+
+
+class GeminiImmagine:
+    def __init__(self, cfg, avanz):
+        self.cfg = cfg
+        self.nome = cfg["modello"]
+        self.avanz = avanz
+        self.chiavi = Chiavi(avanz, "Gemini immagine")
+        self.porta = cfg.get("porta", "auto")
+
+    def genera(self, soggetto):
+        richiesta = self.cfg["prompt"].replace("{soggetto}", soggetto.strip().rstrip("."))
+        if self.porta in ("auto", "interactions"):
+            corpo = {"model": self.nome,
+                     "input": [{"type": "text", "text": richiesta}],
+                     "response_format": {"type": "image", "aspect_ratio": "1:1", "image_size": "1K"}}
+            try:
+                d = chiama(self.chiavi, f"{BASE}/interactions", corpo, self.avanz, timeout=300)
+                img = _immagine_interactions(d)
+                if img:
+                    return img
+                raise ErroreModello("Gemini immagine: risposta senza immagine")
+            except ErroreModello as e:
+                if self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
+                    raise
+                self.porta = "generatecontent"
+        corpo = {"contents": [{"parts": [{"text": richiesta}]}],
+                 "generationConfig": {"responseModalities": ["IMAGE"],
+                                      "imageConfig": {"aspectRatio": "1:1"}}}
+        d = chiama(self.chiavi, f"{BASE}/models/{self.nome}:generateContent", corpo, self.avanz, timeout=300)
+        img = _immagine_generatecontent(d)
+        if not img:
+            raise ErroreModello("Gemini immagine: risposta senza immagine")
+        return img
