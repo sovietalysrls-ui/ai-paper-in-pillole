@@ -28,6 +28,10 @@ from .llm import ErroreModello, estrai_json, pulisci_risposta
 BASE = "https://generativelanguage.googleapis.com/v1beta"
 
 
+class ErroreOccupato(ErroreModello):
+    """Il modello è sovraccarico (503): conviene passare a un modello di riserva."""
+
+
 class Chiavi:
     """Le chiavi in ordine di preferenza, e quale si sta usando."""
 
@@ -74,9 +78,10 @@ def _quota_giornaliera(testo):
     return bool(re.search(r"PerDay|per.day|daily", testo, re.I))
 
 
-def chiama(chiavi, url, corpo, avanz, timeout=300, tentativi=6):
+def chiama(chiavi, url, corpo, avanz, timeout=300, tentativi=6, max_occupato=3):
     """POST con gestione di quote, errori temporanei e cambio chiave."""
     attese_minuto = 0
+    occupato = 0
     ultimo = ""
     for _ in range(tentativi + len(chiavi.lista)):
         try:
@@ -103,8 +108,11 @@ def chiama(chiavi, url, corpo, avanz, timeout=300, tentativi=6):
                 continue
             raise ErroreModello("Quota Gemini esaurita anche sulla chiave di riserva. " + ultimo)
         if r.status_code in (500, 502, 503, 504):
-            avanz.scrivi(f"   Gemini temporaneamente non disponibile ({r.status_code}), riprovo tra 30 secondi")
-            time.sleep(30)
+            occupato += 1
+            if occupato >= max_occupato:
+                raise ErroreOccupato(f"modello sovraccarico ({ultimo[:200]})")
+            avanz.scrivi(f"   Gemini temporaneamente non disponibile ({r.status_code}), riprovo tra 20 secondi")
+            time.sleep(20)
             continue
         # 400, 403, 404: errori della richiesta, non temporanei
         raise ErroreModello(f"Gemini ha rifiutato la richiesta ({ultimo})")
@@ -137,7 +145,27 @@ def _testo_generatecontent(d):
     return "".join(out)
 
 
-class GeminiTesto:
+class _ConRiserva:
+    """Prova il modello principale; se è sovraccarico passa ai modelli di riserva."""
+
+    def _modelli(self):
+        return [self.cfg["modello"]] + list(self.cfg.get("modelli_riserva", []))
+
+    def _con_riserva(self, funzione, etichetta):
+        modelli = self._modelli()
+        while True:
+            try:
+                return funzione()
+            except ErroreOccupato as e:
+                i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
+                if i + 1 >= len(modelli):
+                    raise ErroreModello(f"{etichetta}: tutti i modelli sono sovraccarichi. {e}")
+                self.avanz.avviso(f"{etichetta}: {self.nome} sovraccarico, passo a {modelli[i + 1]}")
+                self.nome = modelli[i + 1]
+                self.porta = self.cfg.get("porta", "auto")
+
+
+class GeminiTesto(_ConRiserva):
     """Stessa interfaccia del motore Ollama: chat(), controlla(), libera()."""
 
     def __init__(self, cfg, avanz):
@@ -169,7 +197,8 @@ class GeminiTesto:
             self._pausa()
             self.avanz.vivo(f"{compito}: in attesa di Gemini ({self.nome}, chiave {self.chiavi.tipo})")
             inizio = time.time()
-            testo = self._una_richiesta(sistema, utente, schema, temp, max_token)
+            testo = self._con_riserva(lambda: self._una_richiesta(sistema, utente, schema, temp, max_token),
+                                      "Gemini testo")
             self.richieste += 1
             self.avanz.vivo(f"{compito}: {len(testo.split())} parole in {time.time() - inizio:.0f} s")
             if not schema:
@@ -249,7 +278,7 @@ def _audio_generatecontent(d):
     return None
 
 
-class GeminiVoce:
+class GeminiVoce(_ConRiserva):
     def __init__(self, cfg, lingua, avanz):
         self.cfg = cfg
         self.nome = cfg["modello"]
@@ -261,6 +290,9 @@ class GeminiVoce:
 
     def blocco(self, battute):
         """Genera un blocco di battute a due voci. Ritorna i byte di un file WAV."""
+        return self._con_riserva(lambda: self._blocco(battute), "Gemini voce")
+
+    def _blocco(self, battute):
         nomi = self.lingua["conduttori"]
         voci = self.cfg["voci"]
         stili = self.cfg.get("stili", {})
@@ -335,7 +367,7 @@ def _immagine_generatecontent(d):
     return None
 
 
-class GeminiImmagine:
+class GeminiImmagine(_ConRiserva):
     def __init__(self, cfg, avanz):
         self.cfg = cfg
         self.nome = cfg["modello"]
@@ -344,6 +376,9 @@ class GeminiImmagine:
         self.porta = cfg.get("porta", "auto")
 
     def genera(self, soggetto):
+        return self._con_riserva(lambda: self._genera(soggetto), "Gemini immagine")
+
+    def _genera(self, soggetto):
         richiesta = self.cfg["prompt"].replace("{soggetto}", soggetto.strip().rstrip("."))
         if self.porta in ("auto", "interactions"):
             corpo = {"model": self.nome,

@@ -79,6 +79,8 @@ modello_testo:
 # ---------------------------------------------------------------------
 gemini_testo:
   modello: gemini-3.8-flash
+  # Se il modello principale è sovraccarico, si prova il successivo.
+  modelli_riserva: [gemini-3.6-flash, gemini-3.5-flash, gemini-3.5-flash-lite]
   temperatura_fatti: 0.2
   temperatura_scrittura: 0.7
   # Secondi di attesa tra una richiesta e l'altra: il livello
@@ -92,6 +94,7 @@ gemini_testo:
 # ---------------------------------------------------------------------
 gemini_voce:
   modello: gemini-3.8-flash-tts
+  modelli_riserva: [gemini-3.8-flash-lite-tts]
   # Voci predefinite di Gemini. Altre possibili: Charon, Fenrir, Orus
   # (maschili), Kore, Leda, Aoede, Erinome (femminili).
   voci:
@@ -143,6 +146,7 @@ copertina:
 # ---------------------------------------------------------------------
 gemini_immagine:
   modello: gemini-3.1-flash-image
+  modelli_riserva: [gemini-3.1-flash-lite-image]
   porta: auto
   prompt: >-
     Square podcast episode cover. Deep navy blue background (#0A1A4A) with a
