@@ -52,7 +52,8 @@ parole_chiusura:
 # Frasi usate dai controlli per spiegare al modello cosa correggere.
 testi_controlli:
   sigla_senza_significato: "dice la sigla {s} senza spiegare cosa significano le lettere: aggiungi \"{s}, cioè {sig}\""
-  punteggio_senza_scala: "cita il punteggio \"{n}\" senza il fondo scala: scrivi per esempio \"72,1 punti su 100\", oppure confrontalo con un altro metodo"
+  punteggio_senza_scala: "cita il punteggio \"{n}\" senza spiegarlo: dì a parole cosa significa (meglio di quanto, rispetto a chi), senza inventare un fondo scala"
+  troppi_numeri: "contiene il numero {n}, ma la puntata ha già troppi numeri: toglilo e dì a parole cosa significa"
   rx_punteggio: "(punteggio|punti|score)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|per\\s*cento|percento))|\\d+(?:[.,]\\d+)?\\s+punti"
   rx_scala: "^\\s*(punti\\s+)?(su|out of)\\s+\\d"
   ripetuta: "ripete una frase già detta prima nel dialogo: dì una cosa nuova o togli la frase"

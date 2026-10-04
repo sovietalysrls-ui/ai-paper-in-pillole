@@ -41,7 +41,8 @@ parole_chiusura:
 
 testi_controlli:
   sigla_senza_significato: "says the acronym {s} without explaining what the letters stand for: add \"{s}, which stands for {sig}\""
-  punteggio_senza_scala: "gives the score \"{n}\" without its scale: say for example \"72.1 out of 100\", or compare it with another method"
+  punteggio_senza_scala: "gives the score \"{n}\" without explaining it: say in words what it means (better by how much, compared with what), never invent a scale"
+  troppi_numeri: "mentions the number {n}, but the episode already has too many numbers: drop it and say in words what it means"
   rx_punteggio: "(score|scored|points)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|percent))|\\d+(?:[.,]\\d+)?\\s+points"
   rx_scala: "^\\s*(points\\s+)?(out of|on a scale of)\\s+\\d"
   ripetuta: "repeats a sentence already said earlier: say something new or drop it"

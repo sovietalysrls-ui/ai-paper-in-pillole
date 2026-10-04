@@ -58,3 +58,7 @@
 - regex: '\b(e questo cambia tutto|e questo è solo l''inizio|il futuro è già qui)\b'
   motivo: "finale finto-profondo"
   esempio: 'Mai finali a effetto: "E questo cambia tutto", "Il futuro è già qui".'
+
+- regex: '\b(divulgazione|divulgativo|divulgatori?)\s+scientific'
+  motivo: "il podcast non è di divulgazione scientifica"
+  esempio: 'Mai "podcast di divulgazione scientifica": il podcast racconta in parole semplici le ricerche sull''intelligenza artificiale.'

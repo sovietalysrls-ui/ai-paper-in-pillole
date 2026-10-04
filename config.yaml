@@ -172,6 +172,8 @@ dialogo:
   giri_correzione: 3
   # Parole massime in una singola frase prima di farla spezzare.
   parole_max_frase: 28
+  # Numeri diversi al massimo in tutta la puntata: oltre, chi ascolta si perde.
+  numeri_max: 4
   # true = tutte le battute da correggere in una sola richiesta (cloud).
   correzione_in_blocco: false
 

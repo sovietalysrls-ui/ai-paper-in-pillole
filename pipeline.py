@@ -169,8 +169,10 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
 
     if L.get("decimali_virgola"):
         # 72.1 → 72,1 (solo decimali di 1-2 cifre: 4.560 resta un "migliaia")
-        battute = [(chi, re.sub(r"(?<![\d.,])0\.(\d+)", r"0,\1",
-                                re.sub(r"(?<![\d.,])(\d+)\.(\d{1,2})(?![\d])", r"\1,\2", b)))
+        # Non si toccano i nomi con numeri di versione (Qwen3.6, GLM-5.2): lettera o
+        # trattino attaccati al numero.
+        battute = [(chi, re.sub(r"(?<![\w.,-])0\.(\d+)(?![\w-])", r"0,\1",
+                                re.sub(r"(?<![\w.,-])(\d+)\.(\d{1,2})(?![\w-])", r"\1,\2", b)))
                    for chi, b in battute]
     parole = sum(conta_parole(b) for _, b in battute)
     dialogo_txt = controlli.componi(battute, L)

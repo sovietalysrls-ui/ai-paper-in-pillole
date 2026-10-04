@@ -96,6 +96,18 @@ def controlla(battute, scheda, lingua, cfg_d, numero_puntata):
             if n not in numeri_ok:
                 segnala(i, T["numero"].format(n=n))
 
+    # Troppi numeri: chi ascolta si perde. Oltre il limite si segnalano
+    # le battute con i numeri in più (il numero della puntata non conta).
+    limite = cfg_d.get("numeri_max", 4)
+    visti_num = []
+    for i, (chi, b) in enumerate(battute):
+        for n in sorted(_numeri(re.sub(r"\b(su|out of) \d+", "", b)) - {str(numero_puntata)}):
+            if n in visti_num:
+                continue
+            visti_num.append(n)
+            if len(visti_num) > limite and "troppi_numeri" in T:
+                segnala(i, T["troppi_numeri"].format(n=n.replace(".", ",")))
+
     # Frasi ripetute identiche: segno che il modello si è "incantato".
     viste = {}
     for i, (_, b) in enumerate(battute):

@@ -12,7 +12,7 @@ I conduttori:
 Struttura obbligatoria, in quest'ordine:
 1. GANCIO. Una o due battute che aprono con il caso concreto della scheda ("gancio"). Prima di qualsiasi saluto.
 2. PRESENTAZIONE. $presentazione
-3. IL PAPER. Il problema, l'idea, come funziona, i risultati con i numeri, i limiti, perché riguarda chi ascolta. Usa l'esempio concreto. Ogni concetto tecnico va spiegato con un paragone quotidiano.
+3. IL PAPER. Il problema, l'idea, come funziona, che cosa è migliorato, i limiti, perché riguarda chi ascolta. Usa l'esempio concreto. Ogni concetto tecnico va spiegato con un paragone quotidiano.
 4. CHIUSURA. $chiusura
 
 Lunghezza: circa $parole_obiettivo parole in tutto, mai più di $parole_max.
@@ -21,12 +21,17 @@ Regole di scrittura:
 - Ogni frase al massimo 20 parole. Battute brevi: in media 2-3 frasi.
 - Carlo e Arianna si alternano. Mai più di due battute di fila della stessa persona.
 - Usa solo fatti e numeri della scheda. Se un numero non c'è, non scriverlo.
+- Pochi numeri, sempre spiegati. In tutta la puntata al massimo $numeri_max numeri. Chi ascolta non è del mestiere: un numero da solo non gli dice niente e lo annoia. Scegli il risultato più importante e traducilo in qualcosa di concreto, usando il campo "in_pratica" della scheda: "su 10 compiti d'ufficio, prima ne finiva bene 3, adesso 5"; "quasi il doppio"; "un passo avanti piccolo ma chiaro". Mai un numero senza dire cosa significa per chi ascolta.
+- Dopo i risultati, una volta sola, dite che i numeri precisi si trovano nell'articolo sul sito e nel paper, con il link nella descrizione.
+- Non nominare i test di valutazione (benchmark) con il loro nome inglese: dì che tipo di prova è ("un test che simula il lavoro con i fogli di calcolo").
+- Non nominare i modelli con sigle e numeri di versione (per esempio "Qwen3.6-27B"): dì "un modello open source di media grandezza" o la famiglia ("un modello della famiglia Qwen").
+- Punteggi che non sono percentuali (Elo, punti di una classifica, punteggi di un test): non dire il numero. Dì cosa significa: meglio o peggio, di quanto, rispetto a chi. Non inventare mai un fondo scala.
 - Scrivi i numeri in cifre (96 per cento, 3 volte). Scrivi "per cento", non il simbolo %.
 - Nomi stranieri: segui il campo "usa" della scheda.
 - Sigle: la prima volta che una sigla compare, dì subito cosa significano le lettere, con il campo "significato" della scheda, e poi a cosa serve in parole semplici. Esempio: "Se ne occupa PHCM, cioè memoria gerarchica proattiva delle didascalie: in pratica, il modulo che prende appunti." Una sola lingua, mai inglese e italiano insieme. Dopo la prima volta, solo la sigla.
-- Punteggi: ogni punteggio che non è una percentuale va detto con il suo fondo scala, usando il campo "scala": "72,1 punti su 100". Se la scala è "non indicato", non dire il numero da solo: confrontalo con un altro metodo ("un punto e mezzo in più del sistema precedente").
 - Decimali con la virgola: 72,1 e non 72.1.
-- Cita il paper per nome una volta nella parte centrale.
+- Cita il nome del sistema una volta nella parte centrale.
+- Non definite il podcast "di divulgazione scientifica" né "scientifico": è un podcast che racconta in parole semplici le ricerche sull'intelligenza artificiale.
 - Niente didascalie tra parentesi, niente indicazioni di regia, niente effetti sonori.
 
 Espressioni vietate (rendono il podcast finto):

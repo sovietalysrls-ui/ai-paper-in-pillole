@@ -33,8 +33,9 @@ SCHEMA_SCHEDA = {
         "idea": {"type": "string"},
         "come_funziona": LISTA_TESTI,
         "risultati": {"type": "array", "items": {"type": "object", "properties": {
-            "fatto": {"type": "string"}, "numero": {"type": "string"}, "scala": {"type": "string"}},
-            "required": ["fatto", "numero", "scala"]}},
+            "fatto": {"type": "string"}, "numero": {"type": "string"}, "scala": {"type": "string"},
+            "in_pratica": {"type": "string"}},
+            "required": ["fatto", "numero", "scala", "in_pratica"]}},
         "limiti": LISTA_TESTI,
         "esempio_concreto": {"type": "string"},
         "perche_ti_riguarda": {"type": "string"},
@@ -101,6 +102,7 @@ def scrivi_dialogo(llm, lingua, sk, numero, cfg_d, cfg_m):
     massimo = int(cfg_d["secondi_max"] / 60 * cfg_d["parole_al_minuto"])
     s, u = prompt(lingua, "dialogo", scheda=sk, numero=str(numero),
                   parole_obiettivo=str(massimo - 60), parole_max=str(massimo),
+                  numeri_max=str(cfg_d.get("numeri_max", 4)),
                   vietate=_regole_vietate(lingua), **lingua["dialogo_vars"])
     for tentativo in range(3):
         testo = llm.chat(s, u, "dialogo", temperatura=cfg_m["temperatura_scrittura"], max_token=3000)
