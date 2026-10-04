@@ -251,6 +251,13 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
                 avanz.avviso(f"[{cod}] la voce dura {ris['voce'] / 60:.1f} minuti, oltre il limite di "
                              f"{cfg_d['secondi_max'] / 60:.1f}. In config.yaml abbassa parole_al_minuto "
                              f"a circa {ritmo:.0f}.")
+            if ritmo < 120:
+                # Ritmo assurdo (una persona parla a 140-170 parole al minuto): la voce
+                # ha letto testo in più o ha lunghi silenzi. Meglio nessun audio che uno sbagliato.
+                for f in (out / "puntata.wav", out / "puntata.mp3"):
+                    f.unlink(missing_ok=True)
+                raise RuntimeError(f"audio anomalo: {ritmo:.0f} parole al minuto (normale 140-170). "
+                                   "Puntata fermata prima della consegna.")
 
     # --- Passo 10: WordPress ---
     p_wp = nome_passo(P_WP, cod, lingue)

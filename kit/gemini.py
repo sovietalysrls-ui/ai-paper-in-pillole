@@ -355,9 +355,12 @@ class GeminiVoce(_ConRiserva):
         copione = "\n".join(f"{nomi[chi]}: {t}" for chi, t in battute)
         testo = (f"{guida}\n\n{copione}" if guida else copione)
         if len(presenti) == 1:
-            # una sola voce: configurazione a voce singola
+            # Una sola voce. Niente istruzioni nel testo: con una voce sola il modello
+            # le leggerebbe ad alta voce. Solo un breve prefisso di stile, se configurato
+            # ("Di' con tono caldo: ..."), che i modelli vocali trattano come regia.
             copione = " ".join(t for _, t in battute)
-            testo = (f"{guida}\n\n{copione}" if guida else copione)
+            prefisso = stile or self.cfg.get("prefisso_voce_singola", "")
+            testo = f"{prefisso.rstrip(': ')}: {copione}" if prefisso else copione
             config_voce = {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voci[presenti[0]]}}}
         else:
             config_voce = {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [

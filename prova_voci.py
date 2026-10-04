@@ -31,8 +31,8 @@ def main():
     avanz = Avanzamento(["Prova voci"], cartella / "log.txt", telegram_attivo=False)
     motore = GeminiVoce(cfg["gemini_voce"], L, avanz)
     g, c = voce.genera(motore, battute, L, cartella, 14, avanz, "Prova voci", toni=cfg["gemini_voce"]["toni"])
-    for p in g + c:
-        print(f"{p.name}: {audio.tono(p) or 0:.0f} Hz")
+    for p, (chi, t) in zip(g + c, battute):
+        print(f"{p.name}: {audio.tono(p) or 0:.0f} Hz, {audio.durata(p):.1f} s")
     out = Path("prova_voci")
     out.mkdir(exist_ok=True)
     for p in g + c:

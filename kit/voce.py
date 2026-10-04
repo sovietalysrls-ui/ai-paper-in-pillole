@@ -106,11 +106,30 @@ def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=Non
         if not p.exists() or p.stat().st_size < 1000:
             avanz.inizia(passo, f"turno {n} di {len(lista)} ({lingua['conduttori'][chi]})")
             p.write_bytes(motore.blocco(turno))
+            durata_giusta(motore, p, turno, avanz, passo)
         (file_g if tipo == "apertura" else file_c).append(p)
         chi_file.append((chi, p, turno))
     if toni:
         controlla_voci(motore, chi_file, toni, lingua, avanz, passo)
     return file_g, file_c
+
+
+def durata_giusta(motore, p, turno, avanz, passo, tentativi=2):
+    """Un turno troppo lungo per le sue parole vuol dire che la voce ha letto
+    anche altro (per esempio le istruzioni) o si è incantata: si rifà."""
+    from . import audio
+    parole = sum(conta_parole(t) for _, t in turno)
+    massimo = parole * 0.6 + 3          # 0,6 secondi a parola è già una lettura lenta
+    for i in range(tentativi + 1):
+        d = audio.durata(p)
+        if d <= massimo:
+            return
+        if i == tentativi:
+            raise ErroreVoci(f"{p.name}: dura {d:.0f} secondi per {parole} parole anche dopo "
+                             f"{tentativi} tentativi. Puntata fermata: la voce legge testo in più.")
+        avanz.avviso(f"{p.name}: {d:.0f} secondi per {parole} parole, troppo: rifaccio il turno")
+        avanz.inizia(passo, f"rifaccio {p.name}")
+        p.write_bytes(motore.blocco(turno))
 
 
 def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
@@ -141,6 +160,7 @@ def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
                          f"{'sotto' if toni[chi] == 'basso' else 'sopra'} {soglia:.0f} Hz): rifaccio il turno")
             avanz.inizia(passo, f"rifaccio {p.name}")
             p.write_bytes(motore.blocco(turno))
+            durata_giusta(motore, p, turno, avanz, passo)
             f = audio.tono(p)
         if sbagliata(chi, f):
             raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
