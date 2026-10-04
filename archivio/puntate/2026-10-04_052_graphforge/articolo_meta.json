@@ -1,13 +1,13 @@
 {
-  "titolo": "GraphForge: quando l'AI si allena a fare il lavoro d'ufficio con documenti veri",
-  "estratto": "Un impiegato deve analizzare cinquanta fatture in formato PDF sparse in cartelle diverse, estrarre i dati corretti e verificare che i totali corrispondano a quanto riportato nei fogli di calcolo di supporto. Questo lavoro richiede attenzione, precisione e molte ore di lettura.",
+  "titolo": "GraphForge: come addestrare gli assistenti IA usando veri documenti d'ufficio",
+  "estratto": "Un impiegato deve analizzare i bilanci aziendali degli ultimi tre anni. Il suo obiettivo consiste nell'estrarre i dati di crescita per una presentazione importante.",
   "tag": [
     "AI",
-    "AgentiVirtuali",
-    "MachineLearning",
-    "ElaborazioneDocumenti",
-    "IntelligenzaArtificiale"
+    "GraphForge",
+    "AgentiIA",
+    "AddestramentoModelli",
+    "AutomazioneUfficio"
   ],
   "categoria": "AI Paper in Pillole",
-  "parole": 562
+  "parole": 827
 }

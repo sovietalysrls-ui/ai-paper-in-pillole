@@ -1,53 +1,45 @@
-[07:54:57] ===== Avvio 2026-10-04 07:54 =====
-[07:54:58] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
-[07:54:59]    liste trovate: 2026-10-02 (50 paper), 2026-10-01 (50 paper), 2026-09-30 (50 paper), 2026-09-29 (50 paper), 2026-09-28 (33 paper)
-[07:54:59]    provo 2609.38923 (144 voti, lista del 2026-10-02): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
-[07:54:59]    (i paper più votati erano già stati usati)
-[07:54:59] ✔ Scelta e lettura del paper — 2609.38923 · 144 voti · arxiv-html · 3436 parole utili
-[07:54:59] ▶ Scheda dei fatti — 1 pezzi da leggere
-[07:54:59] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
-[07:55:06]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[07:55:33]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[07:55:54] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
-[07:55:54]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[07:56:16]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[07:56:36] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
-[07:56:48] ▶ Scheda dei fatti — unione dei fatti nella scheda
-[07:56:49] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.5-flash (chiave gratuita), passo a gemini-3.5-flash-lite
-[07:56:55] ✔ Scheda dei fatti — GraphForge · 3 risultati · 8 termini
-[07:56:55] ▶ Dialogo — puntata #52
-[07:57:00] ✔ Dialogo — 32 battute, 411 parole
-[07:57:01] ▶ Controlli e correzioni
-[07:57:01]    giro 1: 4 battute da sistemare, 1 problemi generali (411 parole)
-[07:57:16]    giro 2: 3 battute da sistemare, 1 problemi generali (481 parole)
-[07:57:33]    giro 3: 2 battute da sistemare, 0 problemi generali (568 parole)
-[07:57:38] ⚠ [it] dialogo, battuta 18: cita il numero 100, che non compare nella scheda dei fatti: toglilo o usa un numero della scheda; dice la sigla GDPVal senza spiegare cosa significano le lettere: aggiungi "GDPVal, cioè validazione generale dell'elaborazione dei dati"
-[07:57:38] ⚠ [it] dialogo, battuta 20: cita il numero 100, che non compare nella scheda dei fatti: toglilo o usa un numero della scheda; dice la sigla SpreadsheetBench II senza spiegare cosa significano le lettere: aggiungi "SpreadsheetBench II, cioè test per fogli di calcolo 2"
-[07:57:38] ✔ Controlli e correzioni — 2 problemi residui
-[07:57:39] ▶ Titolo, descrizione, articolo — titolo
-[07:57:46] ▶ Titolo, descrizione, articolo — descrizione
-[07:58:03] ▶ Titolo, descrizione, articolo — articolo per il sito
-[07:58:19] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: quando l'AI si allena » · articolo 562 parole
-[07:58:20] ▶ Copertina
-[07:58:20] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
-[07:58:20]    limite al minuto raggiunto, aspetto 30 secondi
-[07:58:50]    limite al minuto raggiunto, aspetto 30 secondi
-[07:59:21]    limite al minuto raggiunto, aspetto 30 secondi
-[07:59:51] ⚠ copertina Gemini non riuscita (Gemini immagine: finite le richieste di oggi su tutti i modelli. Manca la chiave a pagamento (segreto GEMINI_API_KEY_PAGAMENTO). 429: {"error":{"messa): uso il disegno del programma
-[07:59:52] ✔ Copertina — disegno del programma, icona «rete»
-[07:59:52] ▶ Voce
-[07:59:52] ▶ Voce — blocco 1 di 3 (5 battute)
-[08:00:12] ▶ Voce — blocco 2 di 3 (14 battute)
-[08:00:43] ▶ Voce — blocco 3 di 3 (12 battute)
-[08:01:09] ▶ Voce — frase finale
-[08:01:19] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
-[08:01:32] ✔ Voce — 3 blocchi + frase finale
-[08:01:33] ▶ Montaggio audio
-[08:01:40] ✔ Montaggio audio — 4.3 minuti in tutto, voce 3.6 minuti, 152 parole al minuto
-[08:01:41] ▶ Articolo su WordPress — stato: bozza
-[08:06:41] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo da altri server, l'esito arriva in un messaggio a parte
-[08:06:41] ▶ Consegna su Telegram
-[08:06:48] ✔ Consegna su Telegram — 5 file inviati
-[08:06:49] ▶ Registro e chiusura
-[08:06:49] Richieste al modello di testo: 13
-[08:06:49] memoria video non misurata (nvidia-smi assente)
+[16:16:36] ===== Avvio 2026-10-04 16:16 =====
+[16:16:36] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[16:16:36]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[16:16:37] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[16:16:37] ▶ Scheda dei fatti — 1 pezzi da leggere
+[16:16:37] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[16:16:39]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:17:02]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:17:24] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[16:17:29]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:18:05]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:18:43] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[16:18:56] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[16:19:15] ✔ Scheda dei fatti — GraphForge · 3 risultati · 5 termini
+[16:19:16] ▶ Dialogo — puntata #52
+[16:20:00] ✔ Dialogo — 30 battute, 661 parole
+[16:20:00] ▶ Controlli e correzioni
+[16:20:00]    giro 1: 2 battute da sistemare, 0 problemi generali (661 parole)
+[16:20:13]    giro 2: nessun problema (652 parole, massimo 736)
+[16:20:13] ✔ Controlli e correzioni — nessun problema residuo
+[16:20:14] ▶ Titolo, descrizione, articolo — titolo
+[16:20:23] ▶ Titolo, descrizione, articolo — descrizione
+[16:20:33]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:21:03] ▶ Titolo, descrizione, articolo — articolo per il sito
+[16:21:59] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come addestrare gli as» · articolo 827 parole
+[16:21:59] ▶ Copertina
+[16:22:00] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[16:22:00]    limite al minuto raggiunto, aspetto 30 secondi
+[16:22:30]    limite al minuto raggiunto, aspetto 30 secondi
+[16:23:00] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[16:23:09] ✔ Copertina — disegnata da Gemini
+[16:23:10] ▶ Voce
+[16:23:10] ▶ Voce — blocco 1 di 3 (4 battute)
+[16:23:34] ▶ Voce — blocco 2 di 3 (14 battute)
+[16:24:06] ▶ Voce — blocco 3 di 3 (12 battute)
+[16:24:35] ✔ Voce — 3 blocchi + frase finale
+[16:24:35] ▶ Montaggio audio
+[16:24:43] ✔ Montaggio audio — 4.6 minuti in tutto, voce 4.0 minuti, 164 parole al minuto
+[16:24:44] ▶ Articolo su WordPress — stato: bozza
+[16:24:52] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
+[16:24:52] ▶ Consegna su Telegram
+[16:24:59] ✔ Consegna su Telegram — 5 file inviati
+[16:25:00] ▶ Registro e chiusura
+[16:25:00] Richieste al modello di testo: 9
+[16:25:00] memoria video non misurata (nvidia-smi assente)

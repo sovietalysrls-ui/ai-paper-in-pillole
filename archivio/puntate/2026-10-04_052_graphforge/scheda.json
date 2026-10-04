@@ -1,119 +1,95 @@
 {
   "nome_breve": "GraphForge",
-  "problema": "Gli assistenti digitali intelligenti per il lavoro d'ufficio hanno bisogno di essere addestrati su compiti reali basati su molti documenti diversi. Oggi però i dati di addestramento disponibili o sono inventati artificialmente e poco realistici, oppure usano file reali ma senza controlli sicuri sui risultati ottenuti.",
-  "idea": "Un sistema che crea ambienti di lavoro virtuali partendo da dati occupazionali reali e collega ogni compito a un grafo di relazioni tra i documenti. In questo modo ogni esercizio e la sua verifica sono ancorati saldamente a file autentici.",
+  "problema": "Per addestrare gli assistenti IA a svolgere compiti d'ufficio complessi servono dati realistici e un modo per verificare se il lavoro è corretto. Oggi i sistemi usano file finti creati da altre IA, poco realistici, oppure usano file veri ma senza un metodo automatico per controllare se l'assistente ha eseguito bene il compito.",
+  "idea": "GraphForge risolve questo problema creando compiti basati su file reali e collegandoli a un 'grafo delle evidenze'. Questo grafo mappa le relazioni tra i documenti, permettendo di generare sia le istruzioni per l'IA sia una griglia di valutazione precisa e ancorata ai file stessi per verificare i risultati.",
   "come_funziona": [
-    "Il sistema seleziona semi basati su occupazioni reali per garantire varietà controllata.",
-    "Raccoglie un insieme di file reali per ciascun ambiente di lavoro virtuale.",
-    "Costruisce un grafo delle evidenze che mappa le relazioni tra tutti i documenti.",
-    "Genera richieste e criteri di valutazione rigorosamente collegati ai file.",
-    "Un agente di revisione controlla e ripara il compito prima dell'utilizzo."
+    "Si parte da compiti lavorativi reali presi da un database occupazionale e da documenti pubblici veri, come i bilanci aziendali.",
+    "Si crea un grafo delle evidenze che mappa le relazioni logiche e i collegamenti tra questi file.",
+    "Dal grafo si ricavano sia le istruzioni dettagliate del compito da svolgere, sia le regole precise per valutarlo.",
+    "Un agente di revisione corregge eventuali errori nei compiti e nelle regole confrontandoli con i file originali.",
+    "Si fanno eseguire i compiti per raccogliere le traiettorie di addestramento, usandole poi per istruire i modelli IA."
   ],
   "risultati": [
     {
-      "fatto": "Incremento del punteggio Elo su GDPVal per il modello Qwen3.6-27B SFT",
-      "numero": "+65.7",
-      "scala": "non indicato"
+      "fatto": "Miglioramento delle capacità generali dell'assistente IA Qwen3.6-27B nel valutare e svolgere compiti complessi su GDPVal.",
+      "numero": "1445.7",
+      "scala": "non indicato",
+      "in_pratica": "Il modello ottiene un punteggio Elo nettamente superiore, con un incremento di 65.7 punti rispetto alla versione base."
     },
     {
-      "fatto": "Incremento di punteggio su Workspace-Bench-Lite per il modello Qwen3.6-27B SFT",
-      "numero": "+7.7",
-      "scala": "non indicato"
+      "fatto": "Miglioramento delle prestazioni dell'assistente IA Qwen3.6-27B nella gestione di file e cartelle di lavoro su Workspace-Bench-Lite.",
+      "numero": "63.7",
+      "scala": "non indicato",
+      "in_pratica": "Un incremento di 7.7 punti rispetto alle prestazioni precedenti nel gestire ambienti di lavoro realistici."
     },
     {
-      "fatto": "Incremento di accuratezza su SpreadsheetBench II per il modello Qwen3.6-27B SFT",
-      "numero": "+13.7",
-      "scala": "non indicato"
+      "fatto": "Miglioramento delle prestazioni dell'assistente IA Qwen3.6-27B nell'analisi e gestione di fogli di calcolo su SpreadsheetBench II.",
+      "numero": "24.0",
+      "scala": "non indicato",
+      "in_pratica": "Un balzo in avanti di ben 13.7 punti, quasi raddoppiando la capacità di gestire fogli Excel complessi."
     }
   ],
   "limiti": [
-    "Il corpus di addestramento è limitato a 2.169 traiettorie senza testare budget di dati superiori.",
-    "La pipeline e il sistema di giudizio si affidano a un modello che fatica a verificare i dettagli a grana fine.",
-    "Gli esperimenti sono stati condotti utilizzando solo due modelli di base della stessa famiglia."
+    "Il set di dati di addestramento è limitato a sole 2,169 traiettorie e non si sa ancora come risponda il sistema con volumi di dati molto più grandi.",
+    "La generazione dei compiti e la valutazione si affidano al modello GLM-5.2, senza aver ancora testato l'efficacia di modelli di frontiera più potenti.",
+    "Il modello usato come giudice mostra difficoltà nel verificare modifiche di contenuto estremamente dettagliate all'interno dei file."
   ],
-  "esempio_concreto": "Un impiegato deve analizzare cinquanta fatture in formato PDF sparse in cartelle diverse, estrarre i dati corretti e verificare che i totali corrispondano a quanto riportato nei fogli di calcolo di supporto.",
-  "perche_ti_riguarda": "In futuro userai assistenti digitali capaci di svolgere compiti d'ufficio complessi senza commettere errori o inventare dati, perché saranno stati addestrati su simulazioni estremamente realistiche.",
-  "gancio": "Per insegnare a un'intelligenza artificiale a lavorare in ufficio non basta farle leggere documenti a caso, bisogna costruire una mappa di prove verificabili proprio come farebbe un investigatore.",
+  "esempio_concreto": "Un impiegato deve analizzare i bilanci aziendali degli ultimi tre anni per estrarre i dati di crescita. Con GraphForge, l'assistente IA viene addestrato usando veri bilanci pubblici e un sistema che controlla riga per riga se i dati estratti corrispondono esattamente a quelli dei documenti originali, evitando che l'IA inventi cifre.",
+  "perche_ti_riguarda": "In futuro, gli assistenti IA che useremo in ufficio saranno molto più affidabili e precisi, perché saranno stati addestrati su compiti e documenti reali anziché su simulazioni astratte.",
+  "gancio": "Un assistente IA che vi aiuta a compilare un foglio Excel o a riassumere un bilancio aziendale è utilissimo, ma solo se non si inventa i dati. Per addestrarlo a non sbagliare, i ricercatori hanno creato un sistema che usa veri documenti pubblici e un 'grafo' per verificare ogni singola risposta.",
   "termini": [
     {
       "termine": "GraphForge",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il framework ideato dai ricercatori per sintetizzare dati di addestramento basati su grafi.",
+      "spiegazione": "Il framework basato su grafi delle evidenze presentato in questo studio per addestrare gli agenti IA.",
       "usa": "termine",
-      "pronuncia": "Gràf Forg"
+      "pronuncia": "Gràf Fòrg"
     },
     {
       "termine": "Qwen3.6-27B",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il modello di intelligenza artificiale utilizzato e addestrato durante gli esperimenti.",
+      "spiegazione": "Il modello linguistico di intelligenza artificiale da 27 miliardi di parametri utilizzato per i test di addestramento.",
       "usa": "termine",
-      "pronuncia": "Cuèn tre punto sèi ventisètte bi"
+      "pronuncia": "Kuèn tre punto sei ventisètte bi"
     },
     {
       "termine": "GLM-5.2",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il modello utilizzato nella pipeline per la sintesi e la verifica dei compiti.",
+      "spiegazione": "Il modello di intelligenza artificiale utilizzato come giudice e per la pipeline di sintesi dei dati.",
       "usa": "termine",
-      "pronuncia": "Gi Elle Èm cinque virgola due"
-    },
-    {
-      "termine": "GDPVal",
-      "tipo": "sigla",
-      "espansione_inglese": "General Data Processing Validation",
-      "significato": "validazione generale dell'elaborazione dei dati",
-      "spiegazione": "Un banco di prova utilizzato per valutare le prestazioni degli agenti di lavoro.",
-      "usa": "termine",
-      "pronuncia": "gi di pi vàl"
-    },
-    {
-      "termine": "Workspace-Bench-Lite",
-      "tipo": "sigla",
-      "espansione_inglese": "Workspace Benchmark Lite",
-      "significato": "test leggero per ambienti di lavoro",
-      "spiegazione": "Una versione ridotta di un benchmark per misurare le capacità degli assistenti digitali.",
-      "usa": "termine",
-      "pronuncia": "uòrk speis bèntch làit"
-    },
-    {
-      "termine": "SpreadsheetBench II",
-      "tipo": "sigla",
-      "espansione_inglese": "Spreadsheet Benchmark 2",
-      "significato": "test per fogli di calcolo 2",
-      "spiegazione": "Un banco di prova specifico per testare la gestione di tabelle e calcoli.",
-      "usa": "termine",
-      "pronuncia": "sprèd shiit bèntch sècondo"
+      "pronuncia": "gi elle emme cinque punto due"
     },
     {
       "termine": "O*NET",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Un database ufficiale dettagliato sulle occupazioni lavorative usato come punto di partenza.",
+      "spiegazione": "Un database occupazionale che raccoglie descrizioni dettagliate di compiti e professioni reali.",
       "usa": "termine",
-      "pronuncia": "O èt"
+      "pronuncia": "ò net"
     },
     {
       "termine": "SFT",
       "tipo": "sigla",
       "espansione_inglese": "Supervised Fine-Tuning",
       "significato": "messa a punto supervisionata",
-      "spiegazione": "La fase in cui un modello di intelligenza artificiale viene perfezionato usando esempi guidati.",
+      "spiegazione": "Un processo di addestramento in cui il modello impara seguendo esempi di comportamento corretto già pronti.",
       "usa": "spiegazione",
-      "pronuncia": "esse eff ti"
+      "pronuncia": "esse effe ti"
     }
   ],
-  "soggetto_immagine": "a network graph connecting a document icon and a verification checklist",
+  "soggetto_immagine": "A network graph connecting a spreadsheet icon and a PDF document with a checkmark",
   "hashtag": [
     "AI",
-    "AgentiVirtuali",
-    "MachineLearning",
-    "ElaborazioneDocumenti",
-    "IntelligenzaArtificiale"
+    "GraphForge",
+    "AgentiIA",
+    "AddestramentoModelli",
+    "AutomazioneUfficio"
   ]
 }
