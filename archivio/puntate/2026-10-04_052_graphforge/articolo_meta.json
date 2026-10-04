@@ -1,13 +1,13 @@
 {
-  "titolo": "GraphForge: come addestrare gli assistenti IA usando veri documenti d'ufficio",
-  "estratto": "Un impiegato deve analizzare i bilanci aziendali degli ultimi tre anni. Il suo obiettivo consiste nell'estrarre i dati di crescita per una presentazione importante.",
+  "titolo": "GraphForge: come insegnare all'AI il lavoro d'ufficio con documenti veri",
+  "estratto": "Chiedere a un'intelligenza artificiale di incrociare tre bilanci in formato PDF e aggiornare un foglio Excel porta quasi sempre a formule rotte e dati inventati. Capita spesso a chi lavora nell'amministrazione o nel marketing.",
   "tag": [
     "AI",
+    "AgentiDigitali",
     "GraphForge",
-    "AgentiIA",
-    "AddestramentoModelli",
-    "AutomazioneUfficio"
+    "AutomazioneUfficio",
+    "MachineLearning"
   ],
   "categoria": "AI Paper in Pillole",
-  "parole": 827
+  "parole": 780
 }

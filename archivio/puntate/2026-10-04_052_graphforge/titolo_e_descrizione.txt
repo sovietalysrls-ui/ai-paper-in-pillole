@@ -1,10 +1,10 @@
-AI Paper in Pillole #52 - GraphForge: come addestrare gli assistenti IA usando veri documenti d'ufficio
+AI Paper in Pillole #52 - GraphForge: come insegnare all'AI il lavoro d'ufficio con documenti veri
 
-Un impiegato deve analizzare i bilanci aziendali degli ultimi tre anni per estrarre i dati di crescita. Oggi gli assistenti di intelligenza artificiale faticano a svolgere questi compiti d'ufficio complessi. Spesso si addestrano i modelli con file finti e poco realistici. Altre volte si usano file veri, ma manca un metodo automatico per verificare se l'assistente ha eseguito bene il lavoro. Di conseguenza, l'intelligenza artificiale rischia di inventare i dati.
+Un professionista deve controllare i conti aziendali di fine anno. Chiede all'assistente digitale di leggere le fatture in formato PDF e aggiornare un foglio di calcolo. Spesso il programma rompe le formule, inventa numeri o si perde tra le cartelle. Gli assistenti digitali faticano a svolgere mansioni d'ufficio complesse. Vengono infatti addestrati su documenti finti poco realistici. Quando usano file veri, mancano criteri precisi per verificare se il lavoro svolto sia corretto.
 
-I ricercatori hanno creato GraphForge per risolvere questo problema. Questo sistema genera compiti partendo da documenti pubblici reali, come i bilanci delle aziende. Il sistema collega poi questi file a una mappa logica, chiamata grafo delle evidenze. Da questa mappa si ricavano sia le istruzioni dettagliate per l'assistente, sia le regole precise per valutarlo. Infine, un agente di revisione corregge gli errori confrontando tutto con i documenti originali.
+I ricercatori hanno sviluppato GraphForge. Il metodo seleziona compiti da un archivio pubblico che cataloga centinaia di professioni e attività quotidiane. Scarica file autentici, come documenti e fogli di calcolo, e traccia una mappa delle loro relazioni logiche. Da questa mappa genera in automatico incarichi d'ufficio realistici. Definisce anche regole di controllo collegate direttamente ai documenti. Un modello supervisore simula il compito e corregge le incongruenze prima di salvare i dati.
 
-Grazie a questo addestramento, il modello Qwen3.6-27B ha migliorato le sue prestazioni. Sull'analisi dei fogli di calcolo il punteggio è salito a 24,0, con un incremento di ben 13,7 punti. Nella gestione dei file il modello ha ottenuto 63,7 punti, migliorando di 7,7 punti. Tuttavia, il sistema ha dei limiti. Il set di dati di addestramento è limitato a sole 2169 traiettorie. Inoltre, il modello usato come giudice fatica a verificare le modifiche di contenuto molto dettagliate nei file.
+L'addestramento porta a un netto salto di qualità complessivo nelle abilità dell'assistente. Nella modifica di fogli di calcolo complessi, l'accuratezza sale a 24 su 100 rispetto al 10,3 iniziale. In pratica il sistema più che raddoppia la propria capacità autonoma di gestire tabelle e formule. Come limite, il supervisore usato per controllare i compiti fatica ancora a verificare dettagli molto fini e specifici all'interno dei testi.
 
 Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
 
@@ -12,4 +12,4 @@ Link al paper: https://arxiv.org/abs/2609.38923
 
 AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
 
-#AI #GraphForge #AgentiIA #AddestramentoModelli #AutomazioneUfficio
+#AI #AgentiDigitali #GraphForge #AutomazioneUfficio #MachineLearning

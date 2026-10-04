@@ -1,95 +1,88 @@
 {
   "nome_breve": "GraphForge",
-  "problema": "Per addestrare gli assistenti IA a svolgere compiti d'ufficio complessi servono dati realistici e un modo per verificare se il lavoro è corretto. Oggi i sistemi usano file finti creati da altre IA, poco realistici, oppure usano file veri ma senza un metodo automatico per controllare se l'assistente ha eseguito bene il compito.",
-  "idea": "GraphForge risolve questo problema creando compiti basati su file reali e collegandoli a un 'grafo delle evidenze'. Questo grafo mappa le relazioni tra i documenti, permettendo di generare sia le istruzioni per l'IA sia una griglia di valutazione precisa e ancorata ai file stessi per verificare i risultati.",
+  "problema": "Gli assistenti digitali faticano a svolgere compiti d'ufficio complessi perché vengono addestrati su documenti finti creati da altre AI, poco realistici, oppure su file reali ma privi di criteri precisi per verificare se il lavoro svolto sia corretto.",
+  "idea": "Creare un sistema che scarica file pubblici reali e traccia una mappa grafica delle loro relazioni. Da questa mappa genera automaticamente compiti d'ufficio realistici e regole di verifica oggettive collegate direttamente ai documenti.",
   "come_funziona": [
-    "Si parte da compiti lavorativi reali presi da un database occupazionale e da documenti pubblici veri, come i bilanci aziendali.",
-    "Si crea un grafo delle evidenze che mappa le relazioni logiche e i collegamenti tra questi file.",
-    "Dal grafo si ricavano sia le istruzioni dettagliate del compito da svolgere, sia le regole precise per valutarlo.",
-    "Un agente di revisione corregge eventuali errori nei compiti e nelle regole confrontandoli con i file originali.",
-    "Si fanno eseguire i compiti per raccogliere le traiettorie di addestramento, usandole poi per istruire i modelli IA."
+    "Seleziona mansioni lavorative concrete basandosi sul database professionale O*NET per garantire varietà.",
+    "Costruisce una cartella di lavoro scaricando file pubblici reali, come PDF e fogli di calcolo, assegnando a ciascuno un ruolo specifico.",
+    "Costruisce un grafo delle relazioni tra i file per scrivere il compito da assegnare e i criteri per verificarne il risultato.",
+    "Simula una prima esecuzione del compito con un modello guida e fa correggere eventuali incongruenze a un agente di revisione prima di salvare i dati."
   ],
   "risultati": [
     {
-      "fatto": "Miglioramento delle capacità generali dell'assistente IA Qwen3.6-27B nel valutare e svolgere compiti complessi su GDPVal.",
+      "fatto": "Valutazione complessiva delle abilità dell'assistente nel risolvere compiti di lavoro digitali",
       "numero": "1445.7",
+      "prima": "1380.0",
       "scala": "non indicato",
-      "in_pratica": "Il modello ottiene un punteggio Elo nettamente superiore, con un incremento di 65.7 punti rispetto alla versione base."
+      "in_pratica": "un netto salto di qualità nelle capacità dell'assistente rispetto alla versione di partenza"
     },
     {
-      "fatto": "Miglioramento delle prestazioni dell'assistente IA Qwen3.6-27B nella gestione di file e cartelle di lavoro su Workspace-Bench-Lite.",
-      "numero": "63.7",
-      "scala": "non indicato",
-      "in_pratica": "Un incremento di 7.7 punti rispetto alle prestazioni precedenti nel gestire ambienti di lavoro realistici."
-    },
-    {
-      "fatto": "Miglioramento delle prestazioni dell'assistente IA Qwen3.6-27B nell'analisi e gestione di fogli di calcolo su SpreadsheetBench II.",
+      "fatto": "Accuratezza nell'esecuzione e modifica di fogli di calcolo complessi",
       "numero": "24.0",
+      "prima": "10.3",
+      "scala": "su 100",
+      "in_pratica": "più del doppio rispetto a prima nella gestione autonoma di tabelle e formule"
+    },
+    {
+      "fatto": "Punteggio di efficienza nella gestione dello spazio di lavoro e dei documenti",
+      "numero": "63.7",
+      "prima": "56.0",
       "scala": "non indicato",
-      "in_pratica": "Un balzo in avanti di ben 13.7 punti, quasi raddoppiando la capacità di gestire fogli Excel complessi."
+      "in_pratica": "un solido passo in avanti nella coordinazione tra diversi tipi di file"
     }
   ],
   "limiti": [
-    "Il set di dati di addestramento è limitato a sole 2,169 traiettorie e non si sa ancora come risponda il sistema con volumi di dati molto più grandi.",
-    "La generazione dei compiti e la valutazione si affidano al modello GLM-5.2, senza aver ancora testato l'efficacia di modelli di frontiera più potenti.",
-    "Il modello usato come giudice mostra difficoltà nel verificare modifiche di contenuto estremamente dettagliate all'interno dei file."
+    "Il corpus di addestramento contiene solo 2.169 esempi e non è ancora stato testato cosa accade aumentando drasticamente i volumi.",
+    "Il modello supervisore usato per controllare i compiti fatica a verificare dettagli molto fini e specifici all'interno dei testi.",
+    "I test sono stati condotti unicamente su due modelli appartenenti alla medesima famiglia."
   ],
-  "esempio_concreto": "Un impiegato deve analizzare i bilanci aziendali degli ultimi tre anni per estrarre i dati di crescita. Con GraphForge, l'assistente IA viene addestrato usando veri bilanci pubblici e un sistema che controlla riga per riga se i dati estratti corrispondono esattamente a quelli dei documenti originali, evitando che l'IA inventi cifre.",
-  "perche_ti_riguarda": "In futuro, gli assistenti IA che useremo in ufficio saranno molto più affidabili e precisi, perché saranno stati addestrati su compiti e documenti reali anziché su simulazioni astratte.",
-  "gancio": "Un assistente IA che vi aiuta a compilare un foglio Excel o a riassumere un bilancio aziendale è utilissimo, ma solo se non si inventa i dati. Per addestrarlo a non sbagliare, i ricercatori hanno creato un sistema che usa veri documenti pubblici e un 'grafo' per verificare ogni singola risposta.",
+  "esempio_concreto": "Un professionista deve riconciliare i conti di fine anno: l'assistente apre le fatture in formato PDF, legge i dati contabili da fogli di calcolo con formule complesse, verifica che i totali coincidano ed elabora il resoconto finale senza perdersi tra le cartelle.",
+  "perche_ti_riguarda": "Permette lo sviluppo di assistenti virtuali a cui affidare incombenze d'ufficio noiose e delicate, con la certezza che non inventino numeri o conclusioni non supportate dai documenti aziendali.",
+  "gancio": "Chiedere a un'intelligenza artificiale di incrociare tre bilanci in PDF e aggiornare un foglio Excel porta quasi sempre a formule rotte e dati inventati. Per insegnare davvero a lavorare ai software serve farli fare pratica su documenti autentici.",
   "termini": [
     {
       "termine": "GraphForge",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il framework basato su grafi delle evidenze presentato in questo studio per addestrare gli agenti IA.",
+      "spiegazione": "Il metodo ideato dai ricercatori per creare compiti realistici e verificabili a partire da file veri.",
       "usa": "termine",
-      "pronuncia": "Gràf Fòrg"
+      "pronuncia": "Gràf Fòrgi"
     },
     {
-      "termine": "Qwen3.6-27B",
-      "tipo": "nome",
-      "espansione_inglese": "",
-      "significato": "",
-      "spiegazione": "Il modello linguistico di intelligenza artificiale da 27 miliardi di parametri utilizzato per i test di addestramento.",
-      "usa": "termine",
-      "pronuncia": "Kuèn tre punto sei ventisètte bi"
+      "termine": "O*NET",
+      "tipo": "sigla",
+      "espansione_inglese": "Occupational Information Network",
+      "significato": "rete informativa sulle professioni",
+      "spiegazione": "Un archivio pubblico che cataloga centinaia di professioni e le rispettive mansioni quotidiane.",
+      "usa": "spiegazione",
+      "pronuncia": "O Nèt"
     },
     {
       "termine": "GLM-5.2",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il modello di intelligenza artificiale utilizzato come giudice e per la pipeline di sintesi dei dati.",
+      "spiegazione": "Il modello di intelligenza artificiale impiegato come supervisore per generare e correggere i compiti.",
       "usa": "termine",
-      "pronuncia": "gi elle emme cinque punto due"
+      "pronuncia": "Gi Èlle Èmme cinque punto due"
     },
     {
-      "termine": "O*NET",
+      "termine": "Qwen3.6-27B",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Un database occupazionale che raccoglie descrizioni dettagliate di compiti e professioni reali.",
+      "spiegazione": "Il modello linguistico open source utilizzato come base per testare l'efficacia dell'addestramento.",
       "usa": "termine",
-      "pronuncia": "ò net"
-    },
-    {
-      "termine": "SFT",
-      "tipo": "sigla",
-      "espansione_inglese": "Supervised Fine-Tuning",
-      "significato": "messa a punto supervisionata",
-      "spiegazione": "Un processo di addestramento in cui il modello impara seguendo esempi di comportamento corretto già pronti.",
-      "usa": "spiegazione",
-      "pronuncia": "esse effe ti"
+      "pronuncia": "Kwen tre punto sei ventisette bi"
     }
   ],
-  "soggetto_immagine": "A network graph connecting a spreadsheet icon and a PDF document with a checkmark",
+  "soggetto_immagine": "a line-drawn network graph connecting several document icons like spreadsheets and text files",
   "hashtag": [
     "AI",
+    "AgentiDigitali",
     "GraphForge",
-    "AgentiIA",
-    "AddestramentoModelli",
-    "AutomazioneUfficio"
+    "AutomazioneUfficio",
+    "MachineLearning"
   ]
 }

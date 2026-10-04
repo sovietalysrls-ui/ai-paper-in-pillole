@@ -1,45 +1,43 @@
-[16:16:36] ===== Avvio 2026-10-04 16:16 =====
-[16:16:36] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
-[16:16:36]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
-[16:16:37] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
-[16:16:37] ▶ Scheda dei fatti — 1 pezzi da leggere
-[16:16:37] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
-[16:16:39]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[16:17:02]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[16:17:24] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
-[16:17:29]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[16:18:05]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[16:18:43] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
-[16:18:56] ▶ Scheda dei fatti — unione dei fatti nella scheda
-[16:19:15] ✔ Scheda dei fatti — GraphForge · 3 risultati · 5 termini
-[16:19:16] ▶ Dialogo — puntata #52
-[16:20:00] ✔ Dialogo — 30 battute, 661 parole
-[16:20:00] ▶ Controlli e correzioni
-[16:20:00]    giro 1: 2 battute da sistemare, 0 problemi generali (661 parole)
-[16:20:13]    giro 2: nessun problema (652 parole, massimo 736)
-[16:20:13] ✔ Controlli e correzioni — nessun problema residuo
-[16:20:14] ▶ Titolo, descrizione, articolo — titolo
-[16:20:23] ▶ Titolo, descrizione, articolo — descrizione
-[16:20:33]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[16:21:03] ▶ Titolo, descrizione, articolo — articolo per il sito
-[16:21:59] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come addestrare gli as» · articolo 827 parole
-[16:21:59] ▶ Copertina
-[16:22:00] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
-[16:22:00]    limite al minuto raggiunto, aspetto 30 secondi
-[16:22:30]    limite al minuto raggiunto, aspetto 30 secondi
-[16:23:00] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
-[16:23:09] ✔ Copertina — disegnata da Gemini
-[16:23:10] ▶ Voce
-[16:23:10] ▶ Voce — blocco 1 di 3 (4 battute)
-[16:23:34] ▶ Voce — blocco 2 di 3 (14 battute)
-[16:24:06] ▶ Voce — blocco 3 di 3 (12 battute)
-[16:24:35] ✔ Voce — 3 blocchi + frase finale
-[16:24:35] ▶ Montaggio audio
-[16:24:43] ✔ Montaggio audio — 4.6 minuti in tutto, voce 4.0 minuti, 164 parole al minuto
-[16:24:44] ▶ Articolo su WordPress — stato: bozza
-[16:24:52] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
-[16:24:52] ▶ Consegna su Telegram
-[16:24:59] ✔ Consegna su Telegram — 5 file inviati
-[16:25:00] ▶ Registro e chiusura
-[16:25:00] Richieste al modello di testo: 9
-[16:25:00] memoria video non misurata (nvidia-smi assente)
+[17:05:19] ===== Avvio 2026-10-04 17:05 =====
+[17:05:19] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[17:05:20]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[17:05:20] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[17:05:20] ▶ Scheda dei fatti — 1 pezzi da leggere
+[17:05:20] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[17:05:27] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[17:05:28] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.6-flash
+[17:05:31]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:05:51] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[17:05:56]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:06:16] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:06:30] ✔ Scheda dei fatti — GraphForge · 3 risultati · 4 termini
+[17:06:30] ▶ Dialogo — puntata #52
+[17:07:14] ✔ Dialogo — 50 battute, 739 parole
+[17:07:14] ▶ Controlli e correzioni
+[17:07:14]    giro 1: 0 battute da sistemare, 1 problemi generali (739 parole)
+[17:07:43]    giro 2: nessun problema (709 parole, massimo 736)
+[17:07:43] ✔ Controlli e correzioni — nessun problema residuo
+[17:07:43] ▶ Titolo, descrizione, articolo — titolo
+[17:07:49] ▶ Titolo, descrizione, articolo — descrizione
+[17:08:13] ▶ Titolo, descrizione, articolo — articolo per il sito
+[17:08:53] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come insegnare all'AI » · articolo 780 parole
+[17:08:54] ▶ Copertina
+[17:08:54] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[17:08:54] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:09:03] ✔ Copertina — disegnata da Gemini
+[17:09:04] ▶ Voce
+[17:09:04] ▶ Voce — blocco 1 di 5 (4 battute)
+[17:09:25] ▶ Voce — blocco 2 di 5 (14 battute)
+[17:09:53] ▶ Voce — blocco 3 di 5 (14 battute)
+[17:10:20] ▶ Voce — blocco 4 di 5 (14 battute)
+[17:10:46] ▶ Voce — blocco 5 di 5 (4 battute)
+[17:11:05] ✔ Voce — 5 blocchi + frase finale
+[17:11:06] ▶ Montaggio audio
+[17:11:14] ✔ Montaggio audio — 5.0 minuti in tutto, voce 4.4 minuti, 163 parole al minuto
+[17:11:15] ▶ Articolo su WordPress — stato: bozza
+[17:11:23] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
+[17:11:24] ▶ Consegna su Telegram
+[17:11:34] ✔ Consegna su Telegram — 5 file inviati
+[17:11:35] ▶ Registro e chiusura
+[17:11:35] Richieste al modello di testo: 9 (usata anche la chiave a pagamento)
+[17:11:35] memoria video non misurata (nvidia-smi assente)
