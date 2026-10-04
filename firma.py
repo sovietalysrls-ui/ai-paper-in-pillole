@@ -21,12 +21,17 @@ CARTELLA = RADICE / "assets" / "proposte"
 # (voce di Gemini, testo da leggere, stile)
 STILE = ("Parla in italiano, con pronuncia italiana naturale, voce calda e sorridente, "
          "come la chiusura di un podcast italiano. Soviétaly ha l'accento sulla e.")
+STILE_K = STILE + " La parola Soviétali si pronuncia so-vi-È-ta-li, con l'accento forte sulla terza sillaba."
+FRASE = "Ài Pèiper in Pìllole è un progetto di {s}, esse erre elle esse."
+# Secondo giro: voce Kore (la 3 del primo giro), grafie diverse per la parola difficile.
+# Numeri da 6 in poi, per non confonderli con il primo giro.
+PRIMO = 6
 VERSIONI = [
-    ("Aoede", "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse.", STILE),
-    ("Aoede", "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse. Alla prossima!", STILE),
-    ("Kore", "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse.", STILE),
-    ("Leda", "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse.", STILE),
-    ("Erinome", "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse.", STILE),
+    ("Kore", FRASE.format(s="Soviétali"), STILE_K),
+    ("Kore", FRASE.format(s="Sovi-étali"), STILE_K),
+    ("Kore", FRASE.format(s="Soviètali"), STILE_K),
+    ("Kore", FRASE.format(s="Sovi Ètali"), STILE_K),
+    ("Kore", FRASE.format(s="Sovjètali"), STILE_K),
 ]
 
 
@@ -38,8 +43,8 @@ def proponi(args):
     avanz = Avanzamento(["Frase finale"], CARTELLA / "firma.log", telegram_attivo=True,
                         intestazione="🎙 AI Paper in Pillole — versioni della frase finale")
     fatte = 0
-    for i, (voce, testo, stile) in enumerate(VERSIONI, 1):
-        avanz.inizia("Frase finale", f"versione {i} di {len(VERSIONI)}")
+    for i, (voce, testo, stile) in enumerate(VERSIONI, PRIMO):
+        avanz.inizia("Frase finale", f"versione {i}")
         c = copy.deepcopy(cfg["gemini_voce"])
         c["voci"]["ARIANNA"] = voce
         try:
@@ -51,7 +56,7 @@ def proponi(args):
         wav.write_bytes(audio)
         mp3 = wav.with_suffix(".mp3")
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(wav), "-b:a", "128k", str(mp3)], check=True)
-        avanz.manda_file(mp3, f"Versione {i}: voce {voce}", "audio")
+        avanz.manda_file(mp3, f"Versione {i}: «{testo.split(' di ')[1].split(',')[0]}»", "audio")
         fatte += 1
     avanz.fatto("Frase finale", f"{fatte} versioni")
     avanz.fine(f"{fatte} versioni della frase finale pronte. Dimmi il numero che preferisci.")
