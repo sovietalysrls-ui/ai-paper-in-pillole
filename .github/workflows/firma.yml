@@ -1,0 +1,57 @@
+# Frase finale ("AI Paper in Pillole è un progetto di Sovietaly SRLS"). Actions > Firma > Run workflow.
+#   proponi: crea alcune versioni e le manda su Telegram
+#   usa:     la versione scelta diventa quella fissa
+name: Firma
+
+on:
+  workflow_dispatch:
+    inputs:
+      azione:
+        description: "Cosa fare"
+        type: choice
+        options: [proponi, usa]
+        default: proponi
+      numero:
+        description: "Solo per 'usa': il numero della versione scelta"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  firma:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Installa programmi
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+      - name: Esegui
+        env:
+          GEMINI_API_KEY_GRATIS: ${{ secrets.GEMINI_API_KEY_GRATIS }}
+          GEMINI_API_KEY_PAGAMENTO: ${{ secrets.GEMINI_API_KEY_PAGAMENTO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ inputs.azione }}" = "usa" ]; then
+            python firma.py usa ${{ inputs.numero }}
+          else
+            python firma.py proponi
+          fi
+      - name: Salva nel repository
+        if: always()
+        run: |
+          git config user.name "AI Paper in Pillole"
+          git config user.email "actions@users.noreply.github.com"
+          for f in assets/proposte/firma_* assets/firma_it.wav; do [ -e "$f" ] && git add -f "$f"; done; true
+          git diff --cached --quiet && exit 0
+          git commit -m "Frase finale: ${{ inputs.azione }} ${{ inputs.numero }}"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

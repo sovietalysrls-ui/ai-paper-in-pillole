@@ -52,10 +52,21 @@ def genera_firma(motore, lingua, cartella, avanz, passo):
     ff = lingua.get("frase_finale")
     if not ff:
         return None
+    # La frase è sempre uguale: se è stata scelta una registrazione fissa
+    # (python firma.py usa N), si usa quella e non si consuma quota.
+    if ff.get("file"):
+        from kit.util import RADICE
+        fisso = RADICE / ff["file"]
+        if fisso.exists():
+            return fisso
     p = Path(cartella) / "blocco_99_firma.wav"
     if not p.exists() or p.stat().st_size < 1000:
         avanz.inizia(passo, "frase finale")
-        p.write_bytes(motore.blocco([(ff.get("chi", "ARIANNA"), ff.get("voce") or ff["testo"])]))
+        try:
+            dati = motore.blocco([(ff.get("chi", "ARIANNA"), ff.get("voce") or ff["testo"])], stile=ff.get("stile"))
+        except TypeError:          # motori senza stile (voce finta)
+            dati = motore.blocco([(ff.get("chi", "ARIANNA"), ff.get("voce") or ff["testo"])])
+        p.write_bytes(dati)
     return p
 
 

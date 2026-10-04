@@ -306,15 +306,18 @@ class GeminiVoce(_ConRiserva):
         self.porta = cfg.get("porta", "auto")
         self.richieste = 0
 
-    def blocco(self, battute):
-        """Genera un blocco di battute a due voci. Ritorna i byte di un file WAV."""
-        return self._con_riserva(lambda: self._blocco(battute), "Gemini voce")
+    def blocco(self, battute, stile=None):
+        """Genera un blocco di battute a due voci. Ritorna i byte di un file WAV.
+        stile: se dato, vale per tutte le battute al posto di quello di config.yaml."""
+        return self._con_riserva(lambda: self._blocco(battute, stile), "Gemini voce")
 
-    def _blocco(self, battute):
+    def _blocco(self, battute, stile=None):
         nomi = self.lingua["conduttori"]
         voci = self.cfg["voci"]
-        stili = self.cfg.get("stili", {})
+        stili = {k: stile for k in nomi} if stile else self.cfg.get("stili", {})
         guida = self.cfg.get("istruzioni", "")
+        if stile:
+            guida = f"{stile}\n{guida}"
         time.sleep(self.cfg.get("pausa_tra_richieste", 0))
         self.richieste += 1
 

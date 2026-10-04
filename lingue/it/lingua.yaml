@@ -12,7 +12,11 @@ conduttori:
 frase_finale:
   chi: ARIANNA
   testo: "AI Paper in Pillole è un progetto di Sovietaly SRLS."
-  voce: "AI Paper in Pillole è un progetto di Sovietaly, esse erre elle esse."
+  # Scritta come si pronuncia, per evitare l'accento inglese.
+  voce: "Ài Pèiper in Pìllole è un progetto di Soviétaly, esse erre elle esse."
+  stile: "Parla in italiano, con pronuncia italiana naturale, voce calda e sorridente. Soviétaly ha l'accento sulla e."
+  # Registrazione fissa scelta con "python firma.py usa N": se c'è, si usa sempre questa.
+  file: assets/firma_it.wav
 
 # Decimali con la virgola nel dialogo (72,1 e non 72.1).
 decimali_virgola: true
