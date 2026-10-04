@@ -32,6 +32,10 @@ on:
         type: choice
         options: [gemini, nessuna]
         default: gemini
+      sostituisci:
+        description: "Con 'paper': rifà una puntata già uscita, stesso numero, e aggiorna articolo, Drive e Releases"
+        type: boolean
+        default: false
       solo_articolo:
         description: "Non rifare la puntata: pubblica solo l'articolo dell'ultima puntata archiviata"
         type: boolean
@@ -82,6 +86,7 @@ jobs:
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="$ARGS --se-manca"; fi
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
+          if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS="$ARGS --sostituisci"; fi
           if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
           python pipeline.py $ARGS
 
@@ -155,7 +160,15 @@ jobs:
           [ -f uscita/OGGI/puntata.wav ] || { echo "Nessun audio oggi"; exit 0; }
           CARTELLA=$(ls -d archivio/puntate/*/ | sort | tail -1)
           NOME=$(basename "$CARTELLA")
-          if gh release view "$NOME" >/dev/null 2>&1; then echo "Release già presente"; exit 0; fi
+          if gh release view "$NOME" >/dev/null 2>&1; then
+            if [ "${{ inputs.sostituisci }}" = "true" ]; then
+              gh release upload "$NOME" uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 uscita/OGGI/copertina.jpg --clobber \
+                && ./avvisa.sh "🗄 Audio sostituito su GitHub: https://github.com/${{ github.repository }}/releases/tag/$NOME"
+            else
+              echo "Release già presente"
+            fi
+            exit 0
+          fi
           gh release create "$NOME" uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 uscita/OGGI/copertina.jpg \
             --title "$(head -1 uscita/OGGI/titolo_e_descrizione.txt)" --notes "$(tail -n +3 uscita/OGGI/titolo_e_descrizione.txt)" \
             && ./avvisa.sh "🗄 Audio archiviato su GitHub: https://github.com/${{ github.repository }}/releases/tag/$NOME" \
@@ -186,7 +199,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WP_UTENTE: ${{ secrets.WP_UTENTE }}
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
-        run: python pubblica_articolo.py ultima --tentativo 2
+        run: python pubblica_articolo.py ultima --tentativo 2 ${{ inputs.sostituisci && '--sostituisci' || '' }}
       - name: Archivia l'esito
         run: |
           git config user.name "AI Paper in Pillole"
@@ -216,7 +229,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WP_UTENTE: ${{ secrets.WP_UTENTE }}
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
-        run: python pubblica_articolo.py ultima --tentativo 3 --ultimo
+        run: python pubblica_articolo.py ultima --tentativo 3 --ultimo ${{ inputs.sostituisci && '--sostituisci' || '' }}
       - name: Archivia l'esito
         run: |
           git config user.name "AI Paper in Pillole"

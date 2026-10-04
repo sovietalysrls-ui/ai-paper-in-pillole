@@ -37,6 +37,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cartella")
     ap.add_argument("--tentativo", type=int, default=1)
+    ap.add_argument("--sostituisci", action="store_true", help="aggiorna l'articolo se esiste già")
     ap.add_argument("--ultimo", action="store_true")
     a = ap.parse_args()
     cfg = carica_config(cloud=True)
@@ -67,7 +68,8 @@ def main():
     wp = WordPress(cfg["wordpress"]["sito"])
     try:
         r = wp.pubblica(meta["titolo"], html, meta["estratto"], meta.get("categoria", cfg["wordpress"]["categoria"]),
-                        meta.get("tag", []), d / "copertina.jpg", cfg["wordpress"]["stato"], chiave)
+                        meta.get("tag", []), d / "copertina.jpg", cfg["wordpress"]["stato"], chiave,
+                        sostituisci=a.sostituisci)
     except ErroreWordPress as e:
         print(f"WordPress (tentativo {a.tentativo}): {e}")
         if a.ultimo:

@@ -72,13 +72,24 @@ class WordPress:
             "Content-Disposition": f'attachment; filename="{nome}"',
             "Content-Type": "image/jpeg"})["id"], titolo
 
-    def pubblica(self, titolo, html, estratto, categoria, tag, copertina, stato, chiave):
-        """chiave: un identificativo (l'id arXiv) per non creare doppioni se si rilancia."""
+    def pubblica(self, titolo, html, estratto, categoria, tag, copertina, stato, chiave, sostituisci=False):
+        """chiave: un identificativo (l'id arXiv) per non creare doppioni se si rilancia.
+        sostituisci: se l'articolo esiste già, ne aggiorna testo, titolo e copertina
+        (lo stato, bozza o pubblicato, resta quello che ha)."""
         esistenti = self._r("GET", "/posts", params={"search": chiave, "status": "draft,publish,future,pending",
                                                      "per_page": 5, "context": "edit"})
         for p in esistenti:
             if chiave in (p.get("content", {}).get("raw", "") or ""):
-                return {"id": p["id"], "link": p.get("link"), "stato": p.get("status"), "esisteva": True}
+                if not sostituisci:
+                    return {"id": p["id"], "link": p.get("link"), "stato": p.get("status"), "esisteva": True}
+                corpo = {"title": titolo, "content": html, "excerpt": estratto}
+                if copertina and Path(copertina).exists():
+                    id_media, _ = self.carica_immagine(copertina, titolo)
+                    self._r("POST", f"/media/{id_media}", json={"alt_text": titolo, "title": titolo})
+                    corpo["featured_media"] = id_media
+                q = self._r("POST", f"/posts/{p['id']}", json=corpo)
+                return {"id": q["id"], "link": q.get("link"), "stato": q.get("status"),
+                        "esisteva": True, "aggiornato": True}
 
         id_cat = self._termine("categories", categoria)
         id_tag = [self._termine("tags", t) for t in tag[:6]]

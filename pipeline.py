@@ -272,7 +272,7 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
             wp = WordPress(cfg_wp["sito"])
             r = wp.pubblica(meta["titolo"], (out / "articolo.html").read_text(encoding="utf-8"),
                             meta["estratto"], meta["categoria"], meta["tag"], out / "copertina.jpg",
-                            cfg_wp["stato"], paper["arxiv_id"])
+                            cfg_wp["stato"], paper["arxiv_id"], sostituisci=cfg.get("sostituisci", False))
             scrivi_json(p_esito, r)
             avanz.fatto(p_wp, ("già presente: " if r["esisteva"] else "") + f"{r['stato']} · {r.get('link', '')}")
         except ErroreWordPress as e:
@@ -332,6 +332,8 @@ def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
             f = oggi_dir / ".lavoro" / cod / nome
             if f.exists():
                 shutil.copy2(f, d / nome)
+            elif nome == "wordpress.json" and cfg.get("sostituisci") and (d / nome).exists():
+                (d / nome).unlink()   # l'articolo va ancora aggiornato: i tentativi successivi lo faranno
     if (oggi_dir / "registro.log").exists():
         shutil.copy2(oggi_dir / "registro.log", dest / "registro.log")
     avanz.scrivi(f"Testi archiviati nel repository: {dest.relative_to(RADICE)}")
@@ -381,11 +383,16 @@ def main():
     ap.add_argument("--data", help="finge che oggi sia questa data (AAAA-MM-GG)")
     ap.add_argument("--modello", help="usa un altro modello Ollama solo per questa volta (es. gemma4:e4b)")
     ap.add_argument("--voce", choices=["gemini", "nessuna"], help="sceglie il motore voce solo per questa volta")
+    ap.add_argument("--sostituisci", action="store_true",
+                    help="con --paper: rifà una puntata già uscita, con lo stesso numero, e aggiorna l'articolo")
     ap.add_argument("--se-manca", action="store_true",
                     help="esce subito se la puntata di oggi è già fatta (per le sveglie di riserva)")
     args = ap.parse_args()
 
     cfg = carica_config(cloud=args.cloud)
+    if args.sostituisci and not args.paper:
+        ap.error("--sostituisci serve insieme a --paper")
+    cfg["sostituisci"] = args.sostituisci
     if args.modello:
         cfg["modello_testo"]["nome"] = args.modello
     if args.voce:
@@ -428,9 +435,13 @@ def main():
         paper, lettura = scegli_e_leggi(cfg, args, oggi, reg, lav, avanz)
         stato.setdefault("numeri", {})
         for cod in lingue:
+            vecchio = reg.numero_di(paper["arxiv_id"], cod) if args.sostituisci else None
+            if vecchio:
+                stato["numeri"][cod] = vecchio
             stato["numeri"].setdefault(cod, reg.prossimo_numero(cod, cfg["numero_iniziale"].get(cod, 1)))
-            reg.segna(paper["arxiv_id"], cod, "in_lavorazione", data, stato["numeri"][cod],
-                      paper["titolo"], paper["voti"])
+            if not vecchio:   # una puntata da sostituire resta "completa" anche se il rifacimento si ferma
+                reg.segna(paper["arxiv_id"], cod, "in_lavorazione", data, stato["numeri"][cod],
+                          paper["titolo"], paper["voti"])
         stato.update({"arxiv_id": paper["arxiv_id"], "numero": stato["numeri"][lingue[0]]})
         scrivi_json(p_stato, stato)
 
