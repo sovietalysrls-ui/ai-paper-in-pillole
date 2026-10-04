@@ -1,88 +1,89 @@
 {
   "nome_breve": "GraphForge",
-  "problema": "Gli assistenti digitali faticano a svolgere compiti d'ufficio complessi perché vengono addestrati su documenti finti creati da altre AI, poco realistici, oppure su file reali ma privi di criteri precisi per verificare se il lavoro svolto sia corretto.",
-  "idea": "Creare un sistema che scarica file pubblici reali e traccia una mappa grafica delle loro relazioni. Da questa mappa genera automaticamente compiti d'ufficio realistici e regole di verifica oggettive collegate direttamente ai documenti.",
+  "problema": "Per insegnare agli assistenti digitali a lavorare davvero in ufficio servono compiti complessi basati su molti documenti reali. Oggi i dati per addestrarli vengono inventati dal computer risultando finti, oppure usano file veri ma senza un modo automatico per verificare se il risultato finale sia corretto.",
+  "idea": "GraphForge raccoglie documenti pubblici reali e costruisce una mappa logica delle loro relazioni. Da questa rete crea in automatico compiti d'ufficio realistici e criteri di verifica oggettivi, legati direttamente ai file originali.",
   "come_funziona": [
-    "Seleziona mansioni lavorative concrete basandosi sul database professionale O*NET per garantire varietà.",
-    "Costruisce una cartella di lavoro scaricando file pubblici reali, come PDF e fogli di calcolo, assegnando a ciascuno un ruolo specifico.",
-    "Costruisce un grafo delle relazioni tra i file per scrivere il compito da assegnare e i criteri per verificarne il risultato.",
-    "Simula una prima esecuzione del compito con un modello guida e fa correggere eventuali incongruenze a un agente di revisione prima di salvare i dati."
+    "Seleziona mansioni tipiche da un database di professioni per evitare compiti troppo generici.",
+    "Raccoglie file pubblici reali in un'area di lavoro, mescolando documenti essenziali e documenti di disturbo.",
+    "Costruisce una mappa delle relazioni tra i file per definire il compito e i criteri esatti con cui controllarlo.",
+    "Mette alla prova il compito con un modello collaudatore per riparare eventuali istruzioni poco chiare o irrealizzabili.",
+    "Registra le sequenze di azioni dell'agente e le ammette nell'addestramento solo se superano severi controlli oggettivi."
   ],
   "risultati": [
     {
-      "fatto": "Valutazione complessiva delle abilità dell'assistente nel risolvere compiti di lavoro digitali",
-      "numero": "1445.7",
-      "prima": "1380.0",
-      "scala": "non indicato",
-      "in_pratica": "un netto salto di qualità nelle capacità dell'assistente rispetto alla versione di partenza"
-    },
-    {
-      "fatto": "Accuratezza nell'esecuzione e modifica di fogli di calcolo complessi",
+      "fatto": "Accuratezza nell'esecuzione di compiti complessi su fogli di calcolo, tra formule e fogli multipli.",
       "numero": "24.0",
-      "prima": "10.3",
+      "prima": "",
       "scala": "su 100",
-      "in_pratica": "più del doppio rispetto a prima nella gestione autonoma di tabelle e formule"
+      "in_pratica": "Più del doppio delle capacità iniziali prima dell'addestramento con questo metodo."
     },
     {
-      "fatto": "Punteggio di efficienza nella gestione dello spazio di lavoro e dei documenti",
+      "fatto": "Capacità di completare attività operative realistiche all'interno di ambienti di lavoro digitali.",
       "numero": "63.7",
-      "prima": "56.0",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "Un progresso evidente nella gestione autonoma di documenti e strumenti da ufficio."
+    },
+    {
+      "fatto": "Punteggio di abilità generale nello svolgimento di compiti lavorativi complessi.",
+      "numero": "1445.7",
+      "prima": "",
       "scala": "non indicato",
-      "in_pratica": "un solido passo in avanti nella coordinazione tra diversi tipi di file"
+      "in_pratica": "Un salto di qualità netto rispetto alla versione base del modello nelle simulazioni d'ufficio."
     }
   ],
   "limiti": [
-    "Il corpus di addestramento contiene solo 2.169 esempi e non è ancora stato testato cosa accade aumentando drasticamente i volumi.",
-    "Il modello supervisore usato per controllare i compiti fatica a verificare dettagli molto fini e specifici all'interno dei testi.",
-    "I test sono stati condotti unicamente su due modelli appartenenti alla medesima famiglia."
+    "Il catalogo di addestramento comprende solo 2.169 esempi e non è stato verificato cosa accade aumentandone la scala.",
+    "Il sistema fatica a rilevare modifiche minime nei contenuti, come il cambio di un singolo numero o di una cella.",
+    "Le verifiche di addestramento sono state condotte solo su modelli della stessa famiglia, senza testare il trasferimento ad altri sistemi."
   ],
-  "esempio_concreto": "Un professionista deve riconciliare i conti di fine anno: l'assistente apre le fatture in formato PDF, legge i dati contabili da fogli di calcolo con formule complesse, verifica che i totali coincidano ed elabora il resoconto finale senza perdersi tra le cartelle.",
-  "perche_ti_riguarda": "Permette lo sviluppo di assistenti virtuali a cui affidare incombenze d'ufficio noiose e delicate, con la certezza che non inventino numeri o conclusioni non supportate dai documenti aziendali.",
-  "gancio": "Chiedere a un'intelligenza artificiale di incrociare tre bilanci in PDF e aggiornare un foglio Excel porta quasi sempre a formule rotte e dati inventati. Per insegnare davvero a lavorare ai software serve farli fare pratica su documenti autentici.",
+  "esempio_concreto": "Un impiegato riceve una cartella piena di bilanci societari, relazioni in PDF e tabelle sparse, e deve riconciliare i dati creando un unico foglio di calcolo con formule precise e conformi alle linee guida.",
+  "perche_ti_riguarda": "In futuro potrai affidare a un assistente virtuale compiti d'ufficio noiosi e articolati, sapendo che sa leggere documenti complessi e che il suo lavoro viene controllato su basi oggettive.",
+  "gancio": "Chiedere a un'intelligenza artificiale di scrivere un'email è facile, ma provate a farle aprire decine di PDF aziendali, incrociare i dati e compilare da sola un foglio Excel con formule perfette.",
   "termini": [
     {
       "termine": "GraphForge",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il metodo ideato dai ricercatori per creare compiti realistici e verificabili a partire da file veri.",
+      "spiegazione": "Il sistema ideato dai ricercatori per generare compiti lavorativi realistici e controllabili a partire da file veri.",
       "usa": "termine",
-      "pronuncia": "Gràf Fòrgi"
+      "pronuncia": "Gràf Forg"
     },
     {
       "termine": "O*NET",
-      "tipo": "sigla",
-      "espansione_inglese": "Occupational Information Network",
-      "significato": "rete informativa sulle professioni",
-      "spiegazione": "Un archivio pubblico che cataloga centinaia di professioni e le rispettive mansioni quotidiane.",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un archivio pubblico che cataloga e descrive nel dettaglio le professioni e le loro mansioni tipiche.",
       "usa": "spiegazione",
-      "pronuncia": "O Nèt"
+      "pronuncia": "o net"
     },
     {
       "termine": "GLM-5.2",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il modello di intelligenza artificiale impiegato come supervisore per generare e correggere i compiti.",
+      "spiegazione": "Un modello avanzato di intelligenza artificiale impiegato come collaudatore e giudice delle attività svolte.",
       "usa": "termine",
-      "pronuncia": "Gi Èlle Èmme cinque punto due"
+      "pronuncia": "gi elle emme cinque punto due"
     },
     {
       "termine": "Qwen3.6-27B",
       "tipo": "nome",
       "espansione_inglese": "",
       "significato": "",
-      "spiegazione": "Il modello linguistico open source utilizzato come base per testare l'efficacia dell'addestramento.",
-      "usa": "termine",
-      "pronuncia": "Kwen tre punto sei ventisette bi"
+      "spiegazione": "Il modello linguistico che è stato addestrato e valutato sui compiti d'ufficio generati.",
+      "usa": "spiegazione",
+      "pronuncia": "cuèn tre punto sei ventisette bi"
     }
   ],
-  "soggetto_immagine": "a line-drawn network graph connecting several document icons like spreadsheets and text files",
+  "soggetto_immagine": "a document folder connected by branching lines to spreadsheet tables and pdf icons",
   "hashtag": [
     "AI",
     "AgentiDigitali",
     "GraphForge",
-    "AutomazioneUfficio",
-    "MachineLearning"
+    "AutomazioneLavoro",
+    "DatiSintetici"
   ]
 }

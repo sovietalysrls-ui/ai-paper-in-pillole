@@ -1,31 +1,36 @@
-<p>Chiedere a un&#x27;intelligenza artificiale di incrociare tre bilanci in formato PDF e aggiornare un foglio Excel porta quasi sempre a formule rotte e dati inventati. Capita spesso a chi lavora nell&#x27;amministrazione o nel marketing. Si prova ad affidare una tabella complicata a un assistente virtuale, ma il risultato contiene errori grossolani. Per insegnare davvero a lavorare ai software serve farli fare pratica su documenti autentici.</p>
-<h2>Il problema dei compiti finti</h2>
-<p>Gli assistenti digitali faticano a svolgere compiti d&#x27;ufficio complessi per un motivo preciso. Molti modelli vengono addestrati su documenti finti creati da altre intelligenze artificiali. Questi testi artificiali sono troppo semplici e risultano poco realistici.</p>
-<p>In alternativa, i ricercatori usano file reali scaricati da internet. In questo secondo caso manca però un metro di giudizio chiaro per verificare se il lavoro svolto sia corretto. Senza regole di verifica oggettive, l&#x27;assistente non può capire dove sbaglia e non impara a correggersi.</p>
-<h2>Una mappa tra i documenti</h2>
-<p>I ricercatori hanno ideato un metodo chiamato GraphForge per superare questo ostacolo. Il sistema scarica file pubblici autentici e traccia una mappa delle relazioni tra le informazioni.</p>
-<p>Possiamo pensare a questo meccanismo come alla lavagna di un investigatore. Sulla parete vengono appesi contratti, fatture e ricevute aziendali. L&#x27;investigatore collega i fogli con fili di lana colorati per evidenziare quali dati dipendono l&#x27;uno dall&#x27;altro. GraphForge fa esattamente la stessa cosa con i documenti digitali. Partendo da questa mappa, il sistema ricava compiti realistici e genera regole certe per controllare il risultato finale.</p>
-<h2>I quattro passi del metodo</h2>
-<p>La procedura ideata dal team di ricerca segue una sequenza ordinata di passaggi:</p>
+<p>Chiedere a un&#x27;intelligenza artificiale di scrivere un&#x27;email è facile. Provate invece a farle aprire decine di documenti aziendali, incrociare i dati e compilare da sola un foglio Excel con formule perfette.</p>
+<p>Spesso un impiegato riceve una cartella piena di bilanci societari, relazioni in formato PDF e tabelle sparse. Il suo lavoro consiste nel riconciliare tutti i dati creando un unico foglio di calcolo, con formule precise e conformi alle regole aziendali. Oggi i programmi di intelligenza artificiale falliscono regolarmente davanti a compiti operativi di questo tipo.</p>
+<h2>La trappola dei dati finti</h2>
+<p>Per insegnare agli assistenti digitali a lavorare davvero in ufficio servono compiti complessi basati su molti documenti reali. Senza esempi articolati, questi strumenti non imparano ad affrontare le nostre giornate lavorative.</p>
+<p>Attualmente i dati per addestrare i modelli linguistici vengono spesso inventati da altri computer. Il risultato finale è una serie di compiti finti, troppo semplici e lontani dalle situazioni quotidiane di un&#x27;azienda.</p>
+<p>In alternativa, i ricercatori usano file autentici presi da internet. In quel caso, però, manca un sistema automatico per verificare se il risultato prodotto dall&#x27;assistente digitale sia davvero corretto.</p>
+<h2>Una mappa per unire i documenti</h2>
+<p>I ricercatori hanno sviluppato GraphForge. Si tratta di un sistema ideato per generare compiti lavorativi realistici e controllabili a partire da file veri.</p>
+<p>Il metodo funziona come un responsabile d&#x27;ufficio che mette ordine su una scrivania caotica. Questo responsabile osserva i fogli sparsi e traccia i collegamenti logici tra una fattura, un contratto di fornitura e una tabella oraria.</p>
+<p>GraphForge raccoglie documenti pubblici reali e costruisce una mappa logica delle loro relazioni. Da questa rete ricava compiti d&#x27;ufficio realistici e criteri di verifica oggettivi, legati direttamente ai file originali.</p>
+<h2>I passaggi della simulazione</h2>
+<p>Il processo di creazione dei compiti si sviluppa attraverso cinque fasi collegate tra loro:</p>
 <ul>
-<li>Seleziona mansioni lavorative concrete basandosi su un archivio pubblico che cataloga centinaia di professioni e le rispettive mansioni quotidiane.</li>
-<li>Costruisce una cartella di lavoro scaricando file pubblici reali, come PDF e fogli di calcolo, assegnando a ciascuno un ruolo specifico.</li>
-<li>Costruisce un grafo delle relazioni tra i file per scrivere il compito da assegnare e i criteri per verificarne il risultato.</li>
-<li>Simula una prima esecuzione del compito con un modello guida e fa correggere eventuali incongruenze a un agente di revisione prima di salvare i dati.</li>
+<li>Seleziona mansioni tipiche da un archivio pubblico che cataloga e descrive nel dettaglio le professioni, così da evitare compiti generici.</li>
+<li>Raccoglie file pubblici reali in un&#x27;area di lavoro digitale, mescolando documenti essenziali e documenti di disturbo per simulare il disordine di un ufficio.</li>
+<li>Costruisce una mappa delle relazioni tra i file per definire sia il lavoro richiesto sia i criteri esatti con cui valutarlo.</li>
+<li>Mette alla prova il compito con GLM-5.2, un modello avanzato di intelligenza artificiale impiegato come collaudatore e giudice, per correggere istruzioni poco chiare o irrealizzabili.</li>
+<li>Registra le sequenze di azioni dell&#x27;assistente digitale e le include nell&#x27;addestramento solo se superano severi controlli oggettivi.</li>
 </ul>
-<p>I ricercatori hanno affidato il controllo dell&#x27;operazione a GLM-5.2, un modello impiegato come supervisore per generare e correggere gli esercizi. Hanno poi testato l&#x27;efficacia dell&#x27;addestramento su Qwen3.6-27B, un modello open source della famiglia Qwen.</p>
 <h2>I risultati sul campo</h2>
-<p>I test pratici hanno evidenziato progressi netti rispetto alla versione base dello stesso software.</p>
-<p>Il primo test ha misurato l&#x27;accuratezza nell&#x27;esecuzione e nella modifica di fogli di calcolo complessi. Il punteggio dell&#x27;assistente è passato da 10,3 su 100 a 24 su 100. In termini percentuali significa salire da circa il 10 per cento al 24 per cento. In pratica il modello ottiene più del doppio rispetto a prima nella gestione autonoma di tabelle e formule.</p>
-<p>Un secondo test ha valutato l&#x27;efficienza nella gestione dello spazio di lavoro e dei documenti. Questa metrica serve a confrontare tra loro sistemi diversi e non ha un punteggio massimo prestabilito. Il valore ottenuto dal modello è salito da 56 a 63,7. Il dato indica un solido passo in avanti nella coordinazione tra diversi tipi di file all&#x27;interno della stessa cartella.</p>
-<p>Infine, i ricercatori hanno misurato la valutazione complessiva delle abilità dell&#x27;assistente nel risolvere compiti di lavoro digitali. Anche questo indice non prevede un voto massimo e serve unicamente per un confronto diretto. Il punteggio è cresciuto da 1380 a 1445,7 punti. Si tratta di un netto salto di qualità nelle capacità dell&#x27;assistente rispetto alla versione di partenza.</p>
-<h2>I limiti attuali</h2>
-<p>La ricerca presenta alcune limitazioni importanti da considerare. Il materiale di addestramento include soltanto 2.169 compiti di prova. Gli autori non hanno ancora verificato cosa accade aumentando drasticamente i volumi dei documenti analizzati.</p>
-<p>Inoltre, il modello supervisore fatica ancora a verificare dettagli molto fini e specifici all&#x27;interno dei testi lunghi. Se una clausola è nascosta tra mille righe, il controllore potrebbe non accorgersi dell&#x27;errore. Infine, le verifiche sono state condotte unicamente su due modelli appartenenti alla medesima famiglia.</p>
-<h2>Cosa cambia nel lavoro d&#x27;ufficio</h2>
-<p>Questa innovazione tocca da vicino chiunque passi ore a riordinare file aziendali. Pensiamo a un professionista che deve riconciliare i conti di fine anno.</p>
-<p>L&#x27;assistente addestrato con questo sistema apre le fatture in formato PDF. Poi legge i dati contabili da fogli di calcolo pieni di formule complesse. A quel punto verifica che i totali coincidano ed elabora il resoconto finale senza perdersi tra le cartelle.</p>
-<p>Il metodo apre la strada ad assistenti virtuali a cui affidare incombenze d&#x27;ufficio noiose e delicate. Il beneficio pratico è la certezza che il sistema non inventi numeri o conclusioni prive di fondamento nei documenti aziendali.</p>
+<p>I ricercatori hanno messo alla prova Qwen3.6-27B, un modello linguistico addestrato e valutato direttamente sui compiti d&#x27;ufficio generati da questo metodo. Hanno quindi misurato i suoi progressi rispetto alla versione di partenza.</p>
+<p>Il primo test ha misurato l&#x27;accuratezza nell&#x27;esecuzione di compiti complessi su fogli di calcolo, tra formule matematiche e documenti composti da più pagine. Il modello ha raggiunto un punteggio di 24 su 100, completando con successo quasi un quarto delle attività. In pratica questo risultato segna più del doppio delle capacità mostrate prima dell&#x27;addestramento con questo metodo.</p>
+<p>Un secondo test ha valutato la capacità di completare attività operative realistiche all&#x27;interno di ambienti di lavoro digitali. In questa prova il punteggio è salito a 63,7 su 100, pari a più di sei compiti risolti su dieci. In pratica gli studiosi hanno osservato un progresso evidente nella gestione autonoma di documenti e strumenti da ufficio.</p>
+<p>Infine, la sperimentazione ha calcolato un punteggio generale nello svolgimento di compiti lavorativi complessi. Questo indice serve a confrontare sistemi diversi e non prevede un voto massimo prestabilito. Il modello ha ottenuto 1445,7 punti, compiendo un netto salto di qualità rispetto alla sua versione base nelle simulazioni d&#x27;ufficio.</p>
+<h2>I limiti della ricerca</h2>
+<p>Questa procedura presenta alcuni limiti precisi segnalati dagli stessi autori.</p>
+<p>Il catalogo preparato per l&#x27;addestramento comprende solo 2.169 esempi. I ricercatori non hanno ancora verificato cosa accade aumentando la scala dei dati con raccolte più estese.</p>
+<p>Inoltre, il sistema fatica a rilevare modifiche minime nei contenuti dei documenti. Mostra difficoltà, per esempio, se cambia soltanto un singolo numero all&#x27;interno di una cella.</p>
+<p>Le verifiche di addestramento sono state condotte solo su modelli della stessa famiglia. Resta quindi da scoprire se le stesse capacità possano trasferirsi con successo ad altri sistemi.</p>
+<h2>Cosa cambia per chi lavora</h2>
+<p>Chi lavora nel marketing, nelle vendite o nell&#x27;amministrazione conosce bene la fatica di incrociare archivi disordinati. Spesso si perdono ore a cercare coerenza tra vecchie presentazioni, listini prezzi e fogli di calcolo.</p>
+<p>In futuro potrai affidare a un assistente virtuale compiti d&#x27;ufficio noiosi e articolati. Potrai farlo sapendo che il software sa leggere documenti complessi e che il suo lavoro viene controllato su basi oggettive.</p>
+<p>Questo approccio avvicina gli assistenti digitali al modo in cui lavoriamo ogni giorno. Non si tratta di fargli scrivere frasi a effetto, ma di aiutarci a gestire il caos quotidiano dei nostri file.</p>
 <hr>
 <p><strong>Il paper:</strong> <a href="https://arxiv.org/abs/2609.38923" target="_blank" rel="noopener">GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis</a> — Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori</p>
 <p>Ascolta la puntata su <a href="https://open.spotify.com/show/0343HceLfMtVbfln7gVijy" target="_blank" rel="noopener">AI Paper in Pillole</a></p>
