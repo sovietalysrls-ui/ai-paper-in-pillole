@@ -1,86 +1,85 @@
-[17:27:21] ===== Avvio 2026-10-04 17:27 =====
-[17:27:21] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
-[17:27:21]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
-[17:27:22] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
-[17:27:22] ▶ Scheda dei fatti — 1 pezzi da leggere
-[17:27:22] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
-[17:27:24]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
-[17:27:44] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.6-flash
-[17:27:44] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
-[17:27:44] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
-[17:27:55] ▶ Scheda dei fatti — unione dei fatti nella scheda
-[17:28:10] ✔ Scheda dei fatti — GraphForge · 3 risultati · 4 termini
-[17:28:10] ▶ Dialogo — puntata #52
-[17:28:18] ✔ Dialogo — 40 battute, 618 parole
-[17:28:19] ▶ Controlli e correzioni
-[17:28:19]    giro 1: 1 battute da sistemare, 0 problemi generali (618 parole)
-[17:28:22]    giro 2: nessun problema (617 parole, massimo 736)
-[17:28:22] ✔ Controlli e correzioni — nessun problema residuo
-[17:28:22] ▶ Titolo, descrizione, articolo — titolo
-[17:28:31] ▶ Titolo, descrizione, articolo — descrizione
-[17:28:51] ▶ Titolo, descrizione, articolo — articolo per il sito
-[17:29:26] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come insegnare all'AI » · articolo 803 parole
-[17:29:27] ▶ Copertina
-[17:29:27] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
-[17:29:27]    limite al minuto raggiunto, aspetto 30 secondi
-[17:29:57]    limite al minuto raggiunto, aspetto 30 secondi
-[17:30:27] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
-[17:30:35] ✔ Copertina — disegnata da Gemini
-[17:30:36] ▶ Voce
-[17:30:36] ▶ Voce — turno 1 di 40 (Carlo)
-[17:30:46]    voce: la porta 'interactions' non risponde, uso generateContent
-[17:30:51] ▶ Voce — turno 2 di 40 (Arianna)
-[17:31:08] ▶ Voce — turno 3 di 40 (Carlo)
-[17:31:25] ▶ Voce — turno 4 di 40 (Arianna)
-[17:31:36] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
-[17:31:46] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
-[17:31:56]    voce: la porta 'interactions' non risponde, uso generateContent
-[17:32:03] ▶ Voce — turno 5 di 40 (Carlo)
-[17:32:20] ▶ Voce — turno 6 di 40 (Arianna)
-[17:32:39] ▶ Voce — turno 7 di 40 (Carlo)
-[17:32:54] ▶ Voce — turno 8 di 40 (Arianna)
-[17:33:12] ▶ Voce — turno 9 di 40 (Carlo)
-[17:33:28] ▶ Voce — turno 10 di 40 (Arianna)
-[17:33:45] ▶ Voce — turno 11 di 40 (Carlo)
-[17:34:01] ▶ Voce — turno 12 di 40 (Arianna)
-[17:34:20] ▶ Voce — turno 13 di 40 (Carlo)
-[17:34:35] ▶ Voce — turno 14 di 40 (Arianna)
-[17:34:52] ▶ Voce — turno 15 di 40 (Carlo)
-[17:35:08] ▶ Voce — turno 16 di 40 (Arianna)
-[17:35:26] ▶ Voce — turno 17 di 40 (Carlo)
-[17:35:43] ▶ Voce — turno 18 di 40 (Arianna)
-[17:36:00] ▶ Voce — turno 19 di 40 (Carlo)
-[17:36:17] ▶ Voce — turno 20 di 40 (Arianna)
-[17:36:35] ▶ Voce — turno 21 di 40 (Carlo)
-[17:36:51] ▶ Voce — turno 22 di 40 (Arianna)
-[17:37:08] ▶ Voce — turno 23 di 40 (Carlo)
-[17:37:24] ▶ Voce — turno 24 di 40 (Arianna)
-[17:37:42] ▶ Voce — turno 25 di 40 (Carlo)
-[17:37:57] ▶ Voce — turno 26 di 40 (Arianna)
-[17:38:16] ▶ Voce — turno 27 di 40 (Carlo)
-[17:38:33] ▶ Voce — turno 28 di 40 (Arianna)
-[17:38:49] ▶ Voce — turno 29 di 40 (Carlo)
-[17:39:04] ▶ Voce — turno 30 di 40 (Arianna)
-[17:39:22] ▶ Voce — turno 31 di 40 (Carlo)
-[17:39:38] ▶ Voce — turno 32 di 40 (Arianna)
-[17:39:56] ▶ Voce — turno 33 di 40 (Carlo)
-[17:40:12] ▶ Voce — turno 34 di 40 (Arianna)
-[17:40:29] ▶ Voce — turno 35 di 40 (Carlo)
-[17:40:45] ▶ Voce — turno 36 di 40 (Arianna)
-[17:41:03] ▶ Voce — turno 37 di 40 (Carlo)
-[17:41:19] ▶ Voce — turno 38 di 40 (Arianna)
-[17:41:36] ▶ Voce — turno 39 di 40 (Carlo)
-[17:41:52] ▶ Voce — turno 40 di 40 (Arianna)
-[17:42:11]    controllo voci: Carlo ~121 Hz, Arianna ~169 Hz, tutto in ordine
-[17:42:11] ✔ Voce — 40 turni, una voce per richiesta + frase finale
-[17:42:12] ▶ Montaggio audio
-[17:42:23] ✔ Montaggio audio — 11.2 minuti in tutto, voce 10.5 minuti, 59 parole al minuto
-[17:42:23] ⚠ [it] la voce dura 10.5 minuti, oltre il limite di 4.8. In config.yaml abbassa parole_al_minuto a circa 59.
-[17:42:23] ▶ Articolo su WordPress — stato: bozza
-[17:42:31] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
-[17:42:33] ▶ Consegna su Telegram
-Telegram ha rifiutato /home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/uscita/OGGI/puntata.wav: {"ok":false,"error_code":413,"description":"Request Entity Too Large"}
-[17:42:41] ✔ Consegna su Telegram — 4 file inviati
-[17:42:42] ▶ Registro e chiusura
-[17:42:42] Richieste al modello di testo: 9 (usata anche la chiave a pagamento)
-[17:42:42] memoria video non misurata (nvidia-smi assente)
+[17:49:19] ===== Avvio 2026-10-04 17:49 =====
+[17:49:19] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[17:49:20]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[17:49:20] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[17:49:20] ▶ Scheda dei fatti — 1 pezzi da leggere
+[17:49:20] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[17:49:30]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:49:51] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.6-flash
+[17:49:52]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:50:12] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[17:51:35] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[17:51:35] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:51:45] ✔ Scheda dei fatti — GraphForge · 3 risultati · 5 termini
+[17:51:46] ▶ Dialogo — puntata #52
+[17:51:59] ✔ Dialogo — 36 battute, 668 parole
+[17:51:59] ▶ Controlli e correzioni
+[17:51:59]    giro 1: 2 battute da sistemare, 0 problemi generali (668 parole)
+[17:52:04]    giro 2: nessun problema (665 parole, massimo 736)
+[17:52:04] ✔ Controlli e correzioni — nessun problema residuo
+[17:52:05] ▶ Titolo, descrizione, articolo — titolo
+[17:52:11] ▶ Titolo, descrizione, articolo — descrizione
+[17:52:37] ▶ Titolo, descrizione, articolo — articolo per il sito
+[17:53:05] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come l'AI impara a lav» · articolo 805 parole
+[17:53:05] ▶ Copertina
+[17:53:05] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[17:53:05]    limite al minuto raggiunto, aspetto 30 secondi
+[17:53:35] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:53:44] ✔ Copertina — disegnata da Gemini
+[17:53:44] ▶ Voce
+[17:53:44] ▶ Voce — turno 1 di 36 (Arianna)
+[17:53:54]    voce: la porta 'interactions' non risponde, uso generateContent
+[17:53:58] ▶ Voce — turno 2 di 36 (Carlo)
+[17:54:09] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[17:54:19]    voce: la porta 'interactions' non risponde, uso generateContent
+[17:54:22] ▶ Voce — turno 3 di 36 (Arianna)
+[17:54:32] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:54:43]    voce: la porta 'interactions' non risponde, uso generateContent
+[17:54:46] ▶ Voce — turno 4 di 36 (Carlo)
+[17:55:01] ▶ Voce — turno 5 di 36 (Arianna)
+[17:55:17] ▶ Voce — turno 6 di 36 (Carlo)
+[17:55:29] ▶ Voce — turno 7 di 36 (Arianna)
+[17:55:43] ▶ Voce — turno 8 di 36 (Carlo)
+[17:55:57] ▶ Voce — turno 9 di 36 (Arianna)
+[17:56:11] ▶ Voce — turno 10 di 36 (Carlo)
+[17:56:23] ▶ Voce — turno 11 di 36 (Arianna)
+[17:56:38] ▶ Voce — turno 12 di 36 (Carlo)
+[17:56:52] ▶ Voce — turno 13 di 36 (Arianna)
+[17:57:06] ▶ Voce — turno 14 di 36 (Carlo)
+[17:57:20] ▶ Voce — turno 15 di 36 (Arianna)
+[17:57:35] ▶ Voce — turno 16 di 36 (Carlo)
+[17:57:49] ▶ Voce — turno 17 di 36 (Arianna)
+[17:58:03] ▶ Voce — turno 18 di 36 (Carlo)
+[17:58:16] ▶ Voce — turno 19 di 36 (Arianna)
+[17:58:32] ▶ Voce — turno 20 di 36 (Carlo)
+[17:58:46] ▶ Voce — turno 21 di 36 (Arianna)
+[17:59:00] ▶ Voce — turno 22 di 36 (Carlo)
+[17:59:14] ▶ Voce — turno 23 di 36 (Arianna)
+[17:59:30] ▶ Voce — turno 24 di 36 (Carlo)
+[17:59:45] ▶ Voce — turno 25 di 36 (Arianna)
+[18:00:01] ▶ Voce — turno 26 di 36 (Carlo)
+[18:00:14] ▶ Voce — turno 27 di 36 (Arianna)
+[18:00:30] ▶ Voce — turno 28 di 36 (Carlo)
+[18:00:45] ▶ Voce — turno 29 di 36 (Arianna)
+[18:01:02] ▶ Voce — turno 30 di 36 (Carlo)
+[18:01:15] ▶ Voce — turno 31 di 36 (Arianna)
+[18:01:31] ▶ Voce — turno 32 di 36 (Carlo)
+[18:01:45] ▶ Voce — turno 33 di 36 (Arianna)
+[18:01:59] ▶ Voce — turno 34 di 36 (Carlo)
+[18:02:13] ▶ Voce — turno 35 di 36 (Arianna)
+[18:02:28] ▶ Voce — turno 36 di 36 (Carlo)
+[18:02:43] ⚠ voce sospetta per Carlo (167 Hz, attesa sotto 151 Hz): rifaccio il turno
+[18:02:43] ▶ Voce — rifaccio turno_010_corpo_carlo.wav
+[18:02:56] ⚠ voce sospetta per Carlo (258 Hz, attesa sotto 151 Hz): rifaccio il turno
+[18:02:56] ▶ Voce — rifaccio turno_036_corpo_carlo.wav
+[18:03:09]    controllo voci: Carlo ~128 Hz, Arianna ~175 Hz, tutto in ordine
+[18:03:09] ✔ Voce — 36 turni, una voce per richiesta + frase finale
+[18:03:09] ▶ Montaggio audio
+[18:03:18] ✔ Montaggio audio — 4.9 minuti in tutto, voce 4.3 minuti, 156 parole al minuto
+[18:03:18] ▶ Articolo su WordPress — stato: bozza
+[18:03:26] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
+[18:03:27] ▶ Consegna su Telegram
+[18:03:35] ✔ Consegna su Telegram — 5 file inviati
+[18:03:36] ▶ Registro e chiusura
+[18:03:36] Richieste al modello di testo: 9 (usata anche la chiave a pagamento)
+[18:03:36] memoria video non misurata (nvidia-smi assente)

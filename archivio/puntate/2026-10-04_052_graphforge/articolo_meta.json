@@ -1,13 +1,13 @@
 {
-  "titolo": "GraphForge: come insegnare all'AI a fare il vero lavoro d'ufficio",
-  "estratto": "Chiedere a un'intelligenza artificiale di scrivere un'email è facile. Provate invece a farle aprire decine di documenti aziendali, incrociare i dati e compilare da sola un foglio Excel con formule perfette.",
+  "titolo": "GraphForge: come l'AI impara a lavorare tra documenti e fogli di calcolo",
+  "estratto": "Un impiegato apre la cartella condivisa del reparto commerciale e trova decine di ricevute di spesa in formato PDF. Deve confrontare ogni cifra con i bilanci trimestrali salvati dentro un foglio di calcolo.",
   "tag": [
     "AI",
     "AgentiDigitali",
+    "AutomazioneUfficio",
     "GraphForge",
-    "AutomazioneLavoro",
-    "DatiSintetici"
+    "MachineLearning"
   ],
   "categoria": "AI Paper in Pillole",
-  "parole": 803
+  "parole": 805
 }

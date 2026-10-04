@@ -1,10 +1,10 @@
-AI Paper in Pillole #52 - GraphForge: come insegnare all'AI a fare il vero lavoro d'ufficio
+AI Paper in Pillole #52 - GraphForge: come l'AI impara a lavorare tra documenti e fogli di calcolo
 
-Un impiegato riceve una cartella piena di bilanci, relazioni e tabelle sparse. Deve incrociare i dati e creare un foglio di calcolo con formule precise. Per insegnare agli assistenti digitali a svolgere compiti simili servono documenti reali. Oggi i dati per addestrarli vengono inventati dal computer e risultano finti. Quando invece si usano file veri, manca un modo automatico per verificare se il risultato finale sia corretto.
+In ufficio capita di dover confrontare decine di ricevute in formato PDF con i bilanci su un foglio di calcolo, correggendo formule senza perdersi tra le cartelle. Per insegnare agli assistenti digitali a svolgere queste mansioni servono migliaia di compiti di prova. Se i documenti sono inventati al computer risultano poco realistici. Se invece si usano file reali, manca un metodo affidabile per verificare se il lavoro svolto sia corretto.
 
-Il sistema GraphForge risolve il problema partendo da documenti pubblici reali. Il metodo seleziona mansioni tipiche da un archivio pubblico delle professioni. Raccoglie i file in un'area di lavoro, mescolando documenti essenziali e documenti di disturbo. Poi costruisce una mappa logica dei loro collegamenti. Da questa rete crea compiti d'ufficio realistici e criteri oggettivi per valutarli. Le azioni dell'assistente digitale entrano nell'addestramento solo se superano questi controlli.
+I ricercatori hanno creato GraphForge, un sistema che parte da documenti reali e ne mappa i collegamenti come una rete logica. Il metodo seleziona mansioni da un archivio pubblico di professioni per garantire attività autentiche. Da questa rete genera in automatico sia i compiti d'ufficio sia le regole per valutarli. Un modello insegnante svolge una prova preliminare e corregge i difetti. L'assistente impara così a muoversi tra file complessi.
 
-Con questo metodo, l'accuratezza nei compiti complessi sui fogli di calcolo arriva a 24 su 100. In pratica, le capacità iniziali del modello sono più che raddoppiate. Nelle attività operative all'interno di ambienti digitali il punteggio tocca 63,7 su 100, con un progresso evidente nella gestione autonoma degli strumenti da ufficio. Come limite, il sistema fatica a rilevare modifiche minime nei contenuti, come il cambio di un singolo numero o di una cella.
+La precisione nella gestione dei fogli di calcolo cresce di 13,7 su 100, offrendo più del doppio dell'accuratezza con formule e tabelle elettroniche. L'abilità nel destreggiarsi tra cartelle aumenta di 7,7 su 100, con un progresso tangibile nel collegare informazioni sparse tra vari file. Come limite, il modello incaricato di valutare i compiti fatica a notare errori di dettaglio minuscoli, come una singola cifra corrotta.
 
 Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
 
@@ -12,4 +12,4 @@ Link al paper: https://arxiv.org/abs/2609.38923
 
 AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
 
-#AI #AgentiDigitali #GraphForge #AutomazioneLavoro #DatiSintetici
+#AI #AgentiDigitali #AutomazioneUfficio #GraphForge #MachineLearning
