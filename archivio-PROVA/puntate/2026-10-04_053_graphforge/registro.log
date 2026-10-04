@@ -1,0 +1,36 @@
+[16:59:45] ===== Avvio 2026-10-04 16:59 =====
+[16:59:45] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[16:59:45]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[16:59:46] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[16:59:46] ▶ Scheda dei fatti — 1 pezzi da leggere
+[16:59:46] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[16:59:50]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:00:14]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:00:47] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[17:00:47] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.6-flash
+[17:00:50]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:01:18]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[17:01:44] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[17:01:44] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[17:02:02] ✔ Scheda dei fatti — GraphForge · 4 risultati · 5 termini
+[17:02:03] ▶ Dialogo — puntata #53
+[17:02:16] ✔ Dialogo — 35 battute, 635 parole
+[17:02:16] ▶ Controlli e correzioni
+[17:02:16]    giro 1: 1 battute da sistemare, 0 problemi generali (635 parole)
+[17:02:20]    giro 2: nessun problema (633 parole, massimo 736)
+[17:02:20] ✔ Controlli e correzioni — nessun problema residuo
+[17:02:20] ▶ Titolo, descrizione, articolo — titolo
+[17:02:33] ▶ Titolo, descrizione, articolo — descrizione
+[17:02:55] ▶ Titolo, descrizione, articolo — articolo per il sito
+[17:03:19]    rivedi articolo: 1 problemi, correggo (giro 1)
+[17:03:44] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #53 - GraphForge: come insegnare all'AI » · articolo 836 parole
+[17:03:44] ▶ Copertina
+[17:03:45] ✔ Copertina — disegno del programma, icona «rete»
+[17:03:45] ↪ Voce — motore voce: nessuno
+[17:03:45] ↪ Montaggio audio — niente voce, niente montaggio
+[17:03:45] ↪ Articolo su WordPress — prova: niente pubblicazione sul sito
+[17:03:45] ▶ Consegna su Telegram
+[17:03:50] ✔ Consegna su Telegram — 3 file inviati
+[17:03:50] ▶ Registro e chiusura
+[17:03:50] Richieste al modello di testo: 10 (usata anche la chiave a pagamento)
+[17:03:50] memoria video non misurata (nvidia-smi assente)

@@ -1,0 +1,15 @@
+AI Paper in Pillole #53 - GraphForge: come insegnare all'AI a districarsi tra i documenti d'ufficio
+
+Un impiegato riceve una cartella con bilanci triennali in formato PDF, bozze superate e un foglio di calcolo. Deve calcolare le spese reali senza farsi ingannare dai file inutili. Oggi gli assistenti digitali faticano in queste attività. Mancano compiti realistici per addestrarli. I file generati al computer sono poco credibili. I documenti veri, invece, non consentono di verificare automaticamente se il risultato finale è corretto.
+
+I ricercatori hanno ideato GraphForge per superare questo ostacolo. Il sistema sceglie una mansione dall'archivio professionale O*NET. Poi raccoglie documenti autentici e crea cartelle con i file necessari ed elementi di disturbo. Una rete logica collega le informazioni sparse tra i testi. Questa struttura stabilisce la consegna e controlla ogni passaggio sui documenti originali. Un modello esegue una prova pratica e corregge le istruzioni prima dell'esercizio finale.
+
+Con questo metodo, l'assistente compie un netto passo avanti rispetto al modello di partenza nella gestione degli strumenti da ufficio. La sua efficacia nei fogli di calcolo risulta più che raddoppiata. Inoltre, nel 96,7 per cento dei compiti sono presenti documenti PDF, obbligandolo a interpretare file complessi. Resta un limite pratico. Il modello incaricato di fare da giudice coglie gli errori di struttura, ma fatica a individuare sbagli nei dettagli minuti, come un singolo numero errato.
+
+Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
+
+Link al paper: https://arxiv.org/abs/2609.38923
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #AgentiIntelligenti #AutomazioneUfficio #DatiSintetici #MachineLearning

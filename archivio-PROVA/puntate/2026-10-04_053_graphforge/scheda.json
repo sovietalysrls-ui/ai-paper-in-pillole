@@ -1,0 +1,105 @@
+{
+  "nome_breve": "GraphForge",
+  "problema": "Gli assistenti digitali devono saper gestire file d'ufficio complessi e portare a termine compiti lavorativi reali. Oggi però mancano compiti realistici per addestrarli: i file generati al computer sono poco credibili e i compiti basati su file veri non hanno un sistema automatico per verificare se il risultato è corretto.",
+  "idea": "Costruire ambienti di lavoro realistici mettendo insieme documenti pubblici veri e collegandoli tramite una rete logica di prove. Questa rete permette di definire il compito e di verificare automaticamente ogni passaggio confrontandolo direttamente con i file d'origine.",
+  "come_funziona": [
+    "Il sistema sceglie un mestiere da un archivio professionale per definire compiti lavorativi vari e realistici.",
+    "Un assistente raccoglie documenti pubblici autentici e assegna a ciascuno un ruolo, inserendo sia i file necessari sia file fuorvianti o di contorno.",
+    "Viene costruita una rete logica che collega i fatti tra i documenti e stabilisce i criteri precisi per verificare la correttezza del lavoro.",
+    "Un modello di intelligenza artificiale esegue una prima prova pratica del compito per assicurarsi che sia fattibile.",
+    "Un agente di revisione corregge eventuali imprecisioni nella consegna e nei criteri di valutazione prima di registrare l'esercizio finale."
+  ],
+  "risultati": [
+    {
+      "fatto": "Abilità complessiva dell'agente nel risolvere compiti lavorativi realistici su computer.",
+      "numero": "1445.7",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Un netto passo avanti rispetto al modello di partenza nella capacità di orientarsi tra strumenti d'ufficio."
+    },
+    {
+      "fatto": "Capacità di eseguire correttamente operazioni complesse e formule all'interno di fogli di calcolo.",
+      "numero": "24.0",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Più del doppio dell'efficacia rispetto alla versione non addestrata con questo metodo."
+    },
+    {
+      "fatto": "Successo dell'agente nello svolgere compiti all'interno di ambienti di lavoro digitali realistici.",
+      "numero": "63.7",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Un miglioramento tangibile nel gestire file e consegne tipiche da ufficio."
+    },
+    {
+      "fatto": "Presenza di documenti in formato PDF negli scenari di addestramento generati.",
+      "numero": "96.7%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Quasi la totalità dei compiti richiede al modello di saper leggere e interpretare documenti formattati complessi."
+    }
+  ],
+  "limiti": [
+    "L'addestramento è stato condotto su poco più di duemila esempi, senza verificare cosa accade aumentando notevolmente la quantità di dati.",
+    "Il modello incaricato di fare da giudice coglie gli errori di struttura ma fa fatica a individuare sbagli nei dettagli minuti, come un singolo numero o una citazione errata.",
+    "I test sono stati eseguiti solo su modelli della stessa famiglia, senza verificare se i benefici si trasferiscano a sistemi di altri produttori."
+  ],
+  "esempio_concreto": "Un impiegato riceve una cartella con i bilanci aziendali degli ultimi tre anni in formato PDF, alcune bozze superate e un foglio di calcolo, con la richiesta di calcolare le spese reali e produrre una sintesi esatta senza farsi ingannare dai file inutili.",
+  "perche_ti_riguarda": "In futuro potrai delegare all'assistente digitale attività d'ufficio lunghe e noiose, sapendo che sa districarsi tra cartelle disordinate e che il suo lavoro può essere verificato riga per riga sui documenti originali.",
+  "gancio": "Mettete un'intelligenza artificiale davanti a una cartella di lavoro piena di bilanci in PDF, fogli di calcolo e documenti duplicati, e quasi sicuramente si perderà. Per insegnarle a lavorare davvero, i ricercatori hanno creato una palestra digitale che riproduce il disordine e le trappole dei veri uffici.",
+  "termini": [
+    {
+      "termine": "GraphForge",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo ideato dai ricercatori per creare compiti realistici basati su file autentici e verifiche automatiche.",
+      "usa": "termine",
+      "pronuncia": "gràff fòrg"
+    },
+    {
+      "termine": "O*NET",
+      "tipo": "sigla",
+      "espansione_inglese": "Occupational Information Network",
+      "significato": "rete informativa sulle occupazioni",
+      "spiegazione": "Un archivio pubblico che descrive in modo dettagliato le mansioni e le competenze richieste in centinaia di professioni diverse.",
+      "usa": "termine",
+      "pronuncia": "ò net"
+    },
+    {
+      "termine": "Qwen3.6-27B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale utilizzato nei test per misurare i miglioramenti sul lavoro d'ufficio.",
+      "usa": "spiegazione",
+      "pronuncia": "kuèn tre punto sèi vénti sètte bi"
+    },
+    {
+      "termine": "OpenHands",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un software che permette ai modelli linguistici di interagire con un computer, aprendo programmi e gestendo file.",
+      "usa": "spiegazione",
+      "pronuncia": "òpen hènds"
+    },
+    {
+      "termine": "GLM-5.2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello utilizzato come giudice automatico per valutare la qualità delle risposte prodotte.",
+      "usa": "termine",
+      "pronuncia": "gi èlle èmme cìnque punto dùe"
+    }
+  ],
+  "soggetto_immagine": "a network graph connecting multiple document icons and a spreadsheet inside an office folder",
+  "hashtag": [
+    "AI",
+    "AgentiIntelligenti",
+    "AutomazioneUfficio",
+    "DatiSintetici",
+    "MachineLearning"
+  ]
+}
