@@ -141,10 +141,6 @@ def controlla(battute, scheda, lingua, cfg_d, numero_puntata):
     for i, (_, b) in enumerate(battute):
         for m in rx_punti.finditer(b):
             coda = b[m.end():m.end() + 40].lower()
-            # Elo non ha un massimo; un confronto con un altro metodo basta.
-            if re.search(r"\belo\b", m.group(0), re.I) or re.search(
-                    r"rispetto|contro|in più|in meno|compared|versus|\bvs\b|more than|less than", coda):
-                continue
             if not re.search(T["rx_scala"], coda):
                 segnala(i, T["punteggio_senza_scala"].format(n=m.group(0).strip()))
                 break
