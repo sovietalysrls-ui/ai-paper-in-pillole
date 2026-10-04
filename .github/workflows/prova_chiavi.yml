@@ -1,0 +1,44 @@
+# Controlla che le chiavi Gemini funzionino, con una richiesta piccolissima
+# per ciascuna. Le chiavi non vengono mai scritte nel diario.
+
+name: Prova chiavi Gemini
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Prova
+        env:
+          GEMINI_API_KEY_GRATIS: ${{ secrets.GEMINI_API_KEY_GRATIS }}
+          GEMINI_API_KEY_PAGAMENTO: ${{ secrets.GEMINI_API_KEY_PAGAMENTO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 - <<'PY' > esito.txt
+          import json, os, urllib.request, urllib.error
+          modello = "gemini-3.8-flash"
+          righe = []
+          for nome, descr in (("GEMINI_API_KEY_GRATIS", "gratuita"), ("GEMINI_API_KEY_PAGAMENTO", "a pagamento")):
+              k = os.environ.get(nome, "").strip()
+              if not k:
+                  righe.append(f"Chiave {descr}: manca"); continue
+              req = urllib.request.Request(
+                  f"https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent",
+                  data=json.dumps({"contents": [{"parts": [{"text": "Rispondi solo: ok"}]}]}).encode(),
+                  headers={"x-goog-api-key": k, "Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(req, timeout=60) as r:
+                      righe.append(f"Chiave {descr}: funziona ({modello})")
+              except urllib.error.HTTPError as e:
+                  testo = e.read().decode()[:300]
+                  righe.append(f"Chiave {descr}: errore {e.code} - {testo}")
+          print("\n".join(righe))
+          PY
+          cat esito.txt
+          ./avvisa.sh "🔑 Prova chiavi Gemini
+          $(cat esito.txt)"

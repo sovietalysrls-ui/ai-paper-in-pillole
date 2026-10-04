@@ -51,9 +51,9 @@ jobs:
     outputs:
       wp_ok: ${{ steps.wp.outputs.ok }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -100,16 +100,22 @@ jobs:
         if: ${{ success() && inputs.prova != true && inputs.solo_articolo != true }}
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           [ -f uscita/OGGI/puntata.wav ] || { echo "Nessuna puntata nuova da copiare"; exit 0; }
           if [ -z "$RCLONE_CONF" ]; then echo "Google Drive non configurato (segreto RCLONE_CONF)"; exit 0; fi
           sudo apt-get install -y -qq rclone >/dev/null
           mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
-          ./drive.sh uscita/OGGI || echo "::warning::Copia su Drive non riuscita"
+          if ./drive.sh uscita/OGGI; then
+            ./avvisa.sh "📁 Puntata copiata su Google Drive (cartella AI PAPER IN PILLOLE / OGGI). La precedente è in OLD, senza wav."
+          else
+            ./avvisa.sh "⚠️ Copia su Google Drive non riuscita. I file restano su Telegram e su GitHub."
+          fi
 
       - name: Salva i file della puntata (14 giorni)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: puntata-${{ github.run_number }}
           path: |
@@ -143,6 +149,8 @@ jobs:
         if: ${{ success() && inputs.prova != true && inputs.solo_articolo != true }}
         env:
           GH_TOKEN: ${{ github.token }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           [ -f uscita/OGGI/puntata.wav ] || { echo "Nessun audio oggi"; exit 0; }
           CARTELLA=$(ls -d archivio/puntate/*/ | sort | tail -1)
@@ -150,7 +158,8 @@ jobs:
           if gh release view "$NOME" >/dev/null 2>&1; then echo "Release già presente"; exit 0; fi
           gh release create "$NOME" uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 uscita/OGGI/copertina.jpg \
             --title "$(head -1 uscita/OGGI/titolo_e_descrizione.txt)" --notes "$(tail -n +3 uscita/OGGI/titolo_e_descrizione.txt)" \
-            || echo "::warning::Release non creata"
+            && ./avvisa.sh "🗄 Audio archiviato su GitHub: https://github.com/${{ github.repository }}/releases/tag/$NOME" \
+            || ./avvisa.sh "⚠️ Audio non archiviato nelle Releases di GitHub."
 
   # Il server del sito blocca alcuni server di GitHub. Ogni lavoro parte su un
   # server diverso: se il caricamento dell'articolo non è riuscito, si riprova
@@ -159,16 +168,18 @@ jobs:
     needs: puntata
     if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && inputs.prova != true }}
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -q -r requirements.txt
+      - name: Aspetta 15 minuti
+        run: sleep 900
       - name: Pubblica l'articolo (tentativo 2)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -187,16 +198,18 @@ jobs:
     needs: [puntata, articolo_2]
     if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && needs.articolo_2.result == 'failure' && inputs.prova != true }}
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -q -r requirements.txt
+      - name: Aspetta 15 minuti
+        run: sleep 900
       - name: Pubblica l'articolo (tentativo 3, ultimo)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}

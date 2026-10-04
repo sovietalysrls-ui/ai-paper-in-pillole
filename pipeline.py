@@ -276,7 +276,7 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         except ErroreWordPress as e:
             # Il sito non deve bloccare la puntata: si segnala e si va avanti.
             avanz.avviso(f"WordPress non raggiunto da questo server ({str(e)[:80]}): "
-                         f"riprovo da altri server, l'esito arriva in un messaggio a parte")
+                         f"riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte")
             avanz.stati[p_wp] = ("errore", str(e)[:120])
 
 

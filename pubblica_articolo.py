@@ -74,6 +74,9 @@ def main():
             telegram(f"⚠️ Articolo non caricato sul sito dopo {a.tentativo} tentativi: il server di Tophost "
                      f"blocca i server di GitHub usati stanotte. L'articolo è nell'archivio "
                      f"({d.name}). Per riprovare: Actions > Notte > Run workflow, con 'solo articolo'.")
+        else:
+            telegram(f"⏳ Articolo: tentativo {a.tentativo} non riuscito (il sito non risponde a questo server). "
+                     f"Riprovo tra 15 minuti da un altro server.")
         return 1
     (d / "wordpress.json").write_text(json.dumps(r, ensure_ascii=False, indent=2), encoding="utf-8")
     stato = "in bozza" if r["stato"] == "draft" else r["stato"]
