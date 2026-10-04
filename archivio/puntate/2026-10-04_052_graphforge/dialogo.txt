@@ -1,0 +1,63 @@
+Carlo: Per insegnare a un'intelligenza artificiale a lavorare in ufficio non basta farle leggere documenti a caso.
+
+Carlo: Bisogna costruire una mappa di prove verificabili proprio come farebbe un investigatore esperto nei casi più complessi.
+
+Arianna: Benvenuti ad AI Paper in Pillole, il podcast quotidiano di divulgazione scientifica, arrivati oggi alla puntata numero cinquantadue.
+
+Carlo: Io sono Carlo.
+
+Arianna: E io sono Arianna.
+
+Arianna: Oggi parliamo di come allenare assistenti digitali davvero utili per il lavoro d'ufficio e per la gestione aziendale quotidiana.
+
+Carlo: Spesso i programmi usati per fare pratica sono inventati oppure non hanno controlli sicuri sui risultati effettivi prodotti.
+
+Arianna: I ricercatori hanno affrontato questo limite con un framework chiamato GraphForge, che in pratica costruisce uffici virtuali basati su dati veri.
+
+Carlo: Pensa a un impiegato che deve analizzare cinquanta fatture in formato PDF sparse in cartelle diverse e archiviate disordinatamente.
+
+Carlo: Deve estrarre con precisione i dati corretti e verificare che i totali corrispondano esattamente a quanto riportato nei fogli di calcolo di supporto.
+
+Arianna: Per preparare l'intelligenza artificiale a questo compito servono esercizi realistici e verifiche rigorose basate su file autentici e verificati.
+
+Carlo: Come fa il sistema a creare questi esercizi senza inventare tutto da zero e mantenendo la massima coerenza?
+
+Arianna: Seleziona semi basati su occupazioni reali per garantire una varietà controllata e raccoglie un insieme di file autentici per ciascun ambiente di lavoro virtuale.
+
+Carlo: Poi collega ogni documento agli altri creando un vero e proprio grafo delle evidenze che mappa con cura le relazioni tra tutte le informazioni disponibili.
+
+Arianna: Infine, genera richieste e criteri di valutazione rigorosamente collegati ai file, mentre un agente di revisione controlla e ripara il compito prima di usarlo per l'addestramento.
+
+Carlo: In questo modo ogni singolo esercizio è ancorato saldamente a file reali e nessuno può barare durante la delicata fase di apprendimento.
+
+Arianna: I risultati mostrano miglioramenti notevoli quando si usa la messa a punto supervisionata, cioè la fase di addestramento con esempi guidati chiamata SFT.
+
+Carlo: Il modello Qwen3,6-27B ha ottenuto risultati eccezionali. Il punteggio Elo su GDPVal è salito di 65,7 punti su 100.
+
+Arianna: Su Workspace-Bench-Lite, cioè il test leggero per ambienti di lavoro, lo stesso modello ha guadagnato ben 7,7 punti in più rispetto al passato.
+
+Carlo: E su SpreadsheetBench II l'accuratezza generale è cresciuta di 13,7 punti su 100 rispetto al passato.
+
+Arianna: Il metodo innovativo ha però anche alcuni limiti attuali molto importanti che i ricercatori dovranno superare nei prossimi studi.
+
+Carlo: Quali sono esattamente questi limiti tecnici?
+
+Arianna: Il corpus di addestramento si ferma a 2.169 traiettorie e al momento non sappiamo cosa potrebbe succedere usando budget di dati superiori.
+
+Carlo: Inoltre la verifica si affida a un modello come GLM-5,2 che a volte fatica sui dettagli più piccoli e a grana fine.
+
+Arianna: E non dimentichiamo che gli esperimenti sono stati condotti utilizzando unicamente modelli di una singola famiglia.
+
+Carlo: Questo argomento riguarda molto da vicino chi ci ascolta tutti i giorni. In futuro useremo assistenti digitali capaci di svolgere compiti d'ufficio complessi senza commettere errori o inventare dati.
+
+Arianna: Questo straordinario traguardo sarà possibile proprio grazie a simulazioni sempre più realistiche, strutturate e basate su file autentici.
+
+Arianna: Vi ricordiamo di lasciare un like e le cinque stelle per sostenere il nostro podcast di intelligenza artificiale.
+
+Carlo: E ricordatevi di seguire la pagina per non perdere nemmeno una puntata futura.
+
+Arianna: A presto.
+
+Carlo: Ciao.
+
+[dopo la sigla] Arianna: AI Paper in Pillole è un progetto di Sovietaly SRLS.

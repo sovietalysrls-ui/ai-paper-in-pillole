@@ -1,0 +1,119 @@
+{
+  "nome_breve": "GraphForge",
+  "problema": "Gli assistenti digitali intelligenti per il lavoro d'ufficio hanno bisogno di essere addestrati su compiti reali basati su molti documenti diversi. Oggi però i dati di addestramento disponibili o sono inventati artificialmente e poco realistici, oppure usano file reali ma senza controlli sicuri sui risultati ottenuti.",
+  "idea": "Un sistema che crea ambienti di lavoro virtuali partendo da dati occupazionali reali e collega ogni compito a un grafo di relazioni tra i documenti. In questo modo ogni esercizio e la sua verifica sono ancorati saldamente a file autentici.",
+  "come_funziona": [
+    "Il sistema seleziona semi basati su occupazioni reali per garantire varietà controllata.",
+    "Raccoglie un insieme di file reali per ciascun ambiente di lavoro virtuale.",
+    "Costruisce un grafo delle evidenze che mappa le relazioni tra tutti i documenti.",
+    "Genera richieste e criteri di valutazione rigorosamente collegati ai file.",
+    "Un agente di revisione controlla e ripara il compito prima dell'utilizzo."
+  ],
+  "risultati": [
+    {
+      "fatto": "Incremento del punteggio Elo su GDPVal per il modello Qwen3.6-27B SFT",
+      "numero": "+65.7",
+      "scala": "non indicato"
+    },
+    {
+      "fatto": "Incremento di punteggio su Workspace-Bench-Lite per il modello Qwen3.6-27B SFT",
+      "numero": "+7.7",
+      "scala": "non indicato"
+    },
+    {
+      "fatto": "Incremento di accuratezza su SpreadsheetBench II per il modello Qwen3.6-27B SFT",
+      "numero": "+13.7",
+      "scala": "non indicato"
+    }
+  ],
+  "limiti": [
+    "Il corpus di addestramento è limitato a 2.169 traiettorie senza testare budget di dati superiori.",
+    "La pipeline e il sistema di giudizio si affidano a un modello che fatica a verificare i dettagli a grana fine.",
+    "Gli esperimenti sono stati condotti utilizzando solo due modelli di base della stessa famiglia."
+  ],
+  "esempio_concreto": "Un impiegato deve analizzare cinquanta fatture in formato PDF sparse in cartelle diverse, estrarre i dati corretti e verificare che i totali corrispondano a quanto riportato nei fogli di calcolo di supporto.",
+  "perche_ti_riguarda": "In futuro userai assistenti digitali capaci di svolgere compiti d'ufficio complessi senza commettere errori o inventare dati, perché saranno stati addestrati su simulazioni estremamente realistiche.",
+  "gancio": "Per insegnare a un'intelligenza artificiale a lavorare in ufficio non basta farle leggere documenti a caso, bisogna costruire una mappa di prove verificabili proprio come farebbe un investigatore.",
+  "termini": [
+    {
+      "termine": "GraphForge",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il framework ideato dai ricercatori per sintetizzare dati di addestramento basati su grafi.",
+      "usa": "termine",
+      "pronuncia": "Gràf Forg"
+    },
+    {
+      "termine": "Qwen3.6-27B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale utilizzato e addestrato durante gli esperimenti.",
+      "usa": "termine",
+      "pronuncia": "Cuèn tre punto sèi ventisètte bi"
+    },
+    {
+      "termine": "GLM-5.2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello utilizzato nella pipeline per la sintesi e la verifica dei compiti.",
+      "usa": "termine",
+      "pronuncia": "Gi Elle Èm cinque virgola due"
+    },
+    {
+      "termine": "GDPVal",
+      "tipo": "sigla",
+      "espansione_inglese": "General Data Processing Validation",
+      "significato": "validazione generale dell'elaborazione dei dati",
+      "spiegazione": "Un banco di prova utilizzato per valutare le prestazioni degli agenti di lavoro.",
+      "usa": "termine",
+      "pronuncia": "gi di pi vàl"
+    },
+    {
+      "termine": "Workspace-Bench-Lite",
+      "tipo": "sigla",
+      "espansione_inglese": "Workspace Benchmark Lite",
+      "significato": "test leggero per ambienti di lavoro",
+      "spiegazione": "Una versione ridotta di un benchmark per misurare le capacità degli assistenti digitali.",
+      "usa": "termine",
+      "pronuncia": "uòrk speis bèntch làit"
+    },
+    {
+      "termine": "SpreadsheetBench II",
+      "tipo": "sigla",
+      "espansione_inglese": "Spreadsheet Benchmark 2",
+      "significato": "test per fogli di calcolo 2",
+      "spiegazione": "Un banco di prova specifico per testare la gestione di tabelle e calcoli.",
+      "usa": "termine",
+      "pronuncia": "sprèd shiit bèntch sècondo"
+    },
+    {
+      "termine": "O*NET",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un database ufficiale dettagliato sulle occupazioni lavorative usato come punto di partenza.",
+      "usa": "termine",
+      "pronuncia": "O èt"
+    },
+    {
+      "termine": "SFT",
+      "tipo": "sigla",
+      "espansione_inglese": "Supervised Fine-Tuning",
+      "significato": "messa a punto supervisionata",
+      "spiegazione": "La fase in cui un modello di intelligenza artificiale viene perfezionato usando esempi guidati.",
+      "usa": "spiegazione",
+      "pronuncia": "esse eff ti"
+    }
+  ],
+  "soggetto_immagine": "a network graph connecting a document icon and a verification checklist",
+  "hashtag": [
+    "AI",
+    "AgentiVirtuali",
+    "MachineLearning",
+    "ElaborazioneDocumenti",
+    "IntelligenzaArtificiale"
+  ]
+}
