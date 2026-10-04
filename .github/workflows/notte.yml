@@ -11,8 +11,12 @@ name: Notte
 on:
   schedule:
     # 02:15 UTC = 04:15 in Italia con l'ora legale, 03:15 con l'ora solare.
-    # GitHub a volte parte con qualche minuto di ritardo.
+    # GitHub a volte salta una partenza quando i suoi server sono carichi.
+    # Per questo ci sono altre due sveglie di riserva, un'ora e due ore dopo:
+    # se la puntata del giorno è già fatta, escono subito senza fare nulla.
     - cron: "15 2 * * *"
+    - cron: "17 3 * * *"
+    - cron: "19 4 * * *"
   workflow_dispatch:
     inputs:
       paper:
@@ -75,6 +79,7 @@ jobs:
             exit 0
           fi
           ARGS="--cloud"
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="$ARGS --se-manca"; fi
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
           if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
@@ -96,6 +101,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run: |
+          [ -f uscita/OGGI/puntata.wav ] || { echo "Nessuna puntata nuova da copiare"; exit 0; }
           if [ -z "$RCLONE_CONF" ]; then echo "Google Drive non configurato (segreto RCLONE_CONF)"; exit 0; fi
           sudo apt-get install -y -qq rclone >/dev/null
           mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf

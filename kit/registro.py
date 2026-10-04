@@ -49,6 +49,12 @@ class Registro:
              dt.datetime.now().isoformat(timespec="seconds")))
         self.db.commit()
 
+    def fatta_il(self, lingua, data):
+        """True se in quella data c'è già una puntata completa."""
+        return self.db.execute(
+            "SELECT 1 FROM puntate WHERE lingua=? AND stato='completa' AND data=?",
+            (lingua, data)).fetchone() is not None
+
     def elenco(self, lingua, n=20):
         return self.db.execute(
             "SELECT data, numero, arxiv_id, stato, titolo FROM puntate "

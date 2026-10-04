@@ -375,6 +375,8 @@ def main():
     ap.add_argument("--data", help="finge che oggi sia questa data (AAAA-MM-GG)")
     ap.add_argument("--modello", help="usa un altro modello Ollama solo per questa volta (es. gemma4:e4b)")
     ap.add_argument("--voce", choices=["gemini", "nessuna"], help="sceglie il motore voce solo per questa volta")
+    ap.add_argument("--se-manca", action="store_true",
+                    help="esce subito se la puntata di oggi è già fatta (per le sveglie di riserva)")
     args = ap.parse_args()
 
     cfg = carica_config(cloud=args.cloud)
@@ -389,6 +391,12 @@ def main():
     oggi = dt.date.fromisoformat(args.data) if args.data else dt.date.today()
     data = oggi.isoformat()
     lingue = cfg["lingue"]
+
+    if args.se_manca:
+        db = (cfg["archivio_git"] if cfg.get("archivio_git") else Path(cfg["cartella_base"]) / "dati") / "registro.sqlite"
+        if db.exists() and Registro(db).fatta_il(lingue[0], data):
+            print(f"La puntata del {data} è già fatta: niente da fare.")
+            return 0
 
     base, oggi_dir, old_dir = cartelle(cfg)
     if args.rifai and oggi_dir.exists():
