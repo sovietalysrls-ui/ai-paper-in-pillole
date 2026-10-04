@@ -198,7 +198,7 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
         scrivi_json(p_tit, tit)
         avanz.inizia(p, "descrizione")
         desc = testi.descrizione(llm, L, sk, paper, meta, paper["link"],
-                                 cloud=cfg["motori"]["testo"] == "gemini")
+                                 cloud=cfg["motori"]["testo"] == "gemini", avanz=avanz)
         scrivi_testo(lav / "descrizione.txt", desc)
         # Titolo e descrizione in un unico file: titolo, riga vuota, descrizione.
         scrivi_testo(out / "titolo_e_descrizione.txt", f"{tit['completo']}\n\n{desc}")

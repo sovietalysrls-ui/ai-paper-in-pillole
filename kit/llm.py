@@ -214,3 +214,9 @@ class Finto:
 
     def _correggi(self, u):
         return self._tra_marcatori(u)
+
+    def _rivedi_articolo(self, u):
+        return self._tra_marcatori(u)
+
+    def _rivedi_descrizione(self, u):
+        return self._tra_marcatori(u)

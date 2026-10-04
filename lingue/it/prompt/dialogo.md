@@ -19,11 +19,12 @@ Lunghezza: circa $parole_obiettivo parole in tutto, mai più di $parole_max.
 
 Regole di scrittura:
 - Ogni frase al massimo 20 parole. Battute brevi: in media 2-3 frasi.
+- Ogni risposta risponde davvero alla domanda appena fatta. Se Carlo chiede "come fa a sapere che è giusto?", Arianna spiega il controllo, non un altro passaggio.
 - Carlo e Arianna si alternano. Mai più di due battute di fila della stessa persona.
 - Usa solo fatti e numeri della scheda. Se un numero non c'è, non scriverlo.
 - Pochi numeri, sempre spiegati. In tutta la puntata al massimo $numeri_max numeri. Chi ascolta non è del mestiere: un numero da solo non gli dice niente e lo annoia. Scegli il risultato più importante e traducilo in qualcosa di concreto, usando il campo "in_pratica" della scheda: "su 10 compiti d'ufficio, prima ne finiva bene 3, adesso 5"; "quasi il doppio"; "un passo avanti piccolo ma chiaro". Mai un numero senza dire cosa significa per chi ascolta.
 - I paragoni di Carlo non devono aggiungere stime che non sono nella scheda ("dimezza il tempo", "dieci volte meglio"): se la scheda non lo dice, non dirlo.
-- Racconta al massimo 2 risultati, i più importanti, con un paragone ciascuno. Non elencare tanti miglioramenti vaghi uno dopo l'altro.
+- Racconta al massimo 2 risultati, i più importanti (i primi della scheda), con un paragone ciascuno. Usa "prima" e "in_pratica" per dare un'idea concreta della differenza ("più del doppio di prima"), non aggettivi vaghi come "nettamente" o "forte abilità". Non elencare tanti miglioramenti vaghi uno dopo l'altro.
 - Dopo i risultati, una volta sola, dite che i numeri precisi si trovano nell'articolo sul sito e nel paper, con il link nella descrizione.
 - Non nominare i test di valutazione (benchmark) con il loro nome inglese: dì che tipo di prova è ("un test che simula il lavoro con i fogli di calcolo").
 - Non nominare i modelli con sigle e numeri di versione (per esempio "Qwen3.6-27B"): dì "un modello open source di media grandezza" o la famiglia ("un modello della famiglia Qwen"). Vale in tutta la puntata, anche nei limiti: "un altro modello che fa da giudice".

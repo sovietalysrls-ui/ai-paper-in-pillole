@@ -7,9 +7,9 @@
 #
 # Per aggiungere un tic: copia un blocco e cambia i tre campi.
 
-- regex: '^\W*(assolutamente|esatto|esattamente|perfetto|certo|giusto|wow|caspita|accidenti)\b\W'
+- regex: '^\W*(assolutamente|esatto|esattamente|perfetto|certo|giusto|wow|caspita|accidenti|proprio così|decisamente|moltissimo|precisamente)\b\W'
   motivo: "interiezione d'apertura da podcast artificiale"
-  esempio: 'Mai aprire una battuta con "Assolutamente!", "Esatto!", "Perfetto!", "Certo!", "Wow!", "Caspita!".'
+  esempio: 'Mai aprire una battuta con "Assolutamente!", "Esatto!", "Perfetto!", "Certo!", "Wow!", "Caspita!", "Proprio così", "Decisamente", "Moltissimo".'
 
 - regex: '\b(ottima|bella|buona|grande) domanda\b'
   motivo: "complimento alla domanda"

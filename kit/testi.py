@@ -35,9 +35,9 @@ SCHEMA_SCHEDA = {
         "idea": {"type": "string"},
         "come_funziona": LISTA_TESTI,
         "risultati": {"type": "array", "items": {"type": "object", "properties": {
-            "fatto": {"type": "string"}, "numero": {"type": "string"}, "scala": {"type": "string"},
-            "in_pratica": {"type": "string"}},
-            "required": ["fatto", "numero", "scala", "in_pratica"]}},
+            "fatto": {"type": "string"}, "numero": {"type": "string"}, "prima": {"type": "string"},
+            "scala": {"type": "string"}, "in_pratica": {"type": "string"}},
+            "required": ["fatto", "numero", "prima", "scala", "in_pratica"]}},
         "limiti": LISTA_TESTI,
         "esempio_concreto": {"type": "string"},
         "perche_ti_riguarda": {"type": "string"},
@@ -248,11 +248,38 @@ def _scheda_lettura(sk):
     return sk
 
 
-def descrizione(llm, lingua, sk, paper, meta, link, cloud=False):
+def rivedi(llm, lingua, testo, sk, numeri_max=None, giri=2, avanz=None, compito="rivedi"):
+    """Controlla un testo da leggere (articolo, descrizione) e fa correggere i problemi.
+    Tiene la versione nuova solo se non ha accorciato o allungato troppo il testo."""
+    for giro in range(giri):
+        problemi = controlli.controlla_prosa(testo, lingua, numeri_max)
+        if not problemi:
+            return testo, []
+        if avanz:
+            avanz.scrivi(f"   {compito}: {len(problemi)} problemi, correggo (giro {giro + 1})")
+        s, u = prompt(lingua, "rivedi", testo=testo, scheda=_scheda_lettura(sk),
+                      problemi="\n".join(f"- {p}" for p in problemi[:15]))
+        nuovo = (llm.chat(s, u, compito, temperatura=0.3, max_token=3500) or "").strip().strip("<>").strip()
+        a, b = conta_parole(testo), conta_parole(nuovo)
+        if not nuovo or b < a * 0.75 or b > a * 1.3:
+            break
+        testo = nuovo
+    return testo, controlli.controlla_prosa(testo, lingua, numeri_max)
+
+
+def _rifinisci(llm, lingua, testo):
+    testo = correggi(llm, lingua, testo)
+    return controlli.virgola_decimali(testo) if lingua.get("decimali_virgola") else testo
+
+
+def descrizione(llm, lingua, sk, paper, meta, link, cloud=False, avanz=None):
     s, u = prompt(lingua, "descrizione", scheda=_scheda_lettura(sk), titolo_originale=paper["titolo"],
                   vietate=_regole_vietate(lingua))
     corpo = llm.chat(s, u, "descrizione", temperatura=0.6, max_token=1200)
-    corpo = correggi(llm, lingua, corpo)
+    corpo, resto = rivedi(llm, lingua, corpo, sk, numeri_max=3, avanz=avanz, compito="rivedi descrizione")
+    if resto and avanz:
+        avanz.avviso("descrizione: " + "; ".join(resto)[:300])
+    corpo = _rifinisci(llm, lingua, corpo)
     L = lingua["piede"]
     righe = [corpo.strip(), ""]
     autori = _autori(meta.get("autori") or paper["autori"], L)
@@ -277,7 +304,10 @@ def articolo(llm, lingua, sk, paper, meta, link, cfg_a, avanz):
     n = conta_parole(testo)
     if n < cfg_a["parole_min"] * 0.85 or n > cfg_a["parole_max"] * 1.15:
         avanz.avviso(f"articolo di {n} parole (atteso {cfg_a['parole_min']}-{cfg_a['parole_max']})")
-    testo = correggi(llm, lingua, testo)
+    testo, resto = rivedi(llm, lingua, testo, sk, avanz=avanz, compito="rivedi articolo")
+    if resto:
+        avanz.avviso("articolo: " + "; ".join(resto)[:300])
+    testo = _rifinisci(llm, lingua, testo)
     L = lingua["piede"]
     autori = _autori(meta.get("autori") or paper["autori"], L)
     corpo_html = md_a_html(testo)

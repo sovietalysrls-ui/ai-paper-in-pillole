@@ -42,6 +42,11 @@ parole_chiusura:
 testi_controlli:
   sigla_senza_significato: "says the acronym {s} without explaining what the letters stand for: add \"{s}, which stands for {sig}\""
   punteggio_senza_scala: "gives the score \"{n}\" without explaining it: say in words what it means (better by how much, compared with what), never invent a scale"
+  prosa_punteggio: "in the sentence «{frase}» the score \"{n}\" means nothing to the reader: say what the test measures and compare it (from what to what, or against whom), or just say what it means in practice. Never invent a scale"
+  prosa_ripetuta: "repeats the sentence «{frase}»: keep it once"
+  prosa_numeri: "contains {n} different numbers, the maximum is {max}: keep the most important and tell the rest in words"
+  prosa_pronuncia: "spells out how to pronounce a name: remove it, this text is read"
+  rx_confronto: "compared|than|before|more|less|double|half|times|from \\d|rose|fell"
   troppi_numeri: "mentions the number {n}, but the episode already has too many numbers: drop it and say in words what it means"
   rx_punteggio: "(score|scored|points)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|percent))|\\d+(?:[.,]\\d+)?\\s+points"
   rx_scala: "^\\s*(points\\s+)?(out of|on a scale of)\\s+\\d"

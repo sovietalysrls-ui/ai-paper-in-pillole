@@ -53,6 +53,11 @@ parole_chiusura:
 testi_controlli:
   sigla_senza_significato: "dice la sigla {s} senza spiegare cosa significano le lettere: aggiungi \"{s}, cioè {sig}\""
   punteggio_senza_scala: "cita il punteggio \"{n}\" senza spiegarlo: dì a parole cosa significa (meglio di quanto, rispetto a chi), senza inventare un fondo scala"
+  prosa_punteggio: "nella frase «{frase}» il punteggio \"{n}\" non dice niente a chi legge: spiega cosa misura il test e confrontalo (da quanto a quanto, o rispetto a chi), oppure dì solo cosa significa in pratica. Non inventare un fondo scala"
+  prosa_ripetuta: "ripete la frase «{frase}»: tienila una volta sola"
+  prosa_numeri: "contiene {n} numeri diversi, il massimo è {max}: tieni i più importanti e racconta gli altri a parole"
+  prosa_pronuncia: "scrive come si pronuncia un nome: togli quella parte, il testo si legge"
+  rx_confronto: "rispetto|prima|più|meno|doppio|metà|volte|da \\d|passato|salito|sceso"
   troppi_numeri: "contiene il numero {n}, ma la puntata ha già troppi numeri: toglilo e dì a parole cosa significa"
   rx_punteggio: "(punteggio|punti|score)[^.!?\\d]{0,25}\\d+(?:[.,]\\d+)?(?!\\s*(%|per\\s*cento|percento))|\\d+(?:[.,]\\d+)?\\s+punti"
   rx_scala: "^\\s*(punti\\s+)?(su|out of)\\s+\\d"

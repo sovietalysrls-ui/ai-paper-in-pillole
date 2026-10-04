@@ -212,3 +212,45 @@ def versione_voce(battute, mappa):
         return list(battute)
     rx = re.compile(r"(?<![\w-])(" + "|".join(map(re.escape, chiavi)) + r")(?![\w-])")
     return [(chi, rx.sub(lambda m: mappa[m.group(1)], b)) for chi, b in battute]
+
+
+# ---------------------------------------------------------------------
+#  Testi da leggere (articolo, descrizione)
+# ---------------------------------------------------------------------
+
+def virgola_decimali(testo):
+    """72.1 → 72,1 e 0.45 → 0,45. Non tocca nomi con versioni (Qwen3.6, GLM-5.2),
+    indirizzi web e numeri lunghi come 2609.38923."""
+    testo = re.sub(r"(?<![\w.,/-])(\d+)\.(\d{1,2})(?![\w/-])", r"\1,\2", testo)
+    return re.sub(r"(?<![\w.,/-])0\.(\d+)(?![\w/-])", r"0,\1", testo)
+
+
+def controlla_prosa(testo, lingua, numeri_max=None):
+    """Problemi in un testo da leggere. Ritorna una lista di frasi da dare al modello."""
+    T = lingua["testi_controlli"]
+    problemi = []
+    for v in lingua["vietate"]:
+        m = re.search(v["regex"], testo, re.I | re.M)
+        if m:
+            problemi.append(T["vietata"].format(motivo=v["motivo"]) + f': «{m.group(0).strip()}»')
+    if re.search(r"pronunciat|pronuncia\b", testo, re.I):
+        problemi.append(T.get("prosa_pronuncia", "scrive come si pronuncia un nome: togli quella parte"))
+    rx = re.compile(T["rx_punteggio"], re.I)
+    confronto = re.compile(T.get("rx_confronto", r"rispetto|prima|più|meno|doppio|metà|volte"), re.I)
+    for f in frasi(testo):
+        for m in rx.finditer(f):
+            coda = f[m.end():m.end() + 40].lower()
+            if not re.search(T["rx_scala"], coda) and not confronto.search(f):
+                problemi.append(T["prosa_punteggio"].format(n=m.group(0).strip(), frase=f.strip()))
+                break
+    viste = set()
+    for f in frasi(testo):
+        k = " ".join(re.findall(r"\w+", f.lower()))
+        if len(k.split()) >= 6 and k in viste:
+            problemi.append(T["prosa_ripetuta"].format(frase=f.strip()))
+        viste.add(k)
+    if numeri_max:
+        nums = [n for n in re.findall(r"\d+(?:[.,]\d+)?", testo) if not re.fullmatch(r"(19|20)\d\d", n)]
+        if len(set(nums)) > numeri_max:
+            problemi.append(T["prosa_numeri"].format(n=len(set(nums)), max=numeri_max))
+    return problemi
