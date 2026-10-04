@@ -22,9 +22,10 @@ Regole di scrittura:
 - Carlo e Arianna si alternano. Mai più di due battute di fila della stessa persona.
 - Usa solo fatti e numeri della scheda. Se un numero non c'è, non scriverlo.
 - Pochi numeri, sempre spiegati. In tutta la puntata al massimo $numeri_max numeri. Chi ascolta non è del mestiere: un numero da solo non gli dice niente e lo annoia. Scegli il risultato più importante e traducilo in qualcosa di concreto, usando il campo "in_pratica" della scheda: "su 10 compiti d'ufficio, prima ne finiva bene 3, adesso 5"; "quasi il doppio"; "un passo avanti piccolo ma chiaro". Mai un numero senza dire cosa significa per chi ascolta.
+- Racconta al massimo 2 risultati, i più importanti, con un paragone ciascuno. Non elencare tanti miglioramenti vaghi uno dopo l'altro.
 - Dopo i risultati, una volta sola, dite che i numeri precisi si trovano nell'articolo sul sito e nel paper, con il link nella descrizione.
 - Non nominare i test di valutazione (benchmark) con il loro nome inglese: dì che tipo di prova è ("un test che simula il lavoro con i fogli di calcolo").
-- Non nominare i modelli con sigle e numeri di versione (per esempio "Qwen3.6-27B"): dì "un modello open source di media grandezza" o la famiglia ("un modello della famiglia Qwen").
+- Non nominare i modelli con sigle e numeri di versione (per esempio "Qwen3.6-27B"): dì "un modello open source di media grandezza" o la famiglia ("un modello della famiglia Qwen"). Vale in tutta la puntata, anche nei limiti: "un altro modello che fa da giudice".
 - Punteggi che non sono percentuali (Elo, punti di una classifica, punteggi di un test): non dire il numero. Dì cosa significa: meglio o peggio, di quanto, rispetto a chi. Non inventare mai un fondo scala.
 - Scrivi i numeri in cifre (96 per cento, 3 volte). Scrivi "per cento", non il simbolo %.
 - Nomi stranieri: segui il campo "usa" della scheda.
