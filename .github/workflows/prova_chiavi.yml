@@ -21,22 +21,26 @@ jobs:
         run: |
           python3 - <<'PY' > esito.txt
           import json, os, urllib.request, urllib.error
-          modello = "gemini-3.8-flash"
+          modelli = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"]
           righe = []
           for nome, descr in (("GEMINI_API_KEY_GRATIS", "gratuita"), ("GEMINI_API_KEY_PAGAMENTO", "a pagamento")):
               k = os.environ.get(nome, "").strip()
               if not k:
                   righe.append(f"Chiave {descr}: manca"); continue
-              req = urllib.request.Request(
-                  f"https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent",
-                  data=json.dumps({"contents": [{"parts": [{"text": "Rispondi solo: ok"}]}]}).encode(),
-                  headers={"x-goog-api-key": k, "Content-Type": "application/json"})
-              try:
-                  with urllib.request.urlopen(req, timeout=60) as r:
-                      righe.append(f"Chiave {descr}: funziona ({modello})")
-              except urllib.error.HTTPError as e:
-                  testo = e.read().decode()[:300]
-                  righe.append(f"Chiave {descr}: errore {e.code} - {testo}")
+              errori = []
+              for modello in modelli:
+                  req = urllib.request.Request(
+                      f"https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent",
+                      data=json.dumps({"contents": [{"parts": [{"text": "Rispondi solo: ok"}]}]}).encode(),
+                      headers={"x-goog-api-key": k, "Content-Type": "application/json"})
+                  try:
+                      with urllib.request.urlopen(req, timeout=60) as r:
+                          righe.append(f"Chiave {descr}: funziona ({modello})"); break
+                  except urllib.error.HTTPError as e:
+                      msg = json.loads(e.read().decode() or "{}").get("error", {}).get("message", "")[:120]
+                      errori.append(f"{modello} {e.code} {msg}")
+              else:
+                  righe.append(f"Chiave {descr}: non funziona. " + " | ".join(errori))
           print("\n".join(righe))
           PY
           cat esito.txt
