@@ -1,0 +1,41 @@
+[16:53:25] ===== Avvio 2026-10-04 16:53 =====
+[16:53:26] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[16:53:26]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[16:53:26] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[16:53:26] ▶ Scheda dei fatti — 1 pezzi da leggere
+[16:53:26] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[16:53:35] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[16:53:40]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:54:13]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:54:36] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[16:54:36]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:55:20] ✔ Scheda dei fatti — GraphForge · 3 risultati · 8 termini
+[16:55:20] ▶ Dialogo — puntata #52
+[16:55:21]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:56:10]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:56:35] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[16:56:35] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.5-flash (chiave gratuita), passo a gemini-3.5-flash-lite
+[16:56:39] ✔ Dialogo — 33 battute, 428 parole
+[16:56:39] ▶ Controlli e correzioni
+[16:56:39]    giro 1: 0 battute da sistemare, 1 problemi generali (428 parole)
+[16:56:43]    giro 2: 2 battute da sistemare, 0 problemi generali (528 parole)
+[16:56:49]    giro 3: 0 battute da sistemare, 1 problemi generali (518 parole)
+[16:56:59] ⚠ [it] dialogo, battuta 20: ha una frase di 31 parole: spezzala in frasi più corte
+[16:56:59] ✔ Controlli e correzioni — 1 problemi residui
+[16:56:59] ▶ Titolo, descrizione, articolo — titolo
+[16:57:04] ▶ Titolo, descrizione, articolo — descrizione
+[16:57:13]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[16:57:21]    rivedi descrizione: 1 problemi, correggo (giro 2)
+[16:57:29] ⚠ descrizione: contiene 5 numeri diversi, il massimo è 3: tieni i più importanti e racconta gli altri a parole
+[16:57:37] ▶ Titolo, descrizione, articolo — articolo per il sito
+[16:57:55] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #52 - GraphForge: come i futuri assisten» · articolo 670 parole
+[16:57:55] ▶ Copertina
+[16:57:56] ✔ Copertina — disegno del programma, icona «rete»
+[16:57:56] ↪ Voce — motore voce: nessuno
+[16:57:56] ↪ Montaggio audio — niente voce, niente montaggio
+[16:57:56] ↪ Articolo su WordPress — prova: niente pubblicazione sul sito
+[16:57:56] ▶ Consegna su Telegram
+[16:57:58] ✔ Consegna su Telegram — 3 file inviati
+[16:57:58] ▶ Registro e chiusura
+[16:57:58] Richieste al modello di testo: 13
+[16:57:58] memoria video non misurata (nvidia-smi assente)

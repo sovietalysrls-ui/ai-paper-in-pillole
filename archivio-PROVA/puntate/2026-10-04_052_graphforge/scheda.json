@@ -1,0 +1,123 @@
+{
+  "nome_breve": "GraphForge",
+  "problema": "Gli assistenti digitali devono saper consultare file diversi e usare strumenti informatici per completare compiti complessi. Addestrarli richiede esercizi basati su file reali con verifiche precise, ma finora i dati sintetizzati mancavano di realismo oppure non avevano un controllo automatico della qualità.",
+  "idea": "GraphForge crea compiti di addestramento e criteri di verifica partendo da ruoli lavorativi reali e file pubblici. Organizza i documenti e le loro relazioni in una rete logica, definendo esattamente cosa l'assistente deve fare e come controllare se il risultato è corretto.",
+  "come_funziona": [
+    "Si seleziona una mansione lavorativa da una banca dati ufficiale per garantire la varietà dei compiti.",
+    "Un agente automatizzato raccoglie file reali dal web e ne mappa le relazioni reciproche all'interno di una rete logica.",
+    "Dalla rete logica si generano le istruzioni del compito e le regole dettagliate di verifica ancorate ai file.",
+    "Un modello guida esegue un test preliminare e un agente di revisione corregge eventuali intoppi prima di salvare i dati d'addestramento."
+  ],
+  "risultati": [
+    {
+      "fatto": "Aumento dell'accuratezza generale nelle operazioni ed esecuzioni su fogli di calcolo",
+      "numero": "24.0",
+      "prima": "10.3",
+      "scala": "non indicato",
+      "in_pratica": "L'accuratezza nell'elaborazione e analisi dei fogli di calcolo è più che raddoppiata rispetto alle prestazioni iniziali."
+    },
+    {
+      "fatto": "Miglioramento della capacità dell'agente di gestire file e strumenti all'interno di un'area di lavoro digitale",
+      "numero": "63.7",
+      "prima": "56.0",
+      "scala": "non indicato",
+      "in_pratica": "L'assistente mostra un progresso chiaro nella coordinazione e nell'uso corretto dei documenti di lavoro."
+    },
+    {
+      "fatto": "Aumento del punteggio complessivo nelle prestazioni di risoluzione dei problemi aziendali",
+      "numero": "1445.7",
+      "prima": "1380.0",
+      "scala": "non indicato",
+      "in_pratica": "Un passo avanti significativo nella capacità di portare a termine compiti complessi in modo autonomo."
+    }
+  ],
+  "limiti": [
+    "L'addestramento è stato testato su un totale di sole 2.169 soluzioni e non è stato verificato l'effetto dell'aumento dei dati su scala maggiore.",
+    "Il modello usato per la verifica automatica fatica a rilevare piccole modifiche di contenuto all'interno dei documenti di testo."
+  ],
+  "esempio_concreto": "Un impiegato amministrativo deve creare una relazione sintetizzando i dati di bilancio presenti in una cartella con vari fogli di calcolo e documenti PDF con le regole aziendali.",
+  "perche_ti_riguarda": "I futuri assistenti intelligenti sapranno svolgere mansioni d'ufficio articolate e basate su molti file reali senza commettere sviste o calcoli errati.",
+  "gancio": "Quasi la totalità dei compiti d'ufficio complessi richiede di incrociare documenti PDF e tabelle per decine di passaggi consecutivi. Un nuovo metodo permette agli assistenti intelligenti di imparare questi processi direttamente da file reali.",
+  "termini": [
+    {
+      "termine": "GraphForge",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il sistema che genera dati di addestramento basandosi su file reali e sulle loro relazioni logiche.",
+      "usa": "termine",
+      "pronuncia": "Gràf Fòrg"
+    },
+    {
+      "termine": "O*NET",
+      "tipo": "sigla",
+      "espansione_inglese": "Occupational Information Network",
+      "significato": "rete di informazioni sulle occupazioni",
+      "spiegazione": "Una banca dati pubblica che descrive dettagliatamente le professioni e i compiti lavorativi reali.",
+      "usa": "spiegazione",
+      "pronuncia": "ò net"
+    },
+    {
+      "termine": "Qwen3.6-27B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale da 27 miliardi di parametri addestrato e testato nella ricerca.",
+      "usa": "termine",
+      "pronuncia": "Kùen tre punto sei ventisètte bi"
+    },
+    {
+      "termine": "GLM-5.2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale impiegato come giudice automatico per controllare la qualità dei compiti.",
+      "usa": "termine",
+      "pronuncia": "Gi Elle Emme cinque punto due"
+    },
+    {
+      "termine": "GDPVal",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test standardizzato per misurare le capacità operative dell'intelligenza artificiale su compiti complessi.",
+      "usa": "spiegazione",
+      "pronuncia": "Gi Di Pi Val"
+    },
+    {
+      "termine": "Workspace-Bench-Lite",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test per valutare l'abilità dell'assistente nel muoversi e operare tra vari file dell'area di lavoro.",
+      "usa": "spiegazione",
+      "pronuncia": "Uòrkspeis Bènch Làit"
+    },
+    {
+      "termine": "SpreadsheetBench II",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test mirato a verificare la precisione dell'agente nel lavoro sui fogli di calcolo.",
+      "usa": "spiegazione",
+      "pronuncia": "Sprèdschit Bènch due"
+    },
+    {
+      "termine": "OpenHands",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "L'ambiente software e la piattaforma di supporto utilizzata per far eseguire l'agente.",
+      "usa": "termine",
+      "pronuncia": "Òpen Hènds"
+    }
+  ],
+  "soggetto_immagine": "a simple network graph connecting document icons and a spreadsheet icon",
+  "hashtag": [
+    "AI",
+    "AgentiVirtuali",
+    "GraphForge",
+    "AutomazioneDigitale",
+    "MachineLearning"
+  ]
+}

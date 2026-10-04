@@ -1,0 +1,15 @@
+AI Paper in Pillole #52 - GraphForge: come i futuri assistenti digitali imparano a gestire file reali in ufficio
+
+Un impiegato amministrativo deve creare una relazione sintetizzando i dati di bilancio presenti in una cartella con vari fogli di calcolo e documenti PDF con le regole aziendali. Quasi la totalità dei compiti d'ufficio complessi richiede di incrociare documenti PDF e tabelle per decine di passaggi consecutivi. Addestrare gli assistenti digitali a fare questo richiede esercizi basati su file reali con verifiche precise, ma finora i dati sintetizzati mancavano di realismo oppure non avevano un controllo automatico della qualità.
+
+Un nuovo metodo, chiamato GraphForge, crea compiti di addestramento e criteri di verifica partendo da ruoli lavorativi reali e file pubblici. Il sistema seleziona una mansione lavorativa da una banca dati ufficiale per garantire la varietà dei compiti. Un agente automatizzato raccoglie file reali dal web e ne mappa le relazioni reciproche all'interno di una rete logica. Dalla rete logica si generano le istruzioni del compito e le regole dettagliate di verifica ancorate ai file. Un modello guida esegue un test preliminare e un agente di revisione corregge eventuali intoppi prima di salvare i dati d'addestramento.
+
+L'accuratezza nell'elaborazione e analisi dei fogli di calcolo è più che raddoppiata rispetto alle prestazioni iniziali, passando da 10,3 a 24,0 su SpreadsheetBench II, un test mirato a verificare la precisione dell'agente nel lavoro sui fogli di calcolo. L'assistente mostra inoltre un progresso chiaro nella coordinazione e nell'uso corretto dei documenti di lavoro, salendo da 56,0 a 63,7 su Workspace-Bench-Lite, un test per valutare l'abilità dell'assistente nel muoversi e operare tra vari file dell'area di lavoro. L'addestramento è stato testato su un totale di sole 2.169 soluzioni, misurate come numero totale di esercizi completati nell'esperimento, e non è stato verificato l'effetto dell'aumento dei dati su scala maggiore.
+
+Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
+
+Link al paper: https://arxiv.org/abs/2609.38923
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #AgentiVirtuali #GraphForge #AutomazioneDigitale #MachineLearning
