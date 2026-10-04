@@ -36,6 +36,10 @@ on:
         description: "Con 'paper': rifà una puntata già uscita, stesso numero, e aggiorna articolo, Drive e Releases"
         type: boolean
         default: false
+      solo_testi:
+        description: "Solo dialogo e articolo: niente voce, copertina disegnata (per rivederli)"
+        type: boolean
+        default: false
       solo_articolo:
         description: "Non rifare la puntata: pubblica solo l'articolo dell'ultima puntata archiviata"
         type: boolean
@@ -87,6 +91,7 @@ jobs:
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
           if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS="$ARGS --sostituisci"; fi
+          if [ "${{ inputs.solo_testi }}" = "true" ]; then ARGS="$ARGS --solo-testi"; fi
           if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
           python pipeline.py $ARGS
 

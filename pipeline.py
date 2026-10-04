@@ -262,6 +262,8 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         avanz.saltato(p_wp, leggi_json(p_esito).get("link", ""))
     elif finto:
         avanz.saltato(p_wp, "prova con motori finti: niente pubblicazione")
+    elif cfg.get("prova"):
+        avanz.saltato(p_wp, "prova: niente pubblicazione sul sito")
     elif not cfg_wp.get("attivo") or cod not in cfg_wp.get("lingue", ["it"]):
         avanz.saltato(p_wp, "non attivo per questa lingua")
     else:
@@ -383,6 +385,8 @@ def main():
     ap.add_argument("--data", help="finge che oggi sia questa data (AAAA-MM-GG)")
     ap.add_argument("--modello", help="usa un altro modello Ollama solo per questa volta (es. gemma4:e4b)")
     ap.add_argument("--voce", choices=["gemini", "nessuna"], help="sceglie il motore voce solo per questa volta")
+    ap.add_argument("--solo-testi", action="store_true",
+                    help="solo testi: niente voce, copertina disegnata (per rivedere dialogo e articolo)")
     ap.add_argument("--sostituisci", action="store_true",
                     help="con --paper: rifà una puntata già uscita, con lo stesso numero, e aggiorna l'articolo")
     ap.add_argument("--se-manca", action="store_true",
@@ -393,10 +397,17 @@ def main():
     if args.sostituisci and not args.paper:
         ap.error("--sostituisci serve insieme a --paper")
     cfg["sostituisci"] = args.sostituisci
+    cfg["prova"] = args.prova
+    if args.solo_testi:
+        # Per rivedere dialogo e articolo: niente voce, copertina disegnata, niente sito.
+        cfg["motori"]["voce"] = "nessuna"
+        cfg["motori"]["copertina"] = "disegno"
     if args.modello:
         cfg["modello_testo"]["nome"] = args.modello
     if args.voce:
         cfg["motori"]["voce"] = args.voce
+    if args.solo_testi:
+        cfg["motori"]["voce"] = "nessuna"
     if args.prova:
         cfg["cartella_base"] = Path(str(cfg["cartella_base"]) + "-PROVA")
         if cfg.get("archivio_git"):

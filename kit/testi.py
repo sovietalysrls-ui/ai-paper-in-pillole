@@ -1,5 +1,7 @@
 """Passi 3-6: scheda dei fatti, dialogo, controlli, titolo, descrizione, articolo."""
+import difflib
 import html
+import json
 import re
 
 from . import controlli
@@ -238,8 +240,16 @@ def _hashtag(lista):
     return " ".join("#" + h for h in out[:6])
 
 
+def _scheda_lettura(sk):
+    """La scheda per i testi da leggere: senza le pronunce (servono solo alla voce)."""
+    sk = json.loads(json.dumps(sk))
+    for t in sk.get("termini", []):
+        t.pop("pronuncia", None)
+    return sk
+
+
 def descrizione(llm, lingua, sk, paper, meta, link, cloud=False):
-    s, u = prompt(lingua, "descrizione", scheda=sk, titolo_originale=paper["titolo"],
+    s, u = prompt(lingua, "descrizione", scheda=_scheda_lettura(sk), titolo_originale=paper["titolo"],
                   vietate=_regole_vietate(lingua))
     corpo = llm.chat(s, u, "descrizione", temperatura=0.6, max_token=1200)
     corpo = correggi(llm, lingua, corpo)
@@ -260,7 +270,7 @@ def descrizione(llm, lingua, sk, paper, meta, link, cloud=False):
 
 
 def articolo(llm, lingua, sk, paper, meta, link, cfg_a, avanz):
-    s, u = prompt(lingua, "articolo", scheda=sk, titolo_originale=paper["titolo"],
+    s, u = prompt(lingua, "articolo", scheda=_scheda_lettura(sk), titolo_originale=paper["titolo"],
                   parole_min=str(cfg_a["parole_min"]), parole_max=str(cfg_a["parole_max"]),
                   vietate=_regole_vietate(lingua))
     testo = llm.chat(s, u, "articolo", temperatura=0.6, max_token=3000)
@@ -281,11 +291,22 @@ def articolo(llm, lingua, sk, paper, meta, link, cfg_a, avanz):
 
 
 def correggi(llm, lingua, testo):
-    """Corregge solo refusi. Se il modello cambia troppo, tiene l'originale."""
+    """Corregge solo refusi. Se il modello cambia troppo, tiene l'originale.
+
+    Il controllo confronta le parole una per una: un correttore vero cambia
+    pochissimo. Così non passano commenti del modello finiti nel testo
+    (per esempio un ragionamento in inglese prima della correzione)."""
     s, u = prompt(lingua, "correggi", testo=testo)
-    nuovo = llm.chat(s, u, "correggi", temperatura=0.0, max_token=3500)
-    a, b = conta_parole(testo), conta_parole(nuovo)
-    if not nuovo or abs(a - b) > max(5, a * 0.05):
+    nuovo = (llm.chat(s, u, "correggi", temperatura=0.0, max_token=3500) or "").strip()
+    if nuovo.startswith("<<<"):
+        nuovo = nuovo.strip("<> \n")
+    a, b = testo.split(), nuovo.split()
+    if not b:
+        return testo
+    def somiglianza(x, y):
+        return difflib.SequenceMatcher(None, [w.lower() for w in x], [w.lower() for w in y], autojunk=False).ratio()
+    # tutto il testo quasi identico, e soprattutto l'inizio e la fine
+    if somiglianza(a, b) < 0.97 or somiglianza(a[:15], b[:15]) < 0.85 or somiglianza(a[-15:], b[-15:]) < 0.85:
         return testo
     return nuovo
 
