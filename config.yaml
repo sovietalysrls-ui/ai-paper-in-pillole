@@ -102,6 +102,11 @@ gemini_voce:
   voci:
     CARLO: Puck
     ARIANNA: Aoede
+  # Controllo automatico: Carlo deve avere la voce più bassa, Arianna la più alta.
+  # Se un turno risulta con la voce sbagliata si rifà; se resta sbagliato la puntata si ferma.
+  toni:
+    CARLO: basso
+    ARIANNA: alto
   stili:
     CARLO: "tono caldo, curioso e un po' ironico, ritmo costante e naturale"
     ARIANNA: "tono chiaro e sorridente, spiega con calma, ritmo costante e naturale"

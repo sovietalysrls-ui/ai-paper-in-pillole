@@ -115,3 +115,24 @@ def monta(gancio, corpo, sigla_ap, sigla_ch, uscita_wav, uscita_mp3, cfg_a, firm
             str(uscita_mp3))
     grezzo.unlink()
     return {"durata": durata(uscita_wav), "voce": (len(voce_g) + len(voce_c)) / FREQ}
+
+
+def tono(p):
+    """Altezza media della voce in Hz (mediana sui tratti parlati), o None.
+
+    Serve a controllare che ogni conduttore abbia la sua voce: una voce
+    maschile sta di solito sotto i 150 Hz, una femminile sopra i 165 Hz.
+    """
+    x = carica(p)
+    n = int(FREQ * 0.04)
+    lo, hi = int(FREQ / 400), int(FREQ / 70)
+    valori = []
+    for i in range(0, len(x) - n, n):
+        seg = x[i:i + n] - x[i:i + n].mean()
+        if np.sqrt((seg ** 2).mean()) < 0.02:
+            continue
+        ac = np.correlate(seg, seg, "full")[n - 1:]
+        k = lo + int(np.argmax(ac[lo:hi]))
+        if ac[k] >= 0.3 * ac[0]:
+            valori.append(FREQ / k)
+    return float(np.median(valori)) if len(valori) >= 10 else None

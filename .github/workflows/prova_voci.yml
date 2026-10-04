@@ -1,0 +1,38 @@
+# Prova delle voci su un dialogo già archiviato: una voce per richiesta e
+# controllo dell'altezza. Non pubblica niente.
+name: Prova voci
+
+on:
+  workflow_dispatch:
+    inputs:
+      dialogo:
+        description: "File del dialogo"
+        default: "archivio/puntate/2026-10-04_052_graphforge/dialogo.txt"
+      battute:
+        description: "Quante battute leggere"
+        default: "10"
+
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+      - name: Prova
+        env:
+          GEMINI_API_KEY_GRATIS: ${{ secrets.GEMINI_API_KEY_GRATIS }}
+          GEMINI_API_KEY_PAGAMENTO: ${{ secrets.GEMINI_API_KEY_PAGAMENTO }}
+        run: python prova_voci.py "${{ inputs.dialogo }}" "${{ inputs.battute }}"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: prova-voci
+          path: prova_voci/
+          if-no-files-found: ignore

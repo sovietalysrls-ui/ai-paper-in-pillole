@@ -321,6 +321,10 @@ class GeminiVoce(_ConRiserva):
         time.sleep(self.cfg.get("pausa_tra_richieste", 0))
         self.richieste += 1
 
+        # Nella richiesta ci sono solo le voci di chi parla davvero. Con una sola
+        # persona c'è una sola voce: il modello non può scambiarle.
+        presenti = [k for k in nomi if any(chi == k for chi, _ in battute)]
+
         if self.porta in ("auto", "interactions"):
             contenuto = []
             for chi, testo in battute:
@@ -333,7 +337,7 @@ class GeminiVoce(_ConRiserva):
                      "response_format": {"type": "audio"},
                      "generation_config": {"speech_config": {
                          "mode": "conversational",
-                         "speakers": [{"speaker": nomi[k], "voice": voci[k]} for k in nomi]}}}
+                         "speakers": [{"speaker": nomi[k], "voice": voci[k]} for k in presenti]}}}
             try:
                 d = chiama(self.chiavi, f"{BASE}/interactions", corpo, self.avanz, timeout=600)
                 if self.porta == "auto":
@@ -350,11 +354,17 @@ class GeminiVoce(_ConRiserva):
 
         copione = "\n".join(f"{nomi[chi]}: {t}" for chi, t in battute)
         testo = (f"{guida}\n\n{copione}" if guida else copione)
+        if len(presenti) == 1:
+            # una sola voce: configurazione a voce singola
+            copione = " ".join(t for _, t in battute)
+            testo = (f"{guida}\n\n{copione}" if guida else copione)
+            config_voce = {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voci[presenti[0]]}}}
+        else:
+            config_voce = {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [
+                {"speaker": nomi[k], "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voci[k]}}}
+                for k in presenti]}}
         corpo = {"contents": [{"parts": [{"text": testo}]}],
-                 "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {
-                     "multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [
-                         {"speaker": nomi[k], "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voci[k]}}}
-                         for k in nomi]}}}}
+                 "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": config_voce}}
         d = chiama(self.chiavi, f"{BASE}/models/{self.nome}:generateContent", corpo, self.avanz, timeout=600)
         audio = _audio_generatecontent(d)
         if not audio:

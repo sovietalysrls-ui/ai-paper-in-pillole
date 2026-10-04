@@ -231,9 +231,10 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         battute = esito["battute"] if cfg["motori"]["voce"] == "gemini" else esito["battute_voce"]
         avanz.inizia(p_voce)
         per_blocco = cfg["gemini_voce"].get("battute_per_blocco", 14)
-        g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce)
+        toni = cfg["gemini_voce"].get("toni") if cfg["motori"]["voce"] == "gemini" else None
+        g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce, toni=toni)
         firma = voce.genera_firma(motore_voce, L, lav / "voce", avanz, p_voce)
-        avanz.fatto(p_voce, f"{len(g) + len(c)} blocchi" + (" + frase finale" if firma else ""))
+        avanz.fatto(p_voce, f"{len(g) + len(c)} turni, una voce per richiesta" + (" + frase finale" if firma else ""))
 
         # --- Passo 9: montaggio ---
         if (out / "puntata.wav").exists() and (out / "puntata.mp3").exists():

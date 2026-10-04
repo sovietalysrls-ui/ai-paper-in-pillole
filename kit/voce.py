@@ -70,19 +70,83 @@ def genera_firma(motore, lingua, cartella, avanz, passo):
     return p
 
 
-def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo):
+class ErroreVoci(RuntimeError):
+    pass
+
+
+def turni(battute):
+    """Raggruppa le battute di fila della stessa persona: ogni turno ha una sola voce."""
+    out = []
+    for chi, testo in battute:
+        if out and out[-1][0][0] == chi:
+            out[-1].append((chi, testo))
+        else:
+            out.append([(chi, testo)])
+    return out
+
+
+def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=None):
+    """Fa leggere il dialogo un turno alla volta: in ogni richiesta c'è una sola
+    persona e una sola voce, così le voci non possono essere scambiate.
+
+    toni: {"CARLO": "basso", "ARIANNA": "alto"}. Se c'è, dopo la lettura si misura
+    l'altezza di ogni turno; un turno con la voce sbagliata viene rifatto, e se
+    resta sbagliato la puntata si ferma con un errore (meglio nessun audio che
+    voci scambiate).
+    """
     cartella = Path(cartella)
     cartella.mkdir(parents=True, exist_ok=True)
     apertura, corpo = dividi(battute, lingua, per_blocco)
-    tutti = [("apertura", b) for b in apertura] + [("corpo", b) for b in corpo]
-    file_g, file_c = [], []
-    for n, (tipo, blocco) in enumerate(tutti, 1):
-        p = cartella / f"blocco_{n:02d}_{tipo}.wav"
+    lista = ([("apertura", t) for b in apertura for t in turni(b)] +
+             [("corpo", t) for b in corpo for t in turni(b)])
+    file_g, file_c, chi_file = [], [], []
+    for n, (tipo, turno) in enumerate(lista, 1):
+        chi = turno[0][0]
+        p = cartella / f"turno_{n:03d}_{tipo}_{chi.lower()}.wav"
         if not p.exists() or p.stat().st_size < 1000:
-            avanz.inizia(passo, f"blocco {n} di {len(tutti)} ({len(blocco)} battute)")
-            p.write_bytes(motore.blocco(blocco))
+            avanz.inizia(passo, f"turno {n} di {len(lista)} ({lingua['conduttori'][chi]})")
+            p.write_bytes(motore.blocco(turno))
         (file_g if tipo == "apertura" else file_c).append(p)
+        chi_file.append((chi, p, turno))
+    if toni:
+        controlla_voci(motore, chi_file, toni, lingua, avanz, passo)
     return file_g, file_c
+
+
+def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
+    from . import audio
+    misure = {p: audio.tono(p) for _, p, _ in chi_file}
+    bassi = [misure[p] for chi, p, _ in chi_file if toni.get(chi) == "basso" and misure[p]]
+    alti = [misure[p] for chi, p, _ in chi_file if toni.get(chi) == "alto" and misure[p]]
+    if not bassi or not alti:
+        avanz.avviso("controllo voci: non sono riuscito a misurare le voci")
+        return
+    m_b, m_a = float(np.median(bassi)), float(np.median(alti))
+    if m_a - m_b < 20:
+        raise ErroreVoci(f"le due voci hanno quasi la stessa altezza ({m_b:.0f} e {m_a:.0f} Hz) "
+                         "oppure sono scambiate: controlla le voci in config.yaml")
+    soglia = (m_b + m_a) / 2
+
+    def sbagliata(chi, f):
+        if f is None:
+            return False
+        return (toni.get(chi) == "basso" and f > soglia + 10) or (toni.get(chi) == "alto" and f < soglia - 10)
+
+    for chi, p, turno in chi_file:
+        f = misure[p]
+        tentativi = 0
+        while sbagliata(chi, f) and tentativi < 2:
+            tentativi += 1
+            avanz.avviso(f"voce sospetta per {lingua['conduttori'][chi]} ({f:.0f} Hz, attesa "
+                         f"{'sotto' if toni[chi] == 'basso' else 'sopra'} {soglia:.0f} Hz): rifaccio il turno")
+            avanz.inizia(passo, f"rifaccio {p.name}")
+            p.write_bytes(motore.blocco(turno))
+            f = audio.tono(p)
+        if sbagliata(chi, f):
+            raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+                             f"2 tentativi ({f:.0f} Hz). Puntata fermata per non pubblicare voci scambiate.")
+    avanz.scrivi(f"   controllo voci: {lingua['conduttori'].get('CARLO', 'CARLO')} ~{m_b:.0f} Hz, "
+                 f"{lingua['conduttori'].get('ARIANNA', 'ARIANNA')} ~{m_a:.0f} Hz, tutto in ordine")
 
 
 class VoceFinta:
@@ -90,7 +154,7 @@ class VoceFinta:
 
     richieste = 0
 
-    def blocco(self, battute):
+    def blocco(self, battute, stile=None):
         freq = 24000
         pezzi = []
         for chi, testo in battute:
