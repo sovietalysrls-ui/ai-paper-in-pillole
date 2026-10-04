@@ -1,0 +1,15 @@
+AI Paper in Pillole #51 - GraphForge: come addestrare l'intelligenza artificiale usando veri documenti d'ufficio
+
+Un impiegato deve riconciliare i dati di un bilancio aziendale in PDF con un foglio di calcolo e scrivere una relazione di sintesi. Un assistente virtuale che deve controllare un bilancio aziendale non può permettersi di inventare i numeri. Eppure, addestrare queste intelligenze artificiali con compiti realistici e verificabili è sempre stato difficilissimo, fino a oggi. I computer usano spesso dati inventati poco realistici e mancano di un sistema automatico per verificare se il lavoro è corretto.
+
+Gli autori propongono GraphForge, un sistema che crea compiti realistici partendo da veri documenti aziendali e mappa le relazioni tra questi file. Il sistema sceglie il tipo di attività da un database di professioni reali e raccoglie veri documenti pubblici come bilanci o report. Viene costruito un grafo che mappa tutte le relazioni logiche tra questi file per generare automaticamente il compito e le regole di verifica. Quasi la totalità dei compiti generati, circa 97 su 100, costringe l'intelligenza artificiale a confrontarsi con veri documenti PDF. Un assistente virtuale di revisione corregge eventuali errori nelle istruzioni dopo un test di prova.
+
+L'assistente virtuale addestrato con questo metodo ha registrato un netto balzo in avanti di oltre 65 punti rispetto alla versione non addestrata. L'assistente ha inoltre dimostrato una forte abilità nel coordinare diversi file per completare i compiti d'ufficio, raggiungendo un punteggio di 63,7. La sperimentazione presenta però alcuni limiti. Il metodo è stato testato su un insieme limitato di 2.169 traiettorie e non si conosce ancora la sua efficacia su scale molto più grandi.
+
+Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
+
+Link al paper: https://arxiv.org/abs/2609.38923
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #GraphForge #AgentiVirtuali #AddestramentoIA #AutomazioneUfficio

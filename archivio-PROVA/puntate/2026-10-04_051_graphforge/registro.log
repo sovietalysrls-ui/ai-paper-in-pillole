@@ -1,0 +1,38 @@
+[16:44:57] ===== Avvio 2026-10-04 16:44 =====
+[16:44:57] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[16:44:58]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[16:44:58] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[16:44:58] ▶ Scheda dei fatti — 1 pezzi da leggere
+[16:44:58] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[16:45:02]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:45:29]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:45:50] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[16:45:50]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:46:22] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[16:46:23]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:46:47]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:47:08] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[16:47:30] ✔ Scheda dei fatti — GraphForge · 4 risultati · 8 termini
+[16:47:31] ▶ Dialogo — puntata #51
+[16:48:36] ✔ Dialogo — 42 battute, 652 parole
+[16:48:36] ▶ Controlli e correzioni
+[16:48:36]    giro 1: 1 battute da sistemare, 0 problemi generali (652 parole)
+[16:48:37]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:48:57]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:49:25]    giro 2: nessun problema (650 parole, massimo 736)
+[16:49:25] ✔ Controlli e correzioni — nessun problema residuo
+[16:49:25] ▶ Titolo, descrizione, articolo — titolo
+[16:49:25] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.5-flash (chiave gratuita), passo a gemini-3.5-flash-lite
+[16:49:27] ▶ Titolo, descrizione, articolo — descrizione
+[16:49:43] ▶ Titolo, descrizione, articolo — articolo per il sito
+[16:50:00] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #51 - GraphForge: come addestrare l'inte» · articolo 715 parole
+[16:50:01] ▶ Copertina
+[16:50:01] ✔ Copertina — disegno del programma, icona «rete»
+[16:50:01] ↪ Voce — motore voce: nessuno
+[16:50:01] ↪ Montaggio audio — niente voce, niente montaggio
+[16:50:01] ↪ Articolo su WordPress — prova: niente pubblicazione sul sito
+[16:50:01] ▶ Consegna su Telegram
+[16:50:04] ✔ Consegna su Telegram — 3 file inviati
+[16:50:04] ▶ Registro e chiusura
+[16:50:04] Richieste al modello di testo: 9
+[16:50:04] memoria video non misurata (nvidia-smi assente)
