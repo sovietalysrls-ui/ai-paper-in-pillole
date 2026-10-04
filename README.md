@@ -121,7 +121,9 @@ Serve un'autorizzazione, una volta sola, con rclone:
 ## Orario
 
 La notte parte alle 02:15 UTC: le 04:15 in Italia con l'ora legale, le
-03:15 con l'ora solare. GitHub a volte parte con qualche minuto di ritardo.
+03:15 con l'ora solare. GitHub a volte salta una partenza: per questo ci sono
+due sveglie di riserva, un'ora e due ore dopo. Se la puntata è già fatta,
+escono subito senza fare nulla.
 L'orario si cambia nel file `.github/workflows/notte.yml`, riga `cron`.
 
 ## La sigla
@@ -177,6 +179,26 @@ della GTX 1070 (7,5 GB) compare un avviso.
 | `--modello gemma4:e4b` | Prova un altro modello locale, solo per questa volta |
 | `--voce nessuna` | Salta voce e montaggio |
 | `--data 2026-10-06` | Finge che oggi sia un altro giorno |
+| `--solo-testi` | Solo dialogo e articolo: niente voce, copertina disegnata (per rivederli) |
+| `--paper ID --sostituisci` | Rifà una puntata già uscita: stesso numero, articolo aggiornato, audio sostituito |
+| `--se-manca` | Esce subito se la puntata di oggi è già fatta (lo usano le sveglie di riserva) |
+
+Da GitHub: Actions > Notte > Run workflow ha le stesse caselle
+(paper, prova, solo testi, sostituisci, solo articolo).
+
+## Le regole dei testi, in breve
+
+- Al massimo 4 numeri nel dialogo, sempre spiegati con un paragone. I numeri precisi stanno nell'articolo.
+- Niente nomi inglesi dei test e niente versioni dei modelli nel dialogo.
+- Punteggi senza un massimo (Elo, classifiche): mai un fondo scala inventato.
+- Mai "divulgazione scientifica".
+- Articolo e descrizione passano un controllo automatico e una revisione.
+
+## La frase finale
+
+"AI Paper in Pillole è un progetto di Sovietaly SRLS" è una registrazione fissa:
+`assets/firma_it.wav`. Per cambiarla: Actions > Firma > proponi, ascolta su
+Telegram, poi Actions > Firma > usa con il numero scelto.
 
 Se la catena si ferma (rete, quota, modello), basta rilanciarla:
 riparte dal passo interrotto.

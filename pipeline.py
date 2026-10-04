@@ -168,12 +168,9 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
         avanz.fatto(p, "nessun problema residuo" if not residui else f"{len(residui)} problemi residui")
 
     if L.get("decimali_virgola"):
-        # 72.1 → 72,1 (solo decimali di 1-2 cifre: 4.560 resta un "migliaia")
-        # Non si toccano i nomi con numeri di versione (Qwen3.6, GLM-5.2): lettera o
-        # trattino attaccati al numero.
-        battute = [(chi, re.sub(r"(?<![\w.,-])0\.(\d+)(?![\w-])", r"0,\1",
-                                re.sub(r"(?<![\w.,-])(\d+)\.(\d{1,2})(?![\w-])", r"\1,\2", b)))
-                   for chi, b in battute]
+        # 72.1 → 72,1 e 24.0 → 24; 4.560 resta un "migliaia";
+        # i nomi con versioni (Qwen3.6, GLM-5.2) restano come sono.
+        battute = [(chi, controlli.virgola_decimali(b)) for chi, b in battute]
     parole = sum(conta_parole(b) for _, b in battute)
     dialogo_txt = controlli.componi(battute, L)
     if L.get("frase_finale"):
