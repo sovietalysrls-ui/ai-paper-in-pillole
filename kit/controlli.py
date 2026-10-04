@@ -96,6 +96,19 @@ def controlla(battute, scheda, lingua, cfg_d, numero_puntata):
             if n not in numeri_ok:
                 segnala(i, T["numero"].format(n=n))
 
+    # Numeri scritti in lettere (la voce li legge meglio in cifre, e il controllo
+    # dei numeri inventati non li vedrebbe).
+    rx_lettere = re.compile(T.get("rx_numeri_lettere", r"$^"), re.I)
+    for i, (chi, b) in enumerate(battute):
+        m = rx_lettere.search(b)
+        if m:
+            segnala(i, T["numeri_lettere"].format(p=m.group(0)))
+
+    # Mai tre battute di fila della stessa persona.
+    for i in range(2, len(battute)):
+        if battute[i][0] == battute[i - 1][0] == battute[i - 2][0] and "di_fila" in T:
+            segnala(i, T["di_fila"])
+
     # Troppi numeri: chi ascolta si perde. Oltre il limite si segnalano
     # le battute con i numeri in più (il numero della puntata non conta).
     limite = cfg_d.get("numeri_max", 4)
@@ -222,7 +235,8 @@ def virgola_decimali(testo):
     """72.1 → 72,1 e 0.45 → 0,45. Non tocca nomi con versioni (Qwen3.6, GLM-5.2),
     indirizzi web e numeri lunghi come 2609.38923."""
     testo = re.sub(r"(?<![\w.,/-])(\d+)\.(\d{1,2})(?![\w/-])", r"\1,\2", testo)
-    return re.sub(r"(?<![\w.,/-])0\.(\d+)(?![\w/-])", r"0,\1", testo)
+    testo = re.sub(r"(?<![\w.,/-])0\.(\d+)(?![\w/-])", r"0,\1", testo)
+    return re.sub(r"(?<![\w.,/-])(\d+),0(?![\d\w/-])", r"\1", testo)   # 56,0 → 56
 
 
 def controlla_prosa(testo, lingua, numeri_max=None):

@@ -29,7 +29,8 @@ Regole di scrittura:
 - Non nominare i test di valutazione (benchmark) con il loro nome inglese: dì che tipo di prova è ("un test che simula il lavoro con i fogli di calcolo").
 - Non nominare i modelli con sigle e numeri di versione (per esempio "Qwen3.6-27B"): dì "un modello open source di media grandezza" o la famiglia ("un modello della famiglia Qwen"). Vale in tutta la puntata, anche nei limiti: "un altro modello che fa da giudice".
 - Punteggi che non sono percentuali (Elo, punti di una classifica, punteggi di un test): non dire il numero, nemmeno come differenza ("7 punti in più" non dice niente a chi ascolta). Dì cosa significa: meglio o peggio, di quanto, rispetto a chi. Non inventare mai un fondo scala.
-- Scrivi i numeri in cifre (96 per cento, 3 volte). Scrivi "per cento", non il simbolo %.
+- Non chiamare "per cento" un valore che nella scheda non è una percentuale.
+- Scrivi i numeri in cifre (96 per cento, 3 volte), mai in lettere. Scrivi "per cento", non il simbolo %.
 - Nomi stranieri: segui il campo "usa" della scheda.
 - Sigle: la prima volta che una sigla compare, dì subito cosa significano le lettere, con il campo "significato" della scheda, e poi a cosa serve in parole semplici. Esempio: "Se ne occupa PHCM, cioè memoria gerarchica proattiva delle didascalie: in pratica, il modulo che prende appunti." Una sola lingua, mai inglese e italiano insieme. Dopo la prima volta, solo la sigla.
 - Decimali con la virgola: 72,1 e non 72.1.

@@ -80,7 +80,9 @@ modello_testo:
 gemini_testo:
   modello: gemini-3.8-flash
   # Se il modello principale è sovraccarico, si prova il successivo.
-  modelli_riserva: [gemini-3.6-flash, gemini-3.5-flash, gemini-3.5-flash-lite]
+  # Niente modelli "lite" per il testo: scrivono peggio. Finita la quota gratuita
+  # di questi, si passa alla chiave a pagamento con il modello principale.
+  modelli_riserva: [gemini-3.6-flash, gemini-3.5-flash]
   temperatura_fatti: 0.2
   temperatura_scrittura: 0.7
   # Secondi di attesa tra una richiesta e l'altra: il livello
