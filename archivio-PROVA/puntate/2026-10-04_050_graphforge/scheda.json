@@ -1,0 +1,128 @@
+{
+  "nome_breve": "GraphForge",
+  "problema": "Gli assistenti digitali devono saper leggere file complessi e coordinare strumenti per svolgere mansioni d'ufficio. Oggi è difficile addestrarli: i compiti sintetici creati dai modelli non sono realistici, mentre quelli basati su file veri non hanno un modo automatico per verificare se il risultato è corretto.",
+  "idea": "GraphForge costruisce compiti di lavoro assemblando documenti reali del web e collegandoli in una mappa logica di relazioni. Da questa mappa ricava sia le istruzioni per l'assistente, sia i criteri precisi per controllare che ogni risultato sia verificabile sui documenti di partenza.",
+  "come_funziona": [
+    "Si parte da professioni reali tratte dal database O*NET per garantire varietà nei compiti lavorativi.",
+    "Un agente raccoglie file pubblici autentici e crea un grafo che descrive come i documenti dipendono l'uno dall'altro.",
+    "Dal grafo vengono generate in automatico le istruzioni del lavoro e i criteri di verifica ancorati a file precisi.",
+    "Una simulazione iniziale verifica se il compito è fattibile e permette a un revisore automatico di correggere eventuali errori.",
+    "Il modello viene addestrato sulle sequenze di lavoro corrette per imparare a risolvere compiti complessi d'ufficio."
+  ],
+  "risultati": [
+    {
+      "fatto": "Sul benchmark di compiti d'ufficio Workspace-Bench-Lite eseguito con Claude Code, il modello Qwen3.6-27B addestrato ha incrementato il proprio punteggio di 7,7 punti.",
+      "numero": "63.7",
+      "scala": "non indicato",
+      "in_pratica": "L'assistente completa le attività lavorative complesse con un'efficacia nettamente maggiore rispetto al modello base."
+    },
+    {
+      "fatto": "Nella prova su fogli di calcolo SpreadsheetBench II sotto Claude Code, l'accuratezza di esecuzione è salita di 13,7 punti.",
+      "numero": "24.0",
+      "scala": "non indicato",
+      "in_pratica": "Più che raddoppia la precisione nel manipolare formule e tabelle dentro fogli di calcolo complessi."
+    },
+    {
+      "fatto": "Nel test generale GDPVal sotto la piattaforma OpenHands, il modello ha ottenuto un incremento di 65,7 punti.",
+      "numero": "1445.7",
+      "scala": "non indicato",
+      "in_pratica": "Un netto passo avanti nella qualità complessiva dei risultati forniti all'utente."
+    },
+    {
+      "fatto": "La stragrande maggioranza dei percorsi di addestramento generati richiede la lettura di documenti in formato PDF.",
+      "numero": "96.7%",
+      "scala": "",
+      "in_pratica": "Quasi tutte le sessioni di lavoro costringono l'agente a misurarsi con file PDF veri, proprio come accade in un vero ufficio."
+    }
+  ],
+  "limiti": [
+    "I dati attuali si fermano a 2.169 sessioni di lavoro e non è stato verificato come scalino i benefici aumentando il volume dei dati.",
+    "L'intera catena di generazione dei compiti e di giudizio automatico si appoggia a un solo modello, GLM-5.2.",
+    "Il giudice automatico fatica a individuare modifiche minime e dettagliate, come la variazione di un singolo numero o di una riga in una tabella."
+  ],
+  "esempio_concreto": "Un professionista deve estrarre dati finanziari da bilanci societari in PDF, verificare la coerenza tra le fonti, inserire i valori corretti in una tabella Excel con formule collegate e redigere un rapporto finale senza errori di calcolo.",
+  "perche_ti_riguarda": "Permette di creare assistenti AI affidabili a cui affidare la burocrazia e l'elaborazione di documenti aziendali, riducendo drasticamente il rischio che inventino numeri o conclusioni non presenti nei file originali.",
+  "gancio": "Far analizzare a un'intelligenza artificiale decine di PDF e fogli di calcolo porta spesso a numeri inventati e calcoli sballati. GraphForge addestra gli agenti digitali partendo da file autentici e verificando ogni passaggio su documenti reali.",
+  "termini": [
+    {
+      "termine": "GraphForge",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo ideato dai ricercatori per generare compiti di lavoro realistici e controllabili a partire da file veri.",
+      "usa": "termine",
+      "pronuncia": "Gràff Fòrg"
+    },
+    {
+      "termine": "O*NET",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un archivio pubblico che cataloga centinaia di mansioni e professioni del mondo reale.",
+      "usa": "termine",
+      "pronuncia": "Ò Net"
+    },
+    {
+      "termine": "OpenHands",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un programma aperto che permette agli agenti artificiali di interagire con il computer e usare strumenti di lavoro.",
+      "usa": "termine",
+      "pronuncia": "Òpen Hànds"
+    },
+    {
+      "termine": "GLM-5.2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale impiegato per generare i compiti e fare da arbitro sulla correttezza dei risultati.",
+      "usa": "termine",
+      "pronuncia": "Gì Elle Èmme cinque punto due"
+    },
+    {
+      "termine": "Qwen3.6-27B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello linguistico aperto scelto dagli autori per essere addestrato e testato con questo metodo.",
+      "usa": "spiegazione",
+      "pronuncia": "Kùen tre punto sei ventisètte bi"
+    },
+    {
+      "termine": "GDPVal",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un banco di prova per misurare la capacità complessiva degli agenti intelligenti di svolgere compiti di valore pratico.",
+      "usa": "spiegazione",
+      "pronuncia": "Gì Di Pi Val"
+    },
+    {
+      "termine": "Workspace-Bench-Lite",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test standard per valutare quanto bene un agente sappia gestire file e cartelle in un ambiente d'ufficio.",
+      "usa": "spiegazione",
+      "pronuncia": "Uòrk-spèis Bènch Làit"
+    },
+    {
+      "termine": "SpreadsheetBench II",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test che misura la precisione di un modello nel creare e modificare fogli di calcolo complessi.",
+      "usa": "spiegazione",
+      "pronuncia": "Sprèd-sciit Bènch due"
+    }
+  ],
+  "soggetto_immagine": "a line-art network graph connecting multiple document icons and spreadsheet tables with checkmarks",
+  "hashtag": [
+    "AI",
+    "AgentiAutonomi",
+    "GraphForge",
+    "AutomazioneUfficio",
+    "DatasetSintetici"
+  ]
+}

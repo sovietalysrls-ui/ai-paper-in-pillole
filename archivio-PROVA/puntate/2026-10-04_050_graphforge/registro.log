@@ -1,0 +1,43 @@
+[16:01:55] ===== Avvio 2026-10-04 16:01 =====
+[16:01:55] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[16:01:56]    provo 2609.38923 (0 voti, lista del manuale): GraphForge: Training Working Agents with Graph-Anchored Workspace Synt
+[16:01:56] ✔ Scelta e lettura del paper — 2609.38923 · 0 voti · arxiv-html · 3436 parole utili
+[16:01:56] ▶ Scheda dei fatti — 1 pezzi da leggere
+[16:01:56] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Main Results + C
+[16:02:05]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:02:28]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:02:57] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[16:03:00]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:03:25]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:04:15] ✔ Scheda dei fatti — GraphForge · 4 risultati · 8 termini
+[16:04:15] ▶ Dialogo — puntata #50
+[16:04:20]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:04:41]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:05:03] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[16:05:08]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:06:39] ✔ Dialogo — 52 battute, 702 parole
+[16:06:39] ▶ Controlli e correzioni
+[16:06:39]    giro 1: 2 battute da sistemare, 0 problemi generali (702 parole)
+[16:06:45]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:07:11]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[16:07:33] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[16:07:41]    giro 2: nessun problema (701 parole, massimo 736)
+[16:07:41] ✔ Controlli e correzioni — nessun problema residuo
+[16:07:42] ▶ Titolo, descrizione, articolo — titolo
+[16:07:48] ▶ Titolo, descrizione, articolo — descrizione
+[16:08:10] ▶ Titolo, descrizione, articolo — articolo per il sito
+[16:11:38] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #50 - GraphForge: come insegnare all'AI » · articolo 894 parole
+[16:11:39] ▶ Copertina
+[16:11:39] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[16:11:39]    limite al minuto raggiunto, aspetto 30 secondi
+[16:12:09] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[16:12:18] ✔ Copertina — disegnata da Gemini
+[16:12:18] ↪ Voce — motore voce: nessuno
+[16:12:18] ↪ Montaggio audio — niente voce, niente montaggio
+[16:12:18] ▶ Articolo su WordPress — stato: bozza
+[16:12:21] ✔ Articolo su WordPress — già presente: publish · https://www.andreamanini.it/graphforge-quando-lai-si-allena-a-fare-il-lavoro-dufficio-con-documenti-veri/
+[16:12:21] ▶ Consegna su Telegram
+[16:12:23] ✔ Consegna su Telegram — 3 file inviati
+[16:12:23] ▶ Registro e chiusura
+[16:12:23] Richieste al modello di testo: 9
+[16:12:23] memoria video non misurata (nvidia-smi assente)

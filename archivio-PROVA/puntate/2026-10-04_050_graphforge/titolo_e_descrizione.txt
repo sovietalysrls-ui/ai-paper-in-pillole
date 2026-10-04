@@ -1,0 +1,15 @@
+AI Paper in Pillole #50 - GraphForge: come insegnare all'AI a lavorare in ufficio senza inventare dati
+
+Un professionista deve estrarre dati finanziari da bilanci in PDF. Deve poi inserire i valori in una tabella Excel con formule e scrivere un rapporto finale senza errori. Oggi gli assistenti digitali faticano a svolgere questi compiti d'ufficio complessi. È difficile addestrarli perché i compiti simulati non sono realistici. Se invece si usano documenti veri, manca un modo automatico per verificare la correttezza del lavoro svolto.
+
+Il metodo GraphForge risolve questo problema creando compiti di lavoro basati su documenti reali presi dal web. Il sistema collega i file in una mappa logica di relazioni. Da questa mappa ricava sia le istruzioni per l'assistente sia i criteri per verificare i risultati. Il processo parte da mansioni reali e simula le attività per correggere gli errori. In questo modo il modello si addestra su sequenze di lavoro corrette.
+
+Grazie a questo metodo, il modello linguistico aperto scelto dagli autori ha aumentato di 7,7 punti il suo punteggio nel test di gestione dei file d'ufficio. Nel test sulla precisione nei fogli di calcolo, l'accuratezza è salita di 13,7 punti. Quasi tutte le sessioni, il 96,7 per cento, richiedono la lettura di PDF reali. Tuttavia, il controllore automatico fatica ancora a notare modifiche minime, come un singolo numero errato in una tabella.
+
+Il paper è di Qisheng Su, Hanchen Wang, Guanru Zhu e altri 9 autori.
+
+Link al paper: https://arxiv.org/abs/2609.38923
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #AgentiAutonomi #GraphForge #AutomazioneUfficio #DatasetSintetici
