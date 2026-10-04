@@ -54,7 +54,8 @@ def main():
     if meta_p.exists():
         meta = json.loads(meta_p.read_text(encoding="utf-8"))
     else:
-        titolo = (d / "titolo.txt").read_text(encoding="utf-8").strip().split(" - ", 1)[-1]
+        f_tit = d / "titolo_e_descrizione.txt" if (d / "titolo_e_descrizione.txt").exists() else d / "titolo.txt"
+        titolo = f_tit.read_text(encoding="utf-8").strip().splitlines()[0].split(" - ", 1)[-1]
         primo = re.search(r"<p>(.*?)</p>", html, re.S)
         testo = re.sub(r"<[^>]+>", "", primo.group(1)) if primo else ""
         estratto = " ".join(re.split(r"(?<=[.!?])\s+", testo)[:2])

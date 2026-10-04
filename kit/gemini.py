@@ -32,6 +32,11 @@ class ErroreOccupato(ErroreModello):
     """Il modello è sovraccarico (503): conviene passare a un modello di riserva."""
 
 
+class ErroreQuota(ErroreModello):
+    """Finite le richieste del giorno per questo modello con questa chiave.
+    Ogni modello ha la sua quota: conviene passare a un modello di riserva."""
+
+
 class Chiavi:
     """Le chiavi in ordine di preferenza, e quale si sta usando."""
 
@@ -103,10 +108,7 @@ def chiama(chiavi, url, corpo, avanz, timeout=300, tentativi=6, max_occupato=3):
                 avanz.scrivi(f"   limite al minuto raggiunto, aspetto {attesa:.0f} secondi")
                 time.sleep(attesa)
                 continue
-            if chiavi.passa_alla_prossima("limite giornaliero" if _quota_giornaliera(r.text) else "limite raggiunto"):
-                attese_minuto = 0
-                continue
-            raise ErroreModello("Quota Gemini esaurita anche sulla chiave di riserva. " + ultimo)
+            raise ErroreQuota(ultimo)
         if r.status_code in (500, 502, 503, 504):
             occupato += 1
             if occupato >= max_occupato:
@@ -152,10 +154,26 @@ class _ConRiserva:
         return [self.cfg["modello"]] + list(self.cfg.get("modelli_riserva", []))
 
     def _con_riserva(self, funzione, etichetta):
+        """Ordine dei tentativi quando finisce la quota del giorno:
+        prima gli altri modelli con la chiave gratuita, poi la chiave a pagamento."""
         modelli = self._modelli()
         while True:
             try:
                 return funzione()
+            except ErroreQuota as e:
+                i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
+                if i + 1 < len(modelli):
+                    self.avanz.avviso(f"{etichetta}: finite le richieste di oggi per {self.nome} "
+                                      f"(chiave {self.chiavi.tipo}), passo a {modelli[i + 1]}")
+                    self.nome = modelli[i + 1]
+                    self.porta = self.cfg.get("porta", "auto")
+                    continue
+                if self.chiavi.passa_alla_prossima("richieste del giorno finite su tutti i modelli"):
+                    self.nome = modelli[0]
+                    self.porta = self.cfg.get("porta", "auto")
+                    continue
+                piu = "" if len(self.chiavi.lista) > 1 else " Manca la chiave a pagamento (segreto GEMINI_API_KEY_PAGAMENTO)."
+                raise ErroreModello(f"{etichetta}: finite le richieste di oggi su tutti i modelli.{piu} {e}")
             except ErroreOccupato as e:
                 i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
                 if i + 1 >= len(modelli):
@@ -224,7 +242,7 @@ class GeminiTesto(_ConRiserva):
                     self.porta = "interactions"
                 return _testo_interactions(d)
             except ErroreModello as e:
-                if self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
+                if isinstance(e, (ErroreQuota, ErroreOccupato)) or self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
                     raise
                 self.avanz.scrivi("   la porta 'interactions' non risponde, uso generateContent")
                 self.porta = "generatecontent"
@@ -322,7 +340,7 @@ class GeminiVoce(_ConRiserva):
                     return audio
                 raise ErroreModello("Gemini voce: risposta senza audio")
             except ErroreModello as e:
-                if self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
+                if isinstance(e, (ErroreQuota, ErroreOccupato)) or self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
                     raise
                 self.avanz.scrivi("   voce: la porta 'interactions' non risponde, uso generateContent")
                 self.porta = "generatecontent"
@@ -391,7 +409,7 @@ class GeminiImmagine(_ConRiserva):
                     return img
                 raise ErroreModello("Gemini immagine: risposta senza immagine")
             except ErroreModello as e:
-                if self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
+                if isinstance(e, (ErroreQuota, ErroreOccupato)) or self.porta == "interactions" or not re.search(r"\b(400|404)\b", str(e)):
                     raise
                 self.porta = "generatecontent"
         corpo = {"contents": [{"parts": [{"text": richiesta}]}],

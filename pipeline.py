@@ -194,11 +194,12 @@ def testi_lingua(L, cfg, cfg_m, paper, lettura, numero, llm, out, lav, lingue, a
         avanz.inizia(p, "titolo")
         tit = testi.titolo(llm, L, sk, paper, numero)
         scrivi_json(p_tit, tit)
-        scrivi_testo(out / "titolo.txt", tit["completo"])
         avanz.inizia(p, "descrizione")
         desc = testi.descrizione(llm, L, sk, paper, meta, paper["link"],
                                  cloud=cfg["motori"]["testo"] == "gemini")
-        scrivi_testo(out / "descrizione.txt", desc)
+        scrivi_testo(lav / "descrizione.txt", desc)
+        # Titolo e descrizione in un unico file: titolo, riga vuota, descrizione.
+        scrivi_testo(out / "titolo_e_descrizione.txt", f"{tit['completo']}\n\n{desc}")
         avanz.inizia(p, "articolo per il sito")
         art = testi.articolo(llm, L, sk, paper, meta, paper["link"], cfg["articolo"], avanz)
         scrivi_testo(out / "articolo.html", art["html"])
@@ -294,11 +295,14 @@ def consegna(cfg, lingue, oggi_dir, numero, avanz, lav):
     for cod in lingue:
         out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
         pre = "" if len(lingue) == 1 else f"[{cod}] "
-        if (out / "titolo.txt").exists():
-            avanz.manda((out / "titolo.txt").read_text(encoding="utf-8").strip())
-        if (out / "descrizione.txt").exists():
-            avanz.manda((out / "descrizione.txt").read_text(encoding="utf-8").strip())
-        for nome, come, didascalia in (("copertina.jpg", "documento", "Copertina"),
+        # Titolo e descrizione anche come messaggi separati, comodi da copiare.
+        lc = lav / cod
+        if (lc / "titolo.json").exists():
+            avanz.manda(leggi_json(lc / "titolo.json")["completo"])
+        if (lc / "descrizione.txt").exists():
+            avanz.manda((lc / "descrizione.txt").read_text(encoding="utf-8").strip())
+        for nome, come, didascalia in (("titolo_e_descrizione.txt", "documento", "Titolo e descrizione"),
+                                       ("copertina.jpg", "documento", "Copertina"),
                                        ("dialogo.txt", "documento", f"Dialogo della puntata #{numero}"),
                                        ("puntata.mp3", "audio", f"Puntata #{numero} (mp3, archivio)"),
                                        ("puntata.wav", "documento", f"Puntata #{numero} (wav, per Spotify)")):
@@ -319,7 +323,7 @@ def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):
         out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
         d = dest if len(lingue) == 1 else dest / cod
         d.mkdir(parents=True, exist_ok=True)
-        for nome in ("titolo.txt", "descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg", "puntata.mp3"):
+        for nome in ("titolo_e_descrizione.txt", "dialogo.txt", "articolo.html", "copertina.jpg", "puntata.mp3"):
             if (out / nome).exists():
                 shutil.copy2(out / nome, d / nome)
         for nome in ("scheda.json", "articolo_meta.json", "wordpress.json"):

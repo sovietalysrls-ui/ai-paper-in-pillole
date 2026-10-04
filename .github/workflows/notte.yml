@@ -149,7 +149,7 @@ jobs:
           NOME=$(basename "$CARTELLA")
           if gh release view "$NOME" >/dev/null 2>&1; then echo "Release già presente"; exit 0; fi
           gh release create "$NOME" uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 uscita/OGGI/copertina.jpg \
-            --title "$(cat uscita/OGGI/titolo.txt)" --notes-file uscita/OGGI/descrizione.txt \
+            --title "$(head -1 uscita/OGGI/titolo_e_descrizione.txt)" --notes "$(tail -n +3 uscita/OGGI/titolo_e_descrizione.txt)" \
             || echo "::warning::Release non creata"
 
   # Il server del sito blocca alcuni server di GitHub. Ogni lavoro parte su un
