@@ -63,7 +63,11 @@ jobs:
     outputs:
       wp_ok: ${{ steps.wp.outputs.ok }}
     steps:
+      # Sempre l'ultima versione di main: una notte in coda deve vedere il registro
+      # aggiornato dalla notte prima di lei, altrimenti farebbe una puntata doppia.
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - uses: actions/setup-python@v6
         with:
