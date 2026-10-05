@@ -1,0 +1,96 @@
+[06:13:47] ===== Avvio 2026-10-05 06:13 =====
+[06:13:47] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[06:13:48]    liste trovate: 2026-10-02 (50 paper), 2026-10-01 (50 paper), 2026-09-30 (50 paper), 2026-09-29 (50 paper), 2026-09-28 (33 paper)
+[06:13:48]    provo 2609.37200 (124 voti, lista del 2026-10-02): Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint A
+[06:13:49]    (i paper più votati erano già stati usati)
+[06:13:49] ✔ Scelta e lettura del paper — 2609.37200 · 124 voti · arxiv-html · 2310 parole utili
+[06:13:49] ▶ Scheda dei fatti — 1 pezzi da leggere
+[06:13:49] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method: Adaptive Reward R
+[06:13:50]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[06:14:10] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.6-flash
+[06:14:13]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[06:14:42]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[06:15:02] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[06:15:23] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[06:15:49] ✔ Scheda dei fatti — Adaptive Reward Routing · 4 risultati · 4 termini
+[06:15:50] ▶ Dialogo — puntata #53
+[06:15:50] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[06:16:33] ✔ Dialogo — 42 battute, 678 parole
+[06:16:34] ▶ Controlli e correzioni
+[06:16:34]    giro 1: nessun problema (678 parole, massimo 736)
+[06:16:34] ✔ Controlli e correzioni — nessun problema residuo
+[06:16:34] ▶ Titolo, descrizione, articolo — titolo
+[06:16:39] ▶ Titolo, descrizione, articolo — descrizione
+[06:16:56] ▶ Titolo, descrizione, articolo — articolo per il sito
+[06:17:15]    rivedi articolo: 1 problemi, correggo (giro 1)
+[06:17:39] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #53 - Adaptive Reward Routing: come sinc» · articolo 865 parole
+[06:17:40] ▶ Copertina
+[06:17:40] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[06:17:40] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[06:17:48] ✔ Copertina — disegnata da Gemini
+[06:17:49] ▶ Voce
+[06:17:49] ▶ Voce — turno 1 di 42 (Carlo)
+[06:17:59]    voce: la porta 'interactions' non risponde, uso generateContent
+[06:18:12] ▶ Voce — turno 2 di 42 (Arianna)
+[06:18:23] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[06:18:33]    voce: la porta 'interactions' non risponde, uso generateContent
+[06:18:33] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[06:18:43]    voce: la porta 'interactions' non risponde, uso generateContent
+[06:18:43]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[06:19:08] ▶ Voce — turno 3 di 42 (Carlo)
+[06:19:22] ▶ Voce — turno 4 di 42 (Arianna)
+[06:19:36] ▶ Voce — turno 5 di 42 (Carlo)
+[06:19:50] ▶ Voce — turno 6 di 42 (Arianna)
+[06:20:06] ▶ Voce — turno 7 di 42 (Carlo)
+[06:20:19] ▶ Voce — turno 8 di 42 (Arianna)
+[06:20:33] ▶ Voce — turno 9 di 42 (Carlo)
+[06:20:44] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave a pagamento), passo a gemini-3.8-flash-lite-tts
+[06:20:54]    voce: la porta 'interactions' non risponde, uso generateContent
+[06:20:56] ▶ Voce — turno 10 di 42 (Arianna)
+[06:21:10] ▶ Voce — turno 11 di 42 (Carlo)
+[06:21:23] ▶ Voce — turno 12 di 42 (Arianna)
+[06:21:37] ▶ Voce — turno 13 di 42 (Carlo)
+[06:21:49] ▶ Voce — turno 14 di 42 (Arianna)
+[06:22:03] ▶ Voce — turno 15 di 42 (Carlo)
+[06:22:15] ▶ Voce — turno 16 di 42 (Arianna)
+[06:22:29] ▶ Voce — turno 17 di 42 (Carlo)
+[06:22:42] ▶ Voce — turno 18 di 42 (Arianna)
+[06:22:56] ▶ Voce — turno 19 di 42 (Carlo)
+[06:23:09] ▶ Voce — turno 20 di 42 (Arianna)
+[06:23:23] ▶ Voce — turno 21 di 42 (Carlo)
+[06:23:36] ▶ Voce — turno 22 di 42 (Arianna)
+[06:23:50] ▶ Voce — turno 23 di 42 (Carlo)
+[06:24:03] ▶ Voce — turno 24 di 42 (Arianna)
+[06:24:17] ▶ Voce — turno 25 di 42 (Carlo)
+[06:24:29] ▶ Voce — turno 26 di 42 (Arianna)
+[06:24:43] ▶ Voce — turno 27 di 42 (Carlo)
+[06:24:56] ▶ Voce — turno 28 di 42 (Arianna)
+[06:25:11] ▶ Voce — turno 29 di 42 (Carlo)
+[06:25:23] ▶ Voce — turno 30 di 42 (Arianna)
+[06:25:36] ▶ Voce — turno 31 di 42 (Carlo)
+[06:25:50] ▶ Voce — turno 32 di 42 (Arianna)
+[06:26:03] ▶ Voce — turno 33 di 42 (Carlo)
+[06:26:15] ▶ Voce — turno 34 di 42 (Arianna)
+[06:26:29] ▶ Voce — turno 35 di 42 (Carlo)
+[06:26:42] ▶ Voce — turno 36 di 42 (Arianna)
+[06:26:56] ▶ Voce — turno 37 di 42 (Carlo)
+[06:27:09] ▶ Voce — turno 38 di 42 (Arianna)
+[06:27:23] ▶ Voce — turno 39 di 42 (Carlo)
+[06:27:36] ▶ Voce — turno 40 di 42 (Arianna)
+[06:27:49] ▶ Voce — turno 41 di 42 (Carlo)
+[06:28:01] ▶ Voce — turno 42 di 42 (Arianna)
+[06:28:17] ⚠ voce sospetta per Carlo (178 Hz, attesa sotto 146 Hz): rifaccio il turno
+[06:28:17] ▶ Voce — rifaccio turno_021_corpo_carlo.wav
+[06:28:29] ⚠ voce sospetta per Carlo (159 Hz, attesa sotto 146 Hz): rifaccio il turno
+[06:28:29] ▶ Voce — rifaccio turno_041_corpo_carlo.wav
+[06:28:42]    controllo voci: Carlo ~120 Hz, Arianna ~172 Hz, tutto in ordine
+[06:28:42] ✔ Voce — 42 turni, una voce per richiesta + frase finale
+[06:28:42] ▶ Montaggio audio
+[06:28:51] ✔ Montaggio audio — 5.2 minuti in tutto, voce 4.5 minuti, 151 parole al minuto
+[06:28:52] ▶ Articolo su WordPress — stato: bozza
+[06:29:15] ✔ Articolo su WordPress — draft · https://www.andreamanini.it/?p=196
+[06:29:16] ▶ Consegna su Telegram
+[06:29:25] ✔ Consegna su Telegram — 5 file inviati
+[06:29:25] ▶ Registro e chiusura
+[06:29:25] Richieste al modello di testo: 9 (usata anche la chiave a pagamento)
+[06:29:25] memoria video non misurata (nvidia-smi assente)
