@@ -36,6 +36,10 @@ on:
         description: "Con 'paper': rifà una puntata già uscita, stesso numero, e aggiorna articolo, Drive e Releases"
         type: boolean
         default: false
+      se_manca:
+        description: "Esci subito se la puntata di oggi è già fatta (per le sveglie esterne)"
+        type: boolean
+        default: false
       solo_testi:
         description: "Solo dialogo e articolo: niente voce, copertina disegnata (per rivederli)"
         type: boolean
@@ -87,7 +91,7 @@ jobs:
             exit 0
           fi
           ARGS="--cloud"
-          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="$ARGS --se-manca"; fi
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.se_manca }}" = "true" ]; then ARGS="$ARGS --se-manca"; fi
           if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
           if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
           if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS="$ARGS --sostituisci"; fi
