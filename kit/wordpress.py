@@ -72,6 +72,11 @@ class WordPress:
             "Content-Disposition": f'attachment; filename="{nome}"',
             "Content-Type": "image/jpeg"})["id"], titolo
 
+    def pubblica_bozza(self, id_post):
+        """Pubblica un articolo che è in bozza."""
+        p = self._r("POST", f"/posts/{id_post}", json={"status": "publish"})
+        return {"id": p["id"], "link": p.get("link"), "stato": p.get("status")}
+
     def pubblica(self, titolo, html, estratto, categoria, tag, copertina, stato, chiave, sostituisci=False):
         """chiave: un identificativo (l'id arXiv) per non creare doppioni se si rilancia.
         sostituisci: se l'articolo esiste già, ne aggiorna testo, titolo e copertina
@@ -81,6 +86,9 @@ class WordPress:
         for p in esistenti:
             if chiave in (p.get("content", {}).get("raw", "") or ""):
                 if not sostituisci:
+                    if stato == "pubblica" and p.get("status") == "draft":
+                        # c'era già in bozza (da un tentativo precedente): ora va pubblicato
+                        p = self._r("POST", f"/posts/{p['id']}", json={"status": "publish"})
                     return {"id": p["id"], "link": p.get("link"), "stato": p.get("status"), "esisteva": True}
                 corpo = {"title": titolo, "content": html, "excerpt": estratto}
                 if copertina and Path(copertina).exists():

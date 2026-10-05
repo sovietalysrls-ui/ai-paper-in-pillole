@@ -1,0 +1,36 @@
+# Pubblica sul sito un articolo che è in bozza (numero dell'articolo: ?p=NUMERO).
+name: Sito - pubblica bozza
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Numero dell'articolo (quello dopo ?p= nell'indirizzo)"
+        required: true
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Pubblica
+        env:
+          WP_UTENTE: ${{ secrets.WP_UTENTE }}
+          WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          from kit.util import carica_config
+          from kit.wordpress import WordPress
+          r = WordPress(carica_config(cloud=True)["wordpress"]["sito"]).pubblica_bozza(${{ inputs.id }})
+          print(r)
+          open("esito.txt", "w").write(f"📝 Articolo pubblicato: {r['link']}")
+          PY
+          ./avvisa.sh "$(cat esito.txt)"

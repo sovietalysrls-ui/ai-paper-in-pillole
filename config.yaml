@@ -201,7 +201,7 @@ wordpress:
   sito: https://www.andreamanini.it
   # bozza  = lo trovi in bozza e premi "Pubblica" tu
   # pubblica = esce da solo
-  stato: bozza
+  stato: pubblica
   categoria: AI Paper in Pillole
   # Lingue che vanno sul sito (il sito è in italiano).
   lingue: [it]
