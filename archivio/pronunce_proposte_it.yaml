@@ -1,5 +1,7 @@
 # Pronunce proposte dal modello. Copia in lingue/it/pronuncia.yaml quelle giuste (correggendole se serve).
+BM25: bi emme venticinque
 DiffusionNFT: diffiùshon enne effe tì
+GDPR: gi di pi erre
 GDPVal: gi di pi vàl
 GLM-5.2: Gi Elle Èm cinque virgola due
 GraphForge: Gràf Forg
@@ -7,6 +9,7 @@ JavisBench: giàvis bènch
 LTX-2: elle tì iks due
 O*NET: O èt
 Qwen3.6-27B: Cuèn tre punto sèi ventisètte bi
+RealCompanion: Rìal Compànion
 SpreadsheetBench II: sprèd shiit bèntch sècondo
 VGGSound: vi gi gi sàund
 Workspace-Bench-Lite: uòrk speis bèntch làit

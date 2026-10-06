@@ -1,0 +1,15 @@
+AI Paper in Pillole #54 - RealCompanion: come si misura se l'assistente virtuale si ricorda davvero di noi
+
+Un utente confida all'assistente virtuale di essere in ansia per un colloquio. Giorni dopo, l'assistente si congratula per il nuovo impiego. L'intelligenza artificiale deduce che sia andato bene, senza che l'utente lo abbia mai detto. Questo accade perché i sistemi attuali faticano a capire il nostro passato. Oggi gli assistenti vengono testati solo su conversazioni finte. Non sappiamo se sappiano davvero ricordare le cose importanti sul lungo periodo.
+
+I ricercatori hanno creato RealCompanion, un test basato su conversazioni reali e di lungo termine. Lo strumento raccoglie dialoghi spontanei fino a 120 giorni. Gli esperti creano un profilo dell'utente verificato da persone reali. Poi mettono alla prova l'intelligenza artificiale per vedere se sappia ricostruire questo profilo. Il test misura se il sistema capisca quando deve recuperare un ricordo lontano nella chat.
+
+Solo il 3,4 per cento dei messaggi richiede di ricordare qualcosa avvenuto in passato. Quando serve un ricordo, questo si trova a una distanza mediana di 2.157 messaggi, cioè lontanissimo nella chat. Come limite, i modelli tendono a inventare informazioni sul conto dell'utente. I sistemi aggiungono da 70 a 80 dettagli inventati ogni 100 risposte corrette.
+
+Il paper è di Arman Behnam, Sunglyoung Kim e Liangwei Yang.
+
+Link al paper: https://arxiv.org/abs/2610.01780
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #RealCompanion #PrivacyDati #AssistentiVirtuali #MemoriaAI

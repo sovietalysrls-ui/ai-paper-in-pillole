@@ -1,0 +1,79 @@
+{
+  "nome_breve": "RealCompanion",
+  "problema": "Gli assistenti virtuali intelligenti con cui parliamo ogni giorno dovrebbero imparare a conoscerci nel tempo. Tuttavia, oggi vengono testati solo su conversazioni finte e inventate a tavolino, perché quelle reali sono private. Di conseguenza, non sappiamo davvero se queste intelligenze artificiali siano in grado di capirci e ricordare le cose importanti sul lungo periodo.",
+  "idea": "Gli autori hanno creato RealCompanion, il primo test basato su conversazioni reali e di lungo termine tra persone vere e assistenti virtuali. Questo strumento permette di misurare se l'intelligenza artificiale capisce davvero chi siamo, cosa ricordiamo e quando è il momento giusto di richiamare un ricordo del passato.",
+  "come_funziona": [
+    "Si raccolgono conversazioni reali e spontanee tra persone e assistenti virtuali per un periodo fino a 120 giorni.",
+    "Per ogni utente si crea un profilo dettagliato e una descrizione della sua personalità, verificati da revisori umani.",
+    "Si sottopone l'intelligenza artificiale a tre prove: ricostruire il profilo dell'utente, rispondere in chat e rispondere a domande scritte.",
+    "Si misura la capacità del sistema di capire quando un messaggio richiede di andare a ripescare un ricordo lontano nella chat."
+  ],
+  "risultati": [
+    {
+      "fatto": "La percentuale di messaggi in cui le persone fanno riferimento a qualcosa detto in precedenza, fuori dal discorso immediato",
+      "numero": "3.4%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Quasi mai: solo pochissimi messaggi su cento richiedono di ricordare qualcosa avvenuto in passato."
+    },
+    {
+      "fatto": "La distanza mediana dei messaggi passati a cui l'utente fa riferimento quando decide di richiamare un ricordo",
+      "numero": "2,157",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Quando serve un ricordo, questo si trova lontanissimo nella chat, a migliaia di messaggi di distanza."
+    },
+    {
+      "fatto": "Il punteggio di accuratezza dei sistemi basati su agenti nel ricostruire la personalità dell'utente",
+      "numero": "0.69 to 0.70",
+      "prima": "",
+      "scala": "su 1",
+      "in_pratica": "I sistemi ottengono un buon punteggio ma tendono a inventare dettagli, immaginando sul conto dell'utente più di quanto lui abbia effettivamente rivelato."
+    }
+  ],
+  "limiti": [
+    "I sistemi di intelligenza artificiale non riescono a capire quando un messaggio richiede davvero di recuperare un ricordo, agendo quasi a caso.",
+    "I modelli tendono a inventare informazioni, aggiungendo da 70 a 80 dettagli inventati ogni 100 corretti quando cercano di ricostruire il profilo dell'utente.",
+    "L'anonimizzazione dei testi non è perfetta: un modello riesce a riconoscere l'autore di un testo con il 98.0% di accuratezza basandosi solo sullo stile di scrittura."
+  ],
+  "esempio_concreto": "Un utente confida al suo assistente virtuale di essere in ansia per un colloquio di lavoro. Giorni dopo, l'assistente si congratula improvvisamente per il nuovo impiego, deducendo erroneamente che sia andato bene, senza che l'utente abbia mai detto di averlo ottenuto.",
+  "perche_ti_riguarda": "Se usi un assistente virtuale sperando che ti capisca come un amico, potresti scoprire che fa fatica a ricordare i dettagli importanti del tuo passato o che, al contrario, si inventa cose su di te che non gli hai mai detto.",
+  "gancio": "Un assistente virtuale che si congratula con voi per un lavoro che non avete mai ottenuto, solo perché gli avevate detto di essere in ansia per il colloquio. Questo accade perché le intelligenze artificiali faticano a capire davvero il nostro passato.",
+  "termini": [
+    {
+      "termine": "RealCompanion",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il nome del nuovo test e del dataset di conversazioni reali usato per valutare gli assistenti virtuali.",
+      "usa": "termine",
+      "pronuncia": "Rìal Compànion"
+    },
+    {
+      "termine": "BM25",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un classico algoritmo matematico utilizzato per cercare e recuperare testi e informazioni all'interno di un archivio.",
+      "usa": "spiegazione",
+      "pronuncia": "bi emme venticinque"
+    },
+    {
+      "termine": "GDPR",
+      "tipo": "sigla",
+      "espansione_inglese": "General Data Protection Regulation",
+      "significato": "Regolamento generale sulla protezione dei dati",
+      "spiegazione": "La legge europea che tutela la privacy e stabilisce come possono essere trattati i dati personali dei cittadini.",
+      "usa": "termine",
+      "pronuncia": "gi di pi erre"
+    }
+  ],
+  "soggetto_immagine": "a chat bubble icon with a small clock and a magnifying glass inside",
+  "hashtag": [
+    "AI",
+    "RealCompanion",
+    "PrivacyDati",
+    "AssistentiVirtuali",
+    "MemoriaAI"
+  ]
+}
