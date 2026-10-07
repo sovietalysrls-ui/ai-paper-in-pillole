@@ -1,0 +1,80 @@
+{
+  "nome_breve": "Kandinsky 6.0 Video",
+  "problema": "Generare video con l'intelligenza artificiale spesso produce filmati muti o con suoni slegati dalle immagini. Quando un personaggio parla o un oggetto sbatte, far combaciare perfettamente i suoni con i movimenti visivi è estremamente difficile.",
+  "idea": "I ricercatori hanno creato un sistema aperto che genera contemporaneamente video e audio coordinati. Due canali dedicati a immagini e suoni comunicano costantemente tra loro durante la creazione per garantire che ogni rumore o battuta avvenga all'istante esatto.",
+  "come_funziona": [
+    "Un canale video e un canale audio separati scambiano informazioni in tempo reale attraverso una connessione bidirezionale.",
+    "Il canale audio viene prima addestrato su grandissime quantità di suoni e poi rifinito insieme a quello visivo.",
+    "L'apprendimento per rinforzo corregge gli errori e perfeziona la sincronizzazione del parlato con il movimento delle labbra.",
+    "Un passaggio finale di super-risoluzione porta il filmato al formato Full-HD.",
+    "Una tecnica di scaricamento della memoria consente di eseguire il programma anche su computer con schede video ordinarie."
+  ],
+  "risultati": [
+    {
+      "fatto": "Riduzione degli errori nelle parole pronunciate dai personaggi grazie all'addestramento con apprendimento per rinforzo",
+      "numero": "47%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Gli errori nel parlato generato sono stati quasi dimezzati, rendendo le parole molto più comprensibili e naturali."
+    },
+    {
+      "fatto": "Memoria minima richiesta sulle schede grafiche commerciali grazie all'ottimizzazione del carico di memoria",
+      "numero": "16 GB",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Permette a chiunque abbia un computer per videogiochi di media fascia di creare brevi video con audio senza noleggiare server costosi."
+    },
+    {
+      "fatto": "Frequenza di campionamento dell'audio sincronizzato prodotto insieme al filmato",
+      "numero": "44 kHz",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "La fedeltà acustica del suono generato raggiunge lo standard tipico dei CD musicali."
+    }
+  ],
+  "limiti": [
+    "I filmati generati non possono superare la durata massima di 5 secondi.",
+    "La risoluzione nativa è bassa e richiede un passaggio aggiuntivo con un secondo modello per ottenere l'alta definizione.",
+    "Rimane ancora un divario qualitativo nella resa complessiva rispetto ai migliori modelli commerciali a codice chiuso."
+  ],
+  "esempio_concreto": "Un creatore di contenuti carica la fotografia di un attore e digita una battuta: il sistema genera un filmato di pochi secondi in cui la persona muove le labbra a tempo con le parole e si sente chiaramente anche il rumore di una tazzina che batte sul piattino.",
+  "perche_ti_riguarda": "Presto chiunque potrà produrre brevi clip cinematografici completi di dialoghi ed effetti sonori dal proprio computer di casa, senza bisogno di studi di doppiaggio o software complessi.",
+  "gancio": "Un personaggio apre bocca e le sue labbra pronunciano esattamente le parole che ascoltiamo, mentre una tazzina tocca il tavolo nello stesso millisecondo in cui sentiamo il rumore del vetro.",
+  "termini": [
+    {
+      "termine": "Kandinsky 6.0 Video",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La famiglia di modelli di intelligenza artificiale presentata nel paper per creare video e audio insieme.",
+      "usa": "termine",
+      "pronuncia": "Candìnski sèi punto zèro Vìdeo"
+    },
+    {
+      "termine": "CrossDiT",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La struttura del modello che fa dialogare in continuazione il flusso video e quello audio durante la generazione.",
+      "usa": "spiegazione",
+      "pronuncia": "Cròs Di Ai Tì"
+    },
+    {
+      "termine": "VABench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test standard per valutare quanto bene un'intelligenza artificiale generi video e audio sincronizzati.",
+      "usa": "spiegazione",
+      "pronuncia": "Vi Ei Bènch"
+    }
+  ],
+  "soggetto_immagine": "a film clapboard connected to a speaker by a glowing horizontal cable",
+  "hashtag": [
+    "AI",
+    "GenerazioneVideo",
+    "VideoSincronizzato",
+    "ModelliAperti",
+    "SintesiVocale"
+  ]
+}

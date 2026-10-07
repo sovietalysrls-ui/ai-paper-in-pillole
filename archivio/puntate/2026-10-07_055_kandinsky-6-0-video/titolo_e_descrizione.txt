@@ -1,0 +1,15 @@
+AI Paper in Pillole #55 - Kandinsky 6.0 Video: come l'AI genera video e suoni perfettamente sincronizzati
+
+Un creatore di contenuti carica la fotografia di un attore e digita una battuta. Spesso i video generati dall'intelligenza artificiale sono muti o hanno suoni slegati dalle immagini. Far combaciare il movimento delle labbra con le parole pronunciate è estremamente difficile. Lo stesso problema si presenta con i rumori d'ambiente, come una tazzina che sbatte sul piattino.
+
+I ricercatori hanno creato un sistema aperto che genera contemporaneamente immagini e suoni coordinati. Il programma usa due canali separati, uno per il video e uno per l'audio. I due canali comunicano costantemente tra loro durante l'elaborazione. L'apprendimento per rinforzo, un metodo che premia le risposte corrette ed elimina gli sbagli, perfeziona la sincronizzazione tra labbra e voce. Un passaggio finale porta poi il filmato al formato ad alta definizione.
+
+Questo sistema ha ridotto gli errori nel parlato del 47 per cento. In pratica, gli sbagli nelle parole pronunciate sono stati quasi dimezzati, rendendo i dialoghi molto più comprensibili e naturali. Inoltre, l'ottimizzazione del programma richiede solo 16 GB di memoria grafica. In questo modo, chiunque abbia un computer per videogiochi di fascia media può creare clip con sonoro senza noleggiare server costosi. Il limite principale è che i filmati non possono superare 5 secondi di durata.
+
+Il paper è di Team Kandinsky, Julia Agafonova, Bulat Akhmatov e altri 85 autori.
+
+Link al paper: https://arxiv.org/abs/2610.05608
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #GenerazioneVideo #VideoSincronizzato #ModelliAperti #SintesiVocale

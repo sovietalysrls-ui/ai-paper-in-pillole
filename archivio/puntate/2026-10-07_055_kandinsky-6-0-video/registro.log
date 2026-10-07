@@ -1,0 +1,112 @@
+[07:37:39] ===== Avvio 2026-10-07 07:37 =====
+[07:37:39] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[07:37:40]    liste trovate: 2026-10-06 (50 paper), 2026-10-05 (50 paper), 2026-10-02 (50 paper), 2026-10-01 (50 paper), 2026-09-30 (50 paper)
+[07:37:40]    provo 2610.05608 (117 voti, lista del 2026-10-06): Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audi
+[07:37:40] ✔ Scelta e lettura del paper — 2610.05608 · 117 voti · arxiv-html · 10575 parole utili
+[07:37:40] ▶ Scheda dei fatti — 1 pezzi da leggere
+[07:37:40] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Data Processing Pipeline 
+[07:37:48]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:38:11]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:38:33] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.6-flash
+[07:38:33]    limite al minuto raggiunto, aspetto 30 secondi
+[07:39:04]    limite al minuto raggiunto, aspetto 30 secondi
+[07:39:34]    limite al minuto raggiunto, aspetto 30 secondi
+[07:40:04] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[07:41:06] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[07:41:19]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:41:41]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:42:03] ⚠ Gemini testo: chiave gratuita esaurita (modelli sovraccarichi), passo alla chiave a pagamento
+[07:42:22] ✔ Scheda dei fatti — Kandinsky 6.0 Video · 3 risultati · 3 termini
+[07:42:23] ▶ Dialogo — puntata #55
+[07:43:42] ✔ Dialogo — 50 battute, 694 parole
+[07:43:42] ▶ Controlli e correzioni
+[07:43:42]    giro 1: nessun problema (694 parole, massimo 736)
+[07:43:42] ✔ Controlli e correzioni — nessun problema residuo
+[07:43:42] ▶ Titolo, descrizione, articolo — titolo
+[07:43:50] ▶ Titolo, descrizione, articolo — descrizione
+[07:44:16]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[07:44:31]    rivedi descrizione: 1 problemi, correggo (giro 2)
+[07:44:48] ⚠ descrizione: scrive come si pronuncia un nome: togli quella parte, il testo si legge
+[07:44:59] ▶ Titolo, descrizione, articolo — articolo per il sito
+[07:45:35]    rivedi articolo: 1 problemi, correggo (giro 1)
+[07:46:16]    rivedi articolo: 1 problemi, correggo (giro 2)
+[07:46:57] ⚠ articolo: scrive come si pronuncia un nome: togli quella parte, il testo si legge
+[07:47:24] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #55 - Kandinsky 6.0 Video: come l'AI gen» · articolo 816 parole
+[07:47:25] ▶ Copertina
+[07:47:25]    limite al minuto raggiunto, aspetto 30 secondi
+[07:47:55] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[07:47:55] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:48:03] ✔ Copertina — disegnata da Gemini
+[07:48:04] ▶ Voce
+[07:48:04] ▶ Voce — turno 1 di 50 (Carlo)
+[07:48:14]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:48:17] ▶ Voce — turno 2 di 50 (Arianna)
+[07:48:31] ▶ Voce — turno 3 di 50 (Carlo)
+[07:49:28]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:49:51] ▶ Voce — turno 4 di 50 (Arianna)
+[07:50:05] ▶ Voce — turno 5 di 50 (Carlo)
+[07:53:34] ▶ Voce — turno 6 di 50 (Arianna)
+[07:53:48] ▶ Voce — turno 7 di 50 (Carlo)
+[07:54:05] ▶ Voce — turno 8 di 50 (Arianna)
+[07:54:15] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[07:54:25]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:54:28] ▶ Voce — turno 9 di 50 (Carlo)
+[07:54:41] ▶ Voce — turno 10 di 50 (Arianna)
+[07:54:54] ▶ Voce — turno 11 di 50 (Carlo)
+[07:55:07] ▶ Voce — turno 12 di 50 (Arianna)
+[07:55:17]    limite al minuto raggiunto, aspetto 42 secondi
+[07:56:02] ▶ Voce — turno 13 di 50 (Carlo)
+[07:56:15] ▶ Voce — turno 14 di 50 (Arianna)
+[07:56:59] ▶ Voce — turno 15 di 50 (Carlo)
+[07:57:12] ▶ Voce — turno 16 di 50 (Arianna)
+[07:57:25] ▶ Voce — turno 17 di 50 (Carlo)
+[07:57:37] ▶ Voce — turno 18 di 50 (Arianna)
+[07:57:48] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:57:58]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:58:01] ▶ Voce — turno 19 di 50 (Carlo)
+[07:58:14] ▶ Voce — turno 20 di 50 (Arianna)
+[07:58:27] ▶ Voce — turno 21 di 50 (Carlo)
+[07:58:41] ▶ Voce — turno 22 di 50 (Arianna)
+[07:58:55] ▶ Voce — turno 23 di 50 (Carlo)
+[07:59:08] ▶ Voce — turno 24 di 50 (Arianna)
+[07:59:22] ▶ Voce — turno 25 di 50 (Carlo)
+[07:59:35] ▶ Voce — turno 26 di 50 (Arianna)
+[07:59:49] ▶ Voce — turno 27 di 50 (Carlo)
+[08:00:02] ▶ Voce — turno 28 di 50 (Arianna)
+[08:00:15] ▶ Voce — turno 29 di 50 (Carlo)
+[08:00:28] ▶ Voce — turno 30 di 50 (Arianna)
+[08:00:42] ▶ Voce — turno 31 di 50 (Carlo)
+[08:00:56] ▶ Voce — turno 32 di 50 (Arianna)
+[08:01:10] ▶ Voce — turno 33 di 50 (Carlo)
+[08:01:23] ▶ Voce — turno 34 di 50 (Arianna)
+[08:01:37] ▶ Voce — turno 35 di 50 (Carlo)
+[08:01:50] ▶ Voce — turno 36 di 50 (Arianna)
+[08:02:04] ▶ Voce — turno 37 di 50 (Carlo)
+[08:02:16] ▶ Voce — turno 38 di 50 (Arianna)
+[08:02:31] ▶ Voce — turno 39 di 50 (Carlo)
+[08:02:44] ▶ Voce — turno 40 di 50 (Arianna)
+[08:02:57] ▶ Voce — turno 41 di 50 (Carlo)
+[08:03:11] ▶ Voce — turno 42 di 50 (Arianna)
+[08:03:26] ▶ Voce — turno 43 di 50 (Carlo)
+[08:03:39] ▶ Voce — turno 44 di 50 (Arianna)
+[08:03:53] ▶ Voce — turno 45 di 50 (Carlo)
+[08:04:07] ▶ Voce — turno 46 di 50 (Arianna)
+[08:04:20] ▶ Voce — turno 47 di 50 (Carlo)
+[08:04:33] ▶ Voce — turno 48 di 50 (Arianna)
+[08:04:47] ▶ Voce — turno 49 di 50 (Carlo)
+[08:05:00] ▶ Voce — turno 50 di 50 (Arianna)
+[08:05:16] ⚠ voce sospetta per Carlo (198 Hz, attesa sotto 158 Hz): rifaccio il turno
+[08:05:16] ▶ Voce — rifaccio turno_017_corpo_carlo.wav
+[08:05:29] ⚠ voce sospetta per Carlo (209 Hz, attesa sotto 158 Hz): rifaccio il turno
+[08:05:29] ▶ Voce — rifaccio turno_041_corpo_carlo.wav
+[08:05:41]    controllo voci: Carlo ~137 Hz, Arianna ~178 Hz, tutto in ordine
+[08:05:41] ✔ Voce — 50 turni, una voce per richiesta + frase finale
+[08:05:42] ▶ Montaggio audio
+[08:05:49] ✔ Montaggio audio — 5.1 minuti in tutto, voce 4.4 minuti, 156 parole al minuto
+[08:05:49] ▶ Articolo su WordPress — stato: pubblica
+[08:06:09] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/kandinsky-6-0-video-come-lai-genera-video-e-suoni-perfettamente-sincronizzati/
+[08:06:09] ▶ Consegna su Telegram
+[08:06:17] ✔ Consegna su Telegram — 5 file inviati
+[08:06:18] ▶ Registro e chiusura
+[08:06:18] Richieste al modello di testo: 12 (usata anche la chiave a pagamento)
+[08:06:18] memoria video non misurata (nvidia-smi assente)
