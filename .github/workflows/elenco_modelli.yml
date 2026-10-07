@@ -1,0 +1,23 @@
+# Elenca i modelli Gemini disponibili per la chiave gratuita (solo nomi, niente chiavi nel diario).
+name: Elenco modelli Gemini
+
+on:
+  workflow_dispatch:
+
+jobs:
+  elenco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Elenco
+        env:
+          K: ${{ secrets.GEMINI_API_KEY_GRATIS }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          url = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000"
+          req = urllib.request.Request(url, headers={"x-goog-api-key": os.environ["K"]})
+          d = json.load(urllib.request.urlopen(req))
+          for m in d.get("models", []):
+              print("MODELLO", m["name"].split("/")[-1], "|", m.get("displayName", ""), "|", m.get("version", ""))
+          PY
