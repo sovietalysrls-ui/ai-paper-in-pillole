@@ -82,7 +82,10 @@ gemini_testo:
   # Se il modello principale è sovraccarico, si prova il successivo.
   # Niente modelli "lite" per il testo: scrivono peggio. Finita la quota gratuita
   # di questi, si passa alla chiave a pagamento con il modello principale.
-  modelli_riserva: [gemini-3.6-flash, gemini-3.5-flash]
+  # Riserve in ordine: stessa famiglia (3.7, 3.6), poi una generazione più vecchia (2.5,
+  # server diversi: di solito libera quando i nuovi sono intasati, e costa meno),
+  # per ultima la 3.5, che a pagamento costa il doppio delle altre.
+  modelli_riserva: [gemini-3.7-flash, gemini-3.6-flash, gemini-2.5-flash, gemini-3.5-flash]
   temperatura_fatti: 0.2
   temperatura_scrittura: 0.7
   # Secondi di attesa tra una richiesta e l'altra: il livello
