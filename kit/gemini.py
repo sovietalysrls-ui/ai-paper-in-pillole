@@ -176,10 +176,29 @@ class _ConRiserva:
                 raise ErroreModello(f"{etichetta}: finite le richieste di oggi su tutti i modelli.{piu} {e}")
             except ErroreOccupato as e:
                 i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
-                if i + 1 >= len(modelli):
-                    raise ErroreModello(f"{etichetta}: tutti i modelli sono sovraccarichi. {e}")
-                self.avanz.avviso(f"{etichetta}: {self.nome} sovraccarico, passo a {modelli[i + 1]}")
-                self.nome = modelli[i + 1]
+                if i + 1 < len(modelli):
+                    self.avanz.avviso(f"{etichetta}: {self.nome} sovraccarico, passo a {modelli[i + 1]}")
+                    self.nome = modelli[i + 1]
+                    self.porta = self.cfg.get("porta", "auto")
+                    continue
+                # Tutti i modelli sovraccarichi: è un picco dei server di Google, di solito
+                # passa in pochi minuti. Prima si prova la chiave a pagamento (ha la precedenza),
+                # poi si aspetta e si ricomincia dal primo modello.
+                if self.chiavi.tipo != "a pagamento" and self.chiavi.passa_alla_prossima("modelli sovraccarichi"):
+                    self.nome = modelli[0]
+                    self.porta = self.cfg.get("porta", "auto")
+                    continue
+                attese = getattr(self, "_attese_sovraccarico", 0)
+                massimo = self.cfg.get("attese_sovraccarico", 6)
+                if attese >= massimo:
+                    raise ErroreModello(f"{etichetta}: tutti i modelli sono sovraccarichi anche dopo "
+                                        f"{massimo} attese. {e}")
+                self._attese_sovraccarico = attese + 1
+                minuti = self.cfg.get("minuti_attesa_sovraccarico", 3)
+                self.avanz.avviso(f"{etichetta}: tutti i modelli sono sovraccarichi (picco dei server di Google). "
+                                  f"Aspetto {minuti} minuti e riprovo ({attese + 1} di {massimo})")
+                time.sleep(minuti * 60)
+                self.nome = modelli[0]
                 self.porta = self.cfg.get("porta", "auto")
 
 

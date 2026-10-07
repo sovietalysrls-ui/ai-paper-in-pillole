@@ -59,7 +59,7 @@ concurrency:
 jobs:
   puntata:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 100
     outputs:
       wp_ok: ${{ steps.wp.outputs.ok }}
     steps:
