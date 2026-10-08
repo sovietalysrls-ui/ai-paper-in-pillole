@@ -147,6 +147,11 @@ def _testo_generatecontent(d):
     return "".join(out)
 
 
+def _modello_assente(testo):
+    """True se Google dice che quel modello non esiste o non è più offerto."""
+    return bool(re.search(r"NOT_FOUND|no longer available|is not found|not supported for", testo, re.I))
+
+
 class _ConRiserva:
     """Prova il modello principale; se è sovraccarico passa ai modelli di riserva."""
 
@@ -174,7 +179,22 @@ class _ConRiserva:
                     continue
                 piu = "" if len(self.chiavi.lista) > 1 else " Manca la chiave a pagamento (segreto GEMINI_API_KEY_PAGAMENTO)."
                 raise ErroreModello(f"{etichetta}: finite le richieste di oggi su tutti i modelli.{piu} {e}")
-            except ErroreOccupato as e:
+            except ErroreModello as e:
+                if not isinstance(e, ErroreOccupato) and not _modello_assente(str(e)):
+                    raise
+                if not isinstance(e, ErroreOccupato):
+                    # Modello non più offerto da Google: si salta e si passa al successivo.
+                    i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
+                    if i + 1 < len(modelli):
+                        self.avanz.avviso(f"{etichetta}: {self.nome} non è disponibile, passo a {modelli[i + 1]}")
+                        self.nome = modelli[i + 1]
+                        self.porta = self.cfg.get("porta", "auto")
+                        continue
+                    if self.nome != modelli[0]:
+                        # finita la lista: si ricomincia dal primo, con le attese per sovraccarico
+                        e = ErroreOccupato(str(e))
+                    else:
+                        raise
                 i = modelli.index(self.nome) if self.nome in modelli else len(modelli)
                 if i + 1 < len(modelli):
                     self.avanz.avviso(f"{etichetta}: {self.nome} sovraccarico, passo a {modelli[i + 1]}")
