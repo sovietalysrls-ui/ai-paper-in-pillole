@@ -1,0 +1,130 @@
+{
+  "nome_breve": "Distillazione affidabile tra vocabolari",
+  "problema": "Quando un modello di intelligenza artificiale esperto cerca di insegnare a uno più piccolo, spesso i due usano dizionari interni diversi per spezzare le parole. Si pensava che per addestrare bene il modello allievo bisognasse correggere ogni minima differenza di testo, anche dove i vocabolari non combaciano affatto.",
+  "idea": "Invece di forzare il confronto su ogni singola sillaba disallineata creando confusione, conviene concentrare i consigli del maestro solo sui punti in cui i due modelli parlano la stessa lingua. Limitare l'insegnamento a poche opzioni chiaramente condivise rende l'addestramento più pulito e preciso.",
+  "come_funziona": [
+    "Il modello allievo genera una risposta completa a una domanda di matematica o programmazione.",
+    "Il sistema individua i punti del testo in cui le parole dell'allievo e del maestro coincidono in modo esatto.",
+    "In quelle posizioni precise, si selezionano solo le sedici parole più probabili condivise da entrambi i vocabolari.",
+    "Il maestro corregge l'allievo solo su queste alternative affidabili, ignorando i blocchi di testo disallineati."
+  ],
+  "risultati": [
+    {
+      "fatto": "Vantaggio medio del metodo che seleziona le migliori sedici parole condivise rispetto alla migliore tecnica alternativa.",
+      "numero": "0.51–1.05 percentage points",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Un passo avanti piccolo ma chiaro rispetto a tutti i metodi concorrenti che cercano di tradurre dizionari diversi."
+    },
+    {
+      "fatto": "Quota di miglioramento medio mantenuta considerando solo le sedici scelte principali rispetto a usare l'intero vocabolario comune.",
+      "numero": "96%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Praticamente la quasi totalità del beneficio viene preservata concentrandosi solo su una manciata di vocaboli chiave."
+    },
+    {
+      "fatto": "Frazione dei frammenti di testo dell'allievo che coincide in modo esatto con quelli del maestro durante le prove pratiche.",
+      "numero": "85.57–96.98%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "La stragrande maggioranza delle parole generate trova già una corrispondenza perfetta senza bisogno di forzature."
+    },
+    {
+      "fatto": "Calo di accuratezza medio quando si costringe il modello a imparare anche dai pezzi di testo non allineati.",
+      "numero": "0.27–1.20 percentage points",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Cercare di correggere a tutti i costi ogni frammento finisce per peggiorare le risposte invece di migliorarle."
+    }
+  ],
+  "limiti": [
+    "I ricercatori segnalano che i set di dati utilizzati potrebbero contenere tracce di linguaggio tossico o socialmente dannoso.",
+    "Forzare l'apprendimento sui frammenti disallineati genera segnali contraddittori e sempre più forti che disturbano l'addestramento."
+  ],
+  "esempio_concreto": "Un programmatore junior cerca di farsi correggere il codice da un programmatore senior che usa abbreviazioni diverse: se il senior insiste a correggere persino il modo in cui il junior va a capo o separa i caratteri, finisce per confonderlo anziché aiutarlo sulla logica dell'algoritmo.",
+  "perche_ti_riguarda": "Permette di creare modelli di intelligenza artificiale compatti, capaci di funzionare direttamente su telefoni e portatili, imparando da modelli giganti senza perdere precisione logica.",
+  "gancio": "Per insegnare a un modello piccolo, costringerlo ad ascoltare il professore su ogni singola sillaba finisce per peggiorare i voti. Funziona molto meglio intervenire solo dove entrambi usano esattamente lo stesso vocabolario.",
+  "termini": [
+    {
+      "termine": "OPD",
+      "tipo": "sigla",
+      "espansione_inglese": "On-Policy Distillation",
+      "significato": "distillazione durante la generazione",
+      "spiegazione": "Tecnica in cui un modello allievo impara dai consigli di un modello maestro mentre genera direttamente le proprie risposte.",
+      "usa": "spiegazione",
+      "pronuncia": "o pi di"
+    },
+    {
+      "termine": "Qwen2.5-7B-Instruct",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello linguistico aperto di medie dimensioni utilizzato nei test come insegnante.",
+      "usa": "termine",
+      "pronuncia": "Kuèn due punto cinque sètte bi instràct"
+    },
+    {
+      "termine": "Llama-3.2-3B-Instruct",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello linguistico compatto progettato per essere leggero e usato qui come studente.",
+      "usa": "termine",
+      "pronuncia": "Liàma tre punto due tre bi instràct"
+    },
+    {
+      "termine": "Granite-4.1-8B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello aperto da otto miliardi di parametri testato negli esperimenti.",
+      "usa": "termine",
+      "pronuncia": "Grànait quattro punto uno òtto bi"
+    },
+    {
+      "termine": "Phi-4-mini-instruct",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello compatto specializzato in ragionamento logico impiegato nelle prove.",
+      "usa": "termine",
+      "pronuncia": "Fi quattro mìni instràct"
+    },
+    {
+      "termine": "SimCT",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una tecnica esistente per confrontare modelli che usano sistemi di frammentazione del testo differenti.",
+      "usa": "termine",
+      "pronuncia": "Sim si ti"
+    },
+    {
+      "termine": "KDFlow",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un metodo alternativo di trasferimento di conoscenza tra modelli con vocabolari diversi.",
+      "usa": "termine",
+      "pronuncia": "Kéi di flòu"
+    },
+    {
+      "termine": "ALFWorld",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un ambiente di test virtuale basato su comandi testuali per simulare attività casalinghe interattive.",
+      "usa": "termine",
+      "pronuncia": "Àlf uòrld"
+    }
+  ],
+  "soggetto_immagine": "two matching geometric puzzle pieces aligning perfectly while mismatched shapes are filtered out",
+  "hashtag": [
+    "AI",
+    "Distillazione",
+    "ModelliLinguistici",
+    "Ragionamento",
+    "MachineLearning"
+  ]
+}

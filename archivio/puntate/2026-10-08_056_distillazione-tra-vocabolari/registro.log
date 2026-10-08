@@ -1,0 +1,108 @@
+[07:35:52] ===== Avvio 2026-10-08 07:35 =====
+[07:35:53] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[07:35:53]    liste trovate: 2026-10-07 (50 paper), 2026-10-06 (50 paper), 2026-10-05 (50 paper), 2026-10-02 (50 paper), 2026-10-01 (50 paper)
+[07:35:53]    provo 2610.08448 (159 voti, lista del 2026-10-07): Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Cove
+[07:35:54] ✔ Scelta e lettura del paper — 2610.08448 · 159 voti · arxiv-html · 2702 parole utili
+[07:35:54] ▶ Scheda dei fatti — 1 pezzi da leggere
+[07:35:54] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Revisiting Supervision Co
+[07:36:15]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:36:50] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[07:37:11]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:37:32]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:38:41] ✔ Scheda dei fatti — Distillazione affidabile tra vocabolari · 4 risultati · 8 termini
+[07:38:42] ▶ Dialogo — puntata #56
+[07:39:07]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:40:36] ✔ Dialogo — 44 battute, 679 parole
+[07:40:37] ▶ Controlli e correzioni
+[07:40:37]    giro 1: 2 battute da sistemare, 0 problemi generali (679 parole)
+[07:40:47]    giro 2: nessun problema (678 parole, massimo 736)
+[07:40:47] ✔ Controlli e correzioni — nessun problema residuo
+[07:40:47] ▶ Titolo, descrizione, articolo — titolo
+[07:40:52]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:41:33]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:42:08] ▶ Titolo, descrizione, articolo — descrizione
+[07:42:32]    rivedi descrizione: 2 problemi, correggo (giro 1)
+[07:42:33]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:43:22] ▶ Titolo, descrizione, articolo — articolo per il sito
+[07:43:23] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.8-flash (chiave gratuita), passo a gemini-3.7-flash
+[07:43:37]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:43:59]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:44:36] ⚠ Gemini testo: gemini-3.7-flash sovraccarico, passo a gemini-3.6-flash
+[07:44:58]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:45:23]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:45:54] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[07:48:11] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #56 - Distillazione tra vocabolari: come» · articolo 878 parole
+[07:48:11] ▶ Copertina
+[07:48:11]    limite al minuto raggiunto, aspetto 30 secondi
+[07:48:42] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[07:48:42] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:48:48] ✔ Copertina — disegnata da Gemini
+[07:48:49] ▶ Voce
+[07:48:49] ▶ Voce — turno 1 di 44 (Arianna)
+[07:48:59]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:49:02] ▶ Voce — turno 2 di 44 (Carlo)
+[07:49:15] ▶ Voce — turno 3 di 44 (Arianna)
+[07:49:30] ▶ Voce — turno 4 di 44 (Carlo)
+[07:49:40]    limite al minuto raggiunto, aspetto 19 secondi
+[07:50:03] ▶ Voce — turno 5 di 44 (Arianna)
+[07:50:16]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[07:50:43] ▶ Voce — turno 6 di 44 (Carlo)
+[07:50:57] ▶ Voce — turno 7 di 44 (Arianna)
+[07:51:10] ▶ Voce — turno 8 di 44 (Carlo)
+[07:51:24] ▶ Voce — turno 9 di 44 (Arianna)
+[07:51:39] ▶ Voce — turno 10 di 44 (Carlo)
+[07:51:53] ▶ Voce — turno 11 di 44 (Arianna)
+[07:52:04] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[07:52:14]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:52:17] ▶ Voce — turno 12 di 44 (Carlo)
+[07:52:29] ▶ Voce — turno 13 di 44 (Arianna)
+[07:52:42] ▶ Voce — turno 14 di 44 (Carlo)
+[07:52:55] ▶ Voce — turno 15 di 44 (Arianna)
+[07:53:09] ▶ Voce — turno 16 di 44 (Carlo)
+[07:53:22] ▶ Voce — turno 17 di 44 (Arianna)
+[07:53:37] ▶ Voce — turno 18 di 44 (Carlo)
+[07:53:49] ▶ Voce — turno 19 di 44 (Arianna)
+[07:54:00] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:54:10]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:54:14] ▶ Voce — turno 20 di 44 (Carlo)
+[07:54:27] ▶ Voce — turno 21 di 44 (Arianna)
+[07:54:41] ▶ Voce — turno 22 di 44 (Carlo)
+[07:54:54] ▶ Voce — turno 23 di 44 (Arianna)
+[07:55:08] ▶ Voce — turno 24 di 44 (Carlo)
+[07:55:21] ▶ Voce — turno 25 di 44 (Arianna)
+[07:55:35] ▶ Voce — turno 26 di 44 (Carlo)
+[07:55:48] ▶ Voce — turno 27 di 44 (Arianna)
+[07:56:02] ▶ Voce — turno 28 di 44 (Carlo)
+[07:56:15] ▶ Voce — turno 29 di 44 (Arianna)
+[07:56:29] ▶ Voce — turno 30 di 44 (Carlo)
+[07:56:43] ▶ Voce — turno 31 di 44 (Arianna)
+[07:56:56] ▶ Voce — turno 32 di 44 (Carlo)
+[07:57:10] ▶ Voce — turno 33 di 44 (Arianna)
+[07:57:25] ▶ Voce — turno 34 di 44 (Carlo)
+[07:57:38] ▶ Voce — turno 35 di 44 (Arianna)
+[07:57:53] ▶ Voce — turno 36 di 44 (Carlo)
+[07:58:05] ▶ Voce — turno 37 di 44 (Arianna)
+[07:58:20] ▶ Voce — turno 38 di 44 (Carlo)
+[07:58:34] ▶ Voce — turno 39 di 44 (Arianna)
+[07:58:48] ▶ Voce — turno 40 di 44 (Carlo)
+[07:59:01] ▶ Voce — turno 41 di 44 (Arianna)
+[07:59:15] ▶ Voce — turno 42 di 44 (Carlo)
+[07:59:29] ▶ Voce — turno 43 di 44 (Arianna)
+[07:59:42] ▶ Voce — turno 44 di 44 (Carlo)
+[07:59:57] ⚠ voce sospetta per Carlo (217 Hz, attesa sotto 158 Hz): rifaccio il turno
+[07:59:57] ▶ Voce — rifaccio turno_024_corpo_carlo.wav
+[08:00:10] ⚠ voce sospetta per Carlo (170 Hz, attesa sotto 158 Hz): rifaccio il turno
+[08:00:10] ▶ Voce — rifaccio turno_042_corpo_carlo.wav
+[08:00:24] ⚠ voce sospetta per Carlo (190 Hz, attesa sotto 158 Hz): rifaccio il turno
+[08:00:24] ▶ Voce — rifaccio turno_044_corpo_carlo.wav
+[08:00:36]    controllo voci: Carlo ~139 Hz, Arianna ~177 Hz, tutto in ordine
+[08:00:36] ✔ Voce — 44 turni, una voce per richiesta + frase finale
+[08:00:36] ▶ Montaggio audio
+[08:00:46] ✔ Montaggio audio — 5.2 minuti in tutto, voce 4.5 minuti, 151 parole al minuto
+[08:00:46] ▶ Articolo su WordPress — stato: pubblica
+[08:05:47] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[08:05:47] ▶ Consegna su Telegram
+[08:05:54] ✔ Consegna su Telegram — 5 file inviati
+[08:05:55] ▶ Registro e chiusura
+[08:05:55] Richieste al modello di testo: 10
+[08:05:55] memoria video non misurata (nvidia-smi assente)
