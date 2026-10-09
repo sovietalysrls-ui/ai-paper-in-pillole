@@ -1,0 +1,94 @@
+{
+  "nome_breve": "STEPQuant",
+  "problema": "I modelli linguistici moderni tengono traccia della conversazione con una memoria interna costante, ma quando centinaia di persone li usano insieme questa memoria riempie le schede grafiche. Se si prova a comprimerla con metodi tradizionali, gli errori si accumulano a ogni parola e il modello perde il filo fino a vaneggiare a vuoto.",
+  "idea": "STEPQuant protegge la memoria valutando quando e dove gli errori fanno più danni. Assegna una precisione maggiore ai dati destinati a durare a lungo nel tempo e calibra la compressione in base alla grandezza effettiva dei singoli valori.",
+  "come_funziona": [
+    "Misura per quanto tempo ogni informazione deve restare attiva nella memoria del modello.",
+    "Riserva una precisione più alta ai dati a lunga durata e mantiene inalterate le unità più delicate.",
+    "Calcola scale di compressione separate per righe e colonne per non schiacciare valori con ampiezze molto diverse.",
+    "Esegue gli aggiornamenti della memoria con istruzioni grafiche fuse insieme per non rallentare l'elaborazione."
+  ],
+  "risultati": [
+    {
+      "fatto": "Riduzione della memoria totale necessaria al server per gestire molte richieste simultanee",
+      "numero": "68.7%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Taglia di oltre due terzi la memoria complessiva richiesta dal computer."
+    },
+    {
+      "fatto": "Fattore di compressione della memoria interna dello stato ricorrente",
+      "numero": "5.03 \\times",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Riduce lo spazio occupato dalla memoria a circa un quinto rispetto all'originale."
+    },
+    {
+      "fatto": "Velocizzazione dell'aggiornamento della memoria sulla scheda grafica",
+      "numero": "2.91 \\times",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Quasi il triplo più veloce nel calcolare i nuovi stati di memoria."
+    },
+    {
+      "fatto": "Accuratezza media nei compiti di ragionamento a risposta lunga",
+      "numero": "80.59%",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "Risolve correttamente più di otto problemi complessi su dieci."
+    }
+  ],
+  "limiti": [
+    "Una piccola frazione di unità di memoria deve restare nel formato originale ad alta precisione perché non tollera la compressione.",
+    "Quando si spinge la compressione al limite massimo di quattro bit, su alcuni modelli si nota ancora un piccolo calo di precisione."
+  ],
+  "esempio_concreto": "Un server universitario che offre un assistente virtuale a centinaia di studenti di ingegneria durante una sessione d'esame: invece di esaurire la memoria video o generare risposte infinite senza capo né coda, il sistema elabora le domande di tutti in parallelo mantenendo le risposte precise.",
+  "perche_ti_riguarda": "Permette ai servizi di intelligenza artificiale di gestire molte più persone contemporaneamente senza blocchi e riducendo i costi delle infrastrutture che li fanno funzionare.",
+  "gancio": "Se provi a comprimere la memoria di un modello linguistico con i metodi classici, durante un calcolo matematico può iniziare a scrivere a vuoto oltre sessantamila parole senza mai arrivare alla soluzione.",
+  "termini": [
+    {
+      "termine": "STEPQuant",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo ideato dai ricercatori per comprimere la memoria dei modelli tenendo conto di tempo e spazio.",
+      "usa": "termine",
+      "pronuncia": "Stèp Cuònt"
+    },
+    {
+      "termine": "SGLang",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un software usato per gestire e velocizzare l'elaborazione dei modelli linguistici su più schede grafiche.",
+      "usa": "termine",
+      "pronuncia": "Èsse Gi Èl Lèng"
+    },
+    {
+      "termine": "AWQ",
+      "tipo": "sigla",
+      "espansione_inglese": "Activation-aware Weight Quantization",
+      "significato": "quantizzazione dei pesi sensibile alle attivazioni",
+      "spiegazione": "Un metodo per rimpicciolire i componenti del modello proteggendo quelli più usati.",
+      "usa": "spiegazione",
+      "pronuncia": "a vu cù"
+    },
+    {
+      "termine": "Qwen3.8-27B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno dei modelli di intelligenza artificiale usati nei test per verificare l'efficacia della compressione.",
+      "usa": "termine",
+      "pronuncia": "Cuèn tre punto òtto ventisètte bi"
+    }
+  ],
+  "soggetto_immagine": "a memory grid matrix with several highlighted nodes and a shrinking data gauge",
+  "hashtag": [
+    "AI",
+    "CompressioneDati",
+    "MemoriaGPU",
+    "STEPQuant",
+    "EfficienzaInformatica"
+  ]
+}

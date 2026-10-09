@@ -1,0 +1,15 @@
+AI Paper in Pillole #57 - STEPQuant: come comprimere la memoria dell'AI senza farle perdere il filo
+
+Durante una sessione di esame, centinaia di studenti usano insieme l'assistente virtuale dell'università. Ogni conversazione occupa memoria sulle schede grafiche del server. Se questo spazio si esaurisce, il sistema rallenta o si blocca. Comprimere la memoria con i metodi tradizionali fa accumulare errori a ogni parola. Il modello rischia di perdere il filo e scrivere a vuoto oltre sessantamila parole senza rispondere.
+
+Il metodo STEPQuant protegge la memoria valutando quando e dove gli errori fanno più danni. Il sistema misura per quanto tempo ogni informazione deve restare attiva. I dati destinati a durare a lungo ricevono una precisione maggiore. I valori vengono compressi con scale separate tra righe e colonne per non schiacciare dati di grandezza diversa. Le istruzioni grafiche vengono fuse insieme per non rallentare l'elaborazione.
+
+La memoria totale necessaria al server cala del 68,7 per cento, tagliando di oltre due terzi lo spazio richiesto al computer. L'aggiornamento della memoria diventa 2,91 volte più rapido, quasi il triplo più veloce sulla scheda grafica. Come limite, una piccola frazione di unità di memoria deve restare nel formato originale ad alta precisione perché non tollera la compressione.
+
+Il paper è di Bingchen Yao, Haobo Xu, Haokun Lin e altri 6 autori.
+
+Link al paper: https://arxiv.org/abs/2609.38169
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #CompressioneDati #MemoriaGPU #STEPQuant #EfficienzaInformatica

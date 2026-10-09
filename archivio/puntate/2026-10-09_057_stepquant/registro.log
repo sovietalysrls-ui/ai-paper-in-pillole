@@ -1,0 +1,78 @@
+[05:13:03] ===== Avvio 2026-10-09 05:13 =====
+[05:13:03] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[05:13:04]    liste trovate: 2026-10-08 (50 paper), 2026-10-07 (50 paper), 2026-10-06 (50 paper), 2026-10-05 (50 paper), 2026-10-02 (50 paper)
+[05:13:04]    provo 2609.38169 (100 voti, lista del 2026-10-08): STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State 
+[05:13:05] ✔ Scelta e lettura del paper — 2609.38169 · 100 voti · arxiv-html · 2844 parole utili
+[05:13:05] ▶ Scheda dei fatti — 1 pezzi da leggere
+[05:13:05] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Temporal Dimension: Lifet
+[05:13:22] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[05:13:44] ✔ Scheda dei fatti — STEPQuant · 4 risultati · 4 termini
+[05:13:44] ▶ Dialogo — puntata #57
+[05:13:45]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:14:16] ✔ Dialogo — 27 battute, 546 parole
+[05:14:16] ▶ Controlli e correzioni
+[05:14:16]    giro 1: 1 battute da sistemare, 0 problemi generali (546 parole)
+[05:14:19]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:14:46]    giro 2: nessun problema (544 parole, massimo 736)
+[05:14:46] ✔ Controlli e correzioni — nessun problema residuo
+[05:14:46] ▶ Titolo, descrizione, articolo — titolo
+[05:14:47]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:15:12] ▶ Titolo, descrizione, articolo — descrizione
+[05:15:14]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:15:35]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:16:38] ▶ Titolo, descrizione, articolo — articolo per il sito
+[05:16:39]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:17:43]    rivedi articolo: 1 problemi, correggo (giro 1)
+[05:18:13]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:19:19] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #57 - STEPQuant: come comprimere la memo» · articolo 771 parole
+[05:19:19] ▶ Copertina
+[05:19:20]    limite al minuto raggiunto, aspetto 30 secondi
+[05:19:50] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[05:19:50] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[05:19:57] ✔ Copertina — disegnata da Gemini
+[05:19:58] ▶ Voce
+[05:19:58] ▶ Voce — turno 1 di 27 (Carlo)
+[05:20:08]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:20:08] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[05:20:18]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:20:18] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[05:20:28]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:20:34] ▶ Voce — turno 2 di 27 (Arianna)
+[05:20:52] ▶ Voce — turno 3 di 27 (Carlo)
+[05:21:05] ▶ Voce — turno 4 di 27 (Arianna)
+[05:21:21] ▶ Voce — turno 5 di 27 (Carlo)
+[05:21:34] ▶ Voce — turno 6 di 27 (Arianna)
+[05:21:48] ▶ Voce — turno 7 di 27 (Carlo)
+[05:22:03] ▶ Voce — turno 8 di 27 (Arianna)
+[05:22:18] ▶ Voce — turno 9 di 27 (Carlo)
+[05:22:31] ▶ Voce — turno 10 di 27 (Arianna)
+[05:22:46] ▶ Voce — turno 11 di 27 (Carlo)
+[05:22:59] ▶ Voce — turno 12 di 27 (Arianna)
+[05:23:17] ▶ Voce — turno 13 di 27 (Carlo)
+[05:23:30] ▶ Voce — turno 14 di 27 (Arianna)
+[05:23:44] ▶ Voce — turno 15 di 27 (Carlo)
+[05:23:57] ▶ Voce — turno 16 di 27 (Arianna)
+[05:24:12] ▶ Voce — turno 17 di 27 (Carlo)
+[05:24:26] ▶ Voce — turno 18 di 27 (Arianna)
+[05:24:42] ▶ Voce — turno 19 di 27 (Carlo)
+[05:24:55] ▶ Voce — turno 20 di 27 (Arianna)
+[05:25:12] ▶ Voce — turno 21 di 27 (Carlo)
+[05:25:24] ▶ Voce — turno 22 di 27 (Arianna)
+[05:25:45] ▶ Voce — turno 23 di 27 (Carlo)
+[05:25:58] ▶ Voce — turno 24 di 27 (Arianna)
+[05:26:13] ▶ Voce — turno 25 di 27 (Carlo)
+[05:26:26] ▶ Voce — turno 26 di 27 (Arianna)
+[05:26:39] ▶ Voce — turno 27 di 27 (Carlo)
+[05:26:53] ⚠ voce sospetta per Carlo (168 Hz, attesa sotto 156 Hz): rifaccio il turno
+[05:26:53] ▶ Voce — rifaccio turno_003_apertura_carlo.wav
+[05:27:07]    controllo voci: Carlo ~141 Hz, Arianna ~170 Hz, tutto in ordine
+[05:27:07] ✔ Voce — 27 turni, una voce per richiesta + frase finale
+[05:27:07] ▶ Montaggio audio
+[05:27:14] ✔ Montaggio audio — 4.1 minuti in tutto, voce 3.4 minuti, 159 parole al minuto
+[05:27:15] ▶ Articolo su WordPress — stato: pubblica
+[05:27:36] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/stepquant-come-comprimere-la-memoria-dellai-senza-farle-perdere-il-filo/
+[05:27:37] ▶ Consegna su Telegram
+[05:27:44] ✔ Consegna su Telegram — 5 file inviati
+[05:27:44] ▶ Registro e chiusura
+[05:27:44] Richieste al modello di testo: 10
+[05:27:44] memoria video non misurata (nvidia-smi assente)
