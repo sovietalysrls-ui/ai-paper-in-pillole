@@ -1,0 +1,90 @@
+[03:16:10] ===== Avvio 2026-10-10 03:16 =====
+[03:16:11] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:12]    liste trovate: 2026-10-09 (50 paper), 2026-10-08 (50 paper), 2026-10-07 (50 paper), 2026-10-06 (50 paper), 2026-10-05 (50 paper)
+[03:16:12]    provo 2610.12374 (131 voti, lista del 2026-10-09): AgentGarten: Code Worlds for Evolving Agents
+[03:16:13] ✔ Scelta e lettura del paper — 2610.12374 · 131 voti · arxiv-html · 4700 parole utili
+[03:16:13] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:13] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Code Worlds + A Real-Time
+[03:17:34] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:18:00]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:18:37] ✔ Scheda dei fatti — AgentGarten · 3 risultati · 3 termini
+[03:18:38] ▶ Dialogo — puntata #58
+[03:21:19]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:23:26]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:23:47] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[03:27:53]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:30:34] ✔ Dialogo — 37 battute, 618 parole
+[03:30:34] ▶ Controlli e correzioni
+[03:30:34]    giro 1: nessun problema (618 parole, massimo 736)
+[03:30:34] ✔ Controlli e correzioni — nessun problema residuo
+[03:30:34] ▶ Titolo, descrizione, articolo — titolo
+[03:31:26] ▶ Titolo, descrizione, articolo — descrizione
+[03:33:30]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:33:59] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:34:58]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:36:41] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #58 - AgentGarten: come creare mondi vir» · articolo 798 parole
+[03:36:42] ▶ Copertina
+[03:36:42]    limite al minuto raggiunto, aspetto 30 secondi
+[03:37:12] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:37:13]    limite al minuto raggiunto, aspetto 30 secondi
+[03:37:43] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:37:50] ✔ Copertina — disegnata da Gemini
+[03:37:51] ▶ Voce
+[03:37:51] ▶ Voce — turno 1 di 37 (Carlo)
+[03:38:01]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:38:34]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:38:57] ▶ Voce — turno 2 di 37 (Arianna)
+[03:39:11] ▶ Voce — turno 3 di 37 (Carlo)
+[03:39:24] ▶ Voce — turno 4 di 37 (Arianna)
+[03:39:39] ▶ Voce — turno 5 di 37 (Carlo)
+[03:39:52] ▶ Voce — turno 6 di 37 (Arianna)
+[03:40:06] ▶ Voce — turno 7 di 37 (Carlo)
+[03:40:19] ▶ Voce — turno 8 di 37 (Arianna)
+[03:40:30] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:40:40]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:40:59] ▶ Voce — turno 9 di 37 (Carlo)
+[03:41:11] ▶ Voce — turno 10 di 37 (Arianna)
+[03:41:24] ▶ Voce — turno 11 di 37 (Carlo)
+[03:41:37] ▶ Voce — turno 12 di 37 (Arianna)
+[03:41:51] ▶ Voce — turno 13 di 37 (Carlo)
+[03:42:03] ▶ Voce — turno 14 di 37 (Arianna)
+[03:42:17] ▶ Voce — turno 15 di 37 (Carlo)
+[03:42:27] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:42:38]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:42:40] ▶ Voce — turno 16 di 37 (Arianna)
+[03:42:53] ▶ Voce — turno 17 di 37 (Carlo)
+[03:43:07] ▶ Voce — turno 18 di 37 (Arianna)
+[03:43:22] ▶ Voce — turno 19 di 37 (Carlo)
+[03:43:34] ▶ Voce — turno 20 di 37 (Arianna)
+[03:43:49] ▶ Voce — turno 21 di 37 (Carlo)
+[03:44:02] ▶ Voce — turno 22 di 37 (Arianna)
+[03:44:17] ▶ Voce — turno 23 di 37 (Carlo)
+[03:44:30] ▶ Voce — turno 24 di 37 (Arianna)
+[03:44:45] ▶ Voce — turno 25 di 37 (Carlo)
+[03:44:58] ▶ Voce — turno 26 di 37 (Arianna)
+[03:45:11] ▶ Voce — turno 27 di 37 (Carlo)
+[03:45:24] ▶ Voce — turno 28 di 37 (Arianna)
+[03:45:38] ▶ Voce — turno 29 di 37 (Carlo)
+[03:45:51] ▶ Voce — turno 30 di 37 (Arianna)
+[03:46:05] ▶ Voce — turno 31 di 37 (Carlo)
+[03:46:17] ▶ Voce — turno 32 di 37 (Arianna)
+[03:46:31] ▶ Voce — turno 33 di 37 (Carlo)
+[03:46:43] ▶ Voce — turno 34 di 37 (Arianna)
+[03:46:59] ▶ Voce — turno 35 di 37 (Carlo)
+[03:47:12] ▶ Voce — turno 36 di 37 (Arianna)
+[03:47:26] ▶ Voce — turno 37 di 37 (Carlo)
+[03:47:40] ⚠ voce sospetta per Carlo (166 Hz, attesa sotto 153 Hz): rifaccio il turno
+[03:47:40] ▶ Voce — rifaccio turno_017_corpo_carlo.wav
+[03:47:55] ⚠ voce sospetta per Carlo (215 Hz, attesa sotto 153 Hz): rifaccio il turno
+[03:47:55] ▶ Voce — rifaccio turno_037_corpo_carlo.wav
+[03:48:08]    controllo voci: Carlo ~135 Hz, Arianna ~171 Hz, tutto in ordine
+[03:48:08] ✔ Voce — 37 turni, una voce per richiesta + frase finale
+[03:48:08] ▶ Montaggio audio
+[03:48:14] ✔ Montaggio audio — 4.6 minuti in tutto, voce 4.0 minuti, 156 parole al minuto
+[03:48:14] ▶ Articolo su WordPress — stato: pubblica
+[03:48:35] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/agentgarten-come-creare-mondi-virtuali-realistici-per-allenare-lai/
+[03:48:36] ▶ Consegna su Telegram
+[03:48:46] ✔ Consegna su Telegram — 5 file inviati
+[03:48:46] ▶ Registro e chiusura
+[03:48:46] Richieste al modello di testo: 8
+[03:48:46] memoria video non misurata (nvidia-smi assente)

@@ -1,0 +1,15 @@
+AI Paper in Pillole #58 - AgentGarten: come creare mondi virtuali realistici per allenare l'AI
+
+Un assistente virtuale deve imparare a giocare con un cane in salotto. Il programma deve capire quando lanciare la palla o porgere la mano. Per allenarsi, ha bisogno di un ambiente digitale con regole fisiche coerenti. Oggi creare spazi virtuali visivamente fedeli e interattivi richiede tempi enormi e milioni di tentativi.
+
+I ricercatori propongono AgentGarten. La piattaforma unisce un simulatore logico a un generatore visivo in tempo reale. Il motore calcola la fisica e la forma geometrica delle superfici. Una rete neurale riceve queste forme e dipinge la scena fotorealistica al volo. Un metodo di addestramento corregge gli errori visivi confrontando il video generato con dati reali. L'agente osserva solo il video finale e memorizza le strategie migliori.
+
+Il sistema crea oltre 35 fotogrammi al secondo su un singolo processore grafico molto potente. Questa fluidità supera i normali video televisivi e permette all'agente di interagire senza scatti. In un gioco a nascondino, gli agenti imparano a costruire ripari già al round 4, invece di compiere milioni di simulazioni alla cieca. Come limite, se un oggetto scompare dalla vista per troppo tempo, la memoria del sistema rischia di dimenticarne l'aspetto.
+
+Il paper è di Jiawei Chi, Shangchen Miao, Zhiyuan Shi e altri 11 autori.
+
+Link al paper: https://arxiv.org/abs/2610.12374
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #AgentGarten #MondiVirtuali #ComputerVision #AgentiAutonomi

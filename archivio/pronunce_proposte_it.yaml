@@ -1,5 +1,7 @@
 # Pronunce proposte dal modello. Copia in lingue/it/pronuncia.yaml quelle giuste (correggendole se serve).
 ALFWorld: Àlf uòrld
+Adversarial Forcing: Advèrsarial Fòrsing
+AgentGarten: Èigent-Gàrten
 BM25: bi emme venticinque
 CrossDiT: Cròs Di Ai Tì
 DiffusionNFT: diffiùshon enne effe tì
@@ -13,6 +15,7 @@ KDFlow: Kéi di flòu
 Kandinsky 6.0 Video: Candìnski sèi punto zèro Vìdeo
 LTX-2: elle tì iks due
 Llama-3.2-3B-Instruct: Liàma tre punto due tre bi instràct
+NVIDIA H100: En-vìdia Àcca-Cènto
 O*NET: O èt
 Phi-4-mini-instruct: Fi quattro mìni instràct
 Qwen2.5-7B-Instruct: Kuèn due punto cinque sètte bi instràct

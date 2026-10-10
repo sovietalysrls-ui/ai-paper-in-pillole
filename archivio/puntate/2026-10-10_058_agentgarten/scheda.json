@@ -1,0 +1,79 @@
+{
+  "nome_breve": "AgentGarten",
+  "problema": "Per far imparare gli agenti intelligenti servono mondi virtuali realistici e con regole fisiche coerenti. Oggi creare ambienti che siano sia visivamente fedeli al mondo reale sia interattivi in tempo reale richiede tempi enormi e milioni di tentativi di addestramento.",
+  "idea": "I ricercatori collegano un motore di simulazione programmabile a un generatore visivo neurale in tempo reale. Il motore gestisce la fisica e la logica geometrica, mentre la rete neurale trasforma la scena in immagini fotorealistiche al volo.",
+  "come_funziona": [
+    "Il simulatore calcola le regole del mondo ed estrae informazioni geometriche come profondità e forme delle superfici.",
+    "Il generatore neurale riceve queste forme, un testo e una foto di riferimento per dipingere la scena visiva in tempo reale.",
+    "Il sistema viene addestrato con una tecnica speciale che ripete esattamente la memoria della scena per correggere gli errori visivi nel tempo.",
+    "L'agente osserva solo il video generato, interagisce con l'ambiente e salva i trucchi migliori in un manuale strategico per i round successivi."
+  ],
+  "risultati": [
+    {
+      "fatto": "Velocità di generazione delle immagini video su un singolo chip ad alte prestazioni.",
+      "numero": "oltre 35 frames per second",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Le immagini vengono create a una fluidità superiore a quella dei normali video televisivi, permettendo all'agente di interagire senza scatti."
+    },
+    {
+      "fatto": "Velocità di apprendimento degli agenti in un gioco a nascondino rispetto all'apprendimento per rinforzo tradizionale.",
+      "numero": "round 4",
+      "prima": "milioni",
+      "scala": "non indicato",
+      "in_pratica": "Gli agenti scoprono come costruire ripari in pochissimi tentativi, invece di dover fare milioni di simulazioni alla cieca."
+    },
+    {
+      "fatto": "Efficienza nell'uso del tempo di calcolo durante l'aggiornamento della memoria.",
+      "numero": "5.4%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Il calcolo della memoria è leggermente più rapido senza appesantire il consumo di risorse."
+    }
+  ],
+  "limiti": [
+    "La sola geometria non può distinguere caratteristiche come il colore, i materiali o una ruota perfettamente liscia che gira su se stessa.",
+    "Se un oggetto sparisce dalla vista per troppo tempo, la memoria temporanea del sistema rischia di dimenticarne l'aspetto.",
+    "La semplificazione dei dettagli geometrici rischia di cancellare elementi sottili o punti di contatto precisi tra oggetti."
+  ],
+  "esempio_concreto": "Un assistente virtuale deve imparare a giocare con un cane in salotto: il simulatore calcola la palla che rimbalza e il cane che si muove, mentre il sistema neurale disegna la stanza con luce e pelliccia realistiche, permettendo all'agente di capire quando accarezzarlo o porgere la mano.",
+  "perche_ti_riguarda": "Permette di allenare robot e intelligenze artificiali in mondi virtuali identici a quelli reali ma a costi e tempi ridotti. In futuro questo accelererà lo sviluppo di assistenti domestici capaci di interagire davvero con la nostra casa.",
+  "gancio": "In appena quattro tentativi, due agenti virtuali che giocavano a nascondino hanno imparato da soli a barricarsi dietro ai mobili usando semplici rampe e pannelli.",
+  "termini": [
+    {
+      "termine": "AgentGarten",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La piattaforma software che combina la simulazione logica e la generazione video in tempo reale per addestrare agenti.",
+      "usa": "termine",
+      "pronuncia": "Èigent-Gàrten"
+    },
+    {
+      "termine": "Adversarial Forcing",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo di addestramento che costringe il generatore visivo a correggere gli errori confrontando il video creato con dati reali.",
+      "usa": "spiegazione",
+      "pronuncia": "Advèrsarial Fòrsing"
+    },
+    {
+      "termine": "NVIDIA H100",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un processore grafico molto potente usato per l'addestramento e il calcolo dell'intelligenza artificiale.",
+      "usa": "termine",
+      "pronuncia": "En-vìdia Àcca-Cènto"
+    }
+  ],
+  "soggetto_immagine": "a wireframe geometric cube smoothly transforming into a realistic glossy rendered sphere",
+  "hashtag": [
+    "AI",
+    "AgentGarten",
+    "MondiVirtuali",
+    "ComputerVision",
+    "AgentiAutonomi"
+  ]
+}
