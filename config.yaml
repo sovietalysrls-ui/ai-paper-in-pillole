@@ -107,6 +107,7 @@ gemini_voce:
     ARIANNA: Aoede
   # Controllo automatico: Carlo deve avere la voce più bassa, Arianna la più alta.
   # Se un turno risulta con la voce sbagliata si rifà; se resta sbagliato la puntata si ferma.
+  tentativi_voce_sbagliata: 4
   toni:
     CARLO: basso
     ARIANNA: alto

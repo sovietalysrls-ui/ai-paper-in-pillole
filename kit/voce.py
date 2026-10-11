@@ -85,7 +85,8 @@ def turni(battute):
     return out
 
 
-def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=None):
+def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=None,
+           tentativi_voci=2):
     """Fa leggere il dialogo un turno alla volta: in ogni richiesta c'è una sola
     persona e una sola voce, così le voci non possono essere scambiate.
 
@@ -110,7 +111,7 @@ def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=Non
         (file_g if tipo == "apertura" else file_c).append(p)
         chi_file.append((chi, p, turno))
     if toni:
-        controlla_voci(motore, chi_file, toni, lingua, avanz, passo)
+        controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
     return file_g, file_c
 
 
@@ -132,7 +133,7 @@ def durata_giusta(motore, p, turno, avanz, passo, tentativi=2):
         p.write_bytes(motore.blocco(turno))
 
 
-def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
+def controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi=2):
     from . import audio
     misure = {p: audio.tono(p) for _, p, _ in chi_file}
     bassi = [misure[p] for chi, p, _ in chi_file if toni.get(chi) == "basso" and misure[p]]
@@ -153,9 +154,9 @@ def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
 
     for chi, p, turno in chi_file:
         f = misure[p]
-        tentativi = 0
-        while sbagliata(chi, f) and tentativi < 2:
-            tentativi += 1
+        rifatti = 0
+        while sbagliata(chi, f) and rifatti < tentativi:
+            rifatti += 1
             avanz.avviso(f"voce sospetta per {lingua['conduttori'][chi]} ({f:.0f} Hz, attesa "
                          f"{'sotto' if toni[chi] == 'basso' else 'sopra'} {soglia:.0f} Hz): rifaccio il turno")
             avanz.inizia(passo, f"rifaccio {p.name}")
@@ -164,7 +165,7 @@ def controlla_voci(motore, chi_file, toni, lingua, avanz, passo):
             f = audio.tono(p)
         if sbagliata(chi, f):
             raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
-                             f"2 tentativi ({f:.0f} Hz). Puntata fermata per non pubblicare voci scambiate.")
+                             f"{tentativi} tentativi ({f:.0f} Hz). Puntata fermata per non pubblicare voci scambiate.")
     avanz.scrivi(f"   controllo voci: {lingua['conduttori'].get('CARLO', 'CARLO')} ~{m_b:.0f} Hz, "
                  f"{lingua['conduttori'].get('ARIANNA', 'ARIANNA')} ~{m_a:.0f} Hz, tutto in ordine")
 

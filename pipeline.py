@@ -232,7 +232,9 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         avanz.inizia(p_voce)
         per_blocco = cfg["gemini_voce"].get("battute_per_blocco", 14)
         toni = cfg["gemini_voce"].get("toni") if cfg["motori"]["voce"] == "gemini" else None
-        g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce, toni=toni)
+        tentativi_voci = cfg["gemini_voce"].get("tentativi_voce_sbagliata", 4)
+        g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+                           toni=toni, tentativi_voci=tentativi_voci)
         firma = voce.genera_firma(motore_voce, L, lav / "voce", avanz, p_voce)
         avanz.fatto(p_voce, f"{len(g) + len(c)} turni, una voce per richiesta" + (" + frase finale" if firma else ""))
 

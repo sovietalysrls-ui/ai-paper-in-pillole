@@ -126,7 +126,19 @@ jobs:
           if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS="$ARGS --sostituisci"; fi
           if [ "${{ inputs.solo_testi }}" = "true" ]; then ARGS="$ARGS --solo-testi"; fi
           if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
-          python pipeline.py $ARGS
+          # Un secondo passaggio usa gli stessi file in .lavoro: ripete soltanto
+          # il passo fallito (per esempio un singolo turno vocale o una chiamata
+          # temporaneamente indisponibile), senza duplicare quelli già conclusi.
+          for TENTATIVO in 1 2; do
+            if python pipeline.py $ARGS; then
+              exit 0
+            fi
+            if [ "$TENTATIVO" -lt 2 ]; then
+              echo "::warning::Tentativo interrotto; riprendo dallo stesso punto tra 2 minuti"
+              sleep 120
+            fi
+          done
+          exit 1
 
       - name: L'articolo è andato sul sito?
         id: wp

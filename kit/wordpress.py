@@ -41,7 +41,10 @@ class WordPress:
         ultimo = None
         for tentativo in range(3):
             try:
-                r = self.s.request(metodo, self.base + percorso, timeout=90, allow_redirects=False, **kw)
+                # Un server irraggiungibile deve fallire presto; 90 secondi restano
+                # disponibili per leggere risposte lente dopo che la connessione è aperta.
+                r = self.s.request(metodo, self.base + percorso, timeout=(20, 90),
+                                   allow_redirects=False, **kw)
                 break
             except requests.RequestException as e:
                 ultimo = e
