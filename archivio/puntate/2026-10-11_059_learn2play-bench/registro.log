@@ -1,0 +1,121 @@
+[05:13:02] ===== Avvio 2026-10-11 05:13 =====
+[05:13:02] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[05:13:03]    liste trovate: 2026-10-09 (50 paper), 2026-10-08 (50 paper), 2026-10-07 (50 paper), 2026-10-06 (50 paper), 2026-10-05 (50 paper)
+[05:13:03]    provo 2610.08215 (135 voti, lista del 2026-10-09): Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfa
+[05:13:07]    (i paper più votati erano già stati usati)
+[05:13:07] ✔ Scelta e lettura del paper — 2610.08215 · 135 voti · arxiv-html · 3581 parole utili
+[05:13:08] ▶ Scheda dei fatti — 1 pezzi da leggere
+[05:13:08] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Evaluation Design + Exper
+[05:13:09]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:13:38] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[05:14:00] ✔ Scheda dei fatti — Learn2Play Bench · 3 risultati · 4 termini
+[05:14:00] ▶ Dialogo — puntata #59
+[05:14:02]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:14:30] ✔ Dialogo — 25 battute, 505 parole
+[05:14:30] ▶ Controlli e correzioni
+[05:14:30]    giro 1: 2 battute da sistemare, 1 problemi generali (505 parole)
+[05:15:07]    giro 2: 3 battute da sistemare, 0 problemi generali (587 parole)
+[05:15:07]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:15:28]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:15:48] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[05:15:49]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:16:09]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:16:41]    giro 3: nessun problema (561 parole, massimo 736)
+[05:16:41] ✔ Controlli e correzioni — nessun problema residuo
+[05:16:41] ▶ Titolo, descrizione, articolo — titolo
+[05:16:43]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:17:10] ▶ Titolo, descrizione, articolo — descrizione
+[05:17:11]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:17:32]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:17:53] ⚠ Gemini testo: gemini-3.7-flash sovraccarico, passo a gemini-3.6-flash
+[05:17:54]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:18:14]    limite al minuto raggiunto, aspetto 30 secondi
+[05:18:44]    limite al minuto raggiunto, aspetto 30 secondi
+[05:19:14]    limite al minuto raggiunto, aspetto 30 secondi
+[05:19:44] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[05:19:45]    limite al minuto raggiunto, aspetto 30 secondi
+[05:20:45] ▶ Titolo, descrizione, articolo — articolo per il sito
+[05:20:52]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:21:12]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[05:21:33]    limite al minuto raggiunto, aspetto 30 secondi
+[05:22:18] ⚠ Gemini testo: chiave gratuita esaurita (modelli sovraccarichi), passo alla chiave a pagamento
+[05:23:18] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #59 - Learn2Play Bench: quando l'AI deve» · articolo 810 parole
+[05:23:18] ▶ Copertina
+[05:23:18] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[05:23:18]    limite al minuto raggiunto, aspetto 30 secondi
+[05:23:48] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[05:23:57] ✔ Copertina — disegnata da Gemini
+[05:23:58] ▶ Voce
+[05:23:58] ▶ Voce — turno 1 di 27 (Carlo)
+[05:24:08]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:24:08] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[05:24:18]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:24:18] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[05:24:28]    voce: la porta 'interactions' non risponde, uso generateContent
+[05:24:33] ▶ Voce — turno 2 di 27 (Arianna)
+[05:24:48] ▶ Voce — turno 3 di 27 (Carlo)
+[05:25:02] ▶ Voce — turno 4 di 27 (Arianna)
+[05:25:19] ▶ Voce — turno 5 di 27 (Carlo)
+[05:25:32] ▶ Voce — turno 6 di 27 (Arianna)
+[05:25:47] ▶ Voce — turno 7 di 27 (Carlo)
+[05:26:00] ▶ Voce — turno 8 di 27 (Arianna)
+[05:26:15] ▶ Voce — turno 9 di 27 (Carlo)
+[05:26:28] ▶ Voce — turno 10 di 27 (Arianna)
+[05:26:42] ▶ Voce — turno 11 di 27 (Carlo)
+[05:26:54] ▶ Voce — turno 12 di 27 (Arianna)
+[05:27:10] ▶ Voce — turno 13 di 27 (Carlo)
+[05:27:24] ▶ Voce — turno 14 di 27 (Arianna)
+[05:27:38] ▶ Voce — turno 15 di 27 (Carlo)
+[05:27:51] ▶ Voce — turno 16 di 27 (Arianna)
+[05:28:06] ▶ Voce — turno 17 di 27 (Carlo)
+[05:28:20] ▶ Voce — turno 18 di 27 (Arianna)
+[05:28:36] ▶ Voce — turno 19 di 27 (Carlo)
+[05:28:48] ▶ Voce — turno 20 di 27 (Arianna)
+[05:29:04] ▶ Voce — turno 21 di 27 (Carlo)
+[05:29:16] ▶ Voce — turno 22 di 27 (Arianna)
+[05:29:32] ▶ Voce — turno 23 di 27 (Carlo)
+[05:29:47] ▶ Voce — turno 24 di 27 (Arianna)
+[05:30:01] ▶ Voce — turno 25 di 27 (Carlo)
+[05:30:15] ▶ Voce — turno 26 di 27 (Arianna)
+[05:30:27] ▶ Voce — turno 27 di 27 (Carlo)
+[05:30:41] ⚠ voce sospetta per Carlo (172 Hz, attesa sotto 156 Hz): rifaccio il turno
+[05:30:41] ▶ Voce — rifaccio turno_027_corpo_carlo.wav
+[05:30:53] ⚠ voce sospetta per Carlo (177 Hz, attesa sotto 156 Hz): rifaccio il turno
+[05:30:53] ▶ Voce — rifaccio turno_027_corpo_carlo.wav
+[05:31:05] ✖ Voce — ERRORE: turno_027_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 2 tentativi (172 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 511, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 235, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce, toni=toni)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 113, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 166, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_027_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 2 tentativi (172 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[10:38:30] ===== Avvio 2026-10-11 10:38 =====
+[10:38:31] ↪ Scelta e lettura del paper — 2610.08215 (ripreso)
+[10:38:31] ↪ Scheda dei fatti — già fatto
+[10:38:31] ↪ Dialogo — già fatto
+[10:38:31] ↪ Controlli e correzioni — già fatto
+[10:38:31] ↪ Titolo, descrizione, articolo — già fatto
+[10:38:31] ↪ Copertina — già fatto
+[10:38:31] ▶ Voce
+[10:38:34] ⚠ voce sospetta per Carlo (172 Hz, attesa sotto 156 Hz): rifaccio il turno
+[10:38:34] ▶ Voce — rifaccio turno_027_corpo_carlo.wav
+[10:38:45]    voce: la porta 'interactions' non risponde, uso generateContent
+[10:38:46] ⚠ voce sospetta per Carlo (187 Hz, attesa sotto 156 Hz): rifaccio il turno
+[10:38:46] ▶ Voce — rifaccio turno_027_corpo_carlo.wav
+[10:38:59]    controllo voci: Carlo ~138 Hz, Arianna ~174 Hz, tutto in ordine
+[10:38:59] ✔ Voce — 27 turni, una voce per richiesta + frase finale
+[10:38:59] ▶ Montaggio audio
+[10:39:08] ✔ Montaggio audio — 4.4 minuti in tutto, voce 3.7 minuti, 152 parole al minuto
+[10:39:08] ▶ Articolo su WordPress — stato: pubblica
+[10:44:09] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[10:44:09] ▶ Consegna su Telegram
+[10:44:16] ✔ Consegna su Telegram — 5 file inviati
+[10:44:16] ▶ Registro e chiusura
+[10:44:16] Richieste al modello di testo: 0
+[10:44:16] memoria video non misurata (nvidia-smi assente)

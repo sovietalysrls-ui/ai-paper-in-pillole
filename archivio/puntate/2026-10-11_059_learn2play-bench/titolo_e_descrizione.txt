@@ -1,0 +1,15 @@
+AI Paper in Pillole #59 - Learn2Play Bench: quando l'AI deve imparare a giocare senza conoscere le regole
+
+In un ufficio virtuale, lavorare duramente non porta ad alcun avanzamento. L'unico modo per ottenere una promozione è rubare il pranzo del collega. Un assistente virtuale deve imparare a gestire le attività quotidiane affrontando regole bizzarre o non scritte. Oggi è difficile capire se un agente artificiale stia davvero imparando dall'esperienza. Molti test usano compiti troppo noti e mascherano i reali limiti dei modelli.
+
+Lo studio presenta un nuovo sistema di prova basato su giochi di testo inediti. Le regole del gioco sono nascoste e controintuitive. L'agente non riceve alcuna istruzione iniziale. Per capire come funziona il mondo deve esplorare, sbagliare e fare tentativi ripetuti. A ogni mossa, il sistema invia un riscontro scritto e un punteggio automatico. L'agente accumula esperienza per sintetizzare regole generali da usare nelle partite successive.
+
+Gli esseri umani reagiscono molto meglio agli sbagli rispetto ai modelli artificiali. Dopo una sconfitta, le persone superano il proprio record nel 33% dei casi, contro il 22% dell'intelligenza artificiale. Inoltre, gli umani variano molto le proprie mosse ed esplorano nuove strade, mentre i modelli ripetono spesso le stesse azioni. Gli agenti soffrono infatti di un limite preciso. Smettono di cercare strategie migliori non appena ne trovano una che funziona anche solo parzialmente.
+
+Il paper è di Yibo Li, Jinhang Qiu, Zhi Zheng, Qianyun Guo, Jiaying Wu, Shuo Ji e Bryan Hooi.
+
+Link al paper: https://arxiv.org/abs/2610.08215
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #Learn2PlayBench #AgentiIntelligenti #ApprendimentoAutomatico #GiochiTestuali

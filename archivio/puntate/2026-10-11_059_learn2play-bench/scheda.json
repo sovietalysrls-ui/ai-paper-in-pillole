@@ -1,0 +1,88 @@
+{
+  "nome_breve": "Learn2Play Bench",
+  "problema": "Oggi è difficile capire se un agente artificiale stia davvero imparando dall'esperienza o se stia solo usando nozioni già memorizzate. I test attuali usano compiti con regole già spiegate o molto note, mascherando i reali limiti di apprendimento dei modelli.",
+  "idea": "Un banco di prova basato su giochi di testo inediti con regole nascoste e controintuitive. Senza istruzioni preliminari, l'agente è costretto a esplorare, sbagliare e capire come funziona il mondo solo interagendo ripetutamente.",
+  "come_funziona": [
+    "L'agente affronta un gioco testuale senza conoscerne le regole di partenza.",
+    "A ogni azione inviata, l'ambiente restituisce un riscontro testuale e un punteggio automatico.",
+    "L'agente accumula l'esperienza conservando le registrazioni grezze o sintetizzando regole per i tentativi successivi.",
+    "Il sistema propone anche partite con elementi rimescolati per verificare se l'agente sa applicare quanto appreso a situazioni nuove."
+  ],
+  "risultati": [
+    {
+      "fatto": "Frequenza con cui si stabilisce un nuovo record personale nell'episodio successivo a una sconfitta, confrontando persone e agenti artificiali.",
+      "numero": "33%",
+      "prima": "22%",
+      "scala": "",
+      "in_pratica": "Gli esseri umani reagiscono molto meglio a un fallimento, superando il proprio punteggio migliore circa una volta su tre contro una su cinque dell'intelligenza artificiale."
+    },
+    {
+      "fatto": "Riduzione del consumo di dati di testo in ingresso sul modello Kimi K3 passando dall'impostazione con memoria al sistema OpenCode.",
+      "numero": "56%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "A parità di modello base, cambiare la struttura di gestione dimezza ampiamente il costo computazionale e le risorse necessarie per farlo ragionare."
+    },
+    {
+      "fatto": "Livello di somiglianza tra le sequenze di azioni consecutive nei giochi fissi per i migliori giocatori umani rispetto ai modelli artificiali.",
+      "numero": "0.54",
+      "prima": "0.66",
+      "scala": "non indicato",
+      "in_pratica": "Le persone variano molto di più le proprie mosse ed esplorano strategie differenti, mentre i modelli tendono a ripetere le stesse azioni."
+    }
+  ],
+  "limiti": [
+    "Gli agenti tendono a fermarsi nella ricerca di strategie migliori non appena ne trovano una che funziona anche solo parzialmente.",
+    "I modelli faticano nella pianificazione a lungo termine pur avendo compreso alla perfezione le regole del gioco.",
+    "Basta cambiare dettagli superficiali come nomi o ambienti per rallentare l'apprendimento, poiché l'agente confonde i singoli dettagli con le regole generali."
+  ],
+  "esempio_concreto": "Un assistente virtuale aziendale che deve imparare a gestire le prenotazioni di una sala riunioni con abitudini non scritte: invece di fissarsi su una singola regola parziale o bloccarsi dopo un disguido, dovrebbe adattarsi ed evitare di lasciare i colleghi senza spazio.",
+  "perche_ti_riguarda": "In futuro delegheremo compiti pratici ad assistenti artificiali che operano in ambienti mutevoli, ed è fondamentale che sappiano correggersi da soli senza ripetere all'infinito gli stessi errori.",
+  "gancio": "In un ufficio virtuale, lavorare duramente non porta ad alcun avanzamento: l'unico modo per ottenere una promozione è rubare il pranzo del collega.",
+  "termini": [
+    {
+      "termine": "Learn2Play Bench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La piattaforma di test presentata nello studio, composta da venti giochi testuali con regole controintuitive.",
+      "usa": "termine",
+      "pronuncia": "Lèrn tu Plèi Bènch"
+    },
+    {
+      "termine": "OpenCode",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una specifica struttura software di supporto che guida l'agente nell'elaborazione delle informazioni.",
+      "usa": "termine",
+      "pronuncia": "Òupen Còud"
+    },
+    {
+      "termine": "Kimi K3",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno dei modelli linguistici usati come cervello dell'agente nelle prove sperimentali.",
+      "usa": "termine",
+      "pronuncia": "Chìmi Kà Tre"
+    },
+    {
+      "termine": "EvoTest",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un metodo che cerca di far evolvere l'agente riassumendo le esperienze passate in regole e strategie astratte.",
+      "usa": "termine",
+      "pronuncia": "Èvo Tèst"
+    }
+  ],
+  "soggetto_immagine": "a simple outline of a puzzle maze with branching paths and a small key",
+  "hashtag": [
+    "AI",
+    "Learn2PlayBench",
+    "AgentiIntelligenti",
+    "ApprendimentoAutomatico",
+    "GiochiTestuali"
+  ]
+}
