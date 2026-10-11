@@ -114,23 +114,30 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WP_UTENTE: ${{ secrets.WP_UTENTE }}
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+          PAPER: ${{ inputs.paper }}
         run: |
           if [ "${{ inputs.solo_articolo }}" = "true" ]; then
             python pubblica_articolo.py ultima || true
             exit 0
           fi
-          ARGS="--cloud"
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.se_manca }}" = "true" ]; then ARGS="$ARGS --se-manca"; fi
-          if [ -n "${{ inputs.paper }}" ]; then ARGS="$ARGS --paper ${{ inputs.paper }}"; fi
-          if [ "${{ inputs.prova }}" = "true" ]; then ARGS="$ARGS --prova"; fi
-          if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS="$ARGS --sostituisci"; fi
-          if [ "${{ inputs.solo_testi }}" = "true" ]; then ARGS="$ARGS --solo-testi"; fi
-          if [ -n "${{ inputs.voce }}" ]; then ARGS="$ARGS --voce ${{ inputs.voce }}"; fi
+          ARGS=(--cloud)
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.se_manca }}" = "true" ]; then ARGS+=(--se-manca); fi
+          if [ -n "$PAPER" ]; then
+            if [[ ! "$PAPER" =~ ^[0-9]{4}\.[0-9]{4,5}(v[0-9]+)?$ ]]; then
+              echo "::error::ID arXiv non valido: usa per esempio 2610.01762"
+              exit 2
+            fi
+            ARGS+=(--paper "$PAPER")
+          fi
+          if [ "${{ inputs.prova }}" = "true" ]; then ARGS+=(--prova); fi
+          if [ "${{ inputs.sostituisci }}" = "true" ]; then ARGS+=(--sostituisci); fi
+          if [ "${{ inputs.solo_testi }}" = "true" ]; then ARGS+=(--solo-testi); fi
+          if [ -n "${{ inputs.voce }}" ]; then ARGS+=(--voce "${{ inputs.voce }}"); fi
           # Un secondo passaggio usa gli stessi file in .lavoro: ripete soltanto
           # il passo fallito (per esempio un singolo turno vocale o una chiamata
           # temporaneamente indisponibile), senza duplicare quelli già conclusi.
           for TENTATIVO in 1 2; do
-            if python pipeline.py $ARGS; then
+            if python pipeline.py "${ARGS[@]}"; then
               exit 0
             fi
             if [ "$TENTATIVO" -lt 2 ]; then
