@@ -188,7 +188,12 @@ Da GitHub: Actions > Notte > Run workflow ha le stesse caselle
 interrompe, copia il numero dell'esecuzione dal suo indirizzo e inseriscilo in
 **riprendi da**: vengono ricaricati i file salvati e si riparte soltanto dal
 passo non concluso. Il workflow prova già una seconda volta automaticamente
-sullo stesso checkpoint prima di fermarsi.
+sullo stesso checkpoint prima di fermarsi. Anche le due sveglie notturne di
+riserva cercano automaticamente un checkpoint fallito nelle otto ore
+precedenti. Se non basta, il messaggio di errore su Telegram contiene il
+pulsante **Riprendi dal punto interrotto**: apre un'azione GitHub senza campi
+da compilare. Un pulsante separato permette di ritentare soltanto l'articolo
+quando è WordPress a non rispondere.
 
 ## Le regole dei testi, in breve
 

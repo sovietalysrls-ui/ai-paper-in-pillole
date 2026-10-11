@@ -302,25 +302,45 @@ def consegna(cfg, lingue, oggi_dir, numero, avanz, lav):
         avanz.saltato(P_CONSEGNA, "Telegram non attivo")
         return
     avanz.inizia(P_CONSEGNA)
-    inviati = 0
+    p_stato = lav / "consegna_stato.json"
+    stato = leggi_json(p_stato) if p_stato.exists() else {"inviati": []}
+    fatti = set(stato.get("inviati", []))
+    attesi = []
+
+    def prova(chiave, funzione):
+        attesi.append(chiave)
+        if chiave in fatti:
+            return
+        if funzione():
+            fatti.add(chiave)
+            scrivi_json(p_stato, {"inviati": sorted(fatti)})
+
     for cod in lingue:
         out = oggi_dir if len(lingue) == 1 else oggi_dir / cod
         pre = "" if len(lingue) == 1 else f"[{cod}] "
         # Titolo e descrizione anche come messaggi separati, comodi da copiare.
         lc = lav / cod
         if (lc / "titolo.json").exists():
-            avanz.manda(leggi_json(lc / "titolo.json")["completo"])
+            prova(f"{cod}:titolo", lambda: avanz.manda(leggi_json(lc / "titolo.json")["completo"]))
         if (lc / "descrizione.txt").exists():
-            avanz.manda((lc / "descrizione.txt").read_text(encoding="utf-8").strip())
+            prova(f"{cod}:descrizione", lambda: avanz.manda(
+                (lc / "descrizione.txt").read_text(encoding="utf-8").strip()))
         for nome, come, didascalia in (("titolo_e_descrizione.txt", "documento", "Titolo e descrizione"),
                                        ("copertina.jpg", "documento", "Copertina"),
                                        ("dialogo.txt", "documento", f"Dialogo della puntata #{numero}"),
                                        ("puntata.mp3", "audio", f"Puntata #{numero} (mp3, archivio)"),
                                        ("puntata.wav", "documento", f"Puntata #{numero} (wav, per Spotify)")):
-            if (out / nome).exists() and avanz.manda_file(out / nome, pre + didascalia, come):
-                inviati += 1
-    scrivi_json(p_ok, {"file": inviati})
-    avanz.fatto(P_CONSEGNA, f"{inviati} file inviati")
+            if (out / nome).exists():
+                prova(f"{cod}:file:{nome}",
+                      lambda percorso=out / nome, did=pre + didascalia, tipo=come:
+                      avanz.manda_file(percorso, did, tipo))
+    mancanti = [k for k in attesi if k not in fatti]
+    if mancanti:
+        raise RuntimeError(f"Telegram: {len(mancanti)} invii non riusciti; al prossimo tentativo "
+                           "saranno inviati soltanto quelli mancanti")
+    file_inviati = sum(1 for k in fatti if ":file:" in k)
+    scrivi_json(p_ok, {"file": file_inviati, "elementi": len(fatti)})
+    avanz.fatto(P_CONSEGNA, f"{file_inviati} file inviati")
 
 
 def archivia_in_git(cfg, lingue, oggi_dir, data, numero, nome_breve, avanz):

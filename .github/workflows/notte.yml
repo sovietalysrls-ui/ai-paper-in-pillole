@@ -63,7 +63,7 @@ concurrency:
 
 jobs:
   puntata:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 100
     outputs:
       wp_ok: ${{ steps.wp.outputs.ok }}
@@ -79,20 +79,51 @@ jobs:
           python-version: "3.12"
           cache: pip
 
+      # Le sveglie di riserva cercano da sole l'ultimo checkpoint fallito.
+      # Per una partenza manuale si può indicare esplicitamente l'esecuzione.
+      - name: Scegli il punto di ripresa
+        id: ripresa
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RICHIESTO: ${{ inputs.riprendi_da }}
+        run: |
+          if [ -n "$RICHIESTO" ]; then
+            echo "run_id=$RICHIESTO" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            exit 0
+          fi
+          while read -r CANDIDATO CREATO; do
+            ETA=$(( $(date -u +%s) - $(date -u -d "$CREATO" +%s) ))
+            [ "$ETA" -le 28800 ] || continue
+            PUNTATA_FALLITA=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATO}/jobs" \
+              --jq '[.jobs[] | select(.name == "puntata" and .conclusion == "failure")] | length')
+            [ "$PUNTATA_FALLITA" -gt 0 ] || continue
+            VALIDI=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATO}/artifacts" \
+              --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("puntata-"))] | length')
+            if [ "$VALIDI" -gt 0 ]; then
+              echo "run_id=$CANDIDATO" >> "$GITHUB_OUTPUT"
+              echo "Ripresa automatica dall'esecuzione $CANDIDATO"
+              break
+            fi
+          done < <(gh run list --workflow notte.yml --status failure --limit 10 \
+            --json databaseId,createdAt --jq '.[] | [.databaseId, .createdAt] | @tsv')
+
       # Ogni esecuzione parte su un computer pulito. Per riprendere davvero,
       # ricarica OGGI e .lavoro dall'artifact salvato dal tentativo interrotto.
       - name: Recupera il punto di interruzione
-        if: ${{ inputs.riprendi_da != '' }}
+        if: ${{ steps.ripresa.outputs.run_id != '' }}
         uses: actions/download-artifact@v5
         with:
-          run-id: ${{ inputs.riprendi_da }}
+          run-id: ${{ steps.ripresa.outputs.run_id }}
           github-token: ${{ github.token }}
           pattern: puntata-*
           path: .
           merge-multiple: true
 
       - name: Controlla il punto di interruzione
-        if: ${{ inputs.riprendi_da != '' }}
+        if: ${{ steps.ripresa.outputs.run_id != '' }}
         run: |
           test -f uscita/OGGI/.lavoro/stato.json || {
             echo "::error::L'esecuzione indicata non contiene un punto di ripresa valido"
@@ -101,8 +132,10 @@ jobs:
 
       - name: Installa programmi
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
           pip install -q -r requirements.txt
 
       - name: Prepara la puntata
@@ -137,6 +170,11 @@ jobs:
           # il passo fallito (per esempio un singolo turno vocale o una chiamata
           # temporaneamente indisponibile), senza duplicare quelli già conclusi.
           for TENTATIVO in 1 2; do
+            if [ "$TENTATIVO" -eq 2 ]; then
+              export MOSTRA_RIPRENDI_TELEGRAM=1
+            else
+              export MOSTRA_RIPRENDI_TELEGRAM=0
+            fi
             if python pipeline.py "${ARGS[@]}"; then
               exit 0
             fi
@@ -237,7 +275,7 @@ jobs:
   articolo_2:
     needs: puntata
     if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && inputs.prova != true }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -267,7 +305,7 @@ jobs:
   articolo_3:
     needs: [puntata, articolo_2]
     if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && needs.articolo_2.result == 'failure' && inputs.prova != true }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5

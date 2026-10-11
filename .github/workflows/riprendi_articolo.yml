@@ -1,0 +1,26 @@
+name: Riprova ultimo articolo
+
+on: workflow_dispatch
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: riprendi-articolo
+  cancel-in-progress: false
+
+jobs:
+  riprova:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Avvia il tentativo
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          gh workflow run notte.yml --ref main -f solo_articolo=true
+          ./avvisa.sh "▶️ Nuovo tentativo richiesto per l'ultimo articolo, senza rifare la puntata."

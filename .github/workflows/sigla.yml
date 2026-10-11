@@ -25,7 +25,7 @@ permissions:
 
 jobs:
   sigla:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -35,8 +35,10 @@ jobs:
           cache: pip
       - name: Installa programmi
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
           pip install -q -r requirements.txt
       - name: Esegui
         env:

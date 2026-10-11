@@ -84,9 +84,20 @@ class Avanzamento:
         self.log.write(traceback.format_exc() + "\n")
         self.log.flush()
         self._aggiorna_tg(forza=True)
+        repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+        run_id = os.environ.get("GITHUB_RUN_ID", "").strip()
+        mostra = os.environ.get("MOSTRA_RIPRENDI_TELEGRAM") == "1"
+        pulsante = None
+        if mostra and repo and run_id.isdigit():
+            pulsante = {"inline_keyboard": [[{
+                "text": "▶️ Riprendi dal punto interrotto",
+                "url": f"https://github.com/{repo}/actions/workflows/riprendi.yml",
+            }]]}
+        riferimento = f"\nEsecuzione GitHub: {run_id}." if run_id.isdigit() else ""
         self.manda(f"❌ AI Paper in Pillole: errore al passo «{passo}».\n\n{str(exc)[:900]}\n\n"
-                   f"Dettagli nel file registro.log della cartella OGGI. "
-                   f"Rilanciando il programma riparte da questo passo.")
+                   f"Dettagli nel file registro.log della cartella OGGI.{riferimento} "
+                   f"La ripresa usa i file già salvati e non rifà i passi conclusi.",
+                   reply_markup=pulsante)
 
     def fine(self, riepilogo):
         minuti = (time.time() - self.inizio) / 60
@@ -145,11 +156,19 @@ class Avanzamento:
             self.log.write(f"Telegram non raggiungibile: {e}\n")
             return False
 
-    def manda(self, testo):
+    def manda(self, testo, reply_markup=None):
         if not self.tg:
-            return
+            return False
         try:
-            requests.post(f"https://api.telegram.org/bot{self.token}/sendMessage", timeout=15,
-                          json={"chat_id": self.chat, "text": testo[:4000]})
+            corpo = {"chat_id": self.chat, "text": testo[:4000]}
+            if reply_markup:
+                corpo["reply_markup"] = reply_markup
+            r = requests.post(f"https://api.telegram.org/bot{self.token}/sendMessage", timeout=15,
+                              json=corpo)
+            if r.status_code != 200:
+                self.log.write(f"Telegram ha rifiutato il messaggio: {r.text[:200]}\n")
+                return False
+            return True
         except requests.RequestException as e:
             self.log.write(f"Telegram non raggiungibile: {e}\n")
+            return False

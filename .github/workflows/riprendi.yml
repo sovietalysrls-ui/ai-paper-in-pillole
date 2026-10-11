@@ -1,0 +1,47 @@
+name: Riprendi ultima notte
+
+on: workflow_dispatch
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: riprendi-notte
+  cancel-in-progress: false
+
+jobs:
+  riprendi:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Trova il checkpoint più recente e riparti
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          RUN_ID=""
+          while read -r CANDIDATO; do
+            PUNTATA_FALLITA=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATO}/jobs" \
+              --jq '[.jobs[] | select(.name == "puntata" and .conclusion == "failure")] | length')
+            [ "$PUNTATA_FALLITA" -gt 0 ] || continue
+            VALIDI=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATO}/artifacts" \
+              --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("puntata-"))] | length')
+            if [ "$VALIDI" -gt 0 ]; then
+              RUN_ID="$CANDIDATO"
+              break
+            fi
+          done < <(gh run list --workflow notte.yml --status failure --limit 20 \
+            --json databaseId --jq '.[].databaseId')
+
+          if [ -z "$RUN_ID" ]; then
+            ./avvisa.sh "⚠️ Ripresa non avviata: non trovo una notte fallita con file ancora disponibili."
+            echo "::error::Nessun checkpoint valido trovato"
+            exit 1
+          fi
+
+          gh workflow run notte.yml --ref main -f riprendi_da="$RUN_ID" -f se_manca=true
+          ./avvisa.sh "▶️ Ripresa richiesta dall'esecuzione ${RUN_ID}. Se la puntata è già completa, uscirà senza duplicare nulla."
+          echo "Ripresa avviata dall'esecuzione $RUN_ID"

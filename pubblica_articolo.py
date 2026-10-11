@@ -23,12 +23,14 @@ from kit.util import RADICE, carica_config
 from kit.wordpress import ErroreWordPress, WordPress
 
 
-def telegram(testo):
+def telegram(testo, reply_markup=None):
     token, chat = os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", "")
     if token and chat:
         try:
-            requests.post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=15,
-                          json={"chat_id": chat, "text": testo})
+            corpo = {"chat_id": chat, "text": testo}
+            if reply_markup:
+                corpo["reply_markup"] = reply_markup
+            requests.post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=15, json=corpo)
         except requests.RequestException:
             pass
 
@@ -73,9 +75,14 @@ def main():
     except ErroreWordPress as e:
         print(f"WordPress (tentativo {a.tentativo}): {e}")
         if a.ultimo:
+            repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+            pulsante = ({"inline_keyboard": [[{
+                "text": "▶️ Riprova soltanto l'articolo",
+                "url": f"https://github.com/{repo}/actions/workflows/riprendi_articolo.yml",
+            }]]} if repo else None)
             telegram(f"⚠️ Articolo non caricato sul sito dopo {a.tentativo} tentativi: il server di Tophost "
                      f"blocca i server di GitHub usati stanotte. L'articolo è nell'archivio "
-                     f"({d.name}). Per riprovare: Actions > Notte > Run workflow, con 'solo articolo'.")
+                     f"({d.name}). Il pulsante riprova senza rifare la puntata.", pulsante)
         else:
             telegram(f"⏳ Articolo: tentativo {a.tentativo} non riuscito (il sito non risponde a questo server). "
                      f"Riprovo tra 15 minuti da un altro server.")
