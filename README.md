@@ -184,7 +184,11 @@ della GTX 1070 (7,5 GB) compare un avviso.
 | `--se-manca` | Esce subito se la puntata di oggi è già fatta (lo usano le sveglie di riserva) |
 
 Da GitHub: Actions > Notte > Run workflow ha le stesse caselle
-(paper, prova, solo testi, sostituisci, solo articolo).
+(paper, prova, solo testi, sostituisci, solo articolo). Se una notte si
+interrompe, copia il numero dell'esecuzione dal suo indirizzo e inseriscilo in
+**riprendi da**: vengono ricaricati i file salvati e si riparte soltanto dal
+passo non concluso. Il workflow prova già una seconda volta automaticamente
+sullo stesso checkpoint prima di fermarsi.
 
 ## Le regole dei testi, in breve
 
