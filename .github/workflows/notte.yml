@@ -48,9 +48,14 @@ on:
         description: "Non rifare la puntata: pubblica solo l'articolo dell'ultima puntata archiviata"
         type: boolean
         default: false
+      riprendi_da:
+        description: "Riprendi dai file salvati di un'esecuzione interrotta (numero nell'indirizzo della pagina)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: notte
@@ -73,6 +78,26 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+
+      # Ogni esecuzione parte su un computer pulito. Per riprendere davvero,
+      # ricarica OGGI e .lavoro dall'artifact salvato dal tentativo interrotto.
+      - name: Recupera il punto di interruzione
+        if: ${{ inputs.riprendi_da != '' }}
+        uses: actions/download-artifact@v5
+        with:
+          run-id: ${{ inputs.riprendi_da }}
+          github-token: ${{ github.token }}
+          pattern: puntata-*
+          path: .
+          merge-multiple: true
+
+      - name: Controlla il punto di interruzione
+        if: ${{ inputs.riprendi_da != '' }}
+        run: |
+          test -f uscita/OGGI/.lavoro/stato.json || {
+            echo "::error::L'esecuzione indicata non contiene un punto di ripresa valido"
+            exit 1
+          }
 
       - name: Installa programmi
         run: |
