@@ -1,0 +1,15 @@
+AI Paper in Pillole #60 - TokenRouter: come far collaborare due IA parola per parola senza rallentare
+
+Chiediamo a un chatbot di scrivere un programma informatico. Un modello piccolo gestisce il codice semplice. Un modello gigante interviene soltanto nei passaggi complessi. Far collaborare due intelligenze artificiali scambiandosi la parola a ogni frammento di testo riduce i costi. Purtroppo i sistemi attuali non sono adatti a questo scambio continuo. I computer si desincronizzano, si bloccano in coda e diventano lentissimi.
+
+TokenRouter offre un nuovo sistema di smistamento per questo problema. Lo sviluppatore imposta le regole logiche per inviare ciascun pezzo di testo. La piattaforma avvia un gestore autonomo per ogni modello ed esegue i compiti in parallelo. Una memoria a breve termine conserva i calcoli sulle parole già scritte. In questo modo il modello che subentra non ricalcola il testo da capo. Infine, un pianificatore raggruppa le parole dirette allo stesso modello in un unico blocco.
+
+Il sistema garantisce una velocità da 2,01 a 64,15 volte superiore ai metodi tradizionali. In pratica, la generazione del testo diventa da due a oltre sessantaquattro volte più rapida. I tempi di attesa scendono rispetto ai server standard, riducendosi da due fino a oltre sessanta volte. Un limite riguarda la formula matematica per raggruppare i compiti. Questa presuppone scambi a intervalli regolari e non gestisce ancora le situazioni anomale.
+
+Il paper è di Tianyu Fu, Tengxuan Liu, Ruoxi Wang, Yixin Dong, Yi Ge, Yichen You e Yu Wang.
+
+Link al paper: https://arxiv.org/abs/2610.12242
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #TokenRouter #ModelliLinguistici #OttimizzazioneAI #EfficienzaInformatica

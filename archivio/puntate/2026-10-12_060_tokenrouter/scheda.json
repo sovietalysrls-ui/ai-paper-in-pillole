@@ -1,0 +1,77 @@
+{
+  "nome_breve": "TokenRouter",
+  "problema": "Far collaborare due modelli di intelligenza artificiale passandosi la parola frase per frase riduce i costi, ma i sistemi attuali non sono progettati per farlo. Quando lo scambio avviene a ogni singolo frammento di parola, i computer si desincronizzano, si bloccano in code di attesa e diventano lentissimi.",
+  "idea": "TokenRouter è un sistema di smistamento che permette a più modelli di passarsi il testo parola per parola senza rallentare. Chi programma stabilisce solo le regole logiche di passaggio, mentre la piattaforma gestisce i modelli in parallelo e raggruppa il carico di lavoro in modo ottimale.",
+  "come_funziona": [
+    "Lo sviluppatore scrive le regole di scambio descrivendo quando instradare, inviare o ricevere ciascun pezzo di testo.",
+    "Il sistema avvia un gestore autonomo per ogni modello ed esegue i compiti in modo asincrono su più cicli.",
+    "Un meccanismo di passaggio di consegne mantiene intatta la memoria del testo già elaborato, evitando di ricalcolarlo quando cambia il modello attivo.",
+    "Un pianificatore ritarda leggermente le operazioni per radunare le parole dirette allo stesso modello in un unico gruppo efficiente."
+  ],
+  "risultati": [
+    {
+      "fatto": "Velocità di elaborazione e generazione del testo rispetto ai sistemi di gestione già esistenti",
+      "numero": "2.01–64.15 \times",
+      "prima": "baseline esistenti",
+      "scala": "",
+      "in_pratica": "da due a oltre sessantaquattro volte più veloce rispetto ai sistemi tradizionali"
+    },
+    {
+      "fatto": "Riduzione del tempo totale necessario per completare le risposte rispetto al server standard SGLang",
+      "numero": "2.03–63.64 \times",
+      "prima": "serving standard basato su SGLang",
+      "scala": "",
+      "in_pratica": "tempi di attesa complessivi ridotti da due fino a oltre sessanta volte"
+    },
+    {
+      "fatto": "Aumento della velocità di calcolo rispetto ai codici ufficiali creati dagli autori degli algoritmi di instradamento",
+      "numero": "2.73–21.97 \times",
+      "prima": "implementazioni ufficiali nelle impostazioni originali",
+      "scala": "",
+      "in_pratica": "da quasi tre fino a circa ventidue volte più rapido delle implementazioni fornite dai ricercatori originali"
+    }
+  ],
+  "limiti": [
+    "La formula matematica per raggruppare i compiti presuppone che le deleghe tra modelli avvengano a intervalli regolari, lasciando da studiare i casi anomali in cui questa ipotesi non vale."
+  ],
+  "esempio_concreto": "Quando chiediamo a un chatbot di scrivere un programma informatico, un modello piccolo ed economico genera le righe di codice semplici, ma passa all'istante i passaggi critici a un modello gigante, senza che l'utente veda la risposta bloccarsi a metà frase.",
+  "perche_ti_riguarda": "Permette di ricevere risposte con la precisione dei modelli di intelligenza artificiale più grandi e avanzati, ma con l'immediatezza e il consumo energetico ridotto dei modelli tascabili.",
+  "gancio": "Un'intelligenza artificiale minuscola può dare le stesse risposte di un colosso venti volte più grande, a patto di passargli il controllo soltanto per il 5% delle parole più difficili.",
+  "termini": [
+    {
+      "termine": "SGLang",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un software diffuso per far funzionare i modelli linguistici sui server con la massima velocità.",
+      "usa": "termine",
+      "pronuncia": "Èsse-Ghi-Lèng"
+    },
+    {
+      "termine": "vLLM",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un celebre programma open source che gestisce la memoria per accelerare le risposte delle intelligenze artificiali.",
+      "usa": "termine",
+      "pronuncia": "Vi-Èlle-Èlle-Èmme"
+    },
+    {
+      "termine": "KV-cache",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La memoria a breve termine del modello, che conserva i calcoli sulle parole già scritte per non doverli rifare da capo.",
+      "usa": "spiegazione",
+      "pronuncia": "Cài-Vi Càsh"
+    }
+  ],
+  "soggetto_immagine": "two computer server towers with glowing data packets bouncing rapidly between them",
+  "hashtag": [
+    "AI",
+    "TokenRouter",
+    "ModelliLinguistici",
+    "OttimizzazioneAI",
+    "EfficienzaInformatica"
+  ]
+}
