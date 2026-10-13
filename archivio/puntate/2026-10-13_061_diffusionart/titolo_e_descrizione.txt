@@ -1,0 +1,15 @@
+AI Paper in Pillole #61 - DiffusionART: come l'AI impara a creare video fluidi venti volte più in fretta
+
+Un grafico deve creare una breve animazione di 50 fotogrammi partendo da una frase. Vuole movimenti fluidi, privi di tremolii o difetti visivi. Oggi insegnare a questi modelli a perfezionarsi tramite prove ed errori richiede giorni di calcoli costosissimi sui server. Se i parametri non vengono regolati a mano con estrema cura, l'intero addestramento rischia di sballarsi all'improvviso.
+
+I ricercatori hanno creato DiffusionART per risolvere questa instabilità. Il sistema genera diverse prove per ogni richiesta e le valuta. Poi combina i risultati migliori per calcolare una direzione comune di miglioramento. Questa guida viene applicata lungo i passaggi con cui il modello costruisce l'immagine o il video. Un meccanismo automatico corregge le deviazioni e blocca le modifiche eccessive. Tutto funziona senza dover tarare parametri a mano.
+
+Per creare video con un'alta qualità visiva, il tempo di calcolo diminuisce di 22,1 volte rispetto al metodo precedente DiffusionNFT. In pratica, serve oltre venti volte meno tempo di calcolo per ottenere la stessa pulizia visiva. Inoltre, il punteggio sulla naturalezza del movimento migliora del 57,4 per cento. In pratica, le scene risultano oltre la metà più convincenti rispetto all'alternativa migliore. Come limite, resta da chiarire dal punto di vista teorico perché nei vecchi metodi la correzione soffocasse la guida.
+
+Il paper è di Zhenglin Wan, Jiayu Chen, Zhengfeiyang Zhang e altri 6 autori.
+
+Link al paper: https://arxiv.org/abs/2610.12572
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #GenerazioneVideo #DiffusionART #ModelliDiDiffusione #EfficienzaComputazionale
