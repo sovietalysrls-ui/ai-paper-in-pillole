@@ -1,0 +1,113 @@
+{
+  "nome_breve": "GroundingPI",
+  "problema": "I robot e le auto a guida autonoma faticano a capire con esattezza dove si trovano gli oggetti nello spazio, soprattutto se sono piccoli o immersi nel disordine. I sistemi attuali usano modelli visivi generici che non sanno indicare con precisione millimetrica la posizione di ciò che devono afferrare o evitare. Senza una vista precisa, ogni azione fisica rischia di fallire.",
+  "idea": "I ricercatori hanno creato un modello specializzato unicamente nel localizzare gli oggetti usando punti e riquadri precisi. Separando la vista accurata dal controllo dei movimenti, il sistema fornisce a robot e veicoli le coordinate esatte di cui hanno bisogno per agire.",
+  "come_funziona": [
+    "Il sistema analizza le immagini e il testo traducendo le coordinate visive in un vocabolario di coordinate condiviso.",
+    "Viene addestrato combinando la comprensione di immagini e concetti spaziali con dati supervisionati specializzati.",
+    "Affina la sua precisione attraverso l'apprendimento per rinforzo basato su regole matematiche.",
+    "Le coordinate e le informazioni visive estratte vengono passate direttamente ai moduli che guidano le braccia robotiche o i veicoli autonomi."
+  ],
+  "risultati": [
+    {
+      "fatto": "Precisione media nell'individuare e localizzare oggetti su trentaquattro test visivi diversi, rispetto a un modello concorrente più grande.",
+      "numero": "73.68%",
+      "prima": "71.54%",
+      "scala": "",
+      "in_pratica": "Supera persino modelli molto più grandi e blasonati nel riconoscere ed evidenziare esattamente gli elementi corretti."
+    },
+    {
+      "fatto": "Tasso di successo del braccio robotico nell'eseguire compiti di manipolazione completi.",
+      "numero": "66.20%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Porta a termine con successo l'operazione richiesta circa due volte su tre."
+    },
+    {
+      "fatto": "Tasso di successo robotico ottenuto usando solo la metà degli esempi di addestramento disponibili, battendo modelli che ne usavano tre quarti.",
+      "numero": "28.75%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Impara a svolgere compiti complessi superando i concorrenti pur avendo a disposizione molti meno video di esempio."
+    },
+    {
+      "fatto": "Errore medio di traiettoria nella previsione della rotta per la guida autonoma.",
+      "numero": "0.296 m",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Mantiene la traiettoria dell'auto sbagliando la posizione di meno di trenta centimetri."
+    }
+  ],
+  "limiti": [
+    "Ha ancora difficoltà a individuare oggetti estremamente piccoli e a tracciare bordi impeccabili a livelli di precisione molto severi.",
+    "La guida autonoma è stata testata solo su simulazioni registrate e non su una macchina vera in strada con tempi di reazione reali.",
+    "Il vantaggio di richiedere meno esempi per imparare è stato confermato sui robot ma non sui veicoli autonomi."
+  ],
+  "esempio_concreto": "In una cucina con il piano da lavoro coperto di piatti e posate, un braccio robotico deve afferrare una tazza per il manico senza far cadere nulla: prima di muovere il braccio, individua il punto esatto del manico e le coordinate della tazzina per prenderla al primo colpo.",
+  "perche_ti_riguarda": "Rende i robot domestici e le auto autonome capaci di vedere davvero ciò che hanno attorno, riducendo gli errori di presa e aumentando la sicurezza quando interagiscono con noi nel mondo reale.",
+  "gancio": "Chiedere a un robot di prendere una tazza da una scrivania piena di oggetti spesso finisce con un disastro, perché il robot non capisce dove finisce il tavolo e dove inizia il manico.",
+  "termini": [
+    {
+      "termine": "GroundingPI",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello visivo fondazionale sviluppato nello studio per localizzare con precisione gli oggetti nello spazio.",
+      "usa": "termine",
+      "pronuncia": "Gràunding Pi-Ai"
+    },
+    {
+      "termine": "GRPO",
+      "tipo": "sigla",
+      "espansione_inglese": "Group Relative Policy Optimization",
+      "significato": "ottimizzazione relativa delle strategie di gruppo",
+      "spiegazione": "Una tecnica di apprendimento per rinforzo che aiuta l'intelligenza artificiale a correggere i propri errori confrontando diversi tentativi.",
+      "usa": "spiegazione",
+      "pronuncia": "gi erre pi o"
+    },
+    {
+      "termine": "GPT-6 Astra",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale concorrente di grandi dimensioni usato per il confronto delle prestazioni visive.",
+      "usa": "termine",
+      "pronuncia": "Gi-Pi-Ti Sèis Àstra"
+    },
+    {
+      "termine": "nuScenes",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una raccolta pubblica di scenari e video di traffico urbano usata per testare i sistemi di guida autonoma.",
+      "usa": "termine",
+      "pronuncia": "Niusìns"
+    },
+    {
+      "termine": "RoboTwin 2.0",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un ambiente di prova per valutare quanto i robot siano abili nel manipolare oggetti in condizioni impreviste.",
+      "usa": "termine",
+      "pronuncia": "Robotuìn due punto zero"
+    },
+    {
+      "termine": "RoboCasa-GR1",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un banco di prova simulato per compiti casalinghi svolti da robot umanoidi.",
+      "usa": "termine",
+      "pronuncia": "Robocàsa Gi-Erre-Uno"
+    }
+  ],
+  "soggetto_immagine": "a robotic gripper approaching a cup outlined by precise geometric bounding boxes",
+  "hashtag": [
+    "AI",
+    "Robotica",
+    "GuidaAutonoma",
+    "VisioneArtificiale",
+    "IntelligenzaFisica"
+  ]
+}

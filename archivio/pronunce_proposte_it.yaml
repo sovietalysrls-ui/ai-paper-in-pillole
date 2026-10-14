@@ -11,8 +11,10 @@ Flow-GRPO: Flòu Gi Erre Pi O
 GDPR: gi di pi erre
 GDPVal: gi di pi vàl
 GLM-5.2: Gi Elle Èm cinque virgola due
+GPT-6 Astra: Gi-Pi-Ti Sèis Àstra
 Granite-4.1-8B: Grànait quattro punto uno òtto bi
 GraphForge: Gràf Forg
+GroundingPI: Gràunding Pi-Ai
 HunyuanVideo-13B: Huniuàn Vìdeo Tredìci Bi
 JavisBench: giàvis bènch
 KDFlow: Kéi di flòu
@@ -30,6 +32,8 @@ Qwen2.5-7B-Instruct: Kuèn due punto cinque sètte bi instràct
 Qwen3.6-27B: Cuèn tre punto sèi ventisètte bi
 Qwen3.8-27B: Cuèn tre punto òtto ventisètte bi
 RealCompanion: Rìal Compànion
+RoboCasa-GR1: Robocàsa Gi-Erre-Uno
+RoboTwin 2.0: Robotuìn due punto zero
 SGLang: Èsse Gi Èl Lèng
 STEPQuant: Stèp Cuònt
 SimCT: Sim si ti
@@ -37,4 +41,5 @@ SpreadsheetBench II: sprèd shiit bèntch sècondo
 VABench: Vi Ei Bènch
 VGGSound: vi gi gi sàund
 Workspace-Bench-Lite: uòrk speis bèntch làit
+nuScenes: Niusìns
 vLLM: Vi-Èlle-Èlle-Èmme

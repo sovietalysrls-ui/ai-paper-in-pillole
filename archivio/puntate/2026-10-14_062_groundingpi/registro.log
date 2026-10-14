@@ -1,0 +1,102 @@
+[03:16:19] ===== Avvio 2026-10-14 03:16 =====
+[03:16:20] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:21]    liste trovate: 2026-10-13 (26 paper), 2026-10-12 (50 paper), 2026-10-09 (50 paper), 2026-10-08 (50 paper), 2026-10-07 (50 paper)
+[03:16:21]    provo 2609.39601 (246 voti, lista del 2026-10-13): GroundingPI: A Grounding Foundation Model towards Physical Intelligenc
+[03:16:24] ✔ Scelta e lettura del paper — 2609.39601 · 246 voti · arxiv-html · 12705 parole utili
+[03:16:25] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:25] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + GroundingPI: A Grounding 
+[03:16:27]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:16:49]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:17:11] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[03:18:59] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:19:01]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:20:01] ✔ Scheda dei fatti — GroundingPI · 4 risultati · 6 termini
+[03:20:02] ▶ Dialogo — puntata #62
+[03:22:31] ✔ Dialogo — 43 battute, 692 parole
+[03:22:31] ▶ Controlli e correzioni
+[03:22:31]    giro 1: 1 battute da sistemare, 0 problemi generali (692 parole)
+[03:22:50]    giro 2: 1 battute da sistemare, 0 problemi generali (692 parole)
+[03:24:41]    giro 3: nessun problema (688 parole, massimo 736)
+[03:24:41] ✔ Controlli e correzioni — nessun problema residuo
+[03:24:42] ▶ Titolo, descrizione, articolo — titolo
+[03:25:33] ▶ Titolo, descrizione, articolo — descrizione
+[03:25:34]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:25:57]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:26:18] ⚠ Gemini testo: gemini-3.7-flash sovraccarico, passo a gemini-3.6-flash
+[03:26:18]    limite al minuto raggiunto, aspetto 30 secondi
+[03:26:48]    limite al minuto raggiunto, aspetto 30 secondi
+[03:27:18]    limite al minuto raggiunto, aspetto 30 secondi
+[03:27:49] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[03:27:49]    limite al minuto raggiunto, aspetto 30 secondi
+[03:28:19]    limite al minuto raggiunto, aspetto 30 secondi
+[03:28:50]    limite al minuto raggiunto, aspetto 30 secondi
+[03:29:20] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:29:47] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:30:37] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #62 - GroundingPI: come i robot imparano» · articolo 782 parole
+[03:30:38] ▶ Copertina
+[03:30:38] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:30:38]    limite al minuto raggiunto, aspetto 30 secondi
+[03:31:08] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:31:20] ✔ Copertina — disegnata da Gemini
+[03:31:20] ▶ Voce
+[03:31:20] ▶ Voce — turno 1 di 42 (Carlo)
+[03:31:30]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:31:34] ▶ Voce — turno 2 di 42 (Arianna)
+[03:31:50] ▶ Voce — turno 3 di 42 (Carlo)
+[03:32:04] ▶ Voce — turno 4 di 42 (Arianna)
+[03:32:18] ▶ Voce — turno 5 di 42 (Carlo)
+[03:32:29]    limite al minuto raggiunto, aspetto 30 secondi
+[03:33:03] ▶ Voce — turno 6 di 42 (Arianna)
+[03:33:18] ▶ Voce — turno 7 di 42 (Carlo)
+[03:33:32] ▶ Voce — turno 8 di 42 (Arianna)
+[03:33:46] ▶ Voce — turno 9 di 42 (Carlo)
+[03:34:00] ▶ Voce — turno 10 di 42 (Arianna)
+[03:34:14] ▶ Voce — turno 11 di 42 (Carlo)
+[03:34:28] ▶ Voce — turno 12 di 42 (Arianna)
+[03:34:39] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:34:49]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:34:51] ▶ Voce — turno 13 di 42 (Carlo)
+[03:35:04] ▶ Voce — turno 14 di 42 (Arianna)
+[03:35:17] ▶ Voce — turno 15 di 42 (Carlo)
+[03:35:30] ▶ Voce — turno 16 di 42 (Arianna)
+[03:35:43] ▶ Voce — turno 17 di 42 (Carlo)
+[03:35:56] ▶ Voce — turno 18 di 42 (Arianna)
+[03:36:09] ▶ Voce — turno 19 di 42 (Carlo)
+[03:36:23] ▶ Voce — turno 20 di 42 (Arianna)
+[03:36:33] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:36:44]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:36:48] ▶ Voce — turno 21 di 42 (Carlo)
+[03:37:01] ▶ Voce — turno 22 di 42 (Arianna)
+[03:37:15] ▶ Voce — turno 23 di 42 (Carlo)
+[03:37:29] ▶ Voce — turno 24 di 42 (Arianna)
+[03:37:43] ▶ Voce — turno 25 di 42 (Carlo)
+[03:37:57] ▶ Voce — turno 26 di 42 (Arianna)
+[03:38:11] ▶ Voce — turno 27 di 42 (Carlo)
+[03:38:24] ▶ Voce — turno 28 di 42 (Arianna)
+[03:38:38] ▶ Voce — turno 29 di 42 (Carlo)
+[03:38:52] ▶ Voce — turno 30 di 42 (Arianna)
+[03:39:07] ▶ Voce — turno 31 di 42 (Carlo)
+[03:39:22] ▶ Voce — turno 32 di 42 (Arianna)
+[03:39:36] ▶ Voce — turno 33 di 42 (Carlo)
+[03:39:49] ▶ Voce — turno 34 di 42 (Arianna)
+[03:40:04] ▶ Voce — turno 35 di 42 (Carlo)
+[03:40:18] ▶ Voce — turno 36 di 42 (Arianna)
+[03:40:32] ▶ Voce — turno 37 di 42 (Carlo)
+[03:40:45] ▶ Voce — turno 38 di 42 (Arianna)
+[03:40:59] ▶ Voce — turno 39 di 42 (Carlo)
+[03:41:13] ▶ Voce — turno 40 di 42 (Arianna)
+[03:41:27] ▶ Voce — turno 41 di 42 (Carlo)
+[03:41:42] ▶ Voce — turno 42 di 42 (Arianna)
+[03:41:58] ⚠ voce sospetta per Carlo (178 Hz, attesa sotto 153 Hz): rifaccio il turno
+[03:41:58] ▶ Voce — rifaccio turno_027_corpo_carlo.wav
+[03:42:11]    controllo voci: Carlo ~129 Hz, Arianna ~178 Hz, tutto in ordine
+[03:42:11] ✔ Voce — 42 turni, una voce per richiesta + frase finale
+[03:42:12] ▶ Montaggio audio
+[03:42:22] ✔ Montaggio audio — 5.0 minuti in tutto, voce 4.3 minuti, 159 parole al minuto
+[03:42:23] ▶ Articolo su WordPress — stato: pubblica
+[03:43:53] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[03:43:53] ▶ Consegna su Telegram
+[03:44:03] ✔ Consegna su Telegram — 5 file inviati
+[03:44:03] ▶ Registro e chiusura
+[03:44:03] Richieste al modello di testo: 10 (usata anche la chiave a pagamento)
+[03:44:03] memoria video non misurata (nvidia-smi assente)

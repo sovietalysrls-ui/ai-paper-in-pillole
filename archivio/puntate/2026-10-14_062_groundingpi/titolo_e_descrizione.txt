@@ -1,0 +1,15 @@
+AI Paper in Pillole #62 - GroundingPI: come i robot imparano a vedere la posizione esatta degli oggetti
+
+In una cucina piena di piatti e posate, un braccio robotico deve afferrare una tazza per il manico. Questo compito spesso finisce con un disastro. Il robot non capisce dove finisce il tavolo e dove comincia la tazzina. I sistemi attuali faticano a calcolare le posizioni esatte in mezzo al disordine. Senza una vista precisa, ogni azione fisica rischia di fallire.
+
+I ricercatori hanno creato GroundingPI, un modello specializzato nel localizzare gli oggetti con punti e riquadri precisi. Il sistema analizza le immagini e traduce le coordinate visive in riferimenti geometrici chiari. L'intelligenza artificiale affina la propria precisione confrontando diversi tentativi per correggere gli errori. Questi dati vengono poi passati ai moduli che guidano i movimenti dei robot e dei veicoli autonomi.
+
+Nei compiti di manipolazione, il braccio meccanico porta a termine l'operazione richiesta circa due volte su tre, con un successo del 66,20 per cento. Nella guida autonoma, il modello mantiene la rotta sbagliando la posizione di appena 0,296 metri. Il sistema mostra però ancora difficoltà a individuare oggetti estremamente piccoli e a tracciare bordi impeccabili.
+
+Il paper è di Qize Yu, Lianrui Fan, Boyu Chen e altri 23 autori, e conta 64 pagine.
+
+Link al paper: https://arxiv.org/abs/2609.39601
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #Robotica #GuidaAutonoma #VisioneArtificiale #IntelligenzaFisica
