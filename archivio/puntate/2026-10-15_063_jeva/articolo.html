@@ -1,0 +1,35 @@
+<p>Prendete un normale quiz a risposta multipla con quattro opzioni. Se scambiate di posto la risposta A e la risposta B, una persona sceglie comunque la stessa opzione. Il significato delle alternative non cambia se cambia la loro posizione sulla pagina.</p>
+<p>Con molti modelli attuali di intelligenza artificiale succede invece qualcosa di inatteso. Se invertite l&#x27;ordine delle risposte, il sistema rischia di cambiare idea. Questa debolezza crea problemi concreti quando un assistente digitale deve prendere decisioni rapide sul lavoro.</p>
+<h2>Perché i sistemi attuali fanno fatica a scegliere</h2>
+<p>I modelli di intelligenza artificiale che usiamo oggi leggono il testo tutto in sequenza. Quando devono compiere una scelta, leggono la richiesta iniziale e tutte le opzioni possibili in un unico blocco continuo.</p>
+<p>Questo modo di procedere rende i programmi molto lenti. Ogni volta che arriva una nuova domanda, il sistema deve ricalcolare tutto da capo. Non riesce a riutilizzare i calcoli già svolti in precedenza sulle stesse opzioni.</p>
+<p>Inoltre, la sequenza delle frasi influenza il risultato finale. I modelli tendono a preferire le opzioni posizionate all&#x27;inizio o alla fine dell&#x27;elenco. Se poi tra le opzioni proposte non ce n&#x27;è nessuna valida, il modello fatica ad accorgersene e sceglie comunque una risposta a caso.</p>
+<h2>Una cartellina di risposte già pronte</h2>
+<p>Per superare questi limiti, i ricercatori hanno creato Jeva. Jeva è il nome di una nuova architettura, cioè di una nuova struttura di calcolo, studiata per creare modelli decisionali rapidi.</p>
+<p>L&#x27;idea si può spiegare pensando a una cartellina di schede informative già archiviate. Invece di riscrivere da capo l&#x27;intero catalogo aziendale per ogni cliente, le schede dei prodotti restano pronte sulla scrivania. Quando arriva una domanda, chi risponde prende la richiesta e la confronta direttamente con i fogli già compilati.</p>
+<p>Jeva applica lo stesso principio. Il sistema elabora la richiesta dell&#x27;utente e le singole scelte in modo del tutto indipendente. Le opzioni vengono memorizzate in una forma fissa e possono essere riutilizzate per qualsiasi domanda successiva.</p>
+<h2>Come funziona il sistema passo dopo passo</h2>
+<p>Il funzionamento di Jeva si articola in passaggi ben definiti:</p>
+<ul>
+<li>Un modello linguistico di base analizza la richiesta dell&#x27;utente e ciascuna opzione separatamente.</li>
+<li>Le informazioni sulle opzioni vengono salvate in una memoria fissa che resta disponibile per richieste future.</li>
+<li>Un piccolo modulo decisionale confronta la richiesta con le opzioni memorizzate senza ricalcolare tutto da zero.</li>
+<li>Un meccanismo di aggregazione simmetrica, cioè una formula matematica che tratta ogni voce allo stesso livello, garantisce che l&#x27;ordine delle opzioni non modifichi mai la risposta finale.</li>
+<li>Un modulo di copertura valuta se tra le alternative esiste almeno una scelta valida, distinguendo l&#x27;incertezza dalla reale assenza di risposte corrette.</li>
+</ul>
+<h2>Cosa dicono i test</h2>
+<p>I ricercatori hanno messo alla prova Jeva con verifiche mirate. Volevano misurare la stabilità delle risposte, la velocità di calcolo e la capacità di riconoscere l&#x27;assenza di soluzioni.</p>
+<p>Il primo test ha misurato quante volte il modello cambia la risposta finale se si inverte l&#x27;ordine delle alternative presentate. Il numero di cambi di decisione è stato pari a zero. In pratica, la decisione rimane del tutto coerente e immune dall&#x27;ordine in cui vengono presentate le alternative.</p>
+<p>Il secondo test ha misurato la velocità di elaborazione quando si riutilizzano opzioni già memorizzate rispetto al calcolo completo da zero. Il sistema si è rivelato 27,86 volte più veloce, ovvero ventisette virgola ottantasei volte più rapido. In pratica, il sistema risponde quasi ventotto volte più velocemente riciclando i calcoli già svolti.</p>
+<p>Il terzo test ha valutato la precisione del modello nel rilevare l&#x27;assenza di un&#x27;opzione corretta nell&#x27;elenco. Jeva ha raggiunto un&#x27;accuratezza del 98,66 per cento, cioè novantotto virgola sessantasei per cento, che equivale a oltre 98 volte su 100. In pratica, riconosce praticamente sempre quando nessuna delle scelte fornite è quella giusta.</p>
+<h2>I limiti da tenere a mente</h2>
+<p>Questa nuova struttura non risolve tutti gli ostacoli tipici di questi programmi. Alcuni vincoli tecnici restano presenti anche in questa soluzione.</p>
+<p>Il metodo non elimina i limiti massimi di lunghezza per i singoli testi passati in ingresso. Testi eccezionalmente lunghi richiedono comunque attenzioni particolari prima di essere elaborati.</p>
+<p>Inoltre, il costo di calcolo complessivo cresce in modo proporzionale al numero totale di opzioni disponibili. Se l&#x27;elenco delle opzioni raddoppia, servirà il doppio delle risorse per analizzarle tutte la prima volta.</p>
+<h2>Cosa cambia nella pratica</h2>
+<p>Questi progressi toccano da vicino gli strumenti digitali che usiamo ogni giorno negli uffici o nei negozi online.</p>
+<p>Pensiamo a un assistente virtuale per il commercio o per l&#x27;assistenza ai clienti. Quel programma deve spesso scegliere l&#x27;azione giusta da compiere tra migliaia di comandi e documenti aziendali.</p>
+<p>Con questo approccio, l&#x27;assistente risponde all&#x27;istante senza ricalcolare ogni volta l&#x27;intero elenco dei file. La risposta non cambia solo perché l&#x27;elenco dei comandi è ordinato in modo diverso. Infine, il sistema segnala chiaramente quando non esiste un&#x27;azione adatta, evitando di proporre soluzioni inventate solo per riempire il silenzio.</p>
+<hr>
+<p><strong>Il paper:</strong> <a href="https://arxiv.org/abs/2610.18773" target="_blank" rel="noopener">Jeva: System One Models from First Principles</a> — Qi Li e Xinchao Wang</p>
+<p>Ascolta la puntata su <a href="https://open.spotify.com/show/0343HceLfMtVbfln7gVijy" target="_blank" rel="noopener">AI Paper in Pillole</a></p>

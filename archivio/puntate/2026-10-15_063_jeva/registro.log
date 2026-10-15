@@ -1,0 +1,76 @@
+[03:16:19] ===== Avvio 2026-10-15 03:16 =====
+[03:16:19] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:20]    liste trovate: 2026-10-14 (50 paper), 2026-10-13 (26 paper), 2026-10-12 (50 paper), 2026-10-09 (50 paper), 2026-10-08 (50 paper)
+[03:16:20]    provo 2610.18773 (267 voti, lista del 2026-10-14): Jeva: System One Models from First Principles
+[03:16:21] ✔ Scelta e lettura del paper — 2610.18773 · 267 voti · arxiv-html · 2379 parole utili
+[03:16:21] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:21] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Jeva: A Native Decision A
+[03:16:41] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:16:54] ✔ Scheda dei fatti — Jeva · 5 risultati · 5 termini
+[03:16:55] ▶ Dialogo — puntata #63
+[03:17:03] ✔ Dialogo — 34 battute, 530 parole
+[03:17:04] ▶ Controlli e correzioni
+[03:17:04]    giro 1: 3 battute da sistemare, 0 problemi generali (530 parole)
+[03:17:17]    giro 2: nessun problema (526 parole, massimo 736)
+[03:17:17] ✔ Controlli e correzioni — nessun problema residuo
+[03:17:17] ▶ Titolo, descrizione, articolo — titolo
+[03:17:29] ▶ Titolo, descrizione, articolo — descrizione
+[03:18:13] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:18:56]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:19:39] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #63 - Jeva: come l'AI sceglie tra mille » · articolo 804 parole
+[03:19:40] ▶ Copertina
+[03:19:40] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:19:40] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:19:48] ✔ Copertina — disegnata da Gemini
+[03:19:49] ▶ Voce
+[03:19:49] ▶ Voce — turno 1 di 34 (Carlo)
+[03:19:59]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:20:04] ▶ Voce — turno 2 di 34 (Arianna)
+[03:20:18] ▶ Voce — turno 3 di 34 (Carlo)
+[03:20:32] ▶ Voce — turno 4 di 34 (Arianna)
+[03:20:46] ▶ Voce — turno 5 di 34 (Carlo)
+[03:20:57]    limite al minuto raggiunto, aspetto 5 secondi
+[03:21:04] ▶ Voce — turno 6 di 34 (Arianna)
+[03:21:18] ▶ Voce — turno 7 di 34 (Carlo)
+[03:21:33] ▶ Voce — turno 8 di 34 (Arianna)
+[03:21:47] ▶ Voce — turno 9 di 34 (Carlo)
+[03:22:00] ▶ Voce — turno 10 di 34 (Arianna)
+[03:22:14] ▶ Voce — turno 11 di 34 (Carlo)
+[03:22:28] ▶ Voce — turno 12 di 34 (Arianna)
+[03:22:39] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:22:49]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:22:51] ▶ Voce — turno 13 di 34 (Carlo)
+[03:23:04] ▶ Voce — turno 14 di 34 (Arianna)
+[03:24:42] ▶ Voce — turno 15 di 34 (Carlo)
+[03:24:54] ▶ Voce — turno 16 di 34 (Arianna)
+[03:25:07] ▶ Voce — turno 17 di 34 (Carlo)
+[03:25:21] ▶ Voce — turno 18 di 34 (Arianna)
+[03:25:34] ▶ Voce — turno 19 di 34 (Carlo)
+[03:25:47] ▶ Voce — turno 20 di 34 (Arianna)
+[03:25:59] ▶ Voce — turno 21 di 34 (Carlo)
+[03:26:12] ▶ Voce — turno 22 di 34 (Arianna)
+[03:26:25] ▶ Voce — turno 23 di 34 (Carlo)
+[03:26:35] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:26:45]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:26:49] ▶ Voce — turno 24 di 34 (Arianna)
+[03:27:04] ▶ Voce — turno 25 di 34 (Carlo)
+[03:27:17] ▶ Voce — turno 26 di 34 (Arianna)
+[03:27:31] ▶ Voce — turno 27 di 34 (Carlo)
+[03:27:45] ▶ Voce — turno 28 di 34 (Arianna)
+[03:28:00] ▶ Voce — turno 29 di 34 (Carlo)
+[03:28:13] ▶ Voce — turno 30 di 34 (Arianna)
+[03:28:29] ▶ Voce — turno 31 di 34 (Carlo)
+[03:28:43] ▶ Voce — turno 32 di 34 (Arianna)
+[03:28:57] ▶ Voce — turno 33 di 34 (Carlo)
+[03:29:10] ▶ Voce — turno 34 di 34 (Arianna)
+[03:29:26]    controllo voci: Carlo ~135 Hz, Arianna ~178 Hz, tutto in ordine
+[03:29:26] ✔ Voce — 34 turni, una voce per richiesta + frase finale
+[03:29:26] ▶ Montaggio audio
+[03:29:35] ✔ Montaggio audio — 4.1 minuti in tutto, voce 3.4 minuti, 154 parole al minuto
+[03:29:35] ▶ Articolo su WordPress — stato: pubblica
+[03:31:06] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[03:31:06] ▶ Consegna su Telegram
+[03:31:16] ✔ Consegna su Telegram — 5 file inviati
+[03:31:16] ▶ Registro e chiusura
+[03:31:16] Richieste al modello di testo: 9
+[03:31:16] memoria video non misurata (nvidia-smi assente)

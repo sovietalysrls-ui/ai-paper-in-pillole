@@ -1,0 +1,15 @@
+AI Paper in Pillole #63 - Jeva: come l'AI sceglie tra mille opzioni senza farsi confondere
+
+Durante un test a risposta multipla, un'intelligenza artificiale tradizionale può cambiare idea se scambiamo l'ordine delle opzioni. I modelli attuali leggono tutto il testo in sequenza. Questo metodo li rende lenti e incapaci di riutilizzare calcoli già svolti. Inoltre, faticano a capire quando nessuna delle alternative proposte è valida.
+
+Per risolvere questi difetti nasce Jeva, una nuova struttura per modelli decisionali rapidi. Il sistema analizza la richiesta dell'utente e ciascuna opzione in modo separato. Le informazioni sulle scelte vengono salvate in una memoria fissa e riutilizzabile. Un piccolo modulo confronta la domanda con le opzioni memorizzate senza ricalcolare tutto da capo. Un meccanismo simmetrico assicura che cambiare l'ordine delle voci non alteri la decisione finale. Un modulo dedicato riconosce subito se manca una risposta corretta.
+
+Nei test, Jeva ha risposto 27,86 volte più velocemente riciclando i calcoli già svolti. Il sistema ha anche identificato con un'accuratezza del 98,66 per cento i casi in cui nessuna delle alternative fornite era corretta. Come limite, il costo di calcolo complessivo cresce comunque in modo proporzionale al numero totale di opzioni disponibili.
+
+Il paper è di Qi Li e Xinchao Wang.
+
+Link al paper: https://arxiv.org/abs/2610.18773
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #Jeva #ProcessoDecisionale #MachineLearning #EfficienzaAI

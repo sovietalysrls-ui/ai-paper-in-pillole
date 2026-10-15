@@ -1,0 +1,111 @@
+{
+  "nome_breve": "Jeva",
+  "problema": "I modelli di intelligenza artificiale attuali scelgono tra varie opzioni leggendo tutto il testo in sequenza. Questo li rende lenti, incapaci di riutilizzare i calcoli già fatti e soggetti a cambiare idea se si inverte l'ordine delle alternative. Inoltre, spesso faticano a capire quando nessuna delle opzioni proposte è valida.",
+  "idea": "Jeva è una nuova struttura per modelli decisionali rapidi che elabora la richiesta e le singole scelte in modo del tutto indipendente. Le opzioni vengono memorizzate in modo fisso e riutilizzabile, garantendo risposte coerenti a prescindere dall'ordine e riconoscendo subito se manca una risposta corretta.",
+  "come_funziona": [
+    "Un modello linguistico di base analizza la richiesta dell'utente e ciascuna opzione separatamente.",
+    "Le informazioni sulle opzioni vengono salvate in una memoria fissa che può essere conservata e riusata per richieste future.",
+    "Un piccolo modulo decisionale confronta la richiesta con le opzioni memorizzate senza dover ricalcolare tutto da zero.",
+    "Un meccanismo di aggregazione simmetrica assicura che cambiare l'ordine delle opzioni non modifichi mai la risposta finale.",
+    "Un modulo di copertura dedicato valuta se tra le opzioni ce n'è almeno una valida, distinguendo l'assenza di risposte dall'indecisione."
+  ],
+  "risultati": [
+    {
+      "fatto": "Cambiando l'ordine di presentazione delle scelte, il modello non ha mai modificato la risposta finale.",
+      "numero": "0",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "La decisione rimane del tutto coerente e immune dall'ordine in cui vengono presentate le alternative."
+    },
+    {
+      "fatto": "Velocità di elaborazione quando si riutilizzano opzioni già calcolate in memoria rispetto al calcolo da zero.",
+      "numero": "27.86x",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Il sistema risponde quasi ventotto volte più velocemente riciclando i calcoli già svolti."
+    },
+    {
+      "fatto": "Accuratezza nel rilevare l'assenza di un'opzione corretta tra le alternative disponibili.",
+      "numero": "98.66%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Riconosce praticamente sempre quando nessuna delle scelte fornite è quella giusta."
+    },
+    {
+      "fatto": "Velocità rispetto a un metodo tradizionale a selezione progressiva su un catalogo di oltre duemila opzioni.",
+      "numero": "over 2x",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Impiega meno della metà del tempo rispetto ai sistemi tradizionali quando deve scegliere tra migliaia di opzioni."
+    },
+    {
+      "fatto": "Percentuale di risposte corrette mantenuta all'aumentare delle alternative disponibili, da poche decine a oltre duemila.",
+      "numero": "69.88%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "La precisione resta stabile e affidabile anche se l'elenco delle possibilità cresce fino a migliaia di voci."
+    }
+  ],
+  "limiti": [
+    "Non elimina i limiti massimi di lunghezza per i singoli testi passati in ingresso.",
+    "Il costo di calcolo complessivo cresce comunque in modo proporzionale al numero totale di opzioni disponibili."
+  ],
+  "esempio_concreto": "Un assistente virtuale deve scegliere l'azione giusta da compiere tra migliaia di comandi e documenti aziendali: con questo sistema risponde all'istante senza ricalcolare ogni volta l'intero elenco, senza farsi ingannare dall'ordine dei comandi e segnalando chiaramente quando non esiste un'azione adatta.",
+  "perche_ti_riguarda": "Gli assistenti digitali diventeranno molto più veloci, affidabili e meno inclini a dare risposte inventate solo perché costretti a scegliere tra opzioni non pertinenti.",
+  "gancio": "Se a un test a risposta multipla scambi l'ordine della risposta A con la risposta B, un'intelligenza artificiale tradizionale rischia di cambiare idea. Jeva risolve questo difetto alla radice, rendendo le decisioni coerenti e quasi trenta volte più veloci.",
+  "termini": [
+    {
+      "termine": "Jeva",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il nome dell'architettura per modelli decisionali introdotta da questo studio.",
+      "usa": "termine",
+      "pronuncia": "Gèva"
+    },
+    {
+      "termine": "Qwen3.5-4B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di base usato per la codifica del testo.",
+      "usa": "spiegazione",
+      "pronuncia": "Kiù-uen tre punto cinque quattro bi"
+    },
+    {
+      "termine": "BANKING77",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un archivio di test basato su richieste e domande del settore bancario.",
+      "usa": "spiegazione",
+      "pronuncia": "Bènking settantasètte"
+    },
+    {
+      "termine": "ToolRet",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test standard per valutare la capacità dell'intelligenza artificiale di selezionare lo strumento giusto da usare.",
+      "usa": "spiegazione",
+      "pronuncia": "Tùl-ret"
+    },
+    {
+      "termine": "MLDR",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una raccolta di testi usata per valutare la ricerca e la selezione di documenti.",
+      "usa": "spiegazione",
+      "pronuncia": "èmme èlle di èrre"
+    }
+  ],
+  "soggetto_immagine": "a central question symbol connecting symmetrically to multiple interchangeable choice nodes",
+  "hashtag": [
+    "AI",
+    "Jeva",
+    "ProcessoDecisionale",
+    "MachineLearning",
+    "EfficienzaAI"
+  ]
+}
