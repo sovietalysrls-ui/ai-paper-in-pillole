@@ -1,0 +1,15 @@
+AI Paper in Pillole #64 - ATAS: come l'AI genera video ricordando stanze e oggetti tra le scene
+
+Un personaggio posa le chiavi sul tavolo dell'ingresso, entra in cucina e poi torna indietro. Nei video creati dall'intelligenza artificiale, le chiavi spesso spariscono o il tavolo cambia forma. I modelli attuali faticano a mantenere coerenti gli ambienti tra inquadrature diverse. Quando l'inquadratura torna in una stanza già vista, la stanza sembra del tutto diversa.
+
+Il paper introduce un metodo chiamato ATAS. Questo sistema costruisce una memoria duratura dello spazio e del tempo. Un programma divide la sceneggiatura in singole inquadrature ordinate. Prima di generare la scena, il sistema consulta una mappa dell'ambiente e ricorda gli eventi passati. Un controllo di qualità esamina il filmato prodotto. Solo le sequenze prive di errori visivi aggiornano la memoria a lungo termine.
+
+I giudici umani assegnano alla fedeltà del video rispetto al testo un punteggio medio di 4,40 su 5. Il risultato indica che le scene prodotte seguono da vicino la storia scritta. Il filtro di controllo respinge il 36,8 per cento delle sequenze provvisorie. Più di una scena su tre viene rigenerata prima che possa rovinare la mappa dello spazio. Come limite principale, mantenere questa memoria rende la generazione più lenta e costosa.
+
+Il paper è di Weijie Wang, Haomin Zhang, Ye Li e altri 7 autori.
+
+Link al paper: https://arxiv.org/abs/2610.20571
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #GenerazioneVideo #CoerenzaSpaziale #VideoAgentico #CinemaDigitale

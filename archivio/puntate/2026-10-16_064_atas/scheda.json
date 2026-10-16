@@ -1,0 +1,132 @@
+{
+  "nome_breve": "ATAS",
+  "problema": "Quando un'intelligenza artificiale genera un video lungo da una sceneggiatura, fatica a mantenere coerenti i luoghi e le azioni tra inquadrature diverse. Se la telecamera torna in una stanza già vista o deve mostrare la stessa scena da un'altra angolazione, gli oggetti cambiano posizione o scompaiono del tutto.",
+  "idea": "Il sistema costruisce una memoria persistente dello spazio e degli eventi accaduti. In questo modo, l'intelligenza artificiale sa sempre com'è fatta ogni stanza e cosa è successo nel tempo prima di girare una nuova inquadratura.",
+  "come_funziona": [
+    "Un programma scompone la sceneggiatura in singole inquadrature assegnando a ciascuna una posizione precisa, la posizione della telecamera e il momento temporale.",
+    "Prima di generare il video, il sistema consulta una memoria per recuperare la mappa 3D del luogo e le azioni già accadute lì in precedenza.",
+    "Il modello video produce una sequenza candidata rispettando questi vincoli spaziali e temporali.",
+    "Un controllo di qualità verifica il video e decide se aggiornare la memoria con le nuove informazioni visive oppure scartarle.",
+    "Il montaggio finale del filmato rimane indipendente dall'accettazione o meno delle immagini nella memoria a lungo termine."
+  ],
+  "risultati": [
+    {
+      "fatto": "Valutazione media data da giudici umani sulla fedeltà del video generato rispetto al testo della sceneggiatura.",
+      "numero": "4.40",
+      "prima": "",
+      "scala": "su 5",
+      "in_pratica": "Un risultato molto vicino al punteggio massimo, a indicare che le scene prodotte seguono da vicino la storia scritta."
+    },
+    {
+      "fatto": "Filtro di controllo sui video candidati per evitare che errori visivi entrino nella memoria dello spazio.",
+      "numero": "36.8%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Più di una scena candidata su tre viene respinta e rigenerata prima che possa rovinare la mappa mentale dell'ambiente."
+    },
+    {
+      "fatto": "Capacità di mantenere intatta l'identità dell'azione quando un evento passato viene ripreso da un'angolazione diversa.",
+      "numero": "0.750",
+      "prima": "",
+      "scala": "su 1",
+      "in_pratica": "Riesce a riprodurre tre quarti delle caratteristiche dell'azione originale anche spostando del tutto il punto di vista."
+    },
+    {
+      "fatto": "Qualità della ricostruzione visiva quando la telecamera torna a inquadrare una stanza già mostrata in precedenza.",
+      "numero": "15.968 PSNR C",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Permette alla telecamera di rientrare in un ambiente già visitato ritrovando gli elementi al loro posto."
+    }
+  ],
+  "limiti": [
+    "Mantenere questa memoria continua rende la generazione più lenta e costosa, facendo salire il tempo per storia da 51.9 a 64.9 minuti e riducendo la resa da 7.28 a 6.21 inquadrature all'ora.",
+    "La coerenza dell'intero sfondo ambientale e della trama complessiva riceve ancora valutazioni inferiori rispetto alla precisione delle singole inquadrature.",
+    "Il sistema incontra ancora qualche difficoltà nel riprodurre con esattezza lo stato preciso di un'azione rispetto al semplice richiamo dell'evento."
+  ],
+  "esempio_concreto": "Un regista scrive una scena in cui una persona posa le chiavi sul tavolo dell'ingresso, poi va in cucina per diversi minuti e infine torna indietro: con questo sistema, al ritorno della telecamera nell'ingresso le chiavi si troveranno esattamente nello stesso punto del tavolo.",
+  "perche_ti_riguarda": "Renderà possibile creare cortometraggi, cartoni animati o videogiochi a episodi con l'intelligenza artificiale senza che case, personaggi e oggetti cambino forma a ogni stacco di telecamera.",
+  "gancio": "Se chiedi a un'intelligenza artificiale di girare un video in cui un personaggio esce da una stanza e poi vi rientra, quasi sempre mobili e finestre saranno completamente diversi. Questo sistema insegna al computer a ricordarsi com'era fatto il mondo prima di riaccendere la telecamera.",
+  "termini": [
+    {
+      "termine": "ATAS",
+      "tipo": "sigla",
+      "espansione_inglese": "Any Time, Any Space",
+      "significato": "in qualunque momento, in qualunque spazio",
+      "spiegazione": "Il nome del sistema che permette di generare video mantenendo la memoria dello spazio e del tempo.",
+      "usa": "termine",
+      "pronuncia": "à-tas"
+    },
+    {
+      "termine": "Wan 3.0",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno dei modelli di base utilizzati per generare i fotogrammi video a partire dal testo.",
+      "usa": "termine",
+      "pronuncia": "Uàn tre punto zero"
+    },
+    {
+      "termine": "MiniMax-H3",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un generatore commerciale di video usato nei test per verificare la qualità del sistema.",
+      "usa": "termine",
+      "pronuncia": "Mìnimacs àcca tre"
+    },
+    {
+      "termine": "HappyHorse 1.0",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di generazione video impiegato nelle prove sperimentali.",
+      "usa": "termine",
+      "pronuncia": "Èppi Hòrs uno punto zero"
+    },
+    {
+      "termine": "ReCA",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un metodo alternativo di generazione guidata da elementi tridimensionali usato come termine di paragone.",
+      "usa": "termine",
+      "pronuncia": "re-cà"
+    },
+    {
+      "termine": "VBench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un insieme standard di test al computer per misurare la qualità visiva dei video generati.",
+      "usa": "spiegazione",
+      "pronuncia": "Vì-bènch"
+    },
+    {
+      "termine": "ST-Bench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un banco di prova per misurare la coerenza spaziale e temporale nei video.",
+      "usa": "spiegazione",
+      "pronuncia": "Èsse Ti Bènch"
+    },
+    {
+      "termine": "ViStory",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un sistema di riferimento per la creazione di storie video multi-inquadratura.",
+      "usa": "termine",
+      "pronuncia": "Vi-stòri"
+    }
+  ],
+  "soggetto_immagine": "a movie camera pointing at a small architectural room wireframe model with clock hands",
+  "hashtag": [
+    "AI",
+    "GenerazioneVideo",
+    "CoerenzaSpaziale",
+    "VideoAgentico",
+    "CinemaDigitale"
+  ]
+}

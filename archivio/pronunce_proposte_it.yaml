@@ -1,5 +1,6 @@
 # Pronunce proposte dal modello. Copia in lingue/it/pronuncia.yaml quelle giuste (correggendole se serve).
 ALFWorld: Àlf uòrld
+ATAS: à-tas
 Adversarial Forcing: Advèrsarial Fòrsing
 AgentGarten: Èigent-Gàrten
 BANKING77: Bènking settantasètte
@@ -16,6 +17,7 @@ GPT-6 Astra: Gi-Pi-Ti Sèis Àstra
 Granite-4.1-8B: Grànait quattro punto uno òtto bi
 GraphForge: Gràf Forg
 GroundingPI: Gràunding Pi-Ai
+HappyHorse 1.0: Èppi Hòrs uno punto zero
 HunyuanVideo-13B: Huniuàn Vìdeo Tredìci Bi
 JavisBench: giàvis bènch
 Jeva: Gèva
@@ -27,6 +29,7 @@ LTX-2: elle tì iks due
 Learn2Play Bench: Lèrn tu Plèi Bènch
 Llama-3.2-3B-Instruct: Liàma tre punto due tre bi instràct
 MLDR: èmme èlle di èrre
+MiniMax-H3: Mìnimacs àcca tre
 NVIDIA H100: En-vìdia Àcca-Cènto
 O*NET: O èt
 OpenCode: Òupen Còud
@@ -35,16 +38,21 @@ Qwen2.5-7B-Instruct: Kuèn due punto cinque sètte bi instràct
 Qwen3.5-4B: Kiù-uen tre punto cinque quattro bi
 Qwen3.6-27B: Cuèn tre punto sèi ventisètte bi
 Qwen3.8-27B: Cuèn tre punto òtto ventisètte bi
+ReCA: re-cà
 RealCompanion: Rìal Compànion
 RoboCasa-GR1: Robocàsa Gi-Erre-Uno
 RoboTwin 2.0: Robotuìn due punto zero
 SGLang: Èsse Gi Èl Lèng
+ST-Bench: Èsse Ti Bènch
 STEPQuant: Stèp Cuònt
 SimCT: Sim si ti
 SpreadsheetBench II: sprèd shiit bèntch sècondo
 ToolRet: Tùl-ret
 VABench: Vi Ei Bènch
+VBench: Vì-bènch
 VGGSound: vi gi gi sàund
+ViStory: Vi-stòri
+Wan 3.0: Uàn tre punto zero
 Workspace-Bench-Lite: uòrk speis bèntch làit
 nuScenes: Niusìns
 vLLM: Vi-Èlle-Èlle-Èmme
