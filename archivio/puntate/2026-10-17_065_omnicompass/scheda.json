@@ -1,0 +1,81 @@
+{
+  "nome_breve": "OmniCompass",
+  "problema": "I test attuali per valutare l'intelligenza artificiale sui video esaminano solo singoli aspetti alla volta. I modelli faticano a capire contemporaneamente cosa succede, in quale punto dello schermo avvenga l'azione e in quale secondo esatto si verifichi, specialmente quando bisogna combinare immagini e suoni.",
+  "idea": "Un banco di prova completo che mette alla prova i sistemi visivi e audio-visivi chiedendo loro insieme il quando, il dove e il cosa di una scena. Inoltre verifica se il modello dà risposte coerenti sia quando gli si descrive un soggetto solo a parole, sia quando gli si mostra una foto di riferimento.",
+  "come_funziona": [
+    "Raccoglie centinaia di video divisi tra filmati basati sulla sola vista e filmati ricchi di suoni nativi sincronizzati.",
+    "Pone a ogni modello tre domande collegate: in quale intervallo di tempo compare il bersaglio, dove si trova nell'inquadratura e cosa sta succedendo.",
+    "Presenta ogni quesito in due modalità abbinate: specificando il soggetto solo con il testo oppure affiancando una foto di riferimento.",
+    "Misura l'accuratezza complessiva e premia i modelli che mantengono risposte corrette e coerenti in entrambe le modalità di richiesta."
+  ],
+  "risultati": [
+    {
+      "fatto": "Punteggio di coerenza e accuratezza nel test con audio e video combinati ottenuto dal modello migliore rispetto al migliore modello aperto",
+      "numero": "57.4%",
+      "prima": "24.6%",
+      "scala": "",
+      "in_pratica": "più del doppio rispetto al miglior modello aperto"
+    },
+    {
+      "fatto": "Miglior punteggio di accuratezza e coerenza registrato nel test basato sulla sola vista dal modello di punta",
+      "numero": "42.8%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "anche il modello migliore sbaglia o risulta incoerente più della metà delle volte"
+    }
+  ],
+  "limiti": [
+    "I modelli faticano molto a individuare la posizione nello spazio e il momento esatto nel tempo rispetto al semplice rispondere a domande generali.",
+    "Aggiungere un'immagine di riferimento alla richiesta scritta non porta benefici stabili e migliora la situazione solo in 11 modelli su 36.",
+    "I modelli aperti mostrano un forte ritardo rispetto a quelli proprietari nell'associare correttamente suoni ed eventi visivi."
+  ],
+  "esempio_concreto": "Durante una partita di basket, si chiede al sistema di trovare il secondo esatto in cui il giocatore con il numero 33 fa una schiacciata, di indicare la sua posizione sul campo e di descrivere l'azione, confrontando se l'intelligenza artificiale capisce la richiesta leggendo solo il testo o guardando anche una foto del giocatore.",
+  "perche_ti_riguarda": "Permetterà di costruire assistenti capaci di cercare momenti specifici nei tuoi video delle vacanze o telecamere di sicurezza che sanno dirti all'istante non solo cosa è successo, ma esattamente dove e quando si è sentito un rumore sospetto.",
+  "gancio": "Se mostrate a un'intelligenza artificiale la foto di un giocatore per farle cercare una schiacciata in una partita, potrebbe fallire proprio nel compito che risolveva senza problemi con una semplice descrizione scritta.",
+  "termini": [
+    {
+      "termine": "OmniCompass",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il nuovo sistema di test per misurare quanto i modelli comprendono a fondo i video.",
+      "usa": "termine",
+      "pronuncia": "Òmni Còmpas"
+    },
+    {
+      "termine": "OmniCompass-VL",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La parte del test che valuta i modelli basandosi unicamente su filmati visivi e testo.",
+      "usa": "spiegazione",
+      "pronuncia": "Òmni Còmpas Vi Èlle"
+    },
+    {
+      "termine": "OmniCompass-AV",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La parte del test che misura la comprensione combinando insieme immagini e traccia audio.",
+      "usa": "spiegazione",
+      "pronuncia": "Òmni Còmpas A Vù"
+    },
+    {
+      "termine": "CS",
+      "tipo": "sigla",
+      "espansione_inglese": "Cross-Specification Consistency Score",
+      "significato": "punteggio di coerenza tra diverse specifiche",
+      "spiegazione": "Una misura che controlla se il modello dà la risposta corretta ed è coerente quando la richiesta gli viene posta in due modi diversi.",
+      "usa": "spiegazione",
+      "pronuncia": "ci èsse"
+    }
+  ],
+  "soggetto_immagine": "a film strip looping through a compass with a small audio wave icon",
+  "hashtag": [
+    "AI",
+    "OmniCompass",
+    "VideoAI",
+    "MultimodalAI",
+    "ComputerVision"
+  ]
+}

@@ -1,0 +1,123 @@
+[03:16:16] ===== Avvio 2026-10-17 03:16 =====
+[03:16:21] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:23]    liste trovate: 2026-10-16 (50 paper), 2026-10-15 (50 paper), 2026-10-14 (50 paper), 2026-10-13 (26 paper), 2026-10-12 (50 paper)
+[03:16:23]    provo 2610.18829 (566 voti, lista del 2026-10-16): OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and U
+[03:16:23] ✔ Scelta e lettura del paper — 2610.18829 · 566 voti · arxiv-html · 3010 parole utili
+[03:16:23] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:23] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + The OmniCompass Benchmark
+[03:16:30] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:16:52] ✔ Scheda dei fatti — OmniCompass · 2 risultati · 4 termini
+[03:16:52] ▶ Dialogo — puntata #65
+[03:18:10] ✔ Dialogo — 37 battute, 677 parole
+[03:18:11] ▶ Controlli e correzioni
+[03:18:11]    giro 1: 2 battute da sistemare, 0 problemi generali (677 parole)
+[03:18:35]    giro 2: nessun problema (662 parole, massimo 736)
+[03:18:35] ✔ Controlli e correzioni — nessun problema residuo
+[03:18:35] ▶ Titolo, descrizione, articolo — titolo
+[03:18:41] ▶ Titolo, descrizione, articolo — descrizione
+[03:19:00]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[03:19:37] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:20:08]    rivedi articolo: 1 problemi, correggo (giro 1)
+[03:20:08]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:21:11] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #65 - OmniCompass: come testare se l'AI » · articolo 836 parole
+[03:21:11] ▶ Copertina
+[03:21:11]    limite al minuto raggiunto, aspetto 30 secondi
+[03:21:42]    limite al minuto raggiunto, aspetto 30 secondi
+[03:22:12] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:22:12]    limite al minuto raggiunto, aspetto 30 secondi
+[03:22:42] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:22:50] ✔ Copertina — disegnata da Gemini
+[03:22:51] ▶ Voce
+[03:22:51] ▶ Voce — turno 1 di 37 (Arianna)
+[03:23:01]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:23:04] ▶ Voce — turno 2 di 37 (Carlo)
+[03:23:17] ▶ Voce — turno 3 di 37 (Arianna)
+[03:23:30] ▶ Voce — turno 4 di 37 (Carlo)
+[03:23:44] ▶ Voce — turno 5 di 37 (Arianna)
+[03:23:54]    limite al minuto raggiunto, aspetto 5 secondi
+[03:24:02] ▶ Voce — turno 6 di 37 (Carlo)
+[03:24:15] ▶ Voce — turno 7 di 37 (Arianna)
+[03:24:28] ▶ Voce — turno 8 di 37 (Carlo)
+[03:24:42] ▶ Voce — turno 9 di 37 (Arianna)
+[03:24:56] ▶ Voce — turno 10 di 37 (Carlo)
+[03:25:09] ▶ Voce — turno 11 di 37 (Arianna)
+[03:25:23] ▶ Voce — turno 12 di 37 (Carlo)
+[03:25:33] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:25:43]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:25:46] ▶ Voce — turno 13 di 37 (Arianna)
+[03:25:59] ▶ Voce — turno 14 di 37 (Carlo)
+[03:26:11] ▶ Voce — turno 15 di 37 (Arianna)
+[03:26:24] ▶ Voce — turno 16 di 37 (Carlo)
+[03:26:35]    limite al minuto raggiunto, aspetto 24 secondi
+[03:27:00] ▶ Voce — turno 17 di 37 (Arianna)
+[03:27:13] ▶ Voce — turno 18 di 37 (Carlo)
+[03:27:25] ▶ Voce — turno 19 di 37 (Arianna)
+[03:27:39] ▶ Voce — turno 20 di 37 (Carlo)
+[03:27:51] ▶ Voce — turno 21 di 37 (Arianna)
+[03:28:03] ▶ Voce — turno 22 di 37 (Carlo)
+[03:28:15] ▶ Voce — turno 23 di 37 (Arianna)
+[03:28:28] ▶ Voce — turno 24 di 37 (Carlo)
+[03:28:38] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:28:49]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:28:51] ▶ Voce — turno 25 di 37 (Arianna)
+[03:29:06] ▶ Voce — turno 26 di 37 (Carlo)
+[03:29:20] ▶ Voce — turno 27 di 37 (Arianna)
+[03:29:34] ▶ Voce — turno 28 di 37 (Carlo)
+[03:29:47] ▶ Voce — turno 29 di 37 (Arianna)
+[03:30:02] ▶ Voce — turno 30 di 37 (Carlo)
+[03:30:15] ▶ Voce — turno 31 di 37 (Arianna)
+[03:30:29] ▶ Voce — turno 32 di 37 (Carlo)
+[03:30:42] ▶ Voce — turno 33 di 37 (Arianna)
+[03:30:56] ▶ Voce — turno 34 di 37 (Carlo)
+[03:31:10] ▶ Voce — turno 35 di 37 (Arianna)
+[03:31:23] ▶ Voce — turno 36 di 37 (Carlo)
+[03:31:36] ▶ Voce — turno 37 di 37 (Arianna)
+[03:31:51] ⚠ voce sospetta per Carlo (162 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:31:51] ▶ Voce — rifaccio turno_008_corpo_carlo.wav
+[03:32:05] ⚠ voce sospetta per Carlo (183 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:32:05] ▶ Voce — rifaccio turno_028_corpo_carlo.wav
+[03:32:17] ⚠ voce sospetta per Carlo (207 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:32:17] ▶ Voce — rifaccio turno_028_corpo_carlo.wav
+[03:32:31] ⚠ voce sospetta per Carlo (163 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:32:31] ▶ Voce — rifaccio turno_028_corpo_carlo.wav
+[03:32:43] ⚠ voce sospetta per Carlo (218 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:32:43] ▶ Voce — rifaccio turno_028_corpo_carlo.wav
+[03:32:56] ✖ Voce — ERRORE: turno_028_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (184 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 533, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 236, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 114, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 167, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_028_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (184 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[03:34:57] ===== Avvio 2026-10-17 03:34 =====
+[03:34:57] ↪ Scelta e lettura del paper — 2610.18829 (ripreso)
+[03:34:57] ↪ Scheda dei fatti — già fatto
+[03:34:57] ↪ Dialogo — già fatto
+[03:34:57] ↪ Controlli e correzioni — già fatto
+[03:34:57] ↪ Titolo, descrizione, articolo — già fatto
+[03:34:57] ↪ Copertina — già fatto
+[03:34:57] ▶ Voce
+[03:35:00] ⚠ voce sospetta per Carlo (184 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:35:00] ▶ Voce — rifaccio turno_028_corpo_carlo.wav
+[03:35:10] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:35:20] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:35:30]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:35:33] ⚠ voce sospetta per Carlo (171 Hz, attesa sotto 150 Hz): rifaccio il turno
+[03:35:33] ▶ Voce — rifaccio turno_036_corpo_carlo.wav
+[03:35:46]    controllo voci: Carlo ~129 Hz, Arianna ~172 Hz, tutto in ordine
+[03:35:46] ✔ Voce — 37 turni, una voce per richiesta + frase finale
+[03:35:46] ▶ Montaggio audio
+[03:35:53] ✔ Montaggio audio — 4.9 minuti in tutto, voce 4.2 minuti, 157 parole al minuto
+[03:35:54] ▶ Articolo su WordPress — stato: pubblica
+[03:37:25] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[03:37:25] ▶ Consegna su Telegram
+[03:37:32] ✔ Consegna su Telegram — 5 file inviati
+[03:37:33] ▶ Registro e chiusura
+[03:37:33] Richieste al modello di testo: 0
+[03:37:33] memoria video non misurata (nvidia-smi assente)

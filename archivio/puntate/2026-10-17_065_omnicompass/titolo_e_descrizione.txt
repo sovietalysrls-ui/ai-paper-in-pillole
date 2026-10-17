@@ -1,0 +1,15 @@
+AI Paper in Pillole #65 - OmniCompass: come testare se l'AI capisce cosa, dove e quando nei video
+
+Durante una partita di basket, chiedete a un sistema di trovare il secondo di una schiacciata, la posizione del giocatore e l'azione svolta. Se mostrate la foto dell'atleta insieme alla richiesta scritta, il sistema può fallire proprio il compito che risolveva a parole. I test attuali valutano un singolo aspetto alla volta. I modelli faticano a capire insieme cosa succede, dove accade sullo schermo e in quale secondo esatto, specialmente unendo immagini e suoni.
+
+Per risolvere il problema nasce OmniCompass, un nuovo sistema di test per misurare la comprensione profonda dei video. Il metodo interroga i modelli chiedendo contemporaneamente il quando, il dove e il cosa di ogni scena. La prova esamina filmati basati sulla sola vista e video ricchi di suoni sincronizzati. Inoltre verifica se le risposte restano coerenti sia ricevendo solo testo, sia ricevendo anche una foto di riferimento del soggetto.
+
+Nel test con audio e video, il modello migliore ha ottenuto il 57,4 per cento di accuratezza e coerenza rispetto al 24,6 per cento del miglior modello aperto, cioè più del doppio. Nella prova sulla sola vista, il sistema di punta si è fermato al 42,8 per cento: in pratica sbaglia o risulta incoerente più della metà delle volte. Inoltre, aggiungere una foto alla richiesta scritta aiuta solo una minoranza dei modelli.
+
+Il paper è di Xuyang Liu, Shihao Wang, Xinyu Wei, Minghan Li, Zeqing Wang, Zuhao Yang, Zichen Wen e Lei Zhang.
+
+Link al paper: https://arxiv.org/abs/2610.18829
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #OmniCompass #VideoAI #MultimodalAI #ComputerVision
