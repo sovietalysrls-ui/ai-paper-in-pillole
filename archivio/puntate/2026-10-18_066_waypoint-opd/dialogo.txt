@@ -1,0 +1,71 @@
+Carlo: Spesso chi impara da solo procede per tentativi ed errori, cambiando idea più volte prima di arrivare alla risposta.
+
+Arianna: Se provasse a insegnare solo basandosi sul risultato finale, finirebbe per passare lezioni contraddittorie.
+
+Carlo: Benvenuti ad AI Paper in Pillole, puntata numero 66. Io sono Carlo.
+
+Arianna: E io sono Arianna. Oggi parliamo di come far imparare un modello più piccolo da un maestro senza trasmettere le sue incertezze.
+
+Carlo: Quando trasferiamo abilità da un modello grande a uno piccolo, cosa va storto di solito?
+
+Arianna: Guardiamo solo il risultato finale del maestro. Nel suo percorso, però, il maestro ha cambiato rotta molte volte.
+
+Carlo: Come un professore alla lavagna che cancella e riscrive?
+
+Arianna: Il professore che deve spiegare un problema difficile a uno studente cancella la lavagna più volte. Se mostra solo la formula finale, nasconde i propri ripensamenti.
+
+Carlo: E quindi rischia di passare istruzioni confuse allo studente.
+
+Arianna: Trasmette lezioni che si contraddicono a vicenda. Il modello allievo finisce per ricevere segnali poco chiari.
+
+Carlo: Come hanno pensato di risolvere i ricercatori?
+
+Arianna: L'idea è controllare una tappa intermedia dell'addestramento del maestro. Si verifica se le sue decisioni sono state coerenti nel tempo.
+
+Carlo: Se il maestro è sempre stato convinto della strada presa, la insegna?
+
+Arianna: Se la direzione iniziale concorda con quella finale, la lezione passa all'allievo. Se invece divergono, il segnale viene bloccato del tutto.
+
+Carlo: In pratica, come funziona questo controllo durante i compiti?
+
+Arianna: Si conservano tre stati del maestro dallo stesso ciclo: iniziale, intermedio e finale. Poi l'allievo genera autonomamente i propri tentativi di soluzione.
+
+Carlo: E il maestro valuta quei tentativi dell'allievo?
+
+Arianna: Il maestro confronta le proprie preferenze tra la prima e la seconda metà del percorso su quei tentativi. Se puntano nella stessa direzione, il segnale viene confermato.
+
+Carlo: Questo metodo ha un nome specifico nel paper?
+
+Arianna: Il sistema si chiama Waypoint-OPD. Richiede un solo passaggio di calcolo in più, senza dover addestrare altri modelli di verifica.
+
+Carlo: Nei test pratici questo filtro fa davvero la differenza?
+
+Arianna: Nei test di scrittura del codice, un modello allievo della famiglia Qwen ottiene un passo avanti evidente rispetto al metodo tradizionale. Riesce a creare programmi informatici che funzionano al primo colpo.
+
+Carlo: E per quanto riguarda le prove di ragionamento?
+
+Arianna: Nei problemi di matematica, l'allievo risolve quesiti complessi con maggiore precisione. Evita le indicazioni contraddittorie e ottiene un punteggio medio di 56,14 su 100.
+
+Carlo: Rispetto al maestro com'è andato?
+
+Arianna: Il maestro finale si fermava a 56,13 su 100. In pratica, l'allievo riesce a raggiungere e superare di un soffio il livello del proprio maestro.
+
+Carlo: Tutti i numeri precisi e i dettagli tecnici si trovano nel nostro articolo sul sito e nel paper, con il link nella descrizione della puntata.
+
+Arianna: Ci sono però dei limiti da considerare. L'accordo tra le fasi del maestro non assicura da solo che l'indicazione trasmessa sia benefica per l'allievo.
+
+Carlo: E ci sono altri aspetti da verificare sui dati?
+
+Arianna: Non vi è alcuna garanzia che i dati di prova impiegati siano del tutto privi di linguaggio dannoso o inappropriato.
+
+Carlo: Perché questa ricerca riguarda da vicino chi ci ascolta tutti i giorni?
+
+Arianna: Permette di creare modelli più compatti ma altrettanto bravi a ragionare. Questo riduce i costi enormi di calcolo e l'energia necessari per addestrarli.
+
+Carlo: Se la puntata vi è piaciuta, lasciateci un like e le cinque stelline sulla vostra piattaforma preferita.
+
+Arianna: Seguite il podcast per non perdere la prossima puntata. A presto!
+
+Carlo: A presto!
+
+[dopo la sigla] Arianna: AI Paper in Pillole è un progetto di Sovietaly SRLS.

@@ -1,0 +1,88 @@
+{
+  "nome_breve": "Waypoint-OPD",
+  "problema": "Quando si cerca di trasferire le abilità da un modello maestro a un modello allievo, guardare solo al risultato finale del maestro nasconde le sue incertezze intermedie. Molti cambiamenti di rotta avvenuti durante l'apprendimento possono contraddirsi a vicenda, trasmettendo all'allievo istruzioni incoerenti.",
+  "idea": "Si controlla una tappa intermedia dell'addestramento del modello maestro per verificare la coerenza delle sue decisioni nel tempo. Se la direzione presa all'inizio concorda con quella finale, la lezione viene trasmessa all'allievo, altrimenti il segnale viene bloccato.",
+  "come_funziona": [
+    "Vengono conservati tre stati del modello maestro dallo stesso ciclo di apprendimento: iniziale, intermedio e finale.",
+    "Il modello allievo genera autonomamente i propri tentativi di soluzione per un problema.",
+    "Si confrontano i cambiamenti di preferenza del maestro tra la prima e la seconda metà del suo percorso su quei tentativi.",
+    "Se le scelte del maestro nelle due fasi puntano nella stessa direzione, il segnale viene confermato all'allievo; se divergono, viene neutralizzato.",
+    "L'intero processo richiede un solo passaggio di calcolo aggiuntivo senza dover addestrare ulteriori modelli di verifica."
+  ],
+  "risultati": [
+    {
+      "fatto": "Miglioramento medio nella scrittura di codice informatico per il modello allievo da 8 miliardi di parametri rispetto al metodo di distillazione diretta senza tappe intermedie.",
+      "numero": "2.66",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Un passo avanti evidente nella capacità di creare programmi informatici che funzionano al primo colpo."
+    },
+    {
+      "fatto": "Miglioramento medio nei problemi di matematica per il modello allievo da 8 miliardi di parametri rispetto al trasferimento diretto.",
+      "numero": "2.18",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Risolve con maggiore precisione quesiti complessi evitando le indicazioni contraddittorie del maestro."
+    },
+    {
+      "fatto": "Accuratezza media raggiunta nei problemi matematici dall'allievo con il nuovo metodo rispetto al modello maestro finale.",
+      "numero": "56.14",
+      "prima": "56.13",
+      "scala": "su 100",
+      "in_pratica": "L'allievo riesce a raggiungere e persino a superare di un soffio il livello complessivo del proprio maestro."
+    }
+  ],
+  "limiti": [
+    "L'accordo di direzione tra le diverse fasi del maestro non assicura da solo che l'indicazione trasmessa sia benefica per l'allievo.",
+    "Non vi è garanzia che i dati di prova impiegati siano del tutto privi di linguaggio dannoso o inappropriato."
+  ],
+  "esempio_concreto": "Un professore che deve spiegare un problema difficile a uno studente: invece di mostrare solo la formula finale dopo aver cancellato la lavagna più volte, controlla i suoi appunti di metà lezione e spiega solo i passaggi su cui non ha mai avuto ripensamenti.",
+  "perche_ti_riguarda": "Permette di creare modelli di intelligenza artificiale più compatti ma altrettanto bravi a ragionare, riducendo i costi enormi di calcolo ed energia necessari per addestrarli.",
+  "gancio": "Spesso chi impara da solo procede per tentativi ed errori, cambiando idea più volte prima di arrivare alla risposta. Se provasse a insegnare solo basandosi sul risultato finale, finirebbe per passare lezioni contraddittorie.",
+  "termini": [
+    {
+      "termine": "Waypoint-OPD",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo proposto che usa una tappa intermedia del maestro per filtrare quali istruzioni passare all'allievo.",
+      "usa": "termine",
+      "pronuncia": "Uèipoint o pi di"
+    },
+    {
+      "termine": "OPD",
+      "tipo": "sigla",
+      "espansione_inglese": "On-Policy Distillation",
+      "significato": "distillazione sulle traiettorie dell'allievo",
+      "spiegazione": "Una tecnica in cui il modello maestro corregge l'allievo direttamente sui percorsi di ragionamento generati dall'allievo stesso.",
+      "usa": "spiegazione",
+      "pronuncia": "o pi di"
+    },
+    {
+      "termine": "Direct-OPD",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo tradizionale di trasferimento che confronta solo lo stato iniziale e quello finale del maestro.",
+      "usa": "spiegazione",
+      "pronuncia": "Dairèct o pi di"
+    },
+    {
+      "termine": "Qwen3-8B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno dei modelli linguistici usati come studente, con una dimensione intermedia di parametri.",
+      "usa": "termine",
+      "pronuncia": "Kùen tre òtto bi"
+    }
+  ],
+  "soggetto_immagine": "a linear path with three circular checkpoints and arrows pointing in the same direction",
+  "hashtag": [
+    "AI",
+    "DistillazioneModelli",
+    "MachineLearning",
+    "RagionamentoMatematico",
+    "GenerazioneCodice"
+  ]
+}

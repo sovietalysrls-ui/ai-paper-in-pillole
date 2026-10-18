@@ -1,0 +1,97 @@
+[03:16:22] ===== Avvio 2026-10-18 03:16 =====
+[03:16:22] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:24]    liste trovate: 2026-10-16 (50 paper), 2026-10-15 (50 paper), 2026-10-14 (50 paper), 2026-10-13 (26 paper), 2026-10-12 (50 paper)
+[03:16:24]    provo 2610.21601 (665 voti, lista del 2026-10-16): Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Polic
+[03:16:24] ✔ Scelta e lettura del paper — 2610.21601 · 665 voti · arxiv-html · 2592 parole utili
+[03:16:24] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:24] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Experiments + Re
+[03:17:53] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:19:25] ✔ Scheda dei fatti — Waypoint-OPD · 3 risultati · 4 termini
+[03:19:26] ▶ Dialogo — puntata #66
+[03:20:19] ✔ Dialogo — 35 battute, 561 parole
+[03:20:20] ▶ Controlli e correzioni
+[03:20:20]    giro 1: nessun problema (561 parole, massimo 736)
+[03:20:20] ✔ Controlli e correzioni — nessun problema residuo
+[03:20:20] ▶ Titolo, descrizione, articolo — titolo
+[03:20:20]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:21:56] ▶ Titolo, descrizione, articolo — descrizione
+[03:23:36] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:24:22] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #66 - Waypoint-OPD: come l'AI allieva im» · articolo 798 parole
+[03:24:23] ▶ Copertina
+[03:24:23]    limite al minuto raggiunto, aspetto 30 secondi
+[03:24:53] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:24:54]    limite al minuto raggiunto, aspetto 30 secondi
+[03:25:24]    limite al minuto raggiunto, aspetto 30 secondi
+[03:25:54]    limite al minuto raggiunto, aspetto 30 secondi
+[03:26:24] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:26:34] ✔ Copertina — disegnata da Gemini
+[03:26:35] ▶ Voce
+[03:26:35] ▶ Voce — turno 1 di 35 (Carlo)
+[03:26:45]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:26:48] ▶ Voce — turno 2 di 35 (Arianna)
+[03:27:03] ▶ Voce — turno 3 di 35 (Carlo)
+[03:27:17] ▶ Voce — turno 4 di 35 (Arianna)
+[03:27:31] ▶ Voce — turno 5 di 35 (Carlo)
+[03:27:42]    limite al minuto raggiunto, aspetto 17 secondi
+[03:28:01] ▶ Voce — turno 6 di 35 (Arianna)
+[03:28:16] ▶ Voce — turno 7 di 35 (Carlo)
+[03:28:29] ▶ Voce — turno 8 di 35 (Arianna)
+[03:28:44] ▶ Voce — turno 9 di 35 (Carlo)
+[03:28:57] ▶ Voce — turno 10 di 35 (Arianna)
+[03:29:08] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:29:18]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:29:20] ▶ Voce — turno 11 di 35 (Carlo)
+[03:29:32] ▶ Voce — turno 12 di 35 (Arianna)
+[03:29:45] ▶ Voce — turno 13 di 35 (Carlo)
+[03:29:55]    limite al minuto raggiunto, aspetto 5 secondi
+[03:30:02] ▶ Voce — turno 14 di 35 (Arianna)
+[03:30:13]    limite al minuto raggiunto, aspetto 46 secondi
+[03:31:01] ▶ Voce — turno 15 di 35 (Carlo)
+[03:31:14] ▶ Voce — turno 16 di 35 (Arianna)
+[03:31:28] ▶ Voce — turno 17 di 35 (Carlo)
+[03:31:40] ▶ Voce — turno 18 di 35 (Arianna)
+[03:31:53] ▶ Voce — turno 19 di 35 (Carlo)
+[03:32:05] ▶ Voce — turno 20 di 35 (Arianna)
+[03:32:16]    limite al minuto raggiunto, aspetto 43 secondi
+[03:32:59] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:33:10]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:33:13] ▶ Voce — turno 21 di 35 (Carlo)
+[03:33:26] ▶ Voce — turno 22 di 35 (Arianna)
+[03:33:41] ▶ Voce — turno 23 di 35 (Carlo)
+[03:33:54] ▶ Voce — turno 24 di 35 (Arianna)
+[03:34:09] ▶ Voce — turno 25 di 35 (Carlo)
+[03:34:21] ▶ Voce — turno 26 di 35 (Arianna)
+[03:34:35] ▶ Voce — turno 27 di 35 (Carlo)
+[03:34:49] ▶ Voce — turno 28 di 35 (Arianna)
+[03:35:03] ▶ Voce — turno 29 di 35 (Carlo)
+[03:35:16] ▶ Voce — turno 30 di 35 (Arianna)
+[03:35:30] ▶ Voce — turno 31 di 35 (Carlo)
+[03:35:42] ▶ Voce — turno 32 di 35 (Arianna)
+[03:35:57] ▶ Voce — turno 33 di 35 (Carlo)
+[03:36:11] ▶ Voce — turno 34 di 35 (Arianna)
+[03:36:23] ▶ Voce — turno 35 di 35 (Carlo)
+[03:36:40] ⚠ voce sospetta per Carlo (200 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:36:40] ▶ Voce — rifaccio turno_007_corpo_carlo.wav
+[03:36:52] ⚠ voce sospetta per Carlo (173 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:36:52] ▶ Voce — rifaccio turno_019_corpo_carlo.wav
+[03:37:05] ⚠ voce sospetta per Carlo (202 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:37:05] ▶ Voce — rifaccio turno_023_corpo_carlo.wav
+[03:37:18] ⚠ voce sospetta per Carlo (190 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:37:18] ▶ Voce — rifaccio turno_023_corpo_carlo.wav
+[03:37:31] ⚠ voce sospetta per Carlo (169 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:37:31] ▶ Voce — rifaccio turno_023_corpo_carlo.wav
+[03:37:43] ⚠ voce sospetta per Carlo (181 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:37:43] ▶ Voce — rifaccio turno_033_corpo_carlo.wav
+[03:37:57] ⚠ voce sospetta per Carlo (222 Hz, attesa sotto 159 Hz): rifaccio il turno
+[03:37:57] ▶ Voce — rifaccio turno_035_corpo_carlo.wav
+[03:38:09]    controllo voci: Carlo ~141 Hz, Arianna ~176 Hz, tutto in ordine
+[03:38:09] ✔ Voce — 35 turni, una voce per richiesta + frase finale
+[03:38:09] ▶ Montaggio audio
+[03:38:18] ✔ Montaggio audio — 4.4 minuti in tutto, voce 3.7 minuti, 151 parole al minuto
+[03:38:19] ▶ Articolo su WordPress — stato: pubblica
+[03:38:40] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/waypoint-opd-come-lai-allieva-impara-evitando-i-ripensamenti-del-maestro/
+[03:38:40] ▶ Consegna su Telegram
+[03:38:50] ✔ Consegna su Telegram — 5 file inviati
+[03:38:51] ▶ Registro e chiusura
+[03:38:51] Richieste al modello di testo: 8
+[03:38:51] memoria video non misurata (nvidia-smi assente)

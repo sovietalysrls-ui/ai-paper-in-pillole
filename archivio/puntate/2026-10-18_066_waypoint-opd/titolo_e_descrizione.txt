@@ -1,0 +1,15 @@
+AI Paper in Pillole #66 - Waypoint-OPD: come l'AI allieva impara evitando i ripensamenti del maestro
+
+Un professore risolve un problema difficile alla lavagna e cancella più volte i passaggi prima di arrivare in fondo. Se mostra allo studente solo la formula finale senza spiegare i suoi ripensamenti, rischia di confonderlo. Lo stesso accade quando si trasferiscono le abilità da un modello maestro a un modello allievo. Guardare solo al risultato finale nasconde le incertezze del percorso e trasmette istruzioni contraddittorie.
+
+Il metodo Waypoint-OPD introduce una verifica su una tappa intermedia del maestro. Vengono conservati tre stati del modello maestro: iniziale, a metà percorso e finale. L'allievo propone da solo i propri tentativi di soluzione. Il maestro valuta queste risposte confrontando le scelte fatte nella prima metà del suo addestramento con quelle della seconda metà. Se le decisioni puntano nella stessa direzione, il consiglio passa all'allievo. Se invece divergono, l'istruzione viene bloccata.
+
+Nei problemi di matematica, l'allievo raggiunge un'accuratezza media di 56,14 su 100, superando il 56,13 su 100 del maestro finale. In pratica, lo studente riesce a raggiungere e superare di un soffio il livello complessivo del proprio insegnante. Come limite, la coerenza tra le diverse fasi del maestro non assicura da sola che l'indicazione trasmessa sia benefica per l'allievo.
+
+Il paper è di Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu e Yuewei Zhang.
+
+Link al paper: https://arxiv.org/abs/2610.21601
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #DistillazioneModelli #MachineLearning #RagionamentoMatematico #GenerazioneCodice
