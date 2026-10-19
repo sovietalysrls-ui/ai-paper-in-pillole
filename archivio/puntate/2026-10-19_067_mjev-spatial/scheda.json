@@ -1,0 +1,86 @@
+{
+  "nome_breve": "MJev-Spatial",
+  "problema": "Per dire dove si trova una tazza o stimare quanto dista un ostacolo, i modelli visivi attuali scrivono intere frasi parola per parola. Questo processo di scrittura richiede tempo e calcoli inutili per risposte che in realtà sono solo una scelta, un numero o un punto sullo schermo.",
+  "idea": "Invece di far scrivere un testo al modello, gli si chiede di scegliere all'istante l'opzione giusta da un elenco prefissato di risposte o posizioni possibili. Così la decisione visiva avviene in un colpo solo, usando i circuiti interni già presenti nel sistema senza aggiungere pezzi.",
+  "come_funziona": [
+    "Il sistema trasforma ogni domanda visiva, stima di distanza o punto da trovare in una scelta tra varie opzioni predefinite.",
+    "Per stimare misure o coordinate precise, restringe il campo passo dopo passo passando da un'area grossolana a una zona via via più piccola.",
+    "Per trovare un punto esatto, taglia e rilegge l'area scelta per analizzarne i dettagli più minuti.",
+    "Assegna un punteggio alle opzioni usando direttamente i meccanismi di attenzione interna già addestrati, senza scrivere testo."
+  ],
+  "risultati": [
+    {
+      "fatto": "Velocità di risposta rispetto allo stesso modello di partenza basato sulla generazione di testo.",
+      "numero": "5.6 \\times",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Risponde in oltre cinque volte meno tempo rispetto alla versione classica che scrive il testo."
+    },
+    {
+      "fatto": "Punteggio medio raggiunto attraverso le prove di comprensione spaziale rispetto a tutti gli altri modelli testati.",
+      "numero": "65.64%",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "Si piazza al primo posto complessivo battendo tutti i modelli concorrenti confrontati nello studio."
+    },
+    {
+      "fatto": "Tempo medio necessario per elaborare una singola risposta spaziale su un processore grafico moderno.",
+      "numero": "160.6 ms",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Prende una decisione spaziale in una frazione minuscola di secondo, quasi istantanea."
+    },
+    {
+      "fatto": "Aumento della velocità di addestramento ottenuto raggruppando i dati per lunghezza e bilanciando il lavoro tra i processori.",
+      "numero": "30.8%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Permette di completare l'addestramento con una resa superiore di quasi un terzo."
+    }
+  ],
+  "limiti": [
+    "Se il modello sbaglia a selezionare la zona iniziale nel primo passaggio grossolano, non può più correggersi nei passaggi successivi.",
+    "La ricerca di punti multipli richiede di esplorare molti bivi decisionali, aumentando il carico di calcolo.",
+    "La verifica della velocità di addestramento è stata effettuata solo su sessioni brevi senza misurare la convergenza finale."
+  ],
+  "esempio_concreto": "Un braccio robotico deve afferrare una scatola di medicinali su un nastro trasportatore in movimento: invece di formulare una risposta verbale, individua istantaneamente le coordinate di presa sulla griglia visiva prima che l'oggetto si sposti.",
+  "perche_ti_riguarda": "Rendere i modelli capaci di capire le posizioni nello spazio all'istante è fondamentale per avere robot domestici, auto autonome e visori che reagiscono in tempo reale senza pericolosi ritardi.",
+  "gancio": "Per far capire a un robot dove poggiare un bicchiere, oggi i sistemi di intelligenza artificiale perdono tempo a comporre un'intera frase per esteso. Un nuovo metodo permette al sistema di puntare direttamente al millimetro giusto in una frazione di secondo.",
+  "termini": [
+    {
+      "termine": "MJev-Spatial",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello di intelligenza artificiale presentato nel paper, specializzato nel prendere decisioni visive rapide.",
+      "usa": "termine",
+      "pronuncia": "Emme-Gèi-Èv Spèiscial"
+    },
+    {
+      "termine": "VLMs",
+      "tipo": "sigla",
+      "espansione_inglese": "Vision-Language Models",
+      "significato": "modelli di visione e linguaggio",
+      "spiegazione": "Sistemi di intelligenza artificiale capaci di comprendere sia immagini che parole.",
+      "usa": "spiegazione",
+      "pronuncia": "vi elle emme"
+    },
+    {
+      "termine": "Qwen3.5-4B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello linguistico e visivo di base, di medie dimensioni, su cui è stato costruito il sistema.",
+      "usa": "termine",
+      "pronuncia": "Kùen tre punto cìnque quàttro bi"
+    }
+  ],
+  "soggetto_immagine": "a grid of squares focusing inward with a targeting reticle on one point",
+  "hashtag": [
+    "AI",
+    "VisioneArtificiale",
+    "Robotica",
+    "IntelligenzaSpaziale",
+    "MachineLearning"
+  ]
+}

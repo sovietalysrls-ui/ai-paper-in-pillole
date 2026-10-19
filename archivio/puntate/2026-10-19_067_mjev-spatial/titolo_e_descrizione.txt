@@ -1,0 +1,15 @@
+AI Paper in Pillole #67 - MJev-Spatial: come l'AI trova gli oggetti al volo senza sprecare parole
+
+Un braccio robotico deve afferrare una scatola di medicinali su un nastro trasportatore in movimento. Per dire dove si trova un oggetto, i sistemi attuali capaci di comprendere sia immagini che parole scrivono intere frasi. Questa scrittura richiede tempo e calcoli inutili per risposte che sono soltanto un punto sullo schermo. Nel frattempo l'oggetto rischia di spostarsi prima della presa.
+
+Il modello MJev-Spatial elimina la scrittura del testo. Il sistema trasforma ogni domanda visiva in una scelta tra opzioni predefinite. Per stimare coordinate precise, restringe il campo passo dopo passo da un'area grossolana a una zona via via più piccola. Poi taglia e rilegge l'area scelta per analizzarne i dettagli minuti. Infine assegna un punteggio alle opzioni usando i propri meccanismi interni già addestrati.
+
+Nelle prove il sistema è 5,6 volte più veloce del modello di partenza. In pratica risponde in oltre cinque volte meno tempo rispetto alla versione classica che scrive il testo. Il tempo medio per elaborare una risposta è di 160,6 millisecondi, prendendo decisioni spaziali in una frazione minuscola di secondo. Come limite, se il modello sbaglia a selezionare la zona iniziale nel primo passaggio grossolano, non può più correggersi nei passaggi successivi.
+
+Il paper è di Luozheng Qin, Yuhan Zhu, Changhai Zhou e altri 9 autori, e conta 37 pagine con 7 figure.
+
+Link al paper: https://arxiv.org/abs/2610.22276
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #VisioneArtificiale #Robotica #IntelligenzaSpaziale #MachineLearning
