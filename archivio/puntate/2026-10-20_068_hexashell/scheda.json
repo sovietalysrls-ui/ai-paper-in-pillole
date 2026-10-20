@@ -1,0 +1,111 @@
+{
+  "nome_breve": "HexaShell",
+  "problema": "Controllare un robot fisico richiede movimenti precisi nello spazio, ma i sistemi di intelligenza artificiale spesso faticano a calcolare le distanze corrette solo guardando attraverso semplici telecamere. Inoltre, quando il robot compie un errore durante un compito, di solito non è in grado di capire da solo cosa è andato storto né di correggere la propria strategia per i tentativi successivi.",
+  "idea": "Trattare il controllo del robot come se fosse la scrittura di un programma informatico. Il sistema riceve i comandi da un modello visivo avanzato e, ogni volta che un'azione fallisce, analizza il registro degli errori, individua il problema e scrive o modifica da solo piccoli programmi su misura per superare l'ostacolo.",
+  "come_funziona": [
+    "Il robot osserva l'ambiente attraverso tre telecamere a colori standard, comprese quelle montate sui propri polsi.",
+    "Un modello di intelligenza artificiale calcola la posizione precisa degli oggetti combinando le diverse inquadrature con la geometria dei raggi visivi.",
+    "L'interfaccia HexaShell riceve i comandi testuali dell'agente e li trasforma direttamente nei movimenti delle braccia meccaniche.",
+    "Se il compito fallisce, l'agente legge i messaggi di errore, individua lo sbaglio e riscrive il codice del programma per perfezionarlo con appositi test di verifica."
+  ],
+  "risultati": [
+    {
+      "fatto": "Capacità globale di portare a termine con successo compiti complessi di manipolazione robotica.",
+      "numero": "39.7%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Il robot riesce a completare con successo circa quattro missioni su dieci, stabilendo un nuovo punto di riferimento per questo genere di compiti."
+    },
+    {
+      "fatto": "Punteggio complessivo di avanzamento registrato nelle prove rispetto agli obiettivi prefissati.",
+      "numero": "48.0",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Il robot riesce a svolgere quasi metà di tutto il lavoro necessario previsto nei vari scenari di prova."
+    },
+    {
+      "fatto": "Percentuale di riuscita nei compiti fisici che prevedono di spingere oggetti sul piano di lavoro.",
+      "numero": "92.5%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Nelle azioni di spinta il robot ha successo quasi sempre, sbagliando meno di una volta su dieci."
+    },
+    {
+      "fatto": "Percentuale di riuscita nei compiti di incastro stretto ad alta precisione millimetrica.",
+      "numero": "8.3%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Quando si tratta di fare incastri millimetrici il robot fallisce quasi sempre, riuscendoci meno di una volta ogni dieci tentativi."
+    },
+    {
+      "fatto": "Tempo mediano impiegato dal sistema per analizzare un errore ed elaborare una correzione del codice.",
+      "numero": "6.3 minuti",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Al sistema bastano poco più di sei minuti per esaminare lo sbaglio e produrre un programma corretto."
+    }
+  ],
+  "limiti": [
+    "Prestazioni estremamente basse quando servono contatti ad altissima precisione millimetrica, come infilare componenti in fessure molto strette.",
+    "Le manovre per muovere le telecamere e ricalcolare le inquadrature consumano rapidamente il numero massimo di mosse consentite per completare il compito.",
+    "Il sistema tende a volte a credere erroneamente di aver terminato con successo compiti basati sulla memoria, venendo poi smentito dalla verifica oggettiva."
+  ],
+  "esempio_concreto": "Un braccio meccanico a due mani che deve suonare uno xilofono: impugna il mazzuolo, sposta il polso per inquadrare meglio le piastre da due angolazioni diverse, e se al primo colpo manca il tasto, corregge da solo il proprio programma per centrare esattamente la nota al tentativo successivo.",
+  "perche_ti_riguarda": "Dimostra che i robot domestici o industriali in futuro potranno adattarsi a nuovi lavori e correggere i propri errori sul campo scrivendo autonomamente il proprio software, senza bisogno dell'intervento costante di un programmatore umano.",
+  "gancio": "Se un robot a due braccia sbaglia a suonare una nota sullo xilofono o manca un incastro, non aspetta un tecnico: legge il registro degli errori e si riscrive da solo il programma per correggere il tiro.",
+  "termini": [
+    {
+      "termine": "HexaShell",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il software che fa da ponte tra il modello di intelligenza artificiale e i motori fisici del robot a due braccia.",
+      "usa": "termine",
+      "pronuncia": "Ècsascièl"
+    },
+    {
+      "termine": "RoboDojo",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una piattaforma di simulazione virtuale con decine di compiti diversi usata per testare la destrezza dei robot.",
+      "usa": "termine",
+      "pronuncia": "Ròbodiògio"
+    },
+    {
+      "termine": "VLM",
+      "tipo": "sigla",
+      "espansione_inglese": "Vision Language Model",
+      "significato": "modello linguistico e visivo",
+      "spiegazione": "Un sistema di intelligenza artificiale capace sia di comprendere ed elaborare immagini sia di ragionare con le parole.",
+      "usa": "spiegazione",
+      "pronuncia": "vi elle emme"
+    },
+    {
+      "termine": "Codex",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale specializzato nello scrivere, correggere ed eseguire codice informatico.",
+      "usa": "termine",
+      "pronuncia": "Còdecs"
+    },
+    {
+      "termine": "GPT-6-Astra",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello avanzato di intelligenza artificiale utilizzato nel sistema per ragionare e pianificare le azioni.",
+      "usa": "termine",
+      "pronuncia": "Gipi-tì sèi Àstra"
+    }
+  ],
+  "soggetto_immagine": "two robotic arms interacting with colored blocks on a grid table beside code brackets",
+  "hashtag": [
+    "AI",
+    "Robotica",
+    "CodingAgent",
+    "HexaShell",
+    "Automazione"
+  ]
+}

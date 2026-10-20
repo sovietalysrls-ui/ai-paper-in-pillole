@@ -1,0 +1,76 @@
+[03:16:34] ===== Avvio 2026-10-20 03:16 =====
+[03:16:34] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:35]    liste trovate: 2026-10-19 (50 paper), 2026-10-16 (50 paper), 2026-10-15 (50 paper), 2026-10-14 (50 paper), 2026-10-13 (26 paper)
+[03:16:35]    provo 2610.23479 (284 voti, lista del 2026-10-19): HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Ro
+[03:16:36] ✔ Scelta e lettura del paper — 2610.23479 · 284 voti · arxiv-html · 5883 parole utili
+[03:16:36] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:36] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + HexaShell + Experiments +
+[03:17:20] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:17:35] ✔ Scheda dei fatti — HexaShell · 5 risultati · 5 termini
+[03:17:36] ▶ Dialogo — puntata #68
+[03:17:45] ✔ Dialogo — 27 battute, 554 parole
+[03:17:46] ▶ Controlli e correzioni
+[03:17:46]    giro 1: 1 battute da sistemare, 0 problemi generali (554 parole)
+[03:17:55]    giro 2: nessun problema (552 parole, massimo 736)
+[03:17:55] ✔ Controlli e correzioni — nessun problema residuo
+[03:17:55] ▶ Titolo, descrizione, articolo — titolo
+[03:18:09] ▶ Titolo, descrizione, articolo — descrizione
+[03:18:51] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:19:20] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #68 - HexaShell: come i robot correggono» · articolo 740 parole
+[03:19:21] ▶ Copertina
+[03:19:21]    limite al minuto raggiunto, aspetto 30 secondi
+[03:19:51]    limite al minuto raggiunto, aspetto 30 secondi
+[03:20:21] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:20:22] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:20:29] ✔ Copertina — disegnata da Gemini
+[03:20:30] ▶ Voce
+[03:20:30] ▶ Voce — turno 1 di 27 (Carlo)
+[03:20:40]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:20:44] ▶ Voce — turno 2 di 27 (Arianna)
+[03:20:58] ▶ Voce — turno 3 di 27 (Carlo)
+[03:21:11] ▶ Voce — turno 4 di 27 (Arianna)
+[03:21:25] ▶ Voce — turno 5 di 27 (Carlo)
+[03:21:35]    limite al minuto raggiunto, aspetto 24 secondi
+[03:22:03] ▶ Voce — turno 6 di 27 (Arianna)
+[03:22:17] ▶ Voce — turno 7 di 27 (Carlo)
+[03:22:30] ▶ Voce — turno 8 di 27 (Arianna)
+[03:22:45] ▶ Voce — turno 9 di 27 (Carlo)
+[03:22:58] ▶ Voce — turno 10 di 27 (Arianna)
+[03:23:09] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:23:19]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:23:22] ▶ Voce — turno 11 di 27 (Carlo)
+[03:23:35] ▶ Voce — turno 12 di 27 (Arianna)
+[03:23:48] ▶ Voce — turno 13 di 27 (Carlo)
+[03:23:58]    limite al minuto raggiunto, aspetto 5 secondi
+[03:24:04]    limite al minuto raggiunto, aspetto 55 secondi
+[03:25:01] ▶ Voce — turno 14 di 27 (Arianna)
+[03:25:15] ▶ Voce — turno 15 di 27 (Carlo)
+[03:25:27] ▶ Voce — turno 16 di 27 (Arianna)
+[03:25:40] ▶ Voce — turno 17 di 27 (Carlo)
+[03:25:52] ▶ Voce — turno 18 di 27 (Arianna)
+[03:26:06] ▶ Voce — turno 19 di 27 (Carlo)
+[03:26:19] ▶ Voce — turno 20 di 27 (Arianna)
+[03:26:30] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:26:40]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:26:45] ▶ Voce — turno 21 di 27 (Carlo)
+[03:26:58] ▶ Voce — turno 22 di 27 (Arianna)
+[03:27:14] ▶ Voce — turno 23 di 27 (Carlo)
+[03:27:28] ▶ Voce — turno 24 di 27 (Arianna)
+[03:27:43] ▶ Voce — turno 25 di 27 (Carlo)
+[03:27:57] ▶ Voce — turno 26 di 27 (Arianna)
+[03:28:10] ▶ Voce — turno 27 di 27 (Carlo)
+[03:28:24] ⚠ voce sospetta per Carlo (173 Hz, attesa sotto 157 Hz): rifaccio il turno
+[03:28:24] ▶ Voce — rifaccio turno_003_apertura_carlo.wav
+[03:28:38] ⚠ voce sospetta per Carlo (172 Hz, attesa sotto 157 Hz): rifaccio il turno
+[03:28:38] ▶ Voce — rifaccio turno_015_corpo_carlo.wav
+[03:28:51]    controllo voci: Carlo ~140 Hz, Arianna ~174 Hz, tutto in ordine
+[03:28:51] ✔ Voce — 27 turni, una voce per richiesta + frase finale
+[03:28:51] ▶ Montaggio audio
+[03:28:58] ✔ Montaggio audio — 4.1 minuti in tutto, voce 3.4 minuti, 161 parole al minuto
+[03:28:58] ▶ Articolo su WordPress — stato: pubblica
+[03:29:28] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/hexashell-come-i-robot-correggono-gli-errori-riscrivendo-il-proprio-codice/
+[03:29:28] ▶ Consegna su Telegram
+[03:29:35] ✔ Consegna su Telegram — 5 file inviati
+[03:29:36] ▶ Registro e chiusura
+[03:29:36] Richieste al modello di testo: 9
+[03:29:36] memoria video non misurata (nvidia-smi assente)

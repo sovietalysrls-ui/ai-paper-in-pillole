@@ -1,0 +1,15 @@
+AI Paper in Pillole #68 - HexaShell: come i robot correggono gli errori riscrivendo il proprio codice
+
+Un braccio meccanico a due mani prova a suonare uno xilofono con un mazzuolo. Spesso manca il tasto corretto. I sistemi di intelligenza artificiale faticano a calcolare le distanze giuste usando solo normali telecamere. Inoltre, quando il robot commette uno sbaglio, non capisce cosa sia andato storto. Di conseguenza non riesce a correggere da solo la propria strategia per i tentativi successivi.
+
+I ricercatori propongono di guidare il robot facendogli scrivere programmi informatici. Un modello capace sia di comprendere immagini sia di ragionare con le parole osserva l'ambiente attraverso tre telecamere. Il software HexaShell riceve i comandi testuali e li trasforma nei movimenti fisici delle braccia. Se l'azione fallisce, il sistema analizza il registro degli errori. Subito dopo, riscrive da solo il codice del programma per superare l'ostacolo.
+
+Nelle azioni di spinta il robot ha successo nel 92,5 per cento dei casi, sbagliando meno di una volta su dieci. Negli incastri ad altissima precisione millimetrica la riuscita crolla invece all'8,3 per cento, fallendo quasi sempre. Un limite evidente è che le manovre per orientare le telecamere consumano rapidamente il numero massimo di mosse consentite.
+
+Il paper è di Hongcheng Gao, Alex Zhou, Jay Zhu e altri 13 autori.
+
+Link al paper: https://arxiv.org/abs/2610.23479
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #Robotica #CodingAgent #HexaShell #Automazione
