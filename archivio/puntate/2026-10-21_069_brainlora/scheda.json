@@ -1,0 +1,105 @@
+{
+  "nome_breve": "BrainLoRA",
+  "problema": "Prevedere come reagisce il cervello umano a immagini e suoni richiede modelli di intelligenza artificiale enormi. Riadattare questi giganti partendo da zero è quasi impossibile, perché registrare l'attività cerebrale con la risonanza magnetica costa moltissimo e produce pochi dati.",
+  "idea": "Invece di toccare l'intero modello, i ricercatori modificano solo una minuscola frazione dei suoi parametri usando degli adattatori leggeri. Inoltre, analizzano sequenze lunghe in un unico passaggio, risparmiando una quantità enorme di calcoli.",
+  "come_funziona": [
+    "Si prende un grande modello già addestrato a capire testo, audio e video.",
+    "Si inseriscono piccoli moduli aggiuntivi chiamati LoRA, lasciando bloccato il resto del modello.",
+    "Si analizza il flusso di dati video e sonori in un unico passaggio causale senza finestre sovrapposte.",
+    "Un componente finale leggero traduce l'elaborazione del modello nelle risposte cerebrali misurate con la risonanza.",
+    "Un sistema di calcolo su misura permette di addestrare decine di questi adattatori in parallelo sullo stesso modello di base."
+  ],
+  "risultati": [
+    {
+      "fatto": "Costo computazionale per estrarre le caratteristiche necessarie rispetto al vecchio metodo a finestre scorrevoli.",
+      "numero": "352x",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "L'elaborazione delle sequenze richiede centinaia di volte meno calcoli rispetto a prima."
+    },
+    {
+      "fatto": "Riduzione del tempo totale di calcolo sui processori grafici rispetto al sistema di riferimento precedente.",
+      "numero": "83x",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Il tempo di calcolo necessario per l'intero processo si è ridotto di oltre ottanta volte."
+    },
+    {
+      "fatto": "Velocità nell'addestrare insieme 32 moduli adattatori con il nuovo sistema rispetto ad addestrarli uno dopo l'altro.",
+      "numero": "29.8x",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "L'addestramento in parallelo è quasi trenta volte più rapido rispetto a fare le cose in sequenza."
+    },
+    {
+      "fatto": "Miglioramento nel prevedere le risposte cerebrali su un archivio di dati completamente nuovo registrato con un altro scanner.",
+      "numero": "+11.1",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Il modello mantiene un netto vantaggio anche quando viene messo alla prova su macchinari e persone mai visti."
+    }
+  ],
+  "limiti": [
+    "L'addestramento principale è stato condotto solo su quattro persone mentre guardavano serie televisive.",
+    "I test sono limitati a contenuti narrativi audiovisivi e non considerano altri tipi di compiti mentali.",
+    "Il modello d'insieme lascia ancora inspiegato il 32.5% della varianza condivisa tra i soggetti."
+  ],
+  "esempio_concreto": "Mentre una persona guarda una puntata della serie Friends dentro una macchina per la risonanza magnetica, il software prevede con precisione millimetrica quali aree del suo cervello si illumineranno all'arrivo di una battuta o di una scena visiva complessa.",
+  "perche_ti_riguarda": "Permette di capire come la nostra mente elabora il mondo che ci circonda senza dover sottoporre le persone a sessioni estenuanti e costose dentro uno scanner.",
+  "gancio": "Per capire cosa succede nel cervello di una persona che guarda una serie TV, i ricercatori hanno dovuto farle guardare ore di Friends dentro una risonanza magnetica. Da oggi, un'intelligenza artificiale sa prevedere quelle reazioni usando una frazione minuscola delle risorse.",
+  "termini": [
+    {
+      "termine": "PEFT",
+      "tipo": "sigla",
+      "espansione_inglese": "Parameter-Efficient Fine-Tuning",
+      "significato": "messa a punto efficiente dei parametri",
+      "spiegazione": "Tecnica che permette di aggiornare solo una piccolissima parte di un modello, risparmiando tempo e memoria.",
+      "usa": "spiegazione",
+      "pronuncia": "pi e effe ti"
+    },
+    {
+      "termine": "LoRA",
+      "tipo": "sigla",
+      "espansione_inglese": "Low-Rank Adaptation",
+      "significato": "adattamento a basso rango",
+      "spiegazione": "Piccoli moduli aggiuntivi che modificano il comportamento del modello senza toccare la sua struttura originale.",
+      "usa": "termine",
+      "pronuncia": "Lò-ra"
+    },
+    {
+      "termine": "BrainLoRA",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo proposto in questo studio per adattare grandi modelli alla predizione dell'attività cerebrale.",
+      "usa": "termine",
+      "pronuncia": "Brèin Lò-ra"
+    },
+    {
+      "termine": "Qwen3-Omni",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un grande modello di intelligenza artificiale capace di elaborare insieme testo, suoni e immagini.",
+      "usa": "termine",
+      "pronuncia": "Cuèn tri òmni"
+    },
+    {
+      "termine": "Algonauts 2025",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Una competizione scientifica internazionale per modelli capaci di prevedere le reazioni del cervello a stimoli visivi e sonori.",
+      "usa": "termine",
+      "pronuncia": "Algònots duemilaventicinque"
+    }
+  ],
+  "soggetto_immagine": "A simple human brain outline connected with thin lines to a computer processor chip",
+  "hashtag": [
+    "AI",
+    "Neuroscienze",
+    "BrainEncoding",
+    "LoRA",
+    "Multimodale"
+  ]
+}

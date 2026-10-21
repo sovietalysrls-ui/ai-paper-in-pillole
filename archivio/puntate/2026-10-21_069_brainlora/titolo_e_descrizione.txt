@@ -1,0 +1,15 @@
+AI Paper in Pillole #69 - BrainLoRA: come l'AI prevede le reazioni del cervello a immagini e suoni
+
+Una persona guarda una puntata della serie Friends dentro una macchina per la risonanza magnetica. I ricercatori vogliono capire quali aree del suo cervello si illuminano a ogni battuta o scena visiva. Per farlo servono modelli di intelligenza artificiale enormi. Addestrare questi giganti da zero è quasi impossibile. Raccogliere i dati con la risonanza magnetica costa molto e richiede troppo tempo.
+
+I ricercatori hanno sviluppato BrainLoRA. Il metodo non tocca la struttura originale del modello. Vengono inseriti solo piccoli moduli aggiuntivi chiamati LoRA. Questa tecnica aggiorna una piccolissima parte dei parametri e fa risparmiare memoria. Il sistema analizza video e suoni in un solo passaggio continuo. Un elemento finale leggero traduce i calcoli nelle reazioni cerebrali misurate.
+
+L'elaborazione delle sequenze richiede 352 volte meno calcoli rispetto ai metodi precedenti. Il tempo totale di lavoro sui processori si è ridotto di 83 volte. Lo studio presenta però un limite importante. L'addestramento principale è stato condotto soltanto su quattro persone mentre guardavano serie televisive.
+
+Il paper è di Zhuofan Josh Ying, Guanglong Sun, Nolan Ho e altri 6 autori, e conta 38 pagine con 13 figure.
+
+Link al paper: https://arxiv.org/abs/2610.26802
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #Neuroscienze #BrainEncoding #LoRA #Multimodale
