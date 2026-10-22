@@ -1,0 +1,93 @@
+{
+  "nome_breve": "FocusGUI",
+  "problema": "Gli assistenti digitali che usano interfacce grafiche devono elaborare contemporaneamente immagini dello schermo, video e audio. Le informazioni davvero utili cambiano continuamente a ogni azione, portando il sistema a distrarsi con dettagli irrilevanti e ad accumulare errori che ne compromettono il compito.",
+  "idea": "Un modulo aggiuntivo leggero che seleziona dinamicamente su quale segnale concentrarsi a ogni singolo passaggio, senza modificare il modello principale né tagliare pezzi dell'interfaccia visiva.",
+  "come_funziona": [
+    "Separa l'osservazione dell'interfaccia nei vari canali sensoriali, come audio, video e schermate.",
+    "Valuta il contesto del passaggio attuale e assegna una priorità dinamica a ciascun canale percettivo.",
+    "Comprime gli elementi più rilevanti in una sintesi compatta.",
+    "Inietta questa sintesi nel modello base congelato per orientarne l'attenzione prima che scelga l'azione."
+  ],
+  "risultati": [
+    {
+      "fatto": "Capacità media di individuare il tipo corretto di azione da eseguire rispetto al modello base congelato.",
+      "numero": "64.2%",
+      "prima": "31.0%",
+      "scala": "",
+      "in_pratica": "più del doppio rispetto al modello di base"
+    },
+    {
+      "fatto": "Percentuale di azioni eseguite in modo del tutto esatto rispetto al modello base congelato.",
+      "numero": "33.5%",
+      "prima": "11.2%",
+      "scala": "",
+      "in_pratica": "il triplo rispetto a prima"
+    },
+    {
+      "fatto": "Miglioramento nella scelta del tipo di azione rispetto al metodo di potenziamento precedente più efficace.",
+      "numero": "1.9 \\times",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "quasi il doppio rispetto alla tecnica migliore conosciuta in precedenza"
+    },
+    {
+      "fatto": "Tenuta dell'accuratezza sul tipo di azione al quarto passaggio consecutivo rispetto al primo sul modello Qwen2.5-Omni.",
+      "numero": "86.8%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "mantiene gran parte dell'efficacia iniziale anche dopo diversi passaggi operativi"
+    }
+  ],
+  "limiti": [
+    "Il meccanismo decide le priorità solo in base all'istante presente e non anticipa quali segnali serviranno nei passaggi futuri."
+  ],
+  "esempio_concreto": "Un assistente virtuale deve toccare un pulsante sul display solo quando sente il rumore di un motore in sottofondo, ignorando lo schermo che resta immobile finché non arriva il segnale acustico corretto.",
+  "perche_ti_riguarda": "Rende gli assistenti su smartphone e computer capaci di seguire video, suoni e schermate senza confondersi o bloccarsi dopo pochi clic.",
+  "gancio": "Cosa fa un assistente digitale quando lo schermo è fermo, ma l'azione da compiere dipende interamente dal rombo di un motore in sottofondo?",
+  "termini": [
+    {
+      "termine": "FocusGUI",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "L'adattatore leggero proposto nello studio per focalizzare l'attenzione dell'agente",
+      "usa": "termine",
+      "pronuncia": "Fòcus Ghi-u-ài"
+    },
+    {
+      "termine": "TM",
+      "tipo": "sigla",
+      "espansione_inglese": "Type Match",
+      "significato": "corrispondenza del tipo di azione",
+      "spiegazione": "La misura di quante volte il sistema indovina la tipologia corretta di comando da dare, per esempio cliccare o scrivere",
+      "usa": "spiegazione",
+      "pronuncia": "ti èmme"
+    },
+    {
+      "termine": "EM",
+      "tipo": "sigla",
+      "espansione_inglese": "Exact Match",
+      "significato": "corrispondenza esatta",
+      "spiegazione": "La misura in cui il sistema azzecca sia il comando che i parametri precisi, come le coordinate esatte sullo schermo",
+      "usa": "spiegazione",
+      "pronuncia": "e èmme"
+    },
+    {
+      "termine": "Qwen2.5-Omni",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno dei modelli principali capaci di gestire testo, audio e video usato per i test",
+      "usa": "termine",
+      "pronuncia": "Kuèn dùe punto cìnque òmni"
+    }
+  ],
+  "soggetto_immagine": "a computer screen receiving soundwaves and video frames focused through a magnifying lens",
+  "hashtag": [
+    "AI",
+    "FocusGUI",
+    "AgentiMultimodali",
+    "InterfacceGrafiche",
+    "VisioneArtificiale"
+  ]
+}
