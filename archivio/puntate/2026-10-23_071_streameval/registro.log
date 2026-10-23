@@ -1,0 +1,109 @@
+[03:16:31] ===== Avvio 2026-10-23 03:16 =====
+[03:16:32] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:33]    liste trovate: 2026-10-22 (50 paper), 2026-10-21 (50 paper), 2026-10-20 (50 paper), 2026-10-19 (50 paper), 2026-10-16 (50 paper)
+[03:16:33]    provo 2610.28402 (355 voti, lista del 2026-10-22): StreamEval: Evaluating Interactive Streaming Video Generation Models
+[03:16:49] ✔ Scelta e lettura del paper — 2610.28402 · 355 voti · arxiv-html · 3983 parole utili
+[03:16:49] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:49] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + The StreamEval Benchmark 
+[03:16:50]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:17:11]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:17:32] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[03:17:32]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:19:47] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:19:48]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:20:08]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:20:30] ⚠ Gemini testo: gemini-3.7-flash sovraccarico, passo a gemini-3.6-flash
+[03:20:50] ✔ Scheda dei fatti — StreamEval · 3 risultati · 3 termini
+[03:20:50] ▶ Dialogo — puntata #71
+[03:20:50]    limite al minuto raggiunto, aspetto 30 secondi
+[03:21:21]    limite al minuto raggiunto, aspetto 30 secondi
+[03:22:56]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:23:47]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:24:24] ⚠ Gemini testo: gemini-3.6-flash sovraccarico, passo a gemini-3.5-flash
+[03:24:29]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:24:49]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:25:09]    limite al minuto raggiunto, aspetto 30 secondi
+[03:27:38] ✔ Dialogo — 43 battute, 689 parole
+[03:27:39] ▶ Controlli e correzioni
+[03:27:39]    giro 1: 2 battute da sistemare, 0 problemi generali (689 parole)
+[03:27:40]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:28:05]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:28:25]    limite al minuto raggiunto, aspetto 30 secondi
+[03:28:56]    limite al minuto raggiunto, aspetto 30 secondi
+[03:29:26]    limite al minuto raggiunto, aspetto 30 secondi
+[03:29:56] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:30:41]    giro 2: nessun problema (702 parole, massimo 736)
+[03:30:41] ✔ Controlli e correzioni — nessun problema residuo
+[03:30:41] ▶ Titolo, descrizione, articolo — titolo
+[03:30:51] ▶ Titolo, descrizione, articolo — descrizione
+[03:31:09]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[03:31:40] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:32:41] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #71 - StreamEval: come testare l'AI che » · articolo 819 parole
+[03:32:41] ▶ Copertina
+[03:32:41] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:32:42]    limite al minuto raggiunto, aspetto 30 secondi
+[03:33:12]    limite al minuto raggiunto, aspetto 30 secondi
+[03:33:42] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:33:50] ✔ Copertina — disegnata da Gemini
+[03:33:50] ▶ Voce
+[03:33:50] ▶ Voce — turno 1 di 42 (Carlo)
+[03:34:01]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:34:04] ▶ Voce — turno 2 di 42 (Arianna)
+[03:34:20] ▶ Voce — turno 3 di 42 (Carlo)
+[03:34:34] ▶ Voce — turno 4 di 42 (Arianna)
+[03:34:44]    limite al minuto raggiunto, aspetto 15 secondi
+[03:34:59]    limite al minuto raggiunto, aspetto 30 secondi
+[03:35:32] ▶ Voce — turno 5 di 42 (Carlo)
+[03:35:46] ▶ Voce — turno 6 di 42 (Arianna)
+[03:36:00] ▶ Voce — turno 7 di 42 (Carlo)
+[03:36:14] ▶ Voce — turno 8 di 42 (Arianna)
+[03:36:27] ▶ Voce — turno 9 di 42 (Carlo)
+[03:36:38] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:36:48]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:36:50] ▶ Voce — turno 10 di 42 (Arianna)
+[03:37:02] ▶ Voce — turno 11 di 42 (Carlo)
+[03:37:15] ▶ Voce — turno 12 di 42 (Arianna)
+[03:37:28] ▶ Voce — turno 13 di 42 (Carlo)
+[03:37:38]    limite al minuto raggiunto, aspetto 21 secondi
+[03:38:01] ▶ Voce — turno 14 di 42 (Arianna)
+[03:38:14] ▶ Voce — turno 15 di 42 (Carlo)
+[03:38:26] ▶ Voce — turno 16 di 42 (Arianna)
+[03:38:39] ▶ Voce — turno 17 di 42 (Carlo)
+[03:38:49] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:39:00]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:39:02] ▶ Voce — turno 18 di 42 (Arianna)
+[03:39:16] ▶ Voce — turno 19 di 42 (Carlo)
+[03:39:30] ▶ Voce — turno 20 di 42 (Arianna)
+[03:39:44] ▶ Voce — turno 21 di 42 (Carlo)
+[03:39:57] ▶ Voce — turno 22 di 42 (Arianna)
+[03:40:11] ▶ Voce — turno 23 di 42 (Carlo)
+[03:40:24] ▶ Voce — turno 24 di 42 (Arianna)
+[03:40:39] ▶ Voce — turno 25 di 42 (Carlo)
+[03:40:52] ▶ Voce — turno 26 di 42 (Arianna)
+[03:41:06] ▶ Voce — turno 27 di 42 (Carlo)
+[03:41:19] ▶ Voce — turno 28 di 42 (Arianna)
+[03:41:32] ▶ Voce — turno 29 di 42 (Carlo)
+[03:41:46] ▶ Voce — turno 30 di 42 (Arianna)
+[03:41:59] ▶ Voce — turno 31 di 42 (Carlo)
+[03:42:12] ▶ Voce — turno 32 di 42 (Arianna)
+[03:42:26] ▶ Voce — turno 33 di 42 (Carlo)
+[03:42:39] ▶ Voce — turno 34 di 42 (Arianna)
+[03:42:53] ▶ Voce — turno 35 di 42 (Carlo)
+[03:43:06] ▶ Voce — turno 36 di 42 (Arianna)
+[03:43:20] ▶ Voce — turno 37 di 42 (Carlo)
+[03:43:33] ▶ Voce — turno 38 di 42 (Arianna)
+[03:43:46] ▶ Voce — turno 39 di 42 (Carlo)
+[03:44:00] ▶ Voce — turno 40 di 42 (Arianna)
+[03:44:13] ▶ Voce — turno 41 di 42 (Carlo)
+[03:44:25] ▶ Voce — turno 42 di 42 (Arianna)
+[03:44:41]    controllo voci: Carlo ~126 Hz, Arianna ~175 Hz, tutto in ordine
+[03:44:41] ✔ Voce — 42 turni, una voce per richiesta + frase finale
+[03:44:41] ▶ Montaggio audio
+[03:44:50] ✔ Montaggio audio — 5.2 minuti in tutto, voce 4.5 minuti, 155 parole al minuto
+[03:44:50] ▶ Articolo su WordPress — stato: pubblica
+[03:45:16] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/streameval-come-testare-lai-che-genera-e-modifica-video-in-diretta/
+[03:45:16] ▶ Consegna su Telegram
+[03:45:24] ✔ Consegna su Telegram — 5 file inviati
+[03:45:24] ▶ Registro e chiusura
+[03:45:24] Richieste al modello di testo: 10 (usata anche la chiave a pagamento)
+[03:45:24] memoria video non misurata (nvidia-smi assente)

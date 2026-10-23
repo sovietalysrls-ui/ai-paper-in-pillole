@@ -1,0 +1,15 @@
+AI Paper in Pillole #71 - StreamEval: come testare l'AI che genera e modifica video in diretta
+
+Un regista chiede a un sistema di intelligenza artificiale di mostrare una modella con un mantello rosso. Poco dopo ordina di sostituirlo con uno dorato, tutto in diretta senza interrompere la riproduzione. Spesso i programmi che creano video in tempo reale falliscono queste richieste. Quando ricevono un nuovo comando, rovinano i dettagli visivi oppure dimenticano del tutto la scena precedente.
+
+I ricercatori hanno sviluppato StreamEval, una procedura di prova per misurare l'affidabilità di questi modelli. Il sistema crea sessioni video che durano da pochi secondi ad alcuni minuti. Durante la generazione invia comandi continui con testo, audio o immagini. Diversi parametri verificano se le istruzioni vengono eseguite, se l'ambiente resta coerente e se i suoni coincidono con i movimenti visivi.
+
+Nel dialogo con personaggi digitali, il modello più avanzato raggiunge un punteggio di 93,98 su 100. In pratica, gestisce l'interazione e la sincronia vocale quasi alla perfezione. Nelle modifiche visive complesse, invece, il risultato massimo si ferma a 15,00 su 100. I modelli attuali riescono a trasformare la scena solo in una piccolissima parte delle prove. Come limite, la procedura non include ancora giudizi di persone in carne e ossa per confermare i punteggi automatici.
+
+Il paper è di StreamEval Team.
+
+Link al paper: https://arxiv.org/abs/2610.28402
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #VideoInStreaming #StreamEval #IntelligenzaArtificiale #BenchmarkVideo

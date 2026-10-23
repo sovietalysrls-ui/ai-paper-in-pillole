@@ -1,0 +1,79 @@
+{
+  "nome_breve": "StreamEval",
+  "problema": "I sistemi di intelligenza artificiale che generano video in diretta cercano di interagire con gli utenti in tempo reale. Tuttavia, quando ricevono nuovi comandi durante la trasmissione, spesso non riescono a eseguire le modifiche richieste o finiscono per rovinare i dettagli visivi e il contesto generati in precedenza.",
+  "idea": "I ricercatori hanno creato StreamEval, un metodo di prova unificato per misurare le capacità dei modelli video in streaming. Il sistema invia richieste continue durante la generazione del video per verificare se i modelli riescono ad aggiornare le scene senza perdere la memoria di ciò che è stato mostrato prima.",
+  "come_funziona": [
+    "Vengono create sessioni di prova interattive con una durata compresa tra 15 e 300 secondi.",
+    "Il sistema invia comandi di testo, audio o immagini in modo progressivo durante la trasmissione del video.",
+    "I test valutano cinque attività diverse, come il dialogo con avatar parlanti, la creazione di ambienti virtuali e la modifica di dettagli nel video.",
+    "Dieci metriche calcolano se i comandi vengono eseguiti, se l'ambiente rimane coerente, la qualità visiva e la sincronia tra voce e immagini."
+  ],
+  "risultati": [
+    {
+      "fatto": "Punteggio globale più alto ottenuto nel compito di dialogo con avatar digitali dal modello Vidu S2 Avatar",
+      "numero": "93.98",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "Il modello migliore riesce a gestire in modo quasi impeccabile la sincronia e l'interazione con un personaggio digitale parlante."
+    },
+    {
+      "fatto": "Punteggio massimo ottenuto dai modelli nel completare con successo le modifiche visive basate su un'immagine di riferimento",
+      "numero": "15.00",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "I modelli attuali faticano moltissimo e riescono a eseguire modifiche visive complesse solo in una piccolissima frazione dei casi."
+    },
+    {
+      "fatto": "Numero totale di eventi e comandi in tempo reale pianificati all'interno dei casi di test",
+      "numero": "1,347",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "I test mettono sotto stress continuo i modelli con un numero elevatissimo di cambi di scena e richieste improvvise."
+    }
+  ],
+  "limiti": [
+    "I modelli valutati mostrano forti difficoltà nel seguire le istruzioni nei compiti di modifica visiva e generazione di mondi.",
+    "La misura della sincronia tra audio e video ha una precisione limitata dal campionamento dei fotogrammi ogni 250 o 500 millisecondi.",
+    "Il benchmark non include ancora giudizi espressi da persone reali per confermare che i punteggi automatici rispecchino il parere umano."
+  ],
+  "esempio_concreto": "Un regista virtuale chiede all'intelligenza artificiale di mostrare una modella con un mantello di velluto rosso, per poi ordinare a dieci secondi di sostituirlo con uno di raso dorato e infine rimuoverlo a venti secondi per ripristinare la scena originale, tutto in diretta senza interrompere il video.",
+  "perche_ti_riguarda": "In futuro permetterà di interagire con videogiochi, assistenti digitali o dirette streaming modificando elementi della scena o personaggi in tempo reale con semplici comandi vocali.",
+  "gancio": "Chiedere a un'intelligenza artificiale di cambiare l'abito a un personaggio in un video in diretta può farle dimenticare del tutto l'ambiente circostante. Un nuovo benchmark ha svelato che i generatori di video in tempo reale sono ancora molto lontani dal seguire ordini complessi senza fare errori.",
+  "termini": [
+    {
+      "termine": "StreamEval",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La piattaforma di test creata dagli autori per valutare le prestazioni dei modelli video in streaming.",
+      "usa": "termine",
+      "pronuncia": "Strìm Ivàl"
+    },
+    {
+      "termine": "Vidu S2 Avatar",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale specializzato nella generazione di umani digitali parlanti.",
+      "usa": "termine",
+      "pronuncia": "Vìdu Essi Dù Àvatar"
+    },
+    {
+      "termine": "MemFlow",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale specializzato nella generazione di ambienti e mondi virtuali in streaming.",
+      "usa": "termine",
+      "pronuncia": "Mèm Flòu"
+    }
+  ],
+  "soggetto_immagine": "a streaming video screen with a play icon and timeline markers",
+  "hashtag": [
+    "AI",
+    "VideoInStreaming",
+    "StreamEval",
+    "IntelligenzaArtificiale",
+    "BenchmarkVideo"
+  ]
+}
