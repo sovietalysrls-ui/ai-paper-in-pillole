@@ -1,0 +1,72 @@
+{
+  "nome_breve": "WeVisOne-VL",
+  "problema": "I modelli di intelligenza artificiale per le immagini faticano a cogliere i dettagli visivi più minuti. Spesso non riescono a tracciare contorni precisi al singolo pixel e si confondono quando viene chiesto di individuare elementi che nella foto non sono presenti.",
+  "idea": "Unificare la comprensione generale delle immagini e il dettaglio dei pixel in un unico modello linguistico visivo. Il sistema predice gli elementi passo dopo passo e usa un piccolo modulo dedicato per estrarre maschere e contorni ad altissima fedeltà.",
+  "come_funziona": [
+    "Il modello analizza l'immagine trattando i compiti visivi come una sequenza ordinata di elementi linguistici.",
+    "Un segnale speciale dedicato fa da ponte tra l'oggetto identificato e un modulo leggero per la decodifica dei pixel.",
+    "Il decodificatore di pixel trasforma le informazioni ricevute in ritagli densi e sagome estremamente dettagliate.",
+    "Il sistema viene perfezionato con l'apprendimento per rinforzo che premia la massima precisione ed elimina doppioni o omissioni."
+  ],
+  "risultati": [
+    {
+      "fatto": "Accuratezza nell'indicare l'esatto conteggio di oggetti su un test di riferimento dedicato",
+      "numero": "93.7%/89.6%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Indovina il numero esatto degli oggetti circa nove volte su dieci sia in fase di verifica sia nei test finali."
+    },
+    {
+      "fatto": "Accuratezza nell'esatto conteggio di oggetti in un test più vario e complesso",
+      "numero": "42.0%/40.4%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Nelle situazioni visive più intricate e miste individua il numero esatto degli elementi circa quattro volte su dieci."
+    }
+  ],
+  "limiti": [
+    "Non usa passaggi espliciti di ragionamento sequenziale durante l'elaborazione, penalizzando le attività logiche più complesse.",
+    "Funziona solo su richieste a singolo turno e non supporta conversazioni a più battute o l'uso di strumenti esterni.",
+    "Può andare in difficoltà quando le istruzioni dell'utente sono vaghe, ambigue o formulate con esitazione."
+  ],
+  "esempio_concreto": "Ritagliare dallo sfondo l'immagine di un animale domestico mantenendo visibili i singoli baffi e i peli svolazzanti, oppure leggere e trascrivere con precisione le scritte fitte di uno scontrino spiegazzato.",
+  "perche_ti_riguarda": "Permette agli strumenti digitali di isolare elementi grafici con perfezione chirurgica e di analizzare foto complesse senza commettere errori su dettagli minuscoli.",
+  "gancio": "Individuare un elefante nascosto dalla polvere in lontananza o accorgersi che una mela è finta in mezzo a tante vere: questo modello porta la vista dell'intelligenza artificiale fino al singolo pixel.",
+  "termini": [
+    {
+      "termine": "WeVisOne-VL",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il nome del modello di intelligenza artificiale presentato nello studio, specializzato nell'unificare compiti visivi.",
+      "usa": "termine",
+      "pronuncia": "Uì Vis Uàn Vù Èlle"
+    },
+    {
+      "termine": "WDE",
+      "tipo": "sigla",
+      "espansione_inglese": "WeVisOne Data Engine",
+      "significato": "motore di dati di WeVisOne",
+      "spiegazione": "Il sistema organizzato usato dagli autori per raccogliere e catalogare miliardi di dati visivi per l'addestramento.",
+      "usa": "spiegazione",
+      "pronuncia": "dòppia vù di è"
+    },
+    {
+      "termine": "GRPO",
+      "tipo": "sigla",
+      "espansione_inglese": "Group Relative Policy Optimization",
+      "significato": "ottimizzazione relativa delle politiche di gruppo",
+      "spiegazione": "Una tecnica di apprendimento per rinforzo che premia il modello quando individua con esattezza gli elementi e lo corregge se sbaglia.",
+      "usa": "spiegazione",
+      "pronuncia": "gi èrre pi ò"
+    }
+  ],
+  "soggetto_immagine": "a magnifying glass focusing on tiny grid pixels of a floating square box",
+  "hashtag": [
+    "AI",
+    "VisioneArtificiale",
+    "PercezioneVisiva",
+    "SegmentazioneImmagini",
+    "ModelliMultimodali"
+  ]
+}

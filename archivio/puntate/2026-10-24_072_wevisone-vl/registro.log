@@ -1,0 +1,126 @@
+[03:16:17] ===== Avvio 2026-10-24 03:16 =====
+[03:16:17] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:18]    liste trovate: 2026-10-23 (50 paper), 2026-10-22 (50 paper), 2026-10-21 (50 paper), 2026-10-20 (50 paper), 2026-10-19 (50 paper)
+[03:16:18]    provo 2610.31329 (222 voti, lista del 2026-10-23): WeVisOne-VL: Unified Visual Perception from Objects to Pixels
+[03:16:19] ✔ Scelta e lettura del paper — 2610.31329 · 222 voti · arxiv-html · 6640 parole utili
+[03:16:19] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:19] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + WeVisOne-VL Data Engine +
+[03:16:26]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:19:05] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:19:24] ✔ Scheda dei fatti — WeVisOne-VL · 2 risultati · 3 termini
+[03:19:25] ▶ Dialogo — puntata #72
+[03:20:55] ✔ Dialogo — 40 battute, 610 parole
+[03:20:56] ▶ Controlli e correzioni
+[03:20:56]    giro 1: 2 battute da sistemare, 0 problemi generali (610 parole)
+[03:23:10]    giro 2: nessun problema (607 parole, massimo 736)
+[03:23:10] ✔ Controlli e correzioni — nessun problema residuo
+[03:23:10] ▶ Titolo, descrizione, articolo — titolo
+[03:23:12]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:25:40] ▶ Titolo, descrizione, articolo — descrizione
+[03:25:45]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:33:39]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[03:36:51] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:38:37] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #72 - WeVisOne-VL: come l'AI riconosce e» · articolo 798 parole
+[03:38:38] ▶ Copertina
+[03:38:38]    limite al minuto raggiunto, aspetto 30 secondi
+[03:39:08] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:39:08]    limite al minuto raggiunto, aspetto 30 secondi
+[03:39:39] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:39:47] ✔ Copertina — disegnata da Gemini
+[03:39:47] ▶ Voce
+[03:39:47] ▶ Voce — turno 1 di 40 (Arianna)
+[03:39:57]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:40:01] ▶ Voce — turno 2 di 40 (Carlo)
+[03:40:13] ▶ Voce — turno 3 di 40 (Arianna)
+[03:40:27] ▶ Voce — turno 4 di 40 (Carlo)
+[03:40:40] ▶ Voce — turno 5 di 40 (Arianna)
+[03:40:53] ▶ Voce — turno 6 di 40 (Carlo)
+[03:41:06] ▶ Voce — turno 7 di 40 (Arianna)
+[03:41:20] ▶ Voce — turno 8 di 40 (Carlo)
+[03:41:33] ▶ Voce — turno 9 di 40 (Arianna)
+[03:41:47] ▶ Voce — turno 10 di 40 (Carlo)
+[03:42:00] ▶ Voce — turno 11 di 40 (Arianna)
+[03:42:14] ▶ Voce — turno 12 di 40 (Carlo)
+[03:42:25] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:42:35]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:42:36] ▶ Voce — turno 13 di 40 (Arianna)
+[03:42:48] ▶ Voce — turno 14 di 40 (Carlo)
+[03:43:00] ▶ Voce — turno 15 di 40 (Arianna)
+[03:43:13] ▶ Voce — turno 16 di 40 (Carlo)
+[03:43:24] ▶ Voce — turno 17 di 40 (Arianna)
+[03:44:09] ▶ Voce — turno 18 di 40 (Carlo)
+[03:44:21] ▶ Voce — turno 19 di 40 (Arianna)
+[03:44:34] ▶ Voce — turno 20 di 40 (Carlo)
+[03:44:46] ▶ Voce — turno 21 di 40 (Arianna)
+[03:44:59] ▶ Voce — turno 22 di 40 (Carlo)
+[03:45:10] ▶ Voce — turno 23 di 40 (Arianna)
+[03:45:21] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:45:31]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:45:34] ▶ Voce — turno 24 di 40 (Carlo)
+[03:45:47] ▶ Voce — turno 25 di 40 (Arianna)
+[03:46:01] ▶ Voce — turno 26 di 40 (Carlo)
+[03:46:14] ▶ Voce — turno 27 di 40 (Arianna)
+[03:46:27] ▶ Voce — turno 28 di 40 (Carlo)
+[03:46:40] ▶ Voce — turno 29 di 40 (Arianna)
+[03:46:53] ▶ Voce — turno 30 di 40 (Carlo)
+[03:47:06] ▶ Voce — turno 31 di 40 (Arianna)
+[03:47:19] ▶ Voce — turno 32 di 40 (Carlo)
+[03:47:32] ▶ Voce — turno 33 di 40 (Arianna)
+[03:47:45] ▶ Voce — turno 34 di 40 (Carlo)
+[03:47:58] ▶ Voce — turno 35 di 40 (Arianna)
+[03:48:12] ▶ Voce — turno 36 di 40 (Carlo)
+[03:48:25] ▶ Voce — turno 37 di 40 (Arianna)
+[03:48:38] ▶ Voce — turno 38 di 40 (Carlo)
+[03:48:51] ▶ Voce — turno 39 di 40 (Arianna)
+[03:49:03] ▶ Voce — turno 40 di 40 (Carlo)
+[03:49:19] ⚠ voce sospetta per Carlo (183 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:49:19] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:49:31] ⚠ voce sospetta per Carlo (186 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:49:31] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:49:44] ⚠ voce sospetta per Carlo (163 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:49:44] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:49:56] ⚠ voce sospetta per Carlo (184 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:49:56] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:50:09] ✖ Voce — ERRORE: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (185 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 533, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 236, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 114, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 167, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (185 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[03:52:10] ===== Avvio 2026-10-24 03:52 =====
+[03:52:10] ↪ Scelta e lettura del paper — 2610.31329 (ripreso)
+[03:52:10] ↪ Scheda dei fatti — già fatto
+[03:52:10] ↪ Dialogo — già fatto
+[03:52:10] ↪ Controlli e correzioni — già fatto
+[03:52:10] ↪ Titolo, descrizione, articolo — già fatto
+[03:52:10] ↪ Copertina — già fatto
+[03:52:10] ▶ Voce
+[03:52:14] ⚠ voce sospetta per Carlo (185 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:52:14] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:52:24]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:52:26] ⚠ voce sospetta per Carlo (261 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:52:26] ▶ Voce — rifaccio turno_040_corpo_carlo.wav
+[03:52:37] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:52:47]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:52:47] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:52:57]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:52:59] ⚠ voce sospetta per Carlo (190 Hz, attesa sotto 152 Hz): rifaccio il turno
+[03:52:59] ▶ Voce — rifaccio turno_040_corpo_carlo.wav
+[03:53:11]    controllo voci: Carlo ~134 Hz, Arianna ~169 Hz, tutto in ordine
+[03:53:11] ✔ Voce — 40 turni, una voce per richiesta + frase finale
+[03:53:11] ▶ Montaggio audio
+[03:53:20] ✔ Montaggio audio — 4.6 minuti in tutto, voce 3.9 minuti, 154 parole al minuto
+[03:53:21] ▶ Articolo su WordPress — stato: pubblica
+[03:54:51] ⚠ WordPress non raggiunto da questo server (sito non raggiungibile: HTTPSConnectionPool(host='www.andreamanini.it', port=443): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[03:54:51] ▶ Consegna su Telegram
+[03:54:58] ✔ Consegna su Telegram — 5 file inviati
+[03:54:58] ▶ Registro e chiusura
+[03:54:58] Richieste al modello di testo: 0
+[03:54:58] memoria video non misurata (nvidia-smi assente)
