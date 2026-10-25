@@ -1,0 +1,87 @@
+{
+  "nome_breve": "LayerEditor",
+  "problema": "Oggi i modelli di intelligenza artificiale che modificano le immagini restituiscono un unico file piatto. Questo rende impossibile isolare un singolo elemento modificato per riutilizzarlo o ritoccarlo a mano, mentre gli strumenti che dividono le immagini in livelli non consentono di fare modifiche guidate da istruzioni.",
+  "idea": "Unire la modifica di immagini guidata da comandi testuali alla generazione simultanea di livelli trasparenti e riutilizzabili. In questo modo ogni elemento modificato finisce ordinatamente su un proprio foglio trasparente indipendente.",
+  "come_funziona": [
+    "Riceve l'immagine originale e l'istruzione di modifica scritta dall'utente.",
+    "Rappresenta l'immagine modificata finale e tutti i singoli livelli ordinati all'interno di una sequenza unificata di token.",
+    "Utilizza un modulo dedicato per ricostruire l'opacità continua e i contorni semitrasparenti di ogni elemento.",
+    "Applica un metodo di distillazione interrogando un modello maestro congelato per preservare la qualità visiva delle modifiche."
+  ],
+  "risultati": [
+    {
+      "fatto": "Riduzione degli artefatti visivi e dell'incoerenza nell'immagine ricomposta rispetto a un modello concorrente.",
+      "numero": "38.8%",
+      "prima": "Seedream5-Pro (Joint)",
+      "scala": "",
+      "in_pratica": "Riduce di oltre un terzo i difetti visivi e le anomalie rispetto al metodo precedente."
+    },
+    {
+      "fatto": "Miglioramento della somiglianza strutturale dell'immagine composta rispetto a un sistema concorrente.",
+      "numero": "5.7%",
+      "prima": "Seedream5-Pro (Joint)",
+      "scala": "",
+      "in_pratica": "Un passo avanti netto nella fedeltà visiva dell'immagine ricomposta a strati."
+    },
+    {
+      "fatto": "Calo di somiglianza tra l'immagine generata direttamente e quella ottenuta sommando i livelli separati.",
+      "numero": "1.0%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "La differenza visiva tra l'immagine intera e la somma dei suoi livelli è praticamente impercettibile."
+    }
+  ],
+  "limiti": [
+    "L'adattamento diretto di un modello di modifica pre-addestrato alla produzione di livelli rischia di ridurne le capacità originali, causando corruzione del testo e distorsioni strutturali.",
+    "La velocità di elaborazione riportata è stata misurata come tempo osservato senza un ambiente hardware controllato."
+  ],
+  "esempio_concreto": "Un grafico pubblicitario per l'e-commerce chiede all'AI di cambiare il colore di un uccello e riscrivere un testo promozionale: il sistema esegue le modifiche e consegna l'uccello ricolorato e il testo su livelli trasparenti separati, pronti per essere spostati o riutilizzati in altri volantini.",
+  "perche_ti_riguarda": "In futuro potrai chiedere all'AI di modificare una foto o un volantino senza perdere la libertà di spostare, cancellare o perfezionare ogni singolo pezzo a mano.",
+  "gancio": "Quando chiediamo all'AI di modificare una foto, di solito ci restituisce un'immagine piatta che non possiamo più smontare. Un nuovo sistema invece esegue le modifiche separando automaticamente ogni dettaglio su livelli trasparenti e riutilizzabili.",
+  "termini": [
+    {
+      "termine": "LayerEditor",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il sistema di intelligenza artificiale presentato nel paper che modifica le immagini suddividendole in livelli trasparenti.",
+      "usa": "termine",
+      "pronuncia": "Lèier Èditor"
+    },
+    {
+      "termine": "C-EPD",
+      "tipo": "sigla",
+      "espansione_inglese": "Compositional Edit-Prior Distillation",
+      "significato": "distillazione dell'esperienza di modifica compositiva",
+      "spiegazione": "La tecnica che trasferisce la bravura di un modello esperto al nuovo sistema per non perdere qualità durante la creazione dei livelli.",
+      "usa": "spiegazione",
+      "pronuncia": "ci e pi di"
+    },
+    {
+      "termine": "LayerEditor-100K",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "L'archivio di centomila immagini con livelli trasparenti creato dai ricercatori per addestrare il sistema.",
+      "usa": "termine",
+      "pronuncia": "Lèier Èditor cènto cappa"
+    },
+    {
+      "termine": "Seedream5-Pro",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di modifica visiva concorrente usato come riferimento nei confronti.",
+      "usa": "termine",
+      "pronuncia": "Si-drim fàiv pro"
+    }
+  ],
+  "soggetto_immagine": "a stack of separated transparent glass sheets displaying distinct graphic elements",
+  "hashtag": [
+    "AI",
+    "EditingImmagini",
+    "GraficaDigitale",
+    "LivelliRGBA",
+    "DesignCreativo"
+  ]
+}

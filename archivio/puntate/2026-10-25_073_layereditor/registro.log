@@ -1,0 +1,203 @@
+[03:16:33] ===== Avvio 2026-10-25 03:16 =====
+[03:16:34] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:34]    liste trovate: 2026-10-23 (49 paper), 2026-10-22 (50 paper), 2026-10-21 (50 paper), 2026-10-20 (50 paper), 2026-10-19 (50 paper)
+[03:16:34]    provo 2610.24738 (181 voti, lista del 2026-10-23): Editing Images into Reusable Layers via Compositional Edit-Prior Disti
+[03:16:35]    (i paper più votati erano già stati usati)
+[03:16:35] ✔ Scelta e lettura del paper — 2610.24738 · 181 voti · arxiv-html · 2750 parole utili
+[03:16:35] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:35] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Experiments + Co
+[03:18:39] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:18:41]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:20:01] ✔ Scheda dei fatti — LayerEditor · 3 risultati · 4 termini
+[03:20:01] ▶ Dialogo — puntata #73
+[03:22:06] ✔ Dialogo — 50 battute, 679 parole
+[03:22:07] ▶ Controlli e correzioni
+[03:22:07]    giro 1: nessun problema (679 parole, massimo 736)
+[03:22:07] ✔ Controlli e correzioni — nessun problema residuo
+[03:22:07] ▶ Titolo, descrizione, articolo — titolo
+[03:22:37] ▶ Titolo, descrizione, articolo — descrizione
+[03:22:38]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:23:00]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:23:21] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[03:25:13] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:26:52] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #73 - LayerEditor: come l'AI modifica le» · articolo 915 parole
+[03:26:52] ▶ Copertina
+[03:26:52]    limite al minuto raggiunto, aspetto 30 secondi
+[03:27:22]    limite al minuto raggiunto, aspetto 30 secondi
+[03:27:53]    limite al minuto raggiunto, aspetto 30 secondi
+[03:28:23] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:28:23] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:28:30] ✔ Copertina — disegnata da Gemini
+[03:28:31] ▶ Voce
+[03:28:31] ▶ Voce — turno 1 di 50 (Arianna)
+[03:28:41]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:28:45] ▶ Voce — turno 2 di 50 (Carlo)
+[03:28:57] ▶ Voce — turno 3 di 50 (Arianna)
+[03:29:11] ▶ Voce — turno 4 di 50 (Carlo)
+[03:29:24] ▶ Voce — turno 5 di 50 (Arianna)
+[03:29:38] ▶ Voce — turno 6 di 50 (Carlo)
+[03:29:51] ▶ Voce — turno 7 di 50 (Arianna)
+[03:30:05] ▶ Voce — turno 8 di 50 (Carlo)
+[03:30:18] ▶ Voce — turno 9 di 50 (Arianna)
+[03:30:31] ▶ Voce — turno 10 di 50 (Carlo)
+[03:30:46] ▶ Voce — turno 11 di 50 (Arianna)
+[03:30:59] ▶ Voce — turno 12 di 50 (Carlo)
+[03:31:10] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:31:20]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:31:22] ▶ Voce — turno 13 di 50 (Arianna)
+[03:31:34] ▶ Voce — turno 14 di 50 (Carlo)
+[03:31:45] ▶ Voce — turno 15 di 50 (Arianna)
+[03:31:58] ▶ Voce — turno 16 di 50 (Carlo)
+[03:32:10] ▶ Voce — turno 17 di 50 (Arianna)
+[03:32:37] ▶ Voce — turno 18 di 50 (Carlo)
+[03:32:49] ▶ Voce — turno 19 di 50 (Arianna)
+[03:33:01] ▶ Voce — turno 20 di 50 (Carlo)
+[03:33:13] ▶ Voce — turno 21 di 50 (Arianna)
+[03:33:25] ▶ Voce — turno 22 di 50 (Carlo)
+[03:33:37] ▶ Voce — turno 23 di 50 (Arianna)
+[03:33:49] ▶ Voce — turno 24 di 50 (Carlo)
+[03:34:00] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:34:10]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:34:12] ▶ Voce — turno 25 di 50 (Arianna)
+[03:34:25] ▶ Voce — turno 26 di 50 (Carlo)
+[03:34:37] ▶ Voce — turno 27 di 50 (Arianna)
+[03:34:51] ▶ Voce — turno 28 di 50 (Carlo)
+[03:35:04] ▶ Voce — turno 29 di 50 (Arianna)
+[03:35:18] ▶ Voce — turno 30 di 50 (Carlo)
+[03:35:31] ▶ Voce — turno 31 di 50 (Arianna)
+[03:35:44] ▶ Voce — turno 32 di 50 (Carlo)
+[03:35:56] ▶ Voce — turno 33 di 50 (Arianna)
+[03:36:10] ▶ Voce — turno 34 di 50 (Carlo)
+[03:36:23] ▶ Voce — turno 35 di 50 (Arianna)
+[03:36:36] ▶ Voce — turno 36 di 50 (Carlo)
+[03:36:49] ▶ Voce — turno 37 di 50 (Arianna)
+[03:37:03] ▶ Voce — turno 38 di 50 (Carlo)
+[03:37:15] ▶ Voce — turno 39 di 50 (Arianna)
+[03:37:28] ▶ Voce — turno 40 di 50 (Carlo)
+[03:37:41] ▶ Voce — turno 41 di 50 (Arianna)
+[03:37:54] ▶ Voce — turno 42 di 50 (Carlo)
+[03:38:06] ▶ Voce — turno 43 di 50 (Arianna)
+[03:38:19] ▶ Voce — turno 44 di 50 (Carlo)
+[03:38:32] ▶ Voce — turno 45 di 50 (Arianna)
+[03:38:46] ▶ Voce — turno 46 di 50 (Carlo)
+[03:38:58] ▶ Voce — turno 47 di 50 (Arianna)
+[03:39:11] ▶ Voce — turno 48 di 50 (Carlo)
+[03:39:24] ▶ Voce — turno 49 di 50 (Arianna)
+[03:39:38] ▶ Voce — turno 50 di 50 (Carlo)
+[03:39:54] ⚠ voce sospetta per Carlo (193 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:39:54] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:40:07] ⚠ voce sospetta per Carlo (173 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:40:07] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:40:19] ⚠ voce sospetta per Carlo (181 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:40:19] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:40:31] ⚠ voce sospetta per Carlo (235 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:40:31] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:40:44] ✖ Voce — ERRORE: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (174 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 533, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 236, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 114, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 167, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (174 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[03:42:45] ===== Avvio 2026-10-25 03:42 =====
+[03:42:45] ↪ Scelta e lettura del paper — 2610.24738 (ripreso)
+[03:42:45] ↪ Scheda dei fatti — già fatto
+[03:42:45] ↪ Dialogo — già fatto
+[03:42:45] ↪ Controlli e correzioni — già fatto
+[03:42:45] ↪ Titolo, descrizione, articolo — già fatto
+[03:42:45] ↪ Copertina — già fatto
+[03:42:45] ▶ Voce
+[03:42:50] ⚠ voce sospetta per Carlo (174 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:42:50] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:43:00]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:43:02] ⚠ voce sospetta per Carlo (209 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:43:02] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:43:15] ⚠ voce sospetta per Carlo (206 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:43:15] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:43:27] ⚠ voce sospetta per Carlo (213 Hz, attesa sotto 156 Hz): rifaccio il turno
+[03:43:27] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[03:43:38] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:43:48]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:43:48] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:43:58]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:44:00] ✖ Voce — ERRORE: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (191 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 533, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 236, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 114, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 167, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (191 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[07:31:50] ===== Avvio 2026-10-25 07:31 =====
+[07:31:51] ↪ Scelta e lettura del paper — 2610.24738 (ripreso)
+[07:31:51] ↪ Scheda dei fatti — già fatto
+[07:31:51] ↪ Dialogo — già fatto
+[07:31:51] ↪ Controlli e correzioni — già fatto
+[07:31:51] ↪ Titolo, descrizione, articolo — già fatto
+[07:31:51] ↪ Copertina — già fatto
+[07:31:51] ▶ Voce
+[07:31:55] ⚠ voce sospetta per Carlo (191 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:31:55] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[07:32:06]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:32:08] ⚠ voce sospetta per Carlo (211 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:32:08] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[07:32:19] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[07:32:29]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:32:31] ⚠ voce sospetta per Carlo (174 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:32:31] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[07:32:41] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:32:51]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:32:53] ⚠ voce sospetta per Carlo (194 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:32:53] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[07:33:06] ✖ Voce — ERRORE: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (168 Hz). Puntata fermata per non pubblicare voci scambiate.
+Traceback (most recent call last):
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 533, in main
+    audio_e_sito(lingua[cod], cfg, motore_voce, esiti[cod], paper, out, lav / cod,
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/pipeline.py", line 236, in audio_e_sito
+    g, c = voce.genera(motore_voce, battute, L, lav / "voce", per_blocco, avanz, p_voce,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 114, in genera
+    controlla_voci(motore, chi_file, toni, lingua, avanz, passo, tentativi_voci)
+  File "/home/runner/work/ai-paper-in-pillole/ai-paper-in-pillole/kit/voce.py", line 167, in controlla_voci
+    raise ErroreVoci(f"{p.name}: la voce di {lingua['conduttori'][chi]} risulta sbagliata anche dopo "
+kit.voce.ErroreVoci: turno_032_corpo_carlo.wav: la voce di Carlo risulta sbagliata anche dopo 4 tentativi (168 Hz). Puntata fermata per non pubblicare voci scambiate.
+
+[07:35:07] ===== Avvio 2026-10-25 07:35 =====
+[07:35:07] ↪ Scelta e lettura del paper — 2610.24738 (ripreso)
+[07:35:07] ↪ Scheda dei fatti — già fatto
+[07:35:07] ↪ Dialogo — già fatto
+[07:35:07] ↪ Controlli e correzioni — già fatto
+[07:35:07] ↪ Titolo, descrizione, articolo — già fatto
+[07:35:07] ↪ Copertina — già fatto
+[07:35:07] ▶ Voce
+[07:35:12] ⚠ voce sospetta per Carlo (168 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:35:12] ▶ Voce — rifaccio turno_032_corpo_carlo.wav
+[07:35:22]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:35:22] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[07:35:32]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:35:33] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[07:35:43]    voce: la porta 'interactions' non risponde, uso generateContent
+[07:35:45] ⚠ voce sospetta per Carlo (172 Hz, attesa sotto 156 Hz): rifaccio il turno
+[07:35:45] ▶ Voce — rifaccio turno_036_corpo_carlo.wav
+[07:35:57]    controllo voci: Carlo ~135 Hz, Arianna ~176 Hz, tutto in ordine
+[07:35:57] ✔ Voce — 50 turni, una voce per richiesta + frase finale
+[07:35:57] ▶ Montaggio audio
+[07:36:09] ✔ Montaggio audio — 5.3 minuti in tutto, voce 4.7 minuti, 145 parole al minuto
+[07:36:09] ▶ Articolo su WordPress — stato: pubblica
+[07:36:40] ✔ Articolo su WordPress — publish · https://www.andreamanini.it/layereditor-come-lai-modifica-le-immagini-dividendole-in-livelli-trasparenti/
+[07:36:40] ▶ Consegna su Telegram
+[07:36:49] ✔ Consegna su Telegram — 5 file inviati
+[07:36:49] ▶ Registro e chiusura
+[07:36:49] Richieste al modello di testo: 0
+[07:36:49] memoria video non misurata (nvidia-smi assente)
