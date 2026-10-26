@@ -1,0 +1,85 @@
+{
+  "nome_breve": "FAPL",
+  "problema": "Generare video cinematografici con l'intelligenza artificiale richiede sia di gestire la sequenza delle azioni partendo da poche indicazioni, sia di controllare separatamente attori, sfondo e movimenti di camera. I modelli visivi e di testo possiederebbero queste nozioni, ma i generatori video tendono a ignorare le loro indicazioni interne, finendo per stravolgere la scena al minimo cambiamento.",
+  "idea": "Il metodo FAPL allena il generatore video in tre passaggi mirati. Prima lo costringe a fare affidamento sulle nozioni del modello linguistico, poi gli insegna a modificare un solo elemento visivo alla volta senza toccare gli altri, e infine affina la capacità di prevedere i movimenti nel tempo.",
+  "come_funziona": [
+    "Nella prima fase, il generatore video viene istruito a creare scene affidandosi unicamente ai dati del modello linguistico, impedendogli di prendere scorciatoie.",
+    "Nella seconda fase, vengono scambiate porzioni di dati visivi tra coppie di video per insegnare al sistema a variare un singolo elemento, come l'attore, lasciando intatti scena e camera.",
+    "Nella terza fase, il generatore visivo viene bloccato e si allena il modello linguistico a prevedere la scena corretta sia partendo da una descrizione testuale sia guardando il video intero."
+  ],
+  "risultati": [
+    {
+      "fatto": "Capacità di modificare con precisione solo il fattore richiesto senza alterare il resto della scena",
+      "numero": "57%",
+      "prima": "48%",
+      "scala": "",
+      "in_pratica": "un netto miglioramento nel riuscire a cambiare solo il dettaglio desiderato senza rovinare l'inquadratura"
+    },
+    {
+      "fatto": "Correttezza nella successione temporale e nell'ordine delle azioni generate",
+      "numero": "61%",
+      "prima": "57%",
+      "scala": "",
+      "in_pratica": "un progresso visibile che rende la sequenza di movimenti più logica e naturale"
+    },
+    {
+      "fatto": "Errore nella rotazione della telecamera virtuale durante la scena",
+      "numero": "1.02 radians",
+      "prima": "1.26 radianti",
+      "scala": "non indicato",
+      "in_pratica": "i movimenti della cinepresa virtuale risultano decisamente più stabili e fedeli alle istruzioni"
+    },
+    {
+      "fatto": "Mantenimento dell'identità visiva del volto del personaggio tra inquadrature diverse",
+      "numero": "0.523",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "riesce a mantenere lo stesso attore riconoscibile da un'inquadratura all'altra"
+    }
+  ],
+  "limiti": [
+    "L'efficacia complessiva resta vincolata ai difetti dei modelli di intelligenza artificiale usati come base.",
+    "I sistemi attuali fanno ancora molta fatica a comprendere geometrie tridimensionali o movimenti di telecamera particolarmente complessi.",
+    "Il generatore visivo di partenza fatica a riprodurre una recitazione o espressioni facciali davvero realistiche."
+  ],
+  "esempio_concreto": "Un regista indipendente descrive a parole una scena in cui un uomo si volta verso una scatola e la telecamera gli ruota attorno. Se poi decide di cambiare solo il costume del personaggio, il sistema aggiorna l'abito mantenendo identici il viso dell'attore, la scatola e la traiettoria della cinepresa.",
+  "perche_ti_riguarda": "Rende la generazione di video tramite intelligenza artificiale meno casuale e più simile a una vera regia, permettendo a chiunque di dirigere inquadrature coerenti e ritoccare singoli dettagli senza dover ricominciare da capo.",
+  "gancio": "Chiedere a un generatore video di cambiare l'abito di un personaggio spesso finisce per trasformare anche la stanza, la luce e persino la faccia dell'attore. Una nuova tecnica insegna all'intelligenza artificiale a muovere la telecamera e modificare singoli dettagli senza stravolgere la scena.",
+  "termini": [
+    {
+      "termine": "FAPL",
+      "tipo": "sigla",
+      "espansione_inglese": "Factor-Aware Predictive Learning",
+      "significato": "apprendimento predittivo consapevole dei fattori",
+      "spiegazione": "Il metodo di addestramento che costringe il generatore video a controllare singolarmente personaggi, movimenti di camera e sfondi.",
+      "usa": "termine",
+      "pronuncia": "èffe a pi èlle"
+    },
+    {
+      "termine": "MLLM",
+      "tipo": "sigla",
+      "espansione_inglese": "Multimodal Large Language Model",
+      "significato": "grande modello linguistico multimodale",
+      "spiegazione": "Un modello di intelligenza artificiale avanzato capace di comprendere e collegare sia testi scritti sia immagini o filmati.",
+      "usa": "spiegazione",
+      "pronuncia": "èmme elle elle èmme"
+    },
+    {
+      "termine": "DiT",
+      "tipo": "sigla",
+      "espansione_inglese": "Diffusion Transformer",
+      "significato": "trasformatore a diffusione",
+      "spiegazione": "Il componente software che si occupa materialmente di dipingere e comporre i singoli fotogrammi del video.",
+      "usa": "spiegazione",
+      "pronuncia": "di i ti"
+    }
+  ],
+  "soggetto_immagine": "a movie camera linked to separate film frames by thin geometric lines",
+  "hashtag": [
+    "AI",
+    "VideoCinematografici",
+    "VideoDiffusion",
+    "RegiaDigitale",
+    "ComputerVision"
+  ]
+}

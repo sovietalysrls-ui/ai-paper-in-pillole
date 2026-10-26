@@ -1,0 +1,88 @@
+[03:16:25] ===== Avvio 2026-10-26 03:16 =====
+[03:16:25] ▶ Scelta e lettura del paper — lettura della lista di Hugging Face
+[03:16:26]    liste trovate: 2026-10-23 (49 paper), 2026-10-22 (50 paper), 2026-10-21 (50 paper), 2026-10-20 (50 paper), 2026-10-19 (50 paper)
+[03:16:26]    provo 2610.30926 (174 voti, lista del 2026-10-23): Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinem
+[03:16:27]    (i paper più votati erano già stati usati)
+[03:16:27] ✔ Scelta e lettura del paper — 2610.30926 · 174 voti · arxiv-html · 2858 parole utili
+[03:16:27] ▶ Scheda dei fatti — 1 pezzi da leggere
+[03:16:27] ▶ Scheda dei fatti — pezzo 1 di 1: Introduction + Method + Experiments + Co
+[03:16:34]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:17:18]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:17:40] ⚠ Gemini testo: gemini-3.8-flash sovraccarico, passo a gemini-3.7-flash
+[03:17:43]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:18:05]    Gemini temporaneamente non disponibile (503), riprovo tra 20 secondi
+[03:18:38] ⚠ Gemini testo: gemini-3.7-flash sovraccarico, passo a gemini-3.6-flash
+[03:18:38]    limite al minuto raggiunto, aspetto 30 secondi
+[03:19:08]    limite al minuto raggiunto, aspetto 30 secondi
+[03:19:39]    limite al minuto raggiunto, aspetto 30 secondi
+[03:20:09] ⚠ Gemini testo: finite le richieste di oggi per gemini-3.6-flash (chiave gratuita), passo a gemini-3.5-flash
+[03:20:09]    limite al minuto raggiunto, aspetto 30 secondi
+[03:20:40]    limite al minuto raggiunto, aspetto 30 secondi
+[03:21:10]    limite al minuto raggiunto, aspetto 30 secondi
+[03:21:40] ⚠ Gemini testo: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:22:04] ▶ Scheda dei fatti — unione dei fatti nella scheda
+[03:22:31] ✔ Scheda dei fatti — FAPL · 4 risultati · 3 termini
+[03:22:31] ▶ Dialogo — puntata #74
+[03:22:48] ✔ Dialogo — 27 battute, 611 parole
+[03:22:48] ▶ Controlli e correzioni
+[03:22:48]    giro 1: nessun problema (611 parole, massimo 736)
+[03:22:48] ✔ Controlli e correzioni — nessun problema residuo
+[03:22:48] ▶ Titolo, descrizione, articolo — titolo
+[03:23:05] ▶ Titolo, descrizione, articolo — descrizione
+[03:23:29]    rivedi descrizione: 1 problemi, correggo (giro 1)
+[03:24:37] ▶ Titolo, descrizione, articolo — articolo per il sito
+[03:25:30] ✔ Titolo, descrizione, articolo — «AI Paper in Pillole #74 - FAPL: come l'AI impara a fare regi» · articolo 871 parole
+[03:25:30] ▶ Copertina
+[03:25:31] ⚠ Gemini immagine: finite le richieste di oggi per gemini-3.1-flash-image (chiave gratuita), passo a gemini-3.1-flash-lite-image
+[03:25:31]    limite al minuto raggiunto, aspetto 30 secondi
+[03:26:01]    limite al minuto raggiunto, aspetto 30 secondi
+[03:26:31] ⚠ Gemini immagine: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:26:37] ✔ Copertina — disegnata da Gemini
+[03:26:38] ▶ Voce
+[03:26:38] ▶ Voce — turno 1 di 27 (Arianna)
+[03:26:48]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:26:52] ▶ Voce — turno 2 di 27 (Carlo)
+[03:27:06] ▶ Voce — turno 3 di 27 (Arianna)
+[03:27:20] ▶ Voce — turno 4 di 27 (Carlo)
+[03:27:34] ▶ Voce — turno 5 di 27 (Arianna)
+[03:27:44]    limite al minuto raggiunto, aspetto 15 secondi
+[03:28:03] ▶ Voce — turno 6 di 27 (Carlo)
+[03:28:17] ▶ Voce — turno 7 di 27 (Arianna)
+[03:28:32] ▶ Voce — turno 8 di 27 (Carlo)
+[03:28:45] ▶ Voce — turno 9 di 27 (Arianna)
+[03:29:01] ▶ Voce — turno 10 di 27 (Carlo)
+[03:29:14] ▶ Voce — turno 11 di 27 (Arianna)
+[03:29:30] ▶ Voce — turno 12 di 27 (Carlo)
+[03:29:41] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[03:29:51]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:29:53] ▶ Voce — turno 13 di 27 (Arianna)
+[03:30:07] ▶ Voce — turno 14 di 27 (Carlo)
+[03:30:19] ▶ Voce — turno 15 di 27 (Arianna)
+[03:30:33] ▶ Voce — turno 16 di 27 (Carlo)
+[03:30:45] ▶ Voce — turno 17 di 27 (Arianna)
+[03:30:59] ▶ Voce — turno 18 di 27 (Carlo)
+[03:31:12] ▶ Voce — turno 19 di 27 (Arianna)
+[03:31:26] ▶ Voce — turno 20 di 27 (Carlo)
+[03:31:38] ▶ Voce — turno 21 di 27 (Arianna)
+[03:31:49]    limite al minuto raggiunto, aspetto 10 secondi
+[03:32:01] ▶ Voce — turno 22 di 27 (Carlo)
+[03:32:15] ▶ Voce — turno 23 di 27 (Arianna)
+[03:32:25] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[03:32:35]    voce: la porta 'interactions' non risponde, uso generateContent
+[03:32:40] ▶ Voce — turno 24 di 27 (Carlo)
+[03:32:54] ▶ Voce — turno 25 di 27 (Arianna)
+[03:33:08] ▶ Voce — turno 26 di 27 (Carlo)
+[03:33:21] ▶ Voce — turno 27 di 27 (Arianna)
+[03:33:35] ⚠ voce sospetta per Carlo (177 Hz, attesa sotto 155 Hz): rifaccio il turno
+[03:33:35] ▶ Voce — rifaccio turno_026_corpo_carlo.wav
+[03:33:48]    controllo voci: Carlo ~139 Hz, Arianna ~172 Hz, tutto in ordine
+[03:33:48] ✔ Voce — 27 turni, una voce per richiesta + frase finale
+[03:33:48] ▶ Montaggio audio
+[03:33:54] ✔ Montaggio audio — 4.6 minuti in tutto, voce 3.9 minuti, 156 parole al minuto
+[03:33:54] ▶ Articolo su WordPress — stato: pubblica
+[03:33:58] ⚠ WordPress non raggiunto da questo server (il sito rimanda a /wp-json/wp/v2/posts?search=2610.30926&status=draft%2Cpublish%): riprovo tra 15 minuti da un altro server (fino a 2 volte), l'esito arriva in un messaggio a parte
+[03:33:58] ▶ Consegna su Telegram
+[03:34:05] ✔ Consegna su Telegram — 5 file inviati
+[03:34:06] ▶ Registro e chiusura
+[03:34:06] Richieste al modello di testo: 9 (usata anche la chiave a pagamento)
+[03:34:06] memoria video non misurata (nvidia-smi assente)

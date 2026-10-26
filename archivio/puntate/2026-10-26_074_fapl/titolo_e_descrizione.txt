@@ -1,0 +1,15 @@
+AI Paper in Pillole #74 - FAPL: come l'AI impara a fare regia senza stravolgere la scena
+
+Un regista descrive a parole una scena in cui un uomo si volta verso una scatola e la telecamera gli ruota attorno. Se poi decide di cambiare solo il costume del personaggio, i normali generatori video modificano anche la stanza, le luci o il volto dell'attore. I sistemi attuali non riescono a controllare questi elementi in modo separato.
+
+Il metodo FAPL risolve il problema addestrando il generatore visivo in tre passaggi mirati. Prima lo costringe ad affidarsi a un modello capace di collegare testi e immagini, impedendogli di prendere scorciatoie. In seguito scambia porzioni visive tra filmati diversi per insegnargli a variare un solo dettaglio alla volta. Infine, allena il sistema a prevedere l'evoluzione logica dei movimenti nel tempo.
+
+La capacità di modificare solo il dettaglio richiesto sale dal 48% al 57%. In pratica si ottiene un netto miglioramento nel riuscire a cambiare solo il particolare voluto senza rovinare l'inquadratura. L'errore di rotazione della telecamera virtuale si riduce rispetto a prima, rendendo i movimenti della cinepresa decisamente più stabili e fedeli. Resta però un limite: il generatore visivo di partenza fatica ancora a riprodurre espressioni facciali davvero realistiche.
+
+Il paper è di Songlin Yang, Zhe Wang, Xiaotong Zhao e altri 8 autori.
+
+Link al paper: https://arxiv.org/abs/2610.30926
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #VideoCinematografici #VideoDiffusion #RegiaDigitale #ComputerVision
