@@ -195,6 +195,16 @@ pulsante **Riprendi dal punto interrotto**: apre un'azione GitHub senza campi
 da compilare. Un pulsante separato permette di ritentare soltanto l'articolo
 quando è WordPress a non rispondere.
 
+## Mail di riserva per l'articolo
+
+Se il sito non accetta l'articolo nemmeno al terzo tentativo, parte una mail
+a `posta > destinatario` (config.yaml) con titolo, estratto, tag, copertina e
+articolo impaginato, più gli allegati `copertina.jpg` e `articolo.html`.
+La mail parte sempre, anche se poi si riprova. Segreti necessari:
+`MAIL_UTENTE` (indirizzo Gmail che spedisce) e `MAIL_PASSWORD` (sua password
+per le app). Per provarla: Actions > Prova mail articolo > Run workflow.
+Se la mail non parte, i due file arrivano su Telegram.
+
 ## Le regole dei testi, in breve
 
 - Al massimo 4 numeri nel dialogo, sempre spiegati con un paragone. I numeri precisi stanno nell'articolo.
