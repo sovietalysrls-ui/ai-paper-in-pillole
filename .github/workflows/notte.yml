@@ -324,6 +324,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WP_UTENTE: ${{ secrets.WP_UTENTE }}
           WP_PASSWORD_APP: ${{ secrets.WP_PASSWORD_APP }}
+          MAIL_UTENTE: ${{ secrets.MAIL_UTENTE }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_SERVER: ${{ secrets.MAIL_SERVER }}
         run: python pubblica_articolo.py ultima --tentativo 3 --ultimo ${{ inputs.sostituisci && '--sostituisci' || '' }}
       - name: Archivia l'esito
         run: |

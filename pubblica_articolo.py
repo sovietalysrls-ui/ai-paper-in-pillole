@@ -8,7 +8,9 @@ Uso:
 
 Opzioni:
   --tentativo N     scrive nel messaggio Telegram quale tentativo è
-  --ultimo          è l'ultimo tentativo: se fallisce, avvisa su Telegram
+  --ultimo          è l'ultimo tentativo: se fallisce, avvisa su Telegram e
+                    manda per mail l'articolo pronto da caricare a mano
+  --prova-mail      non tocca il sito: manda soltanto la mail, per provarla
 """
 import argparse
 import os
@@ -19,6 +21,7 @@ import re
 import sys
 from pathlib import Path
 
+from kit.posta import ErrorePosta, manda_articolo
 from kit.util import RADICE, carica_config
 from kit.wordpress import ErroreWordPress, WordPress
 
@@ -35,12 +38,42 @@ def telegram(testo, reply_markup=None):
             pass
 
 
+def telegram_file(percorso, didascalia=""):
+    token, chat = os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", "")
+    if not (token and chat and Path(percorso).exists()):
+        return
+    try:
+        with open(percorso, "rb") as f:
+            requests.post(f"https://api.telegram.org/bot{token}/sendDocument", timeout=120,
+                          data={"chat_id": chat, "caption": didascalia[:1000]}, files={"document": f})
+    except (requests.RequestException, OSError):
+        pass
+
+
+def mail_di_riserva(cfg, d, meta, html):
+    """Manda l'articolo per mail. Se la mail non parte, i file arrivano su Telegram."""
+    destinatario = (cfg.get("posta") or {}).get("destinatario", "")
+    try:
+        manda_articolo(d, meta, html, destinatario)
+        print(f"Mail con l'articolo mandata a {destinatario}")
+        telegram(f"📧 Ti ho mandato per mail ({destinatario}) l'articolo pronto da caricare a mano: "
+                 f"titolo, testo impaginato e copertina.")
+        return True
+    except ErrorePosta as e:
+        print(f"Mail non partita: {e}")
+        telegram(f"⚠️ Mail con l'articolo non partita ({e}). Ti mando qui i file da caricare a mano.")
+        telegram_file(d / "articolo.html", f"Articolo: {meta['titolo']} (incollalo nell'Editor di codice)")
+        telegram_file(d / "copertina.jpg", "Immagine in evidenza")
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cartella")
     ap.add_argument("--tentativo", type=int, default=1)
     ap.add_argument("--sostituisci", action="store_true", help="aggiorna l'articolo se esiste già")
     ap.add_argument("--ultimo", action="store_true")
+    ap.add_argument("--prova-mail", action="store_true")
     a = ap.parse_args()
     cfg = carica_config(cloud=True)
     if a.cartella == "ultima":
@@ -49,7 +82,7 @@ def main():
     else:
         d = Path(a.cartella)
         d = d if d.is_absolute() else RADICE / d
-    if (d / "wordpress.json").exists():
+    if (d / "wordpress.json").exists() and not a.prova_mail:
         print("Articolo già pubblicato: " + (d / "wordpress.json").read_text(encoding="utf-8"))
         return 0
     html = (d / "articolo.html").read_text(encoding="utf-8")
@@ -65,6 +98,8 @@ def main():
         sk = json.loads((d / "scheda.json").read_text(encoding="utf-8")) if (d / "scheda.json").exists() else {}
         meta = {"titolo": titolo, "estratto": estratto, "tag": sk.get("hashtag", []),
                 "categoria": cfg["wordpress"]["categoria"]}
+    if a.prova_mail:
+        return 0 if mail_di_riserva(cfg, d, meta, html) else 1
     chiave = re.search(r"arxiv\.org/abs/([\w.]+)", html)
     chiave = chiave.group(1) if chiave else meta["titolo"]
     wp = WordPress(cfg["wordpress"]["sito"])
@@ -83,6 +118,8 @@ def main():
             telegram(f"⚠️ Articolo non caricato sul sito dopo {a.tentativo} tentativi: il server di Tophost "
                      f"blocca i server di GitHub usati stanotte. L'articolo è nell'archivio "
                      f"({d.name}). Il pulsante riprova senza rifare la puntata.", pulsante)
+            # La mail parte sempre al terzo fallimento, anche se poi si riprova.
+            mail_di_riserva(cfg, d, meta, html)
         else:
             telegram(f"⏳ Articolo: tentativo {a.tentativo} non riuscito (il sito non risponde a questo server). "
                      f"Riprovo tra 15 minuti da un altro server.")

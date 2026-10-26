@@ -248,3 +248,12 @@ profilo_cloud:
     unisci_sezioni: true
   dialogo:
     correzione_in_blocco: true
+
+# ---------------------------------------------------------------------
+#  Mail di riserva
+#  Se il sito non accetta l'articolo nemmeno al terzo tentativo, arriva
+#  una mail con titolo, testo impaginato e copertina, da caricare a mano.
+#  Chi spedisce: segreti MAIL_UTENTE e MAIL_PASSWORD (vedi kit/posta.py).
+# ---------------------------------------------------------------------
+posta:
+  destinatario: sovietalysrls@orologirussi.it

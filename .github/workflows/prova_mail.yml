@@ -1,0 +1,27 @@
+# Prova la mail di riserva: manda l'ultimo articolo archiviato all'indirizzo
+# di config.yaml (posta > destinatario), senza toccare il sito.
+
+name: Prova mail articolo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prova:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Manda la mail
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MAIL_UTENTE: ${{ secrets.MAIL_UTENTE }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_SERVER: ${{ secrets.MAIL_SERVER }}
+        run: python pubblica_articolo.py ultima --prova-mail
