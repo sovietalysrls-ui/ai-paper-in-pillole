@@ -287,7 +287,11 @@ jobs:
           cache: pip
       - run: pip install -q -r requirements.txt
       - name: Aspetta 15 minuti
-        run: sleep 900
+        run: |
+          sleep 900
+          # Nel frattempo il plugin del sito può aver già pubblicato l'articolo
+          # (scrive wordpress.json nel repository): si prende l'ultima versione.
+          git pull -q origin main || true
       - name: Pubblica l'articolo (tentativo 2)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -317,7 +321,11 @@ jobs:
           cache: pip
       - run: pip install -q -r requirements.txt
       - name: Aspetta 15 minuti
-        run: sleep 900
+        run: |
+          sleep 900
+          # Nel frattempo il plugin del sito può aver già pubblicato l'articolo
+          # (scrive wordpress.json nel repository): si prende l'ultima versione.
+          git pull -q origin main || true
       - name: Pubblica l'articolo (tentativo 3, ultimo)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
