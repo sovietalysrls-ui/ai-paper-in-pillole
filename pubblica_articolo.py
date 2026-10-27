@@ -5,6 +5,8 @@ puntata già archiviata, senza rifare la puntata.
 Uso:
   python pubblica_articolo.py archivio/puntate/2026-10-03_050_onestreamer
   python pubblica_articolo.py ultima        la puntata più recente dell'archivio
+  python pubblica_articolo.py mancanti      tutte le puntate degli ultimi 7 giorni
+                                            con l'articolo non ancora sul sito
 
 Opzioni:
   --tentativo N     scrive nel messaggio Telegram quale tentativo è
@@ -76,12 +78,23 @@ def main():
     ap.add_argument("--prova-mail", action="store_true")
     a = ap.parse_args()
     cfg = carica_config(cloud=True)
+    if a.cartella == "mancanti":
+        esito = 0
+        for d in sorted((cfg["archivio_git"] / "puntate").iterdir())[-7:]:
+            if d.is_dir() and (d / "articolo.html").exists() and not (d / "wordpress.json").exists():
+                print(f"--- {d.name}")
+                esito |= pubblica_cartella(cfg, d, a)
+        return esito
     if a.cartella == "ultima":
         cartelle = sorted((cfg["archivio_git"] / "puntate").iterdir())
         d = cartelle[-1]
     else:
         d = Path(a.cartella)
         d = d if d.is_absolute() else RADICE / d
+    return pubblica_cartella(cfg, d, a)
+
+
+def pubblica_cartella(cfg, d, a):
     if (d / "wordpress.json").exists() and not a.prova_mail:
         print("Articolo già pubblicato: " + (d / "wordpress.json").read_text(encoding="utf-8"))
         return 0

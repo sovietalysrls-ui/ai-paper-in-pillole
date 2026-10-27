@@ -13,6 +13,7 @@ import os
 import socket
 import time
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 import urllib3.util.connection as _conn
@@ -37,20 +38,35 @@ class WordPress:
         self.s.auth = (utente, password)
         self.s.headers["User-Agent"] = "AI-Paper-in-Pillole/1.0"
 
-    def _r(self, metodo, percorso, **kw):
+    def _richiesta(self, metodo, url, **kw):
         ultimo = None
         for tentativo in range(3):
             try:
                 # Un server irraggiungibile deve fallire presto; 90 secondi restano
                 # disponibili per leggere risposte lente dopo che la connessione è aperta.
-                r = self.s.request(metodo, self.base + percorso, timeout=(20, 90),
-                                   allow_redirects=False, **kw)
-                break
+                return self.s.request(metodo, url, timeout=(20, 90), allow_redirects=False, **kw)
             except requests.RequestException as e:
                 ultimo = e
                 time.sleep(10)
-        else:
-            raise ErroreWordPress(f"sito non raggiungibile: {ultimo}")
+        raise ErroreWordPress(f"sito non raggiungibile: {ultimo}")
+
+    def _r(self, metodo, percorso, **kw):
+        url = self.base + percorso
+        r = self._richiesta(metodo, url, **kw)
+        # Quando WordPress deve far girare i suoi lavori programmati ("wp-cron"),
+        # a volte rimanda la stessa richiesta a sé stesso aggiungendo
+        # "doing_wp_cron" all'indirizzo. Non è un errore: si ripete la richiesta.
+        for _ in range(3):
+            dove = r.headers.get("Location", "") if r.status_code in (301, 302, 307, 308) else ""
+            if "doing_wp_cron" not in dove:
+                break
+            time.sleep(3)
+            r = self._richiesta(metodo, url, **kw)
+        if r.status_code in (301, 302, 307, 308) and "doing_wp_cron" in r.headers.get("Location", ""):
+            # Ancora il rimando: si segue l'indirizzo indicato, con gli stessi dati.
+            dove = urljoin(url, r.headers["Location"])
+            kw.pop("params", None)
+            r = self._richiesta(metodo, dove, **kw)
         if r.status_code in (301, 302, 307, 308):
             raise ErroreWordPress(f"il sito rimanda a {r.headers.get('Location')}: "
                                   "correggi 'sito' in config.yaml con quell'indirizzo")

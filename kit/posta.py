@@ -112,15 +112,29 @@ def manda_articolo(cartella, meta, html_articolo, destinatario):
         raise ErrorePosta("manca posta > destinatario in config.yaml")
     m = componi(cartella, meta, html_articolo, destinatario, utente)
     host, porta = _server()
-    try:
-        if porta == 465:
-            with smtplib.SMTP_SSL(host, porta, context=ssl.create_default_context(), timeout=60) as s:
-                s.login(utente, password)
-                s.send_message(m)
-        else:
-            with smtplib.SMTP(host, porta, timeout=60) as s:
+    # Prima la porta indicata, poi l'altra porta standard: alcuni server
+    # chiudono la connessione su una delle due.
+    porte = [porta] + [q for q in (465, 587) if q != porta]
+    errori = []
+    for q in porte:
+        fase = "connessione"
+        try:
+            if q == 465:
+                s = smtplib.SMTP_SSL(host, q, context=ssl.create_default_context(), timeout=60)
+            else:
+                s = smtplib.SMTP(host, q, timeout=60)
+                s.ehlo()
+                fase = "cifratura"
                 s.starttls(context=ssl.create_default_context())
+                s.ehlo()
+            with s:
+                fase = "accesso"
                 s.login(utente, password)
+                fase = "invio"
                 s.send_message(m)
-    except (smtplib.SMTPException, OSError) as e:
-        raise ErrorePosta(f"{host}: {e}") from e
+            return q
+        except smtplib.SMTPAuthenticationError as e:
+            raise ErrorePosta(f"{host}: utente o password per le app rifiutati ({e.smtp_code})") from e
+        except (smtplib.SMTPException, OSError) as e:
+            errori.append(f"porta {q}, fase {fase}: {e}")
+    raise ErrorePosta(f"{host}: " + " | ".join(errori))
