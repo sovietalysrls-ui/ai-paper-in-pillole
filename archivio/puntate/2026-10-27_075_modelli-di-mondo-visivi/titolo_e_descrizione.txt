@@ -1,0 +1,15 @@
+AI Paper in Pillole #75 - Modelli di mondo visivi: come l'AI impara le regole della fisica attraverso i video
+
+Un utente interagisce con una simulazione generata dall'intelligenza artificiale tramite mouse e tastiera. Sullo sfondo c'è un cubetto di ghiaccio nascosto, che dovrebbe continuare a sciogliersi gradualmente. I modelli visivi attuali faticano a comprendere la fisica e le relazioni di causa ed effetto. Quando creano o analizzano video lunghi, tendono a perdere la continuità degli oggetti.
+
+Lo studio propone di interpretare i video come modelli del mondo attraverso quattro operazioni. La lettura analizza il filmato per ricavare le proprietà fisiche e temporali della scena. La scrittura genera nuove sequenze visive basandosi su testi o comandi di movimento. La condivisione unisce la comprensione e la creazione visiva all'interno dello stesso sistema. L'interazione aggiorna e predice le evoluzioni dell'ambiente in risposta alle azioni dell'utente.
+
+La ricerca introduce una griglia 2x3 per organizzare tutti i modelli esistenti con uno schema chiaro ed essenziale. Inoltre, una capacità di 256K unità elementari di informazione permette di elaborare video estremamente lunghi mantenendo la memoria dell'intero contesto visivo. Tuttavia, durante le simulazioni interattive gli errori di predizione si accumulano nel tempo, degradando la coerenza delle immagini future.
+
+Il paper è di Shengqiong Wu, Meng Luo, Bobo Li, Ziwei Liu, Shuicheng Yan, Ming-Hsuan Yang, Philip Torr e Hao Fei, e conta 102 pagine con 17 figure.
+
+Link al paper: https://arxiv.org/abs/2610.31668
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #WorldModeling #VideoAI #SimulazioneDigitale #IntelligenzaArtificiale

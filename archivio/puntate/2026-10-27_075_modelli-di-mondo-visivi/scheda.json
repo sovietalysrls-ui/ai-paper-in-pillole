@@ -1,0 +1,117 @@
+{
+  "nome_breve": "World Modeling nei Video",
+  "problema": "Oggi i modelli di intelligenza artificiale visivi faticano a comprendere la fisica e le relazioni causali del mondo reale. Di conseguenza, quando generano o analizzano sequenze video estese, tendono a perdere la continuità e la coerenza degli oggetti nel tempo.",
+  "idea": "Gli autori propongono di interpretare la ricerca sui video attraverso la prospettiva dei modelli di mondo. Il quadro teorico suddivide il funzionamento dei sistemi visivi in quattro operazioni fondamentali: leggere, scrivere, condividere e interagire.",
+  "come_funziona": [
+    "L'operazione di lettura analizza il video osservato per stimate proprietà fisiche, temporali e causali del mondo.",
+    "L'operazione di scrittura sintetizza nuove sequenze video basandosi su testi, immagini o comandi di movimento.",
+    "L'operazione di condivisione unifica comprensione e generazione attraverso gli stessi parametri o spazi latenti.",
+    "L'operazione di interazione aggiorna e predice le evoluzioni del mondo in risposta alle azioni dell'utente."
+  ],
+  "risultati": [
+    {
+      "fatto": "Numero di token di contesto multimodale che il modello Qwen3-VL riesce a supportare per analizzare filmati di lunga durata.",
+      "numero": "256K",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "permette di elaborare video estremamente lunghi mantenendo la memoria dell'intero contesto visivo"
+    },
+    {
+      "fatto": "Dimensione della griglia utilizzata per classificare i modelli di mondo in base allo spazio di predizione e all'interfaccia di transizione.",
+      "numero": "2x3",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "fornisce uno schema di classificazione chiaro ed essenziale per organizzare tutti i modelli esistenti"
+    }
+  ],
+  "limiti": [
+    "I generatori video tendono a perdere la continuità degli oggetti e il rispetto dei vincoli fisici su orizzonti temporali estesi.",
+    "Gli errori di predizione si accumulano durante le simulazioni interattive, degradando la coerenza delle immagini future.",
+    "I modelli ad azioni latenti rischiano di confondere i movimenti della telecamera o dello sfondo con le reali azioni dell'agente."
+  ],
+  "esempio_concreto": "Un utente interagisce in tempo reale con una simulazione giocabile generata dall'intelligenza artificiale tramite mouse e tastiera, mentre un cubo di ghiaccio nascosto sullo sfondo continua a sciogliersi gradualmente mantenendo la propria identità.",
+  "perche_ti_riguarda": "Questa tecnologia permetterà di creare videogiochi e simulatori interattivi generati all'istante, con mondi virtuali che rispettano in modo coerente le leggi fisiche e le conseguenze delle nostre azioni.",
+  "gancio": "Un cubo di ghiaccio nascosto alla vista continua a sciogliersi mantenendo la propria identità all'interno di un video generato dall'intelligenza artificiale. Questo accade quando un modello non si limita a mostrare immagini, ma comprende le regole del mondo reale.",
+  "termini": [
+    {
+      "termine": "Sora",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale orientato alla generazione di sequenze video realistiche.",
+      "usa": "termine",
+      "pronuncia": "Sòra"
+    },
+    {
+      "termine": "Qwen3-VL",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello multimodale in grado di elaborare testo e video con un ampio contesto.",
+      "usa": "termine",
+      "pronuncia": "Cùen trè vì èlle"
+    },
+    {
+      "termine": "Video-LLaVA",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un sistema progettato per la comprensione e l'analisi del contenuto nei video.",
+      "usa": "termine",
+      "pronuncia": "Vìdeo Liàva"
+    },
+    {
+      "termine": "V-JEPA",
+      "tipo": "sigla",
+      "espansione_inglese": "Video Joint Embedding Predictive Architecture",
+      "significato": "architettura predittiva visiva con spazio di rappresentazione congiunto per video",
+      "spiegazione": "Un metodo di apprendimento che predice lo stato futuro del video nello spazio delle rappresentazioni invece di generare singoli pixel.",
+      "usa": "spiegazione",
+      "pronuncia": "vì gèpa"
+    },
+    {
+      "termine": "Genie",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello in grado di generare mondi virtuali giocabili e interattivi a partire da comandi.",
+      "usa": "termine",
+      "pronuncia": "Gìni"
+    },
+    {
+      "termine": "GAIA-1",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di mondo sviluppato per la simulazione e la comprensione di contesti di guida.",
+      "usa": "termine",
+      "pronuncia": "Gàia ùno"
+    },
+    {
+      "termine": "Emu3",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello unificato che combina le capacità di generazione e comprensione visiva.",
+      "usa": "termine",
+      "pronuncia": "Èmu trè"
+    },
+    {
+      "termine": "VBench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno strumento di test utilizzato per valutare le prestazioni dei modelli di generazione video.",
+      "usa": "termine",
+      "pronuncia": "Vì Bènch"
+    }
+  ],
+  "soggetto_immagine": "a cube on a flat surface inside a wireframe grid video interface",
+  "hashtag": [
+    "AI",
+    "WorldModeling",
+    "VideoAI",
+    "SimulazioneDigitale",
+    "IntelligenzaArtificiale"
+  ]
+}
