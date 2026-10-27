@@ -137,4 +137,8 @@ def manda_articolo(cartella, meta, html_articolo, destinatario):
             raise ErrorePosta(f"{host}: utente o password per le app rifiutati ({e.smtp_code})") from e
         except (smtplib.SMTPException, OSError) as e:
             errori.append(f"porta {q}, fase {fase}: {e}")
-    raise ErrorePosta(f"{host}: " + " | ".join(errori))
+    # Indizi per capire il problema, senza mostrare i segreti.
+    dominio = utente.split("@")[-1] if "@" in utente else "(indirizzo senza @)"
+    indizi = (f"mittente @{dominio}, password di {len(password)} caratteri"
+              + ("" if password.isalpha() and password.isascii() else ", con caratteri non lettere"))
+    raise ErrorePosta(f"{host}: " + " | ".join(errori) + f" [{indizi}]")
