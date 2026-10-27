@@ -273,6 +273,8 @@ def audio_e_sito(L, cfg, motore_voce, esito, paper, out, lav, lingue, avanz, fin
         avanz.saltato(p_wp, "prova: niente pubblicazione sul sito")
     elif not cfg_wp.get("attivo") or cod not in cfg_wp.get("lingue", ["it"]):
         avanz.saltato(p_wp, "non attivo per questa lingua")
+    elif cfg_wp.get("carica", "github") == "plugin":
+        avanz.saltato(p_wp, "lo pubblica il plugin del sito al prossimo controllo")
     else:
         from kit.wordpress import ErroreWordPress, WordPress
         avanz.inizia(p_wp, f"stato: {cfg_wp['stato']}")

@@ -1,0 +1,30 @@
+# Fallback: controlla che il plugin del sito abbia pubblicato l'articolo
+# dell'ultima puntata. Se non risulta online, manda la mail con l'articolo
+# pronto da caricare a mano. Dura meno di un minuto.
+
+name: Controlla articolo
+
+on:
+  schedule:
+    # 04:37 UTC = 05:37 in Italia d'inverno (06:37 d'estate): dopo il controllo
+    # delle 4 del plugin.
+    - cron: "37 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  controlla:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - run: pip install -q requests pyyaml
+      - name: Articolo online? Altrimenti mail
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MAIL_UTENTE: ${{ secrets.MAIL_UTENTE }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_SERVER: ${{ secrets.MAIL_SERVER }}
+        run: python pubblica_articolo.py ultima --mail-se-manca

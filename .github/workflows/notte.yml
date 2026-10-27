@@ -283,7 +283,8 @@ jobs:
   # da qui, fino a due volte.
   articolo_2:
     needs: puntata
-    if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && inputs.prova != true }}
+    # SPENTO: ora l'articolo lo carica il plugin del sito. Per riaccenderlo togli "false &&".
+    if: ${{ false && always() && needs.puntata.outputs.wp_ok != 'true' && inputs.prova != true }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -317,7 +318,8 @@ jobs:
 
   articolo_3:
     needs: [puntata, articolo_2]
-    if: ${{ always() && needs.puntata.outputs.wp_ok != 'true' && needs.articolo_2.result == 'failure' && inputs.prova != true }}
+    # SPENTO: ora l'articolo lo carica il plugin del sito. Per riaccenderlo togli "false &&".
+    if: ${{ false && always() && needs.puntata.outputs.wp_ok != 'true' && needs.articolo_2.result == 'failure' && inputs.prova != true }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:

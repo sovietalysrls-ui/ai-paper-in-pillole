@@ -13,6 +13,8 @@ Opzioni:
   --ultimo          è l'ultimo tentativo: se fallisce, avvisa su Telegram e
                     manda per mail l'articolo pronto da caricare a mano
   --prova-mail      non tocca il sito: manda soltanto la mail, per provarla
+  --mail-se-manca   non tocca il sito: se l'articolo non risulta online
+                    (manca wordpress.json), manda la mail di riserva
 """
 import argparse
 import os
@@ -76,6 +78,7 @@ def main():
     ap.add_argument("--sostituisci", action="store_true", help="aggiorna l'articolo se esiste già")
     ap.add_argument("--ultimo", action="store_true")
     ap.add_argument("--prova-mail", action="store_true")
+    ap.add_argument("--mail-se-manca", action="store_true")
     a = ap.parse_args()
     cfg = carica_config(cloud=True)
     if a.cartella == "mancanti":
@@ -95,6 +98,9 @@ def main():
 
 
 def pubblica_cartella(cfg, d, a):
+    if a.mail_se_manca and (d / "wordpress.json").exists():
+        print("Articolo online: niente mail")
+        return 0
     if (d / "wordpress.json").exists() and not a.prova_mail:
         print("Articolo già pubblicato: " + (d / "wordpress.json").read_text(encoding="utf-8"))
         return 0
@@ -111,7 +117,10 @@ def pubblica_cartella(cfg, d, a):
         sk = json.loads((d / "scheda.json").read_text(encoding="utf-8")) if (d / "scheda.json").exists() else {}
         meta = {"titolo": titolo, "estratto": estratto, "tag": sk.get("hashtag", []),
                 "categoria": cfg["wordpress"]["categoria"]}
-    if a.prova_mail:
+    if a.mail_se_manca:
+        telegram(f"⚠️ L'articolo «{meta['titolo']}» non risulta ancora sul sito: il plugin non l'ha pubblicato. "
+                 f"Ti mando la mail per caricarlo a mano.")
+    if a.prova_mail or a.mail_se_manca:
         return 0 if mail_di_riserva(cfg, d, meta, html) else 1
     chiave = re.search(r"arxiv\.org/abs/([\w.]+)", html)
     chiave = chiave.group(1) if chiave else meta["titolo"]

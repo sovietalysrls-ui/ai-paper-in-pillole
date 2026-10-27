@@ -202,6 +202,11 @@ articolo:
 # ---------------------------------------------------------------------
 wordpress:
   attivo: true
+  # Chi carica l'articolo sul sito:
+  #   plugin = lo va a prendere il plugin del sito (sito/aipp-importa); GitHub
+  #            controlla soltanto, e se manca manda la mail di riserva.
+  #   github = lo carica la catena notturna da GitHub (3 tentativi, poi mail).
+  carica: plugin
   sito: https://www.andreamanini.it
   # bozza  = lo trovi in bozza e premi "Pubblica" tu
   # pubblica = esce da solo
