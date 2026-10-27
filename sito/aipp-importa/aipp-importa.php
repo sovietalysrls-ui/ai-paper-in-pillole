@@ -2,11 +2,11 @@
 /**
  * Plugin Name: AI Paper in Pillole - Importa articoli
  * Description: Il sito va a prendere da solo gli articoli del podcast su GitHub e li pubblica. Serve perché il firewall di Tophost blocca i server di GitHub quando sono loro a cercare il sito.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Sovietaly SRLS
  *
  * Come funziona, in breve:
- * - ogni 15 minuti guarda le ultime puntate nell'archivio del repository GitHub;
+ * - ogni 6 ore (alle 4, 10, 16 e 22, ora del sito) guarda le ultime puntate nell'archivio del repository GitHub;
  * - se una puntata ha l'articolo ma non risulta pubblicata, la pubblica
  *   con titolo, estratto, categoria, tag e immagine in evidenza;
  * - poi scrive nel repository il file wordpress.json, così la catena notturna
@@ -35,25 +35,43 @@ function aipp_opzioni() {
 /* ------------------------------------------------------------------ */
 
 add_filter('cron_schedules', function ($s) {
-    $s['aipp_15_minuti'] = array('interval' => 900, 'display' => 'Ogni 15 minuti');
+    $s['aipp_6_ore'] = array('interval' => 6 * HOUR_IN_SECONDS, 'display' => 'Ogni 6 ore');
     return $s;
 });
 
-register_activation_hook(__FILE__, function () {
-    if (!wp_next_scheduled(AIPP_EVENTO)) {
-        wp_schedule_event(time() + 60, 'aipp_15_minuti', AIPP_EVENTO);
+/** Il prossimo orario tra le 4, le 10, le 16 e le 22 (ora del sito). */
+function aipp_prossimo_orario() {
+    $tz = wp_timezone();
+    $ora = new DateTime('now', $tz);
+    foreach (array(0, 1) as $giorni) {
+        foreach (array(4, 10, 16, 22) as $h) {
+            $t = new DateTime('today', $tz);
+            $t->modify("+$giorni day")->setTime($h, 0);
+            if ($t > $ora) {
+                return $t->getTimestamp();
+            }
+        }
     }
-});
+    return time() + 6 * HOUR_IN_SECONDS;
+}
+
+function aipp_programma() {
+    $evento = wp_get_scheduled_event(AIPP_EVENTO);
+    if ($evento && $evento->schedule === 'aipp_6_ore') {
+        return;
+    }
+    // Nessun controllo programmato, o programmato con il vecchio intervallo.
+    wp_clear_scheduled_hook(AIPP_EVENTO);
+    wp_schedule_event(aipp_prossimo_orario(), 'aipp_6_ore', AIPP_EVENTO);
+}
+
+register_activation_hook(__FILE__, 'aipp_programma');
 
 register_deactivation_hook(__FILE__, function () {
     wp_clear_scheduled_hook(AIPP_EVENTO);
 });
 
-add_action('init', function () {
-    if (!wp_next_scheduled(AIPP_EVENTO)) {
-        wp_schedule_event(time() + 60, 'aipp_15_minuti', AIPP_EVENTO);
-    }
-});
+add_action('init', 'aipp_programma');
 
 add_action(AIPP_EVENTO, 'aipp_importa');
 
@@ -280,7 +298,7 @@ function aipp_pagina() {
     ?>
     <div class="wrap">
         <h1>AI Paper in Pillole</h1>
-        <p>Ogni 15 minuti il sito controlla su GitHub se c'è un articolo nuovo e lo pubblica da solo.</p>
+        <p>Alle 4, alle 10, alle 16 e alle 22 il sito controlla su GitHub se c'è un articolo nuovo e lo pubblica da solo.</p>
         <form method="post">
             <?php wp_nonce_field('aipp'); ?>
             <table class="form-table">
