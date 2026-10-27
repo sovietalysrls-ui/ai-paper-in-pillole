@@ -189,8 +189,17 @@ jobs:
         id: wp
         if: always()
         run: |
+          # ok=false se una delle ultime 7 puntate ha l'articolo ma non è sul sito.
           ULTIMA=$(ls -d archivio/puntate/*/ 2>/dev/null | tail -1)
-          if ls uscita/OGGI/.lavoro/*/wordpress.json >/dev/null 2>&1 || [ -f "${ULTIMA}wordpress.json" ]; then
+          MANCA=0
+          for d in $(ls -d archivio/puntate/*/ 2>/dev/null | tail -7); do
+            [ -f "${d}articolo.html" ] || continue
+            [ -f "${d}wordpress.json" ] && continue
+            if [ "$d" = "$ULTIMA" ] && ls uscita/OGGI/.lavoro/*/wordpress.json >/dev/null 2>&1; then continue; fi
+            echo "Articolo non ancora sul sito: $d"
+            MANCA=1
+          done
+          if [ "$MANCA" = 0 ]; then
             echo "ok=true" >> "$GITHUB_OUTPUT"
           else
             echo "ok=false" >> "$GITHUB_OUTPUT"
