@@ -150,7 +150,7 @@ jobs:
           PAPER: ${{ inputs.paper }}
         run: |
           if [ "${{ inputs.solo_articolo }}" = "true" ]; then
-            python pubblica_articolo.py ultima || true
+            python pubblica_articolo.py mancanti || true
             exit 0
           fi
           ARGS=(--cloud)
