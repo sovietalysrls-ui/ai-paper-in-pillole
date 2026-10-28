@@ -55,6 +55,7 @@ OpenCode: Òupen Còud
 Phi-4-mini-instruct: Fi quattro mìni instràct
 Qwen2.5-7B-Instruct: Kuèn due punto cinque sètte bi instràct
 Qwen2.5-Omni: Kuèn dùe punto cìnque òmni
+Qwen3: Kùen trè
 Qwen3-8B: Kùen tre òtto bi
 Qwen3-Omni: Cuèn tri òmni
 Qwen3-VL: Cùen trè vì èlle
@@ -74,7 +75,9 @@ SimCT: Sim si ti
 Sora: Sòra
 SpreadsheetBench II: sprèd shiit bèntch sècondo
 StreamEval: Strìm Ivàl
+Tau2: Tàu dùe
 ToolRet: Tùl-ret
+Trajectory2Gym: Tragèttori tù Dgìm
 VABench: Vi Ei Bènch
 VBench: Vì-bènch
 VGGSound: vi gi gi sàund

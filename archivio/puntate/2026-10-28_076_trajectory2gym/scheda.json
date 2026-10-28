@@ -1,0 +1,96 @@
+{
+  "nome_breve": "Trajectory2Gym",
+  "problema": "Gli assistenti AI che utilizzano strumenti software vengono spesso addestrati copiando semplicemente le sequenze di azioni terminate con successo. Tuttavia, molte di queste sequenze contengono passaggi ingiustificati rispetto alle informazioni disponibili al momento della scelta, oppure non mostrano chiaramente la dipendenza tra i vari passaggi.",
+  "idea": "Trajectory2Gym propone di costruire appositamente scenari di interazione complessi e di ricavare l'addestramento solo dalle decisioni espressamente giustificate da ciò che l'agente ha potuto vedere durante la simulazione.",
+  "come_funziona": [
+    "Identifica le combinazioni di azioni e osservazioni meno coperte ma necessarie per svolgere compiti complessi.",
+    "Costruisce ed esegue scenari di prova specifici all'interno degli ambienti nativi degli strumenti.",
+    "Filtra e conserva solo le decisioni certificate da informazioni e fatti effettivamente visibili all'agente.",
+    "Bilancia l'esperienza in base alla taglia del modello e applica un addestramento che dà il giusto peso a ogni interazione."
+  ],
+  "risultati": [
+    {
+      "fatto": "Aumento della media complessiva delle prestazioni sui tre benchmark principali di utilizzo degli strumenti per i modelli post-addestrati",
+      "numero": "16.9 to 29.8",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Un miglioramento marcato e diffuso su tutte le dimensioni di modello analizzate."
+    },
+    {
+      "fatto": "Punteggio ottenuto nel test di interazione complessa e multi-turno Tau2 dal modello da 4 miliardi di parametri",
+      "numero": "69.17",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Dimostra una buona capacità di portare a termine conversazioni articolate basate su feedback continui."
+    },
+    {
+      "fatto": "Punteggio complessivo raggiunto nel benchmark sulle chiamate di funzioni BFCL dal modello da 30 miliardi di parametri",
+      "numero": "80.93",
+      "prima": "",
+      "scala": "non indicato",
+      "in_pratica": "Completa correttamente la grande maggioranza dei compiti che richiedono l'uso di comandi e funzioni."
+    }
+  ],
+  "limiti": [
+    "Nel test di chiamate a funzioni semplici e dirette si registra un calo di punteggio in quattro modelli su cinque.",
+    "Aumentare eccessivamente la complessità delle strutture di supporto provoca un calo delle prestazioni nel test di interazione multi-turno."
+  ],
+  "esempio_concreto": "Un agente di supporto clienti deve gestire la cancellazione di due ordini e l'aggiornamento di un terzo. Se la ricerca iniziale per email fallisce, l'agente non si blocca ma richiede il nome e il codice avviamento postale per riprendere l'operazione in modo corretto.",
+  "perche_ti_riguarda": "Gli assistenti virtuali con cui interagiamo per richiedere prenotazioni o gestire pratiche diventeranno molto più affidabili e capaci di correggere il tiro quando una ricerca iniziale fallisce.",
+  "gancio": "Spesso gli assistenti AI imparano la lezione sbagliata anche quando riescono a completare un compito. Per renderli davvero intelligenti bisogna insegnare loro a decidere solo in base a quello che hanno potuto realmente osservare.",
+  "termini": [
+    {
+      "termine": "Trajectory2Gym",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il metodo di addestramento che genera interazioni mirate e seleziona solo le decisioni giustificate.",
+      "usa": "termine",
+      "pronuncia": "Tragèttori tù Dgìm"
+    },
+    {
+      "termine": "Qwen3",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La famiglia di modelli di intelligenza artificiale utilizzata per testare l'efficacia del sistema.",
+      "usa": "termine",
+      "pronuncia": "Kùen trè"
+    },
+    {
+      "termine": "SFT",
+      "tipo": "sigla",
+      "espansione_inglese": "Supervised Fine-Tuning",
+      "significato": "affinamento supervisionato",
+      "spiegazione": "Una tecnica per adattare un modello pre-addestrato mostrandogli esempi diretti di comportamento corretto.",
+      "usa": "spiegazione",
+      "pronuncia": "esse effe ti"
+    },
+    {
+      "termine": "BFCL",
+      "tipo": "sigla",
+      "espansione_inglese": "Berkeley Function Calling Leaderboard",
+      "significato": "classifica di Berkeley per le chiamate a funzione",
+      "spiegazione": "Un test standard per misurare quanto un modello sia bravo a richiamare comandi e strumenti software.",
+      "usa": "spiegazione",
+      "pronuncia": "bi effe ci elle"
+    },
+    {
+      "termine": "Tau2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un benchmark di valutazione che misura le capacità degli agenti in interazioni complesse e a più passaggi.",
+      "usa": "termine",
+      "pronuncia": "Tàu dùe"
+    }
+  ],
+  "soggetto_immagine": "a simple flowchart with connected decision nodes and gear icons in line style",
+  "hashtag": [
+    "AI",
+    "AgentiIntelligenti",
+    "Trajectory2Gym",
+    "MachineLearning",
+    "PostTraining"
+  ]
+}

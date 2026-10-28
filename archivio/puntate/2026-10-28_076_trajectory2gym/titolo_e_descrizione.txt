@@ -1,0 +1,15 @@
+AI Paper in Pillole #76 - Trajectory2Gym: come insegnare all'AI a decidere solo in base a ciò che vede
+
+Un agente del servizio clienti deve cancellare alcuni ordini e aggiornarne un altro. Se la ricerca iniziale per email fallisce, l'agente rischia di bloccarsi. Molti assistenti di intelligenza artificiale vengono infatti addestrati copiando sequenze che hanno avuto successo. Alcune azioni di queste sequenze contengono però passaggi ingiustificati rispetto alle informazioni disponibili al momento della scelta.
+
+Il metodo Trajectory2Gym risolve il problema creando scenari di prova specifici negli ambienti dei software. Il sistema individua le combinazioni di azioni e osservazioni meno coperte ma necessarie per svolgere compiti complessi. Esegue le simulazioni e conserva solo le decisioni certificate da fatti realmente visibili all'agente. Infine applica un affinamento supervisionato dando il giusto peso a ciascuna interazione.
+
+La media complessiva delle prestazioni sui test principali è arrivata a 29,8. Questo rappresenta un miglioramento marcato e diffuso su tutte le dimensioni di modello analizzate. Nel test sulle chiamate a funzioni, che misura la capacità di richiamare comandi e strumenti software, il modello da 30 miliardi di parametri ha raggiunto il punteggio di 80,93: in pratica, l'agente completa correttamente la grande maggioranza dei compiti che richiedono l'uso di comandi e funzioni. Come limite, nei test su funzioni semplici e dirette si registra un calo di punteggio nella quasi totalità dei modelli.
+
+Il paper è di Yihao Hu, Zhihao Wen, Yitong Lin, Siyuan Lu, Pan Wang, Wei Wu, Jiang-Ming Yang e Tao Lin.
+
+Link al paper: https://arxiv.org/abs/2610.33568
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #AgentiIntelligenti #Trajectory2Gym #MachineLearning #PostTraining

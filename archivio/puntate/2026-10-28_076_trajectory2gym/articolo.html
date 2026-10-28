@@ -1,0 +1,32 @@
+<p>Un assistente digitale del servizio clienti deve gestire una richiesta complicata. Un utente vuole cancellare due ordini e aggiornare i dati di un terzo pacco. L&#x27;assistente prova a cercare la pratica usando l&#x27;indirizzo email dell&#x27;utente, ma il database restituisce un errore.</p>
+<p>Molti sistemi tradizionali a questo punto si bloccano. Un assistente preparato in modo diverso, invece, sa come reagire. Chiede subito all&#x27;utente il nome e il codice di avviamento postale per riprendere l&#x27;operazione in modo corretto.</p>
+<h2>Imparare per caso non basta</h2>
+<p>I modelli linguistici attuali usano spesso strumenti esterni come archivi di dati o gestionali. Per insegnare loro a lavorare, i ricercatori mostrano molte sequenze di azioni che si sono concluse con successo.</p>
+<p>Questo metodo presenta però un difetto nascosto. Gli assistenti vengono addestrati copiando alla cieca tutti i passaggi svolti. Spesso queste sequenze contengono azioni non giustificate da ciò che il modello sapeva in quel momento. Il sistema rischia quindi di imparare la lezione sbagliata anche quando porta a termine il lavoro.</p>
+<h2>Giudicare solo quello che si vede</h2>
+<p>Un gruppo di ricercatori ha proposto una soluzione chiamata Trajectory2Gym. Il nome indica un metodo di addestramento che genera scenari di interazione mirati e seleziona solo le decisioni giustificate dai fatti.</p>
+<p>Il concetto assomiglia alla formazione di un apprendista in officina. Un conto è copiare i gesti del maestro sperando di avere la stessa fortuna. Un altro conto è imparare a prendere un attrezzo solo quando il pezzo sul banco presenta un difetto visibile.</p>
+<p>Trajectory2Gym segue questo secondo principio. Il sistema accetta una decisione come esempio valido solo se è chiaramente motivata dalle informazioni che l&#x27;agente ha potuto vedere prima di scegliere.</p>
+<h2>Come funziona il sistema</h2>
+<p>I ricercatori hanno organizzato questo percorso formativo in passaggi precisi. L&#x27;obiettivo è costruire situazioni di prova realistiche e misurate:</p>
+<ul>
+<li>Individua le combinazioni di azioni e risposte meno coperte ma necessarie per svolgere compiti complessi.</li>
+<li>Costruisce ed esegue scenari di prova specifici all&#x27;interno degli ambienti nativi degli strumenti.</li>
+<li>Filtra le sequenze e conserva solo le decisioni certificate da informazioni effettivamente visibili all&#x27;agente.</li>
+<li>Bilancia l&#x27;esperienza in base alla taglia del modello e applica un addestramento supervisionato, cioè una tecnica per adattare il modello mostrandogli esempi diretti di comportamento corretto, dando il giusto peso a ogni interazione.</li>
+</ul>
+<h2>I risultati delle prove</h2>
+<p>I ricercatori hanno messo alla prova il metodo sulla famiglia di modelli Qwen3. I test si basano su banchi di prova standard che misurano l&#x27;abilità dei programmi attraverso punteggi comparativi.</p>
+<p>Il primo valore riguarda la media complessiva delle prestazioni sui tre principali banchi di prova dedicati all&#x27;uso di strumenti software. Nei modelli che hanno ricevuto questo addestramento mirato, il punteggio medio è passato da 16,9 a 29,8. Questo incremento rappresenta un miglioramento marcato e diffuso su tutte le dimensioni di modello analizzate.</p>
+<p>Un secondo test, chiamato Tau2, misura le capacità degli agenti nelle interazioni complesse e a più passaggi. In questa prova un modello di taglia ridotta, con 4 miliardi di parametri, ha dimostrato una buona capacità di portare a termine conversazioni articolate basate su feedback continui.</p>
+<p>Infine, gli studiosi hanno esaminato la classifica di Berkeley per le chiamate a funzione, un test standard che misura quanto un modello sia bravo a richiamare comandi e strumenti software. Il modello più grande, dotato di 30 miliardi di parametri, ha raggiunto un punteggio di 80,93. In pratica, il sistema completa correttamente la grande maggioranza dei compiti che richiedono l&#x27;uso di comandi e funzioni.</p>
+<h2>Dove il metodo mostra delle crepe</h2>
+<p>La ricerca segnala anche alcuni aspetti critici da considerare. Il sistema non produce vantaggi identici in ogni situazione operativa.</p>
+<p>Nel test dedicato alle chiamate a funzioni semplici e dirette, quattro modelli su cinque hanno registrato un calo di punteggio. Concentrare l&#x27;addestramento sui casi complessi rischia quindi di peggiorare le risposte nei compiti più immediati.</p>
+<p>Inoltre, aumentare eccessivamente la complessità delle strutture di supporto durante l&#x27;addestramento provoca un calo delle prestazioni nel test di interazione a più passaggi. Esiste un punto di equilibrio oltre il quale aggiungere dettagli diventa controproducente.</p>
+<h2>Sistemi più capaci di rimediare agli errori</h2>
+<p>Questi esperimenti toccano da vicino i servizi con cui interagiamo ogni giorno. Molti assistenti virtuali usati per gestire prenotazioni o pratiche commerciali si perdono al primo intoppo imprevisto.</p>
+<p>Insegnare ai modelli a decidere solo in base a ciò che hanno realmente osservato li rende molto più robusti. Gli assistenti diventano capaci di correggere il tiro quando una ricerca iniziale non va a buon fine. Invece di interrompere la conversazione, il sistema capisce quale informazione manca e formula la domanda giusta per concludere la pratica.</p>
+<hr>
+<p><strong>Il paper:</strong> <a href="https://arxiv.org/abs/2610.33568" target="_blank" rel="noopener">Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents</a> — Yihao Hu, Zhihao Wen, Yitong Lin, Siyuan Lu, Pan Wang, Wei Wu, Jiang-Ming Yang e Tao Lin</p>
+<p>Ascolta la puntata su <a href="https://open.spotify.com/show/0343HceLfMtVbfln7gVijy" target="_blank" rel="noopener">AI Paper in Pillole</a></p>
