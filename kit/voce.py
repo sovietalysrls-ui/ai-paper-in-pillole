@@ -41,10 +41,28 @@ def dividi(battute, lingua, per_blocco):
     apertura = [battute[:fine + 1]] if fine >= 0 else []
     resto = battute[fine + 1:]
     corpo = [resto[i:i + per_blocco] for i in range(0, len(resto), per_blocco)]
-    # evita un ultimo blocco minuscolo: lo unisce al precedente
+    # evita un ultimo blocco minuscolo: lo unisce al precedente.
+    # (Attenzione: "corpo[-2] += corpo.pop()" sembra uguale ma non lo è: Python
+    # toglie l'ultimo blocco PRIMA di scrivere, e il risultato finisce al posto
+    # sbagliato. Così il 29/10/2026 un pezzo è stato perso e un altro ripetuto.)
     if len(corpo) > 1 and len(corpo[-1]) < 3:
-        corpo[-2] += corpo.pop()
+        ultimo = corpo.pop()
+        corpo[-1] = corpo[-1] + ultimo
+    controlla_ordine(battute, apertura + corpo)
     return apertura, corpo
+
+
+class ErroreOrdine(RuntimeError):
+    pass
+
+
+def controlla_ordine(battute, blocchi):
+    """Le battute da leggere devono essere esattamente quelle del dialogo,
+    nello stesso ordine: nessuna persa, nessuna ripetuta."""
+    unite = [b for blocco in blocchi for b in blocco]
+    if unite != list(battute):
+        raise ErroreOrdine(f"divisione del dialogo sbagliata: {len(battute)} battute nel testo, "
+                           f"{len(unite)} da leggere. Puntata fermata prima della voce.")
 
 
 def genera_firma(motore, lingua, cartella, avanz, passo):
@@ -100,6 +118,7 @@ def genera(motore, battute, lingua, cartella, per_blocco, avanz, passo, toni=Non
     apertura, corpo = dividi(battute, lingua, per_blocco)
     lista = ([("apertura", t) for b in apertura for t in turni(b)] +
              [("corpo", t) for b in corpo for t in turni(b)])
+    controlla_ordine(battute, [t for _, t in lista])
     file_g, file_c, chi_file = [], [], []
     for n, (tipo, turno) in enumerate(lista, 1):
         chi = turno[0][0]

@@ -52,6 +52,10 @@ on:
         description: "Riprendi dai file salvati di un'esecuzione interrotta (numero nell'indirizzo della pagina)"
         required: false
         default: ""
+      rifai_voce:
+        description: "Con 'riprendi da', 'paper' e 'sostituisci': tiene i testi e rifà solo voce, montaggio e consegna"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -129,6 +133,20 @@ jobs:
             echo "::error::L'esecuzione indicata non contiene un punto di ripresa valido"
             exit 1
           }
+
+      # Rifare solo l'audio: si tengono testi e copertina dell'esecuzione indicata,
+      # si cancellano voce, montaggio e consegna, così ripartono da capo.
+      - name: Prepara il rifacimento della voce
+        if: ${{ inputs.rifai_voce && steps.ripresa.outputs.run_id != '' }}
+        run: |
+          rm -f uscita/OGGI/.lavoro/*/voce/turno_* uscita/OGGI/.lavoro/*/audio.json \
+                uscita/OGGI/puntata.wav uscita/OGGI/puntata.mp3 \
+                uscita/OGGI/.lavoro/consegnato.json uscita/OGGI/.lavoro/consegna_stato.json
+          # L'articolo è già sul sito: si conserva l'esito, così non viene toccato.
+          NUM=$(python3 -c "import json;print('%03d' % json.load(open('uscita/OGGI/.lavoro/stato.json'))['numero'])")
+          WP=$(ls archivio/puntate/*_${NUM}_*/wordpress.json 2>/dev/null | tail -1)
+          if [ -n "$WP" ]; then cp "$WP" uscita/OGGI/.lavoro/it/wordpress.json; fi
+          echo "Voce da rifare per la puntata $NUM"
 
       - name: Installa programmi
         run: |
