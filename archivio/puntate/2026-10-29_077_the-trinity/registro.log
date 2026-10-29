@@ -96,3 +96,78 @@
 [03:41:11] ▶ Registro e chiusura
 [03:41:11] Richieste al modello di testo: 8
 [03:41:11] memoria video non misurata (nvidia-smi assente)
+[03:41:11] Testi archiviati nel repository: archivio/puntate/2026-10-29_077_the-trinity
+[03:41:11] ✔ Registro e chiusura
+[03:41:11] ===== Finito in 25 minuti =====
+[19:04:51] ===== Avvio 2026-10-29 19:04 =====
+[19:04:51] ↪ Scelta e lettura del paper — 2610.36077 (ripreso)
+[19:04:51] ↪ Scheda dei fatti — già fatto
+[19:04:51] ↪ Dialogo — già fatto
+[19:04:51] ↪ Controlli e correzioni — già fatto
+[19:04:51] ↪ Titolo, descrizione, articolo — già fatto
+[19:04:51] ↪ Copertina — già fatto
+[19:04:51] ▶ Voce
+[19:04:51] ▶ Voce — turno 1 di 46 (Carlo)
+[19:05:02]    voce: la porta 'interactions' non risponde, uso generateContent
+[19:05:05] ▶ Voce — turno 2 di 46 (Arianna)
+[19:05:19] ▶ Voce — turno 3 di 46 (Carlo)
+[19:05:33] ▶ Voce — turno 4 di 46 (Arianna)
+[19:05:47] ▶ Voce — turno 5 di 46 (Carlo)
+[19:06:00] ▶ Voce — turno 6 di 46 (Arianna)
+[19:06:14] ▶ Voce — turno 7 di 46 (Carlo)
+[19:06:27] ▶ Voce — turno 8 di 46 (Arianna)
+[19:06:41] ▶ Voce — turno 9 di 46 (Carlo)
+[19:06:54] ▶ Voce — turno 10 di 46 (Arianna)
+[19:07:07] ▶ Voce — turno 11 di 46 (Carlo)
+[19:07:21] ▶ Voce — turno 12 di 46 (Arianna)
+[19:07:31] ⚠ Gemini voce: finite le richieste di oggi per gemini-3.8-flash-tts (chiave gratuita), passo a gemini-3.8-flash-lite-tts
+[19:07:41]    voce: la porta 'interactions' non risponde, uso generateContent
+[19:07:44] ▶ Voce — turno 13 di 46 (Carlo)
+[19:07:58] ▶ Voce — turno 14 di 46 (Arianna)
+[19:08:10] ▶ Voce — turno 15 di 46 (Carlo)
+[19:08:23] ▶ Voce — turno 16 di 46 (Arianna)
+[19:08:34]    limite al minuto raggiunto, aspetto 25 secondi
+[19:09:01] ▶ Voce — turno 17 di 46 (Carlo)
+[19:09:14] ▶ Voce — turno 18 di 46 (Arianna)
+[19:09:27] ▶ Voce — turno 19 di 46 (Carlo)
+[19:09:39] ▶ Voce — turno 20 di 46 (Arianna)
+[19:09:51] ▶ Voce — turno 21 di 46 (Carlo)
+[19:10:04] ▶ Voce — turno 22 di 46 (Arianna)
+[19:10:17] ▶ Voce — turno 23 di 46 (Carlo)
+[19:11:07] ▶ Voce — turno 24 di 46 (Arianna)
+[19:11:40] ▶ Voce — turno 25 di 46 (Carlo)
+[19:11:50] ⚠ Gemini voce: chiave gratuita esaurita (richieste del giorno finite su tutti i modelli), passo alla chiave a pagamento
+[19:12:00]    voce: la porta 'interactions' non risponde, uso generateContent
+[19:12:03] ▶ Voce — turno 26 di 46 (Arianna)
+[19:12:17] ▶ Voce — turno 27 di 46 (Carlo)
+[19:12:30] ▶ Voce — turno 28 di 46 (Arianna)
+[19:12:44] ▶ Voce — turno 29 di 46 (Carlo)
+[19:12:57] ▶ Voce — turno 30 di 46 (Arianna)
+[19:13:11] ▶ Voce — turno 31 di 46 (Carlo)
+[19:13:25] ▶ Voce — turno 32 di 46 (Arianna)
+[19:13:38] ▶ Voce — turno 33 di 46 (Carlo)
+[19:13:51] ▶ Voce — turno 34 di 46 (Arianna)
+[19:14:05] ▶ Voce — turno 35 di 46 (Carlo)
+[19:14:18] ▶ Voce — turno 36 di 46 (Arianna)
+[19:14:32] ▶ Voce — turno 37 di 46 (Carlo)
+[19:14:45] ▶ Voce — turno 38 di 46 (Arianna)
+[19:14:59] ▶ Voce — turno 39 di 46 (Carlo)
+[19:15:12] ▶ Voce — turno 40 di 46 (Arianna)
+[19:15:26] ▶ Voce — turno 41 di 46 (Carlo)
+[19:15:41] ▶ Voce — turno 42 di 46 (Arianna)
+[19:15:55] ▶ Voce — turno 43 di 46 (Carlo)
+[19:16:09] ▶ Voce — turno 44 di 46 (Arianna)
+[19:16:22] ▶ Voce — turno 45 di 46 (Carlo)
+[19:16:35] ▶ Voce — turno 46 di 46 (Arianna)
+[19:16:51] ⚠ voce sospetta per Carlo (178 Hz, attesa sotto 158 Hz): rifaccio il turno
+[19:16:51] ▶ Voce — rifaccio turno_045_corpo_carlo.wav
+[19:17:04]    controllo voci: Carlo ~136 Hz, Arianna ~181 Hz, tutto in ordine
+[19:17:04] ✔ Voce — 46 turni, una voce per richiesta + frase finale
+[19:17:04] ▶ Montaggio audio
+[19:17:11] ✔ Montaggio audio — 5.1 minuti in tutto, voce 4.4 minuti, 155 parole al minuto
+[19:17:11] ↪ Articolo su WordPress — https://www.andreamanini.it/the-trinity-come-gli-agenti-ai-imparano-a-migliorarsi-da-soli/
+[19:17:11] ▶ Consegna su Telegram
+[19:17:18] ✔ Consegna su Telegram — 5 file inviati
+[19:17:19] ▶ Registro e chiusura
+[19:17:19] Richieste al modello di testo: 0
+[19:17:19] memoria video non misurata (nvidia-smi assente)
