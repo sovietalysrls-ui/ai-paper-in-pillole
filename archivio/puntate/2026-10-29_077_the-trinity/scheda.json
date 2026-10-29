@@ -1,0 +1,131 @@
+{
+  "nome_breve": "The Trinity",
+  "problema": "Creare ambienti virtuali sempre diversi per far allenare gli agenti intelligenti costa troppo tempo e risorse. Inoltre, aggiornare a mano la struttura di supporto degli agenti non riesce a stare dietro alla varietà dei compiti richiesti.",
+  "idea": "Un nuovo framework riorganizza compiti diversi in base alle capacità di base condivise e crea automaticamente simulazioni semplificate. Tre ruoli lavorano insieme per far evolvere le capacità dell'agente senza intervento umano.",
+  "come_funziona": [
+    "Evolver riorganizza compiti eterogenei in un albero gerarchico basato sui requisiti condivisi.",
+    "Creator sintetizza mondi virtuali semplificati in cui l'agente esercita specifiche capacità.",
+    "Explorer fa evolvere le strutture di supporto lungo l'albero selezionando e perfezionando i moduli più efficaci.",
+    "Un modulo di smistamento sceglie la configurazione ideale per ciascun nuovo compito da svolgere."
+  ],
+  "risultati": [
+    {
+      "fatto": "Punteggio medio raggiunto sui test di addestramento dopo la quarta iterazione",
+      "numero": "73.2",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "un notevole livello di accuratezza nei compiti su cui l'agente si è allenato"
+    },
+    {
+      "fatto": "Punteggio medio ottenuto sui test non visti prima dopo la quarta iterazione",
+      "numero": "64.1",
+      "prima": "",
+      "scala": "su 100",
+      "in_pratica": "buone prestazioni anche di fronte a problemi del tutto nuovi"
+    },
+    {
+      "fatto": "Tasso di successo ottenuto nella simulazione del compito robotico SOON",
+      "numero": "80%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "completa la missione virtuale in quattro tentativi su cinque"
+    },
+    {
+      "fatto": "Tasso di successo ottenuto sul robot reale nei compiti SOON e CaP-X",
+      "numero": "60%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "riesce a completare la missione reale più di una volta su due"
+    }
+  ],
+  "limiti": [
+    "La qualità dei benchmark trovati sul web dipende dalle parole chiave usate nella ricerca.",
+    "L'auto-miglioramento riguarda la struttura di supporto e non modifica direttamente i parametri del modello.",
+    "Nei test con robot fisici non si isola l'effetto dei singoli moduli evoluti."
+  ],
+  "esempio_concreto": "Un braccio robotico AlohaMini2 deve scoprire il colore di un cubo nascosto sollevando e controllando il contenuto di tre tazze capovolte.",
+  "perche_ti_riguarda": "Permette agli agenti e ai robot di imparare da soli a svolgere compiti complessi. In futuro questo renderà gli assistenti robotici domestici più autonomi e capaci di risolvere problemi inediti.",
+  "gancio": "Un robot reale come Unitree G1 può imparare ad avvicinarsi a una scrivania e posizionarsi in modo corretto senza che un umano debba programmare ogni singolo passaggio.",
+  "termini": [
+    {
+      "termine": "The Trinity",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il sistema di auto-miglioramento ricorsivo proposto nello studio",
+      "usa": "termine",
+      "pronuncia": "Dhe Trìniti"
+    },
+    {
+      "termine": "Harness",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "La struttura di controllo e supporto che guida le azioni dell'agente",
+      "usa": "spiegazione",
+      "pronuncia": "Hàrnes"
+    },
+    {
+      "termine": "RSI",
+      "tipo": "sigla",
+      "espansione_inglese": "Recursive Self-Improvement",
+      "significato": "auto-miglioramento ricorsivo",
+      "spiegazione": "Processo in cui un agente AI migliora continuamente le proprie capacità da solo",
+      "usa": "spiegazione",
+      "pronuncia": "erre esse i"
+    },
+    {
+      "termine": "Real2Sim2Real",
+      "tipo": "tecnico",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Metodo che estrae un compito reale, lo semplifica in simulazione e riporta i miglioramenti nel mondo reale",
+      "usa": "spiegazione",
+      "pronuncia": "Rìal tu Sìm tu Rìal"
+    },
+    {
+      "termine": "Unitree G1",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di robot umanoide usato per gli esperimenti fisici",
+      "usa": "termine",
+      "pronuncia": "Iùnitri gi ùno"
+    },
+    {
+      "termine": "AlohaMini2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di braccio robotico per compiti di manipolazione",
+      "usa": "termine",
+      "pronuncia": "Alòha Mìni dùe"
+    },
+    {
+      "termine": "ARC-AGI-3",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test di valutazione per misurare capacità di ragionamento e percezione",
+      "usa": "termine",
+      "pronuncia": "A-Erre-Ci A-Gi-I tre"
+    },
+    {
+      "termine": "Claude Opus 5",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello di intelligenza artificiale avanzato",
+      "usa": "termine",
+      "pronuncia": "Klòd Òpus cìnque"
+    }
+  ],
+  "soggetto_immagine": "a stylized tree icon connecting simple geometric nodes and a robotic arm",
+  "hashtag": [
+    "AI",
+    "TheTrinity",
+    "AgentiMultimodali",
+    "Robotica",
+    "AutoMiglioramento"
+  ]
+}

@@ -1,0 +1,93 @@
+Carlo: Un robot umanoide può imparare ad avvicinarsi a una scrivania senza che un umano debba programmare ogni singolo passaggio.
+
+Arianna: Succede quando il sistema impara a costruire da solo i propri esercizi di allenamento. Benvenuti ad AI Paper in Pillole, puntata numero 77. Io sono Arianna.
+
+Carlo: E io sono Carlo. Oggi vediamo come i robot imparano a svolgere compiti nuovi senza il nostro intervento.
+
+Arianna: Creare ambienti virtuali sempre diversi per allenare un robot richiede troppo tempo e molte risorse fisiche.
+
+Carlo: Un po' come doversi inventare ogni volta una pista di guida diversa per insegnare a guidare a qualcuno.
+
+Arianna: È una buona analogia. Se i compiti cambiano, le strutture scritte a mano non riescono a stare dietro alle novità.
+
+Carlo: E qual è l'idea di questo studio per uscire da questa situazione?
+
+Arianna: Gli autori propongono di usare RSI, cioè auto-miglioramento ricorsivo. In pratica, un processo in cui un agente migliora le sue capacità da solo.
+
+Carlo: In questo modo il robot diventa l'allenatore di se stesso.
+
+Arianna: Il nuovo framework riorganizza compiti diversi in base alle capacità di base condivise e crea automaticamente simulazioni semplificate.
+
+Carlo: Come funziona questo processo nel dettaglio della ricerca?
+
+Arianna: In questo studio tre ruoli coordinati lavorano insieme e formano il sistema chiamato The Trinity.
+
+Carlo: Chi è il primo di questi tre elementi del sistema?
+
+Arianna: Il primo si chiama Evolver. Riorganizza i compiti eterogenei in un albero gerarchico basato sui requisiti condivisi.
+
+Carlo: In pratica divide un progetto grande in tanti mattoncini elementari più semplici.
+
+Arianna: Il secondo ruolo si chiama Creator. Sintetizza mondi virtuali semplificati dove l'agente esercita specifiche capacità.
+
+Carlo: Un po' come creare una palestra con attrezzi dedicati a un solo muscolo.
+
+Arianna: Il terzo si chiama Explorer. Fa evolvere le strutture di supporto lungo l'albero selezionando i moduli più efficaci.
+
+Carlo: Sceglie quindi gli strumenti che funzionano meglio per superare la prova.
+
+Arianna: E quando si presenta un compito del tutto nuovo, interviene un modulo di smistamento.
+
+Carlo: Che cosa fa esattamente questo modulo di smistamento?
+
+Arianna: Sceglie la configurazione ideale della struttura di supporto per quel specifico nuovo compito da svolgere.
+
+Carlo: Puoi farci un esempio concreto di come lavora sul campo?
+
+Arianna: Un braccio robotico deve scoprire il colore di un cubo nascosto sollevando e controllando il contenuto di tre tazze capovolte.
+
+Carlo: Deve quindi fare un ragionamento e provare a sollevare le tazze finché non trova l'oggetto.
+
+Arianna: L'agente si esercita prima nella simulazione creata apposta per lui e poi applica la strategia nel mondo reale.
+
+Carlo: E quali sono stati i risultati principali di questo allenamento?
+
+Arianna: Nella simulazione del compito robotico il sistema ha raggiunto un tasso di successo dell'80 per cento.
+
+Carlo: In pratica completa la missione virtuale nella gran parte dei tentativi.
+
+Arianna: Quando lo stesso metodo è stato applicato sul robot reale, il tasso di successo è stato del 60 per cento.
+
+Carlo: Quindi sul robot fisico riesce a completare la missione reale più della metà delle volte.
+
+Arianna: Trovate i numeri e i dati precisi nell'articolo sul nostro sito e nel paper. Il link è nella descrizione.
+
+Carlo: Quali sono i limiti di questo approccio che bisogna considerare?
+
+Arianna: La qualità dei test di valutazione trovati sul web dipende molto dalle parole chiave usate nella ricerca.
+
+Carlo: Se cerchi con parole sbagliate trovi materiale meno utile per l'allenamento.
+
+Arianna: Inoltre l'auto-miglioramento riguarda la struttura di supporto e non modifica direttamente i parametri del modello.
+
+Carlo: Cambia la mappa degli aiuti esterni ma non modifica la memoria profonda della rete.
+
+Arianna: E nei test con i robot fisici non si riesce a isolare l'effetto dei singoli moduli evoluti.
+
+Carlo: Perché questo lavoro riguarda da vicino chi ci ascolta ogni giorno?
+
+Arianna: Permette agli agenti e ai robot di imparare da soli a svolgere compiti sempre più complessi.
+
+Carlo: In futuro questo renderà gli assistenti robotici domestici molto più autonomi di fronte ai problemi di tutti i giorni.
+
+Arianna: Saranno capaci di risolvere compiti del tutto nuovi senza bisogno di un intervento umano continuo.
+
+Carlo: Se questa puntata vi è piaciuta, vi invitiamo a lasciarci un like e le cinque stelline di valutazione.
+
+Arianna: Seguite il podcast sulle vostre piattaforme preferite per non perdere la prossima puntata.
+
+Carlo: Grazie per l'ascolto e per la vostra compagnia.
+
+Arianna: Un saluto caloroso a tutti e a domani!
+
+[dopo la sigla] Arianna: AI Paper in Pillole è un progetto di Sovietaly SRLS.

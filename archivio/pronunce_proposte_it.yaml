@@ -1,12 +1,15 @@
 # Pronunce proposte dal modello. Copia in lingue/it/pronuncia.yaml quelle giuste (correggendole se serve).
 ALFWorld: Àlf uòrld
+ARC-AGI-3: A-Erre-Ci A-Gi-I tre
 ATAS: à-tas
 Adversarial Forcing: Advèrsarial Fòrsing
 AgentGarten: Èigent-Gàrten
 Algonauts 2025: Algònots duemilaventicinque
+AlohaMini2: Alòha Mìni dùe
 BANKING77: Bènking settantasètte
 BM25: bi emme venticinque
 BrainLoRA: Brèin Lò-ra
+Claude Opus 5: Klòd Òpus cìnque
 Codex: Còdecs
 CrossDiT: Cròs Di Ai Tì
 DiffusionART: Diffiùscion Àrt
@@ -28,6 +31,7 @@ Granite-4.1-8B: Grànait quattro punto uno òtto bi
 GraphForge: Gràf Forg
 GroundingPI: Gràunding Pi-Ai
 HappyHorse 1.0: Èppi Hòrs uno punto zero
+Harness: Hàrnes
 HexaShell: Ècsascièl
 HunyuanVideo-13B: Huniuàn Vìdeo Tredìci Bi
 JavisBench: giàvis bènch
@@ -63,6 +67,7 @@ Qwen3.5-4B: Kiù-uen tre punto cinque quattro bi
 Qwen3.6-27B: Cuèn tre punto sèi ventisètte bi
 Qwen3.8-27B: Cuèn tre punto òtto ventisètte bi
 ReCA: re-cà
+Real2Sim2Real: Rìal tu Sìm tu Rìal
 RealCompanion: Rìal Compànion
 RoboCasa-GR1: Robocàsa Gi-Erre-Uno
 RoboDojo: Ròbodiògio
@@ -76,8 +81,10 @@ Sora: Sòra
 SpreadsheetBench II: sprèd shiit bèntch sècondo
 StreamEval: Strìm Ivàl
 Tau2: Tàu dùe
+The Trinity: Dhe Trìniti
 ToolRet: Tùl-ret
 Trajectory2Gym: Tragèttori tù Dgìm
+Unitree G1: Iùnitri gi ùno
 VABench: Vi Ei Bènch
 VBench: Vì-bènch
 VGGSound: vi gi gi sàund

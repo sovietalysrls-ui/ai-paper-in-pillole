@@ -1,0 +1,15 @@
+AI Paper in Pillole #77 - The Trinity: come gli agenti AI imparano a migliorarsi da soli
+
+Un braccio robotico deve scoprire il colore di un cubo nascosto. Per riuscirci, deve sollevare e controllare il contenuto di tre tazze capovolte. Creare da zero ambienti virtuali per allenare questi sistemi richiede troppo tempo. Inoltre, aggiornare a mano la loro struttura di controllo non permette di stare dietro alla varietà dei compiti.
+
+Lo studio presenta The Trinity, un sistema di auto-miglioramento per agenti intelligenti. Il programma riorganizza compiti diversi in una struttura ad albero basata sulle capacità condivise. In seguito, crea automaticamente simulazioni semplificate in cui l'agente fa esercizio. Tre ruoli lavorano insieme per far evolvere la struttura di controllo senza intervento umano. Infine, un modulo di smistamento sceglie la configurazione ideale per ogni nuovo problema.
+
+Nelle simulazioni di compiti robotici, il sistema ha raggiunto un tasso di successo dell'80 per cento. In pratica completa la missione virtuale in quattro tentativi su cinque. Sul robot reale il tasso di successo è stato del 60 per cento. In questo modo riesce a completare la missione reale più di una volta su due. Come limite, nei test fisici non si isola l'effetto dei singoli moduli evoluti.
+
+Il paper è di Weidong Tang, Ruiheng Wang, Jingxuan Zhang e altri 17 autori.
+
+Link al paper: https://arxiv.org/abs/2610.36077
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #TheTrinity #AgentiMultimodali #Robotica #AutoMiglioramento
