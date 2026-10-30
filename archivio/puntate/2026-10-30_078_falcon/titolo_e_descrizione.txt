@@ -1,0 +1,15 @@
+AI Paper in Pillole #78 - Falcon: come isolare una sola voce nel caos guardando chi parla
+
+In una riunione affollata dentro una sala con molto rimbombo, le voci si accavallano facilmente. Chi indossa un apparecchio acustico o partecipa da remoto fatica a seguire chi parla. I programmi capaci di isolare una voce osservando i movimenti del volto esistono già. Questi sistemi sono però troppo pesanti e lenti per funzionare in tempo reale su uno smartphone.
+
+I ricercatori hanno quindi creato Falcon, un modello leggero che combina audio e video per isolare all'istante chi viene inquadrato. Il sistema riceve contemporaneamente il suono registrato e le immagini del viso. Una rete neurale specializzata analizza il tempo e le frequenze della voce in un unico passaggio rapido. Il programma impara anche a riconoscere e zittire le persone vicine che disturbano. In questo modo restituisce subito una traccia vocale pulita, senza richiedere calcoli complessi sul momento.
+
+Rispetto a un potente modello precedente, Falcon ha ridotto i parametri del 91,9 per cento. In pratica, il programma è stato miniaturizzato e occupa meno di un decimo dello spazio. Inoltre, il sistema risponde 11,1 volte più rapidamente, ripulendo la voce oltre dieci volte più in fretta di prima. Come limite, la tecnologia funziona solo con segnali sonori a canale singolo e non sfrutta la presenza di più microfoni.
+
+Il paper è di Wendi Sang, Kai Li, Yifan Li, Jianqiang Huang e Xiaolin Hu, e conta 28 pagine.
+
+Link al paper: https://arxiv.org/abs/2610.32749
+
+AI Paper in Pillole: un paper al giorno, in pillole, tra amici. Voci e testi generati con l'intelligenza artificiale di Google Gemini.
+
+#AI #IsolamentoVoce #AudioVideo #Falcon #RiduzioneRumore

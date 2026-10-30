@@ -1,0 +1,88 @@
+{
+  "nome_breve": "Falcon",
+  "problema": "Nei contesti di tutti i giorni le voci si accavallano, con rimbombi e rumori improvvisi che rendono difficile isolare chi parla. I sistemi attuali di intelligenza artificiale capaci di seguire una voce sono troppo pesanti o lenti per funzionare in diretta sui dispositivi portatili.",
+  "idea": "Gli autori hanno creato Falcon, un modello leggero che combina audio e video per isolare all'istante solo la voce di chi viene inquadrato. Il sistema impara a cancellare i disturbi delle persone vicine senza appesantire il dispositivo quando viene utilizzato.",
+  "come_funziona": [
+    "Riceve in contemporanea la traccia audio registrata e le immagini del volto di chi sta parlando.",
+    "Analizza le frequenze del suono e il tempo in un solo passaggio rapido attraverso una rete neurale specializzata.",
+    "Usa durante l'addestramento una regola che impara a distinguere e zittire le voci di disturbo vicine.",
+    "Restituisce all'istante la traccia vocale isolata e pulita, senza richiedere calcoli aggiuntivi."
+  ],
+  "risultati": [
+    {
+      "fatto": "Riduzione del costo computazionale rispetto al modello causale AV-TFGridNet",
+      "numero": "20.2 \\times",
+      "prima": "AV-TFGridNet",
+      "scala": "",
+      "in_pratica": "richiede una quantità di calcoli drasticamente inferiore, oltre venti volte più leggera di prima"
+    },
+    {
+      "fatto": "Riduzione della latenza di elaborazione su GPU rispetto ad AV-TFGridNet",
+      "numero": "11.1 \\times",
+      "prima": "AV-TFGridNet",
+      "scala": "",
+      "in_pratica": "risponde e ripulisce la voce oltre dieci volte più in fretta del sistema precedente"
+    },
+    {
+      "fatto": "Riduzione dei parametri del modello rispetto ad AV-TFGridNet",
+      "numero": "91.9%",
+      "prima": "AV-TFGridNet",
+      "scala": "",
+      "in_pratica": "il programma è stato miniaturizzato occupando meno di un decimo dello spazio rispetto al passato"
+    }
+  ],
+  "limiti": [
+    "Funziona soltanto su segnali sonori a canale singolo e non sfrutta le disposizioni a microfoni multipli.",
+    "La verifica su registrazioni reali è limitata a circa 84 minuti con dieci partecipanti e otto ambienti.",
+    "L'addestramento richiede le registrazioni vocali isolate e pulite di ciascun interferente vicino, ottenibili solo tramite simulazioni."
+  ],
+  "esempio_concreto": "Durante una riunione di lavoro affollata in una sala d'ateneo con forte rimbombo, una persona con un apparecchio acustico o in collegamento video riesce a sentire chiaramente solo il collega inquadrato dalla telecamera, ignorando chi chiacchiera nei posti vicini.",
+  "perche_ti_riguarda": "Presto auricolari, cuffie e programmi di videochiamata potrebbero eliminare il caos di sottofondo senza ritardi fastidiosi, facendo funzionare l'isolamento vocale direttamente sul tuo smartphone.",
+  "gancio": "In un'aula universitaria affollata o in una stanza che rimbomba, isolare la voce di chi parla guardandone solo le labbra richiedeva computer potentissimi. Un nuovo modello ultraleggero riesce a farlo in diretta tagliando del novantadue per cento il peso del programma.",
+  "termini": [
+    {
+      "termine": "Falcon",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Il modello leggero proposto per isolare la voce bersaglio in tempo reale combinando audio e video.",
+      "usa": "termine",
+      "pronuncia": "Fàlcon"
+    },
+    {
+      "termine": "AVTSE",
+      "tipo": "sigla",
+      "espansione_inglese": "Audio-Visual Target Speaker Extraction",
+      "significato": "estrazione audio-visiva del parlante bersaglio",
+      "spiegazione": "La tecnologia che isola la voce di una persona specifica combinando la registrazione audio con il video del suo volto.",
+      "usa": "spiegazione",
+      "pronuncia": "a vi ti esse e"
+    },
+    {
+      "termine": "RealSSA",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "L'insieme di test e registrazioni introdotto per valutare questi sistemi in condizioni acustiche realistiche.",
+      "usa": "termine",
+      "pronuncia": "Rial esse esse a"
+    },
+    {
+      "termine": "AV-TFGridNet",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un potente modello precedente usato come termine di confronto per verificare velocità e precisione.",
+      "usa": "spiegazione",
+      "pronuncia": "a vi ti effe grid net"
+    }
+  ],
+  "soggetto_immagine": "a camera lens focusing on a single clear soundwave among chaotic tangled waves",
+  "hashtag": [
+    "AI",
+    "IsolamentoVoce",
+    "AudioVideo",
+    "Falcon",
+    "RiduzioneRumore"
+  ]
+}
