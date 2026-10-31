@@ -1,0 +1,130 @@
+{
+  "nome_breve": "Intrinsic Distribution Matching",
+  "problema": "Generare immagini dettagliate a partire da un testo richiede solitamente molti passaggi di calcolo intermedi. Quando si prova a ridurre i passaggi a uno o due, i dettagli complessi come le scritte lunghe vengono spesso sfuocati o errati.",
+  "idea": "Viene introdotto il metodo Intrinsic Distribution Matching per velocizzare la generazione a soli due passaggi. La tecnica confronta le statistiche interne del modello stesso senza dover usare reti o discriminatori esterni.",
+  "come_funziona": [
+    "Scompone la differenza tra la distribuzione generata e quella reale in una componente gaussiana e un residuo.",
+    "Calcola le medie e le deviazioni standard delle caratteristiche interne del generatore.",
+    "Confronta le caratteristiche misurate usando la copia memorizzata nel tempo del generatore stesso.",
+    "Combina questo controllo dei momenti con la distillazione interna esistente per affinare l'immagine in due sole valutazioni della rete."
+  ],
+  "risultati": [
+    {
+      "fatto": "Accuratezza nella generazione di testo lungo in cinese con due valutazioni della rete su benchmark dedicato.",
+      "numero": "94.25%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Riesce a creare cartelli e testi in cinese corretti in quasi diciannove casi su venti."
+    },
+    {
+      "fatto": "Accuratezza nella creazione di testo in inglese in soli due passaggi.",
+      "numero": "90.20%",
+      "prima": "",
+      "scala": "",
+      "in_pratica": "Genera scritte inglesi accurate e leggibili in nove casi su dieci."
+    },
+    {
+      "fatto": "Punteggio di qualità complessiva della generazione di immagini ottenuto con il modello da venti miliardi di parametri a due passaggi.",
+      "numero": "0.91",
+      "prima": "",
+      "scala": "su 1",
+      "in_pratica": "Raggiunge un livello di fedeltà visiva ed aderenza al testo estremamente elevato."
+    },
+    {
+      "fatto": "Punteggio di qualità visiva ottenuto con il modello da sei miliardi di parametri in due passaggi.",
+      "numero": "0.78",
+      "prima": "",
+      "scala": "su 1",
+      "in_pratica": "Mantiene una qualità elevata anche impiegando una versione più leggera del modello."
+    }
+  ],
+  "limiti": [
+    "Il solo allineamento dei momenti gaussiani non cattura l'intera forma della distribuzione, lasciando un residuo non gaussiano.",
+    "Le stime apprese e l'addestramento su un numero finito di passi possono lasciare piccole discrepanze tra le immagini vere e quelle generate."
+  ],
+  "esempio_concreto": "La creazione grafica di un poster pubblicitario o di un menu da lavagna contenente un testo denso su più righe, con prezzi, simboli e scritte sia in cinese sia in inglese.",
+  "perche_ti_riguarda": "Permetterà agli strumenti di intelligenza artificiale di creare immagini contenenti testi lunghi e grafiche dettagliate quasi all'istante, riducendo l'attesa e il consumo di energia.",
+  "gancio": "Generare un menu da ristorante su lavagna ricco di prezzi, scritte dense e simboli richiede di solito lunghi tempi di elaborazione. Con questo nuovo approccio, l'intelligenza artificiale crea l'immagine completa e nitida in soli due passaggi.",
+  "termini": [
+    {
+      "termine": "IDM",
+      "tipo": "sigla",
+      "espansione_inglese": "Intrinsic Distribution Matching",
+      "significato": "corrispondenza intrinseca della distribuzione",
+      "spiegazione": "Il nuovo metodo di distillazione che allinea le statistiche interne del generatore per creare immagini in pochi passaggi.",
+      "usa": "termine",
+      "pronuncia": "i di emme"
+    },
+    {
+      "termine": "DMD",
+      "tipo": "sigla",
+      "espansione_inglese": "Distribution Matching Distillation",
+      "significato": "distillazione per corrispondenza della distribuzione",
+      "spiegazione": "Tecnica per addestrare modelli veloci facendo combaciare la loro distribuzione di immagini con quella di modelli più lenti.",
+      "usa": "termine",
+      "pronuncia": "di emme di"
+    },
+    {
+      "termine": "Z-Image-Turbo 6B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello generativo da sei miliardi di parametri utilizzato nei test.",
+      "usa": "termine",
+      "pronuncia": "zed imaj tùrbo sei bi"
+    },
+    {
+      "termine": "Qwen-Image 20B",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un grande modello per la generazione di immagini da venti miliardi di parametri.",
+      "usa": "termine",
+      "pronuncia": "kùen imaj venti bi"
+    },
+    {
+      "termine": "LongText-Bench",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un insieme di test progettato per misurare la capacità di generare immagini con testi lunghi.",
+      "usa": "termine",
+      "pronuncia": "long tekst bench"
+    },
+    {
+      "termine": "GenEval",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un test standard per valutare la qualità complessiva e la correttezza delle immagini generate.",
+      "usa": "termine",
+      "pronuncia": "jen evàl"
+    },
+    {
+      "termine": "DINOv2",
+      "tipo": "nome",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Un modello esterno di visione artificiale usato comunemente per estrarre caratteristiche visive.",
+      "usa": "spiegazione",
+      "pronuncia": "dino vì due"
+    },
+    {
+      "termine": "APEX",
+      "tipo": "sigla",
+      "espansione_inglese": "",
+      "significato": "",
+      "spiegazione": "Uno strumento software impiegato per l'ottimizzazione dei calcoli nei modelli.",
+      "usa": "spiegazione",
+      "pronuncia": "àpex"
+    }
+  ],
+  "soggetto_immagine": "a simple chalkboard menu icon with linear text blocks and basic price symbols",
+  "hashtag": [
+    "AI",
+    "GenerazioneImmagini",
+    "TextToImage",
+    "Distillazione",
+    "ComputerVision"
+  ]
+}

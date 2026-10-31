@@ -13,6 +13,8 @@ BrainLoRA: Brèin Lò-ra
 Claude Opus 5: Klòd Òpus cìnque
 Codex: Còdecs
 CrossDiT: Cròs Di Ai Tì
+DINOv2: dino vì due
+DMD: di emme di
 DiffusionART: Diffiùscion Àrt
 DiffusionNFT: diffiùshon enne effe tì
 Direct-OPD: Dairèct o pi di
@@ -28,6 +30,7 @@ GDPVal: gi di pi vàl
 GLM-5.2: Gi Elle Èm cinque virgola due
 GPT-6 Astra: Gi-Pi-Ti Sèis Àstra
 GPT-6-Astra: Gipi-tì sèi Àstra
+GenEval: jen evàl
 Genie: Gìni
 Granite-4.1-8B: Grànait quattro punto uno òtto bi
 GraphForge: Gràf Forg
@@ -36,6 +39,7 @@ HappyHorse 1.0: Èppi Hòrs uno punto zero
 Harness: Hàrnes
 HexaShell: Ècsascièl
 HunyuanVideo-13B: Huniuàn Vìdeo Tredìci Bi
+IDM: i di emme
 JavisBench: giàvis bènch
 Jeva: Gèva
 KDFlow: Kéi di flòu
@@ -48,6 +52,7 @@ LayerEditor-100K: Lèier Èditor cènto cappa
 Learn2Play Bench: Lèrn tu Plèi Bènch
 Llama-3.2-3B-Instruct: Liàma tre punto due tre bi instràct
 LoRA: Lò-ra
+LongText-Bench: long tekst bench
 MJev-Spatial: Emme-Gèi-Èv Spèiscial
 MLDR: èmme èlle di èrre
 MemFlow: Mèm Flòu
@@ -59,6 +64,7 @@ OmniCompass-AV: Òmni Còmpas A Vù
 OmniCompass-VL: Òmni Còmpas Vi Èlle
 OpenCode: Òupen Còud
 Phi-4-mini-instruct: Fi quattro mìni instràct
+Qwen-Image 20B: kùen imaj venti bi
 Qwen2.5-7B-Instruct: Kuèn due punto cinque sètte bi instràct
 Qwen2.5-Omni: Kuèn dùe punto cìnque òmni
 Qwen3: Kùen trè
@@ -98,5 +104,6 @@ Wan 3.0: Uàn tre punto zero
 Waypoint-OPD: Uèipoint o pi di
 WeVisOne-VL: Uì Vis Uàn Vù Èlle
 Workspace-Bench-Lite: uòrk speis bèntch làit
+Z-Image-Turbo 6B: zed imaj tùrbo sei bi
 nuScenes: Niusìns
 vLLM: Vi-Èlle-Èlle-Èmme
